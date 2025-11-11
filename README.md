@@ -178,7 +178,7 @@ Identifies whitelist operations not found in swagger documentation.
 
 ## Related Files
 
-- **Skill File**: `~/.claude/skills/intelliflo-public-api-report.md`
+- **Skill File**: `~/.claude/skills/api-report-generator/skill.md`
 - **Main Report**: `output/FINAL-API-REPORT.md`
 - **Whitelist Analysis**: `output/WHITELIST-ANALYSIS.md`
 
