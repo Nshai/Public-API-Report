@@ -1,0 +1,2348 @@
+[
+  {
+    "operationId": "GetFundHoldingTimeSeries",
+    "method": "GET",
+    "path": "/clients/{clientId}/plans/{planId}/holdings/{holdingId}/timeseries",
+    "description": "Returns up to three years of fund holding time series for a given client and plan."
+  },
+  {
+    "operationId": "SubscribeUnsubscribeWebSub",
+    "method": "POST",
+    "path": "/hub",
+    "description": "A WebSub compliant endpoint which creates or updates an existing webhook subscription."
+  },
+  {
+    "operationId": "ListWebhooks",
+    "method": "GET",
+    "path": "/hub/webhooks",
+    "description": "Returns the list of webhook subscriptions."
+  },
+  {
+    "operationId": "CreateWebhook",
+    "method": "POST",
+    "path": "/hub/webhooks",
+    "description": "Creates or updates an existing webhook subscription."
+  },
+  {
+    "operationId": "DeleteWebhook",
+    "method": "DELETE",
+    "path": "/hub/webhooks/{id}",
+    "description": "Deletes a specific webhook subscription by id (Unsubscribe)."
+  },
+  {
+    "operationId": "GetWebhook",
+    "method": "GET",
+    "path": "/hub/webhooks/{id}",
+    "description": "Returns a specific webhook subscription by id."
+  },
+  {
+    "operationId": "ListAdvisers",
+    "method": "GET",
+    "path": "/v2/advisers",
+    "description": "Returns a list of advisers."
+  },
+  {
+    "operationId": "GetAdviser",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}",
+    "description": "Returns an adviser for a given adviser."
+  },
+  {
+    "operationId": "AdviserExists",
+    "method": "HEAD",
+    "path": "/v2/advisers/{adviserId}",
+    "description": "Checks if the adviser exists."
+  },
+  {
+    "operationId": "ListAdviserAddresses",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/addresses",
+    "description": "Returns a paged list of Address (AddressCollection)"
+  },
+  {
+    "operationId": "GetAdviserAddress",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/addresses/{addressId}",
+    "description": "Retrieves the Address for the given addressId."
+  },
+  {
+    "operationId": "ListBandingTemplates",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/bandingtemplates",
+    "description": "Returns a list of banding templates for an adviser."
+  },
+  {
+    "operationId": "GetBandingTemplate",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId}",
+    "description": "Returns a single banding template for an adviser."
+  },
+  {
+    "operationId": "BandingTemplateExists",
+    "method": "HEAD",
+    "path": "/v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId}",
+    "description": "Check for the existence of a specific banding template."
+  },
+  {
+    "operationId": "ListAdviserContactdetails",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/contactdetails",
+    "description": "Returns list of a adviser's contact details"
+  },
+  {
+    "operationId": "GetAdviserContactdetail",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/contactdetails/{contactDetailId}",
+    "description": "Returns ContactDetail resource"
+  },
+  {
+    "operationId": "ForwardIncomeToOperation",
+    "method": "POST",
+    "path": "/v2/advisers/{adviserId}/forwardincometo",
+    "description": "Creates a new event to indicate that income should be forwarded to a different adviser."
+  },
+  {
+    "operationId": "ListGatedPlanTypesByAdviserId",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/planTypes",
+    "description": "Returns a list of gated plan types based on adviser multi-tie configuration."
+  },
+  {
+    "operationId": "ListSplitTemplates",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/splittemplates",
+    "description": "Returns a list of split templates for the given adviser"
+  },
+  {
+    "operationId": "GetSplitTemplate",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/splittemplates/{templateId}",
+    "description": "Returns a single split template for an adviser."
+  },
+  {
+    "operationId": "GetProviderModels",
+    "method": "GET",
+    "path": "/v2/apps/{appId}/models",
+    "description": "Returns a list of provider models."
+  },
+  {
+    "operationId": "CreateProviderModel",
+    "method": "POST",
+    "path": "/v2/apps/{appId}/models",
+    "description": "Creates a new provider model."
+  },
+  {
+    "operationId": "GetProviderModel",
+    "method": "GET",
+    "path": "/v2/apps/{appId}/models/{modelId}",
+    "description": "Returns a provider model."
+  },
+  {
+    "operationId": "ListProviderAtrTemplates",
+    "method": "GET",
+    "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates",
+    "description": "Returns a list of the ATR template details associated with a third party provider application."
+  },
+  {
+    "operationId": "CreateProviderAtrTemplate",
+    "method": "POST",
+    "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates",
+    "description": "Creates a new 3rd party ATR template."
+  },
+  {
+    "operationId": "GetProviderAtrTemplate",
+    "method": "GET",
+    "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates/{templateId}",
+    "description": "Retrieves details of a third party ATR template."
+  },
+  {
+    "operationId": "ActivateProviderAtrTemplate",
+    "method": "POST",
+    "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates/{templateId}/activate",
+    "description": "Activates or deactivates a third party provider template. Only active templates can be accepted by tenants."
+  },
+  {
+    "operationId": "ListAtrTemplatesV2",
+    "method": "GET",
+    "path": "/v2/attitudeToRisk/atr_templates",
+    "description": "Retrieves a list of all the ATR templates or those that match the filter provided."
+  },
+  {
+    "operationId": "CreateAtrTemplate",
+    "method": "POST",
+    "path": "/v2/attitudeToRisk/atr_templates",
+    "description": "Creates a new ATR template."
+  },
+  {
+    "operationId": "GetAtrTemplateV2",
+    "method": "GET",
+    "path": "/v2/attitudeToRisk/atr_templates/{templateId}",
+    "description": "Retrieves an ATR template."
+  },
+  {
+    "operationId": "PatchAtrTemplate",
+    "method": "PATCH",
+    "path": "/v2/attitudeToRisk/atr_templates/{templateId}",
+    "description": "Updates an existing ATR template."
+  },
+  {
+    "operationId": "UpdateAtrTemplate",
+    "method": "PUT",
+    "path": "/v2/attitudeToRisk/atr_templates/{templateId}",
+    "description": "Updates an existing ATR Template."
+  },
+  {
+    "operationId": "ActivateAtrTemplate",
+    "method": "POST",
+    "path": "/v2/attitudeToRisk/atr_templates/{templateId}/active",
+    "description": "Activates/Deactivates a ATR template."
+  },
+  {
+    "operationId": "ListClients",
+    "method": "GET",
+    "path": "/v2/clients",
+    "description": "Returns a list of clients."
+  },
+  {
+    "operationId": "CreateClient",
+    "method": "POST",
+    "path": "/v2/clients",
+    "description": "Creates a client."
+  },
+  {
+    "operationId": "DeleteClient",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}",
+    "description": "Deletes a given client."
+  },
+  {
+    "operationId": "GetClient",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}",
+    "description": "Returns a clients for a given client."
+  },
+  {
+    "operationId": "ClientExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}",
+    "description": "Checks the client exists."
+  },
+  {
+    "operationId": "UpdateClient",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}",
+    "description": "Updates a client for a given client."
+  },
+  {
+    "operationId": "ListClientAddresses",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/addresses",
+    "description": "Returns a list of addresses for a client"
+  },
+  {
+    "operationId": "CreateClientAddress",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/addresses",
+    "description": "Create an address"
+  },
+  {
+    "operationId": "DeleteClientAddress",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/addresses/{addressId}",
+    "description": "Deletes an existing Address for the given Client."
+  },
+  {
+    "operationId": "GetClientAddress",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/addresses/{addressId}",
+    "description": "Get a client's address by id."
+  },
+  {
+    "operationId": "UpdateClientAddress",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/addresses/{addressId}",
+    "description": "Update an address"
+  },
+  {
+    "operationId": "ListClientAssets",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/assets",
+    "description": "Returns a list of assets for the given client."
+  },
+  {
+    "operationId": "CreateClientAssets",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/assets",
+    "description": "Creates the asset for a given client."
+  },
+  {
+    "operationId": "DeleteClientAsset",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/assets/{assetId}",
+    "description": "Deletes the asset for a given client and asset."
+  },
+  {
+    "operationId": "GetClientAsset",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/assets/{assetId}",
+    "description": "Returns the asset for a given client and asset."
+  },
+  {
+    "operationId": "UpdateClientAsset",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/assets/{assetId}",
+    "description": "Updates the asset for a given client and asset."
+  },
+  {
+    "operationId": "ListClientAssetValuations",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/assets/{assetId}/valuations",
+    "description": "Returns a list of valuations on a given client and asset."
+  },
+  {
+    "operationId": "CreateAssetValuations",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/assets/{assetId}/valuations",
+    "description": "Creates a valuation on a given client and asset."
+  },
+  {
+    "operationId": "DeleteClientAssetValuation",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId}",
+    "description": "Deletes an association on a valuation for a given client, asset and valuation."
+  },
+  {
+    "operationId": "GetClientAssetValuation",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId}",
+    "description": "Returns an association on a valuation for a given client, asset and valuation."
+  },
+  {
+    "operationId": "UpdateClientAssetValuation",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId}",
+    "description": "Updates or creates an association on a valuation for a given client, asset and valuation."
+  },
+  {
+    "operationId": "ListClientAtrs",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/attitudeToRisk",
+    "description": "Returns a list of the ATRs for a client."
+  },
+  {
+    "operationId": "CreateClientAtr",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/attitudeToRisk",
+    "description": "Submits a client ATR."
+  },
+  {
+    "operationId": "DeleteClientAtr",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/attitudeToRisk/{atrId}",
+    "description": "Deletes a client's ATR."
+  },
+  {
+    "operationId": "GetClientAtr",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/attitudeToRisk/{atrId}",
+    "description": "Returns an ATR for a client."
+  },
+  {
+    "operationId": "PatchClientAtr",
+    "method": "PATCH",
+    "path": "/v2/clients/{clientId}/attitudeToRisk/{atrId}",
+    "description": "Updates an existing client ATR."
+  },
+  {
+    "operationId": "UpdateClientAtrResult",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/attitudeToRisk/{atrId}/result",
+    "description": "Update result for a client atr"
+  },
+  {
+    "operationId": "ListClientContactdetails",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/contactdetails",
+    "description": "Returns a list of contact details for a given client."
+  },
+  {
+    "operationId": "CreateClientContactdetails",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/contactdetails",
+    "description": "Creates a contact detail for a given client."
+  },
+  {
+    "operationId": "DeleteClientContactdetail",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/contactdetails/{contactDetailId}",
+    "description": "Deletes a contact detail for a given client and contact detail."
+  },
+  {
+    "operationId": "GetClientContactdetail",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/contactdetails/{contactDetailId}",
+    "description": "Returns a contact detail for a given client and contact detail."
+  },
+  {
+    "operationId": "UpdateClientContactdetail",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/contactdetails/{contactDetailId}",
+    "description": "Updates contact details for a given client and contact detail."
+  },
+  {
+    "operationId": "ListClientDependants",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/dependants",
+    "description": "Returns a list of dependants for a given client."
+  },
+  {
+    "operationId": "CreateClientDependant",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/dependants",
+    "description": "Creates a dependant for a given client."
+  },
+  {
+    "operationId": "DeleteClientDependant",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+    "description": "Deletes a dependant for a given client."
+  },
+  {
+    "operationId": "GetClientDependant",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+    "description": "Returns a dependant for a given client and dependant."
+  },
+  {
+    "operationId": "UpdateClientDependant",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+    "description": "Updates a dependant for a given client."
+  },
+  {
+    "operationId": "ListDocumentFolders",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/documentfolders",
+    "description": "Returns a list of document folders."
+  },
+  {
+    "operationId": "CreateDocumentFolder",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/documentfolders",
+    "description": "Creates a new document folder."
+  },
+  {
+    "operationId": "GetDocumentFolder",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/documentfolders/{documentFolderId}",
+    "description": "Gets a single document folder."
+  },
+  {
+    "operationId": "ListClientDocumentsByFolder",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/documentfolders/{documentFolderId}/documents",
+    "description": "Returns a list of client documents for given folder."
+  },
+  {
+    "operationId": "ListClientDocuments",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/documents",
+    "description": "Returns a list of documents for a given client."
+  },
+  {
+    "operationId": "CreateClientDocument",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/documents",
+    "description": "Creates a document for a given client."
+  },
+  {
+    "operationId": "GetClientDocument",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/documents/{documentId}",
+    "description": "Returns a document for a given client and document."
+  },
+  {
+    "operationId": "UpdateClientDocument",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/documents/{documentId}",
+    "description": "Updates a document for a given client and document."
+  },
+  {
+    "operationId": "ListClientDpaPolicyAgreements",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/dpa_agreements",
+    "description": "Returns a list of client's DPA policy agreements."
+  },
+  {
+    "operationId": "CreateClientDpaPolicyAgreement",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/dpa_agreements",
+    "description": "Creates a new DPA policy agreement for a client."
+  },
+  {
+    "operationId": "GetClientDpaPolicyAgreement",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/dpa_agreements/{agreementId}",
+    "description": "Returns a single DPA policy agreement for a client."
+  },
+  {
+    "operationId": "ListClientEmployments",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/employments",
+    "description": "Get a list of employments for a given client."
+  },
+  {
+    "operationId": "CreateClientEmployment",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/employments",
+    "description": "Create an employment for a given client."
+  },
+  {
+    "operationId": "DeleteClientEmployment",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/employments/{employmentId}",
+    "description": "Deletes a given employment."
+  },
+  {
+    "operationId": "GetClientEmployment",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/employments/{employmentId}",
+    "description": "Get an employment for a given client."
+  },
+  {
+    "operationId": "UpdateClientEmployment",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/employments/{employmentId}",
+    "description": "Updates an employment for a given client."
+  },
+  {
+    "operationId": "ListClientExpenditures",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/expenditures",
+    "description": "Returns a list of expenditure records for a client. The returned list may be filtered."
+  },
+  {
+    "operationId": "CreateClientExpenditure",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/expenditures",
+    "description": "Creates an expenditure record for a client."
+  },
+  {
+    "operationId": "DeleteClientExpenditure",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+    "description": "Deletes a client's expenditure record."
+  },
+  {
+    "operationId": "GetClientExpenditure",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+    "description": "Retrieves a client's expenditure record."
+  },
+  {
+    "operationId": "UpdateClientExpenditure",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+    "description": "Updates a client's expenditure record."
+  },
+  {
+    "operationId": "ListClientFees",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/fees",
+    "description": "Returns a list of fees for a client."
+  },
+  {
+    "operationId": "CreateClientFees",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/fees",
+    "description": "Create client fee."
+  },
+  {
+    "operationId": "DeleteClientFee",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/fees/{feeId}",
+    "description": "Deletes the fee."
+  },
+  {
+    "operationId": "GetClientFee",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/fees/{feeId}",
+    "description": "Get client fee by id."
+  },
+  {
+    "operationId": "UpdateClientFeeDates",
+    "method": "PATCH",
+    "path": "/v2/clients/{clientId}/fees/{feeId}",
+    "description": "Update client fee dates."
+  },
+  {
+    "operationId": "UpdateClientFee",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/fees/{feeId}",
+    "description": "Update client fee."
+  },
+  {
+    "operationId": "ListClientFeeSplits",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/splits",
+    "description": "Returns a collection of client fee splits"
+  },
+  {
+    "operationId": "CreateClientFeeSplit",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/splits",
+    "description": "Creates a client fee split document."
+  },
+  {
+    "operationId": "DeleteClientFeeSplit",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/splits/{splitId}",
+    "description": "Deletes a client fee split document."
+  },
+  {
+    "operationId": "GetClientFeeSplit",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/splits/{splitId}",
+    "description": "Returns a client fee split document."
+  },
+  {
+    "operationId": "ClientFeeSplitExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/splits/{splitId}",
+    "description": "Checks that the client fee split exists."
+  },
+  {
+    "operationId": "UpdateClientFeeSplit",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/splits/{splitId}",
+    "description": "Updates a client fee split document."
+  },
+  {
+    "operationId": "ListClientFeeStatuses",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/statuses",
+    "description": "Returns fee status history collection."
+  },
+  {
+    "operationId": "CreateClientFeeStatus",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/statuses",
+    "description": "Change client fee status"
+  },
+  {
+    "operationId": "GetClientFeeStatus",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/statuses/{feeStatusId}",
+    "description": "Get fee status"
+  },
+  {
+    "operationId": "ClientFeeStatusExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/fees/{feeId}/statuses/{feeStatusId}",
+    "description": "Check fee status exists."
+  },
+  {
+    "operationId": "ListClientIncomes",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/incomes",
+    "description": "Returns a list of incomes for a given client."
+  },
+  {
+    "operationId": "CreateClientIncome",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/incomes",
+    "description": "Creates an income record for a client."
+  },
+  {
+    "operationId": "DeleteClientIncome",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+    "description": "Deletes a client's income record."
+  },
+  {
+    "operationId": "GetClientIncome",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+    "description": "Returns the income for a given client and income."
+  },
+  {
+    "operationId": "UpdateClientIncome",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+    "description": "Updates a client's income record."
+  },
+  {
+    "operationId": "GetClientMarketingPreferences",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/marketing_preferences",
+    "description": "Returns client's current marketing preferences."
+  },
+  {
+    "operationId": "UpdateClientMarketingPreferences",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/marketing_preferences",
+    "description": "Updates client's marketing preferences."
+  },
+  {
+    "operationId": "ListClientOpportunities",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/opportunities",
+    "description": "Returns list of opportunities for a given client."
+  },
+  {
+    "operationId": "CreateClientOpportunity",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/opportunities",
+    "description": "Creates a new Opportunity for the given client."
+  },
+  {
+    "operationId": "GetClientOpportunity",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/opportunities/{opportunityId}",
+    "description": "Returns opportunity documents for a given client and document."
+  },
+  {
+    "operationId": "UpdateClientOpportunity",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/opportunities/{opportunityId}",
+    "description": "Updates an existing Opportunity for the given client."
+  },
+  {
+    "operationId": "DeleteClientOpportunityPlan",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/opportunities/{opportunityId}/plans/{planId}",
+    "description": "Deletes an opportunity from a plan for a given client, opportunity and plan."
+  },
+  {
+    "operationId": "CreateClientOpportunityPlan",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/opportunities/{opportunityId}/plans/{planId}",
+    "description": "Updates an opportunity with a plan for a given client, opportunity and plan."
+  },
+  {
+    "operationId": "ListPersonalContacts",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/personalContacts",
+    "description": "List personal contacts for a given client."
+  },
+  {
+    "operationId": "CreatePersonalContact",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/personalContacts",
+    "description": "Add a new personal contact for a given client"
+  },
+  {
+    "operationId": "DeletePersonalContact",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/personalContacts/{personalContactId}",
+    "description": "Delete an existing personal contact"
+  },
+  {
+    "operationId": "GetPersonalContact",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/personalContacts/{personalContactId}",
+    "description": "Get given personal contact for a given client"
+  },
+  {
+    "operationId": "PatchPersonalContact",
+    "method": "PATCH",
+    "path": "/v2/clients/{clientId}/personalContacts/{personalContactId}",
+    "description": "Patch an existing personal contact"
+  },
+  {
+    "operationId": "UpdatePersonalContact",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/personalContacts/{personalContactId}",
+    "description": "Update an existing personal contact."
+  },
+  {
+    "operationId": "ListClientPlans",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans",
+    "description": "Returns a list of plans for a given client."
+  },
+  {
+    "operationId": "CreateClientPlans",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans",
+    "description": "Creates a plan for a given client."
+  },
+  {
+    "operationId": "DeleteClientPlan",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}",
+    "description": "Deletes the client plan by the given client id and plan id."
+  },
+  {
+    "operationId": "GetClientPlan",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}",
+    "description": "Returns a plan for a given client and plan."
+  },
+  {
+    "operationId": "ExistsClientPlan",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/plans/{planId}",
+    "description": "Checks a plan exists for a given client and plan."
+  },
+  {
+    "operationId": "PatchClientPlan",
+    "method": "PATCH",
+    "path": "/v2/clients/{clientId}/plans/{planId}",
+    "description": "Patch update a client plan for given client id and plan id."
+  },
+  {
+    "operationId": "CreateTopupPlan",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}",
+    "description": "Creates a plan for a given client."
+  },
+  {
+    "operationId": "UpdateClientPlan",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}",
+    "description": "Updates a plan for a given client."
+  },
+  {
+    "operationId": "DeleteClientPlanBeneficiaries",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}/beneficiaries",
+    "description": "Deletes beneficiary or beneficiaries for a given plan."
+  },
+  {
+    "operationId": "ListClientPlansBeneficiaries",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/beneficiaries",
+    "description": "Returns a list of beneficiaries for a given client and plan."
+  },
+  {
+    "operationId": "UpdateClientPlansBeneficiaries",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/beneficiaries",
+    "description": "Updates or creates the beneficiary for a given client and plan."
+  },
+  {
+    "operationId": "ListClientPlanCharges",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/charges",
+    "description": "Returns a list of charge for a client's plan."
+  },
+  {
+    "operationId": "CreateClientPlanCharge",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/charges",
+    "description": "Creates a new charge for a client's plan."
+  },
+  {
+    "operationId": "DeleteClientPlanCharge",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}/charges/{chargeId}",
+    "description": "Deletes an existing charge for a client's plan."
+  },
+  {
+    "operationId": "GetClientPlanCharge",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/charges/{chargeId}",
+    "description": "Returns a single charge for a client's plan."
+  },
+  {
+    "operationId": "UpdateClientPlanCharge",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/charges/{chargeId}",
+    "description": "Updates an existing charge for a client's plan."
+  },
+  {
+    "operationId": "ListPlanCommissions",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/commissions",
+    "description": "Return a list of commissions for a given plan."
+  },
+  {
+    "operationId": "CreatePlanCommissions",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/commissions",
+    "description": "Create a commission for a given plan."
+  },
+  {
+    "operationId": "DeletePlanCommissions",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}/commissions/{planCommissionId}",
+    "description": "Delete a commission for a given plan."
+  },
+  {
+    "operationId": "GetPlanCommission",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/commissions/{planCommissionId}",
+    "description": "Get a commission by identifier for a given plan."
+  },
+  {
+    "operationId": "ClientCommissionExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/plans/{planId}/commissions/{planCommissionId}",
+    "description": "Check to see if commission exists for a given plan."
+  },
+  {
+    "operationId": "UpdatePlanCommissions",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/commissions/{planCommissionId}",
+    "description": "Update a commission for a given plan."
+  },
+  {
+    "operationId": "ListClientPlanContributions",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/contributions",
+    "description": "Returns list of contributions for a given client and plan."
+  },
+  {
+    "operationId": "CreatePlanContributions",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/contributions",
+    "description": "Creates a contribution for a given client and plan."
+  },
+  {
+    "operationId": "DeleteClientPlanContribution",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}/contributions/{contributionId}",
+    "description": "Deletes a contribution for a given plan."
+  },
+  {
+    "operationId": "GetClientPlanContribution",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/contributions/{contributionId}",
+    "description": "Returns a contribution for a given client and plan."
+  },
+  {
+    "operationId": "UpdateClientPlanContribution",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/contributions/{contributionId}",
+    "description": "Updates a contribution for a given client and plan."
+  },
+  {
+    "operationId": "ListClientPlanFees",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees",
+    "description": "Gets a collection of fee linked to the given plan."
+  },
+  {
+    "operationId": "UpdatePlanFees",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees",
+    "description": "Replaces all plan fees"
+  },
+  {
+    "operationId": "DeleteClientPlanFee",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}",
+    "description": "Removes the link between the Fee and the plan, does not delete the actual Fee."
+  },
+  {
+    "operationId": "GetClientPlanFee",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}",
+    "description": "Gets a Fee for the given plan."
+  },
+  {
+    "operationId": "CreateClientPlanFee",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}",
+    "description": "Links an existing Fee to the given Plan."
+  },
+  {
+    "operationId": "ListPlanFeeStatuses",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}/statuses",
+    "description": "Returns fee status history collection."
+  },
+  {
+    "operationId": "CreatePlanFeeStatus",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}/statuses",
+    "description": "Change plan fee status"
+  },
+  {
+    "operationId": "GetPlanFeeStatus",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}/statuses/{feeStatusId}",
+    "description": "Get fee status."
+  },
+  {
+    "operationId": "PlanFeeStatusExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}/statuses/{feeStatusId}",
+    "description": "Check a fee status exists"
+  },
+  {
+    "operationId": "CreateClientPlanFeeByTemplate",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fees/templates/{templateId}",
+    "description": "Create a client plan fee from a fee model template."
+  },
+  {
+    "operationId": "DeleteClientPlanFundproposal",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fundproposal",
+    "description": "Deletes fund proposals from holdings for a given client and plan."
+  },
+  {
+    "operationId": "GetClientPlanFundproposal",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fundproposal",
+    "description": "Returns a fund proposals from holidings for a given client and plan."
+  },
+  {
+    "operationId": "UpdateClientPlanFundproposal",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/fundproposal",
+    "description": "Updates or creates a fund proposal for a given client and plan."
+  },
+  {
+    "operationId": "ListClientPlanHoldings",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/holdings",
+    "description": "Returns a list of fund holdings for a given client and plan."
+  },
+  {
+    "operationId": "CreatePlanHoldings",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/holdings",
+    "description": "Creates fund holdings for a given client and plan."
+  },
+  {
+    "operationId": "GetClientPlanHolding",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}",
+    "description": "Returns a fund holding for a given client, plan and holding."
+  },
+  {
+    "operationId": "UpdateClientPlanHolding",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}",
+    "description": "Updates a fund holding for a given client, plan and holding."
+  },
+  {
+    "operationId": "ListClientPlanHoldingTransactions",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}/transactions",
+    "description": "Returns a list of fund holdings transactions for a given client, plan and holding."
+  },
+  {
+    "operationId": "GetClientPlanHoldingTransaction",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}/transactions/{transactionId}",
+    "description": "Returns a fund holdings transaction for a given client, plan, holding and transaction."
+  },
+  {
+    "operationId": "ListClientPlansLivesAssured",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/livesassured",
+    "description": "Returns a list of Lives Assured for the plan."
+  },
+  {
+    "operationId": "UpdateClientPlansLivesAssured",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/livesassured",
+    "description": "Creates or updates the list of Lives Assured for the plan. A maximum of 6 lives assured can be added."
+  },
+  {
+    "operationId": "ListClientPlansPurposes",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/purposes",
+    "description": "Returns a list of purposes for a given client and plan."
+  },
+  {
+    "operationId": "UpdateClientPlansPurposes",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/purposes",
+    "description": "Creates or updates the purpose for a given client and plan."
+  },
+  {
+    "operationId": "ListPlanSplits",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/splits",
+    "description": "Returns a collection of plan splits"
+  },
+  {
+    "operationId": "CreatePlanSplit",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/splits",
+    "description": "Creates a plan split document."
+  },
+  {
+    "operationId": "DeletePlanSplit",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+    "description": "Deletes a plan split document."
+  },
+  {
+    "operationId": "GetPlanSplit",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+    "description": "Returns a plan split document."
+  },
+  {
+    "operationId": "PlanSplitExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+    "description": "Checks that the plan split exists."
+  },
+  {
+    "operationId": "UpdatePlanSplit",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+    "description": "Updates a plan split document."
+  },
+  {
+    "operationId": "ListClientPlanStatuses",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/statuses",
+    "description": "Returns a list of status histories for a given client and plan."
+  },
+  {
+    "operationId": "CreatePlanStatuses",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/statuses",
+    "description": "Creates status history for a given client and plan."
+  },
+  {
+    "operationId": "GetPlanStatus",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/statuses/{planStatusId}",
+    "description": "Retrieves a specific history record"
+  },
+  {
+    "operationId": "ListClientPlanTransactions",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/transactions",
+    "description": "Returns a list of transactions for a client plan."
+  },
+  {
+    "operationId": "GetClientPlanTransaction",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/transactions/{transactionId}",
+    "description": "Gets a single transaction by id."
+  },
+  {
+    "operationId": "ClientPlanTransactionExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/plans/{planId}/transactions/{transactionId}",
+    "description": "Check to see if a transaction exists."
+  },
+  {
+    "operationId": "UpdateClientPlanTransaction",
+    "method": "PATCH",
+    "path": "/v2/clients/{clientId}/plans/{planId}/transactions/{transactionId}",
+    "description": "Updates a client plan transaction."
+  },
+  {
+    "operationId": "ListClientPlanValuations",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/valuations",
+    "description": "Returns a list of valuations for a given client and plan."
+  },
+  {
+    "operationId": "CreatePlanValuations",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/valuations",
+    "description": "Creates a valuation for a given client and plan."
+  },
+  {
+    "operationId": "GetClientPlanValuation",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/valuations/{valuationId}",
+    "description": "Returns a valuation on a given client, plan and valuation."
+  },
+  {
+    "operationId": "UpdateClientPlanValuation",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/valuations/{valuationId}",
+    "description": "Updates a valuation on a given client, plan and valuation."
+  },
+  {
+    "operationId": "ListClientPlanWithdrawals",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals",
+    "description": "Returns a list of withdrawal for a given client and plan."
+  },
+  {
+    "operationId": "CreatePlanWithdrawals",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals",
+    "description": "Creates a withdrawal for a given client and plan."
+  },
+  {
+    "operationId": "DeleteClientPlanWithdrawal",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}",
+    "description": "Deletes a withdrawal for a given client, plan and withdrawal."
+  },
+  {
+    "operationId": "GetClientPlanWithdrawal",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}",
+    "description": "Returns a withdrawal for a given client, plan and withdrawal."
+  },
+  {
+    "operationId": "UpdateClientPlanWithdrawal",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}",
+    "description": "Updates a withdrawal for a given client, plan and withdrawal."
+  },
+  {
+    "operationId": "ListQuestionsAnswers",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/questions",
+    "description": "Returns a list of the answers a client has given to a given set of questions. The answers are returned in the order that the related questions should be answered."
+  },
+  {
+    "operationId": "ListClientQuotes",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/quotes",
+    "description": "Returns a list of quotes."
+  },
+  {
+    "operationId": "CreateClientQuote",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/quotes",
+    "description": "Creates a new client quote."
+  },
+  {
+    "operationId": "GetClientQuote",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+    "description": "Returns a client quote."
+  },
+  {
+    "operationId": "ClientQuoteExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+    "description": "Checks that a quote exists for a given client."
+  },
+  {
+    "operationId": "AddClientQuoteApplicant",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+    "description": "Adds a secondary client owner to a given quote."
+  },
+  {
+    "operationId": "ListClientQuoteResults",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}/results",
+    "description": "Returns a list of client quote results."
+  },
+  {
+    "operationId": "CreateClientQuoteResult",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}/results",
+    "description": "Creates a new client quote result."
+  },
+  {
+    "operationId": "GetClientQuoteResult",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}",
+    "description": "Returns a client quote result."
+  },
+  {
+    "operationId": "ClientQuoteResultsExists",
+    "method": "HEAD",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}",
+    "description": "Checks that a quote result exists for a client quote."
+  },
+  {
+    "operationId": "GetClientQuoteResultProductBenefits",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/benefits",
+    "description": "This endpoint allows an API user to retrieve product details of a specific quote result or illustration result for a client."
+  },
+  {
+    "operationId": "UpdateClientQuoteResultProductBenefits",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/benefits",
+    "description": "This endpoint allows an API user to update product details of a specific quote result or illustration result for a client."
+  },
+  {
+    "operationId": "SetClientQuoteStatus",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/quotes/{quoteId}/status/{status}",
+    "description": "Sets a new status for the client quote."
+  },
+  {
+    "operationId": "ListClientRelationships",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/relationships",
+    "description": "Returns a list of relationships for a given client."
+  },
+  {
+    "operationId": "CreateClientRelationship",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/relationships",
+    "description": "Creates a relationship for a given client."
+  },
+  {
+    "operationId": "DeleteClientRelationship",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/relationships/{relationshipId}",
+    "description": "Deletes a relationship for a given client and relationship."
+  },
+  {
+    "operationId": "GetClientRelationship",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/relationships/{relationshipId}",
+    "description": "Returns a relationship for a given client and relationship."
+  },
+  {
+    "operationId": "UpdateClientRelationship",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/relationships/{relationshipId}",
+    "description": "Updates a relationship for a given client and relationship."
+  },
+  {
+    "operationId": "DeleteClientRelationshipAccess",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/relationships/{relationshipId}/access",
+    "description": "Revokes access from the Relationship relation to the Relationship subject."
+  },
+  {
+    "operationId": "CreateClientRelationshipAccess",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/relationships/{relationshipId}/access",
+    "description": "Grants access for the Relationship relation to the Relationship subject."
+  },
+  {
+    "operationId": "CreateClientRelationshipWithRelation",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/relationships/relation",
+    "description": "Creates a new relationship and relation for the given client."
+  },
+  {
+    "operationId": "ListClientServicecases",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/servicecases",
+    "description": "Returns a list of service cases for a given client."
+  },
+  {
+    "operationId": "CreateClientServicecases",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/servicecases",
+    "description": "Creates a service case for a given client."
+  },
+  {
+    "operationId": "GetClientServicecase",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}",
+    "description": "Returns a service case for a given client and service case."
+  },
+  {
+    "operationId": "UpdateClientServicecase",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}",
+    "description": "Updates a service case for a given client and service case."
+  },
+  {
+    "operationId": "DeleteClientServicecasePlan",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/plans/{planId}",
+    "description": "Deletes an association on a service with a plan for a given client, service and plan."
+  },
+  {
+    "operationId": "CreateClientServicecasePlan",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/plans/{planId}",
+    "description": "Creates an association with a service on a plan for a given client, service and plan."
+  },
+  {
+    "operationId": "ListClientSplitTemplates",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/splittemplates",
+    "description": "Returns a list of split templates for the given client"
+  },
+  {
+    "operationId": "GetClientSplitTemplate",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/splittemplates/{templateId}",
+    "description": "Returns a single split template for an client."
+  },
+  {
+    "operationId": "ListClientTags",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/tags",
+    "description": "Returns a list of tags for a given client."
+  },
+  {
+    "operationId": "UpdateClientTags",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/tags",
+    "description": "Updates/Creates client's tags."
+  },
+  {
+    "operationId": "RemoveClientTag",
+    "method": "DELETE",
+    "path": "/v2/clients/{clientId}/tags/{tagName}",
+    "description": "Deletes an existing tag for a given client."
+  },
+  {
+    "operationId": "AddClientTag",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/tags/{tagName}",
+    "description": "Creates a new tag for a given client."
+  },
+  {
+    "operationId": "ListClientTransactions",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/transactions",
+    "description": "Returns a list of transactions for a client."
+  },
+  {
+    "operationId": "BatchCreateClientTransactions",
+    "method": "POST",
+    "path": "/v2/clients/{clientId}/transactions",
+    "description": "Creates a batch of transactions for different plans for a particular client."
+  },
+  {
+    "operationId": "GetClientVulnerability",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/vulnerabilities/{vulnerabilityId}",
+    "description": "Get a single client vulnerability."
+  },
+  {
+    "operationId": "GetClientVulnerabilityCurrent",
+    "method": "GET",
+    "path": "/v2/clients/{clientId}/vulnerabilities/current",
+    "description": "Get client's current vulnerability."
+  },
+  {
+    "operationId": "UpdateClientVulnerabilitiesCurrent",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/vulnerabilities/current",
+    "description": "Update client's current vulnerability."
+  },
+  {
+    "operationId": "ListClientSegments",
+    "method": "GET",
+    "path": "/v2/clients/client_segments",
+    "description": "Retrieves a list of the available clients' segments."
+  },
+  {
+    "operationId": "ListClientsVulnerabilities",
+    "method": "GET",
+    "path": "/v2/clients/vulnerabilities/current",
+    "description": "Returns a list of current vulnerabilities for clients defined in the filter."
+  },
+  {
+    "operationId": "ListCommissions",
+    "method": "GET",
+    "path": "/v2/commissions",
+    "description": "Returns a list of commissions."
+  },
+  {
+    "operationId": "GetCommission",
+    "method": "GET",
+    "path": "/v2/commissions/{commissionId}",
+    "description": "Get a commission by id."
+  },
+  {
+    "operationId": "CommissionExists",
+    "method": "HEAD",
+    "path": "/v2/commissions/{commissionId}",
+    "description": "Check to see if a commission exists."
+  },
+  {
+    "operationId": "GetDocument",
+    "method": "GET",
+    "path": "/v2/documents/{documentId}",
+    "description": "Gets a single document by id"
+  },
+  {
+    "operationId": "ListDpaPolicies",
+    "method": "GET",
+    "path": "/v2/dpa_policies",
+    "description": "Returns a list of DPA policies."
+  },
+  {
+    "operationId": "CreateDPAPolicy",
+    "method": "POST",
+    "path": "/v2/dpa_policies",
+    "description": "Creates a new DPA policy which will become the current DPA policy when created (see notes on party type above)."
+  },
+  {
+    "operationId": "DeleteDPAPolicy",
+    "method": "DELETE",
+    "path": "/v2/dpa_policies/{policyId}",
+    "description": "Deletes an existing DPA policy. Only policies that are not associated with client agreements can be deleted."
+  },
+  {
+    "operationId": "GetDpaPolicy",
+    "method": "GET",
+    "path": "/v2/dpa_policies/{policyId}",
+    "description": "Returns a single DPA policy."
+  },
+  {
+    "operationId": "PatchDPAPolicy",
+    "method": "PATCH",
+    "path": "/v2/dpa_policies/{policyId}",
+    "description": "Updates an existing DPA policy."
+  },
+  {
+    "operationId": "UpdateDPAPolicy",
+    "method": "PUT",
+    "path": "/v2/dpa_policies/{policyId}",
+    "description": "Updates an existing DPA policy."
+  },
+  {
+    "operationId": "GetCurrentDPAPolicy",
+    "method": "GET",
+    "path": "/v2/dpa_policies/current",
+    "description": "Returns the current default DPA policy (see notes on party type above)."
+  },
+  {
+    "operationId": "ListFeeModels",
+    "method": "GET",
+    "path": "/v2/feemodels",
+    "description": "Returns a list of fee models."
+  },
+  {
+    "operationId": "GetFeeModel",
+    "method": "GET",
+    "path": "/v2/feemodels/{feeModelId}",
+    "description": "Get fee model by id."
+  },
+  {
+    "operationId": "DeleteFeeModelProgram",
+    "method": "DELETE",
+    "path": "/v2/feemodels/{feeModelId}/programs/{programId}",
+    "description": "Delete fee model for a given program"
+  },
+  {
+    "operationId": "CreateFeeModelProgram",
+    "method": "POST",
+    "path": "/v2/feemodels/programs",
+    "description": "Create a fee program model"
+  },
+  {
+    "operationId": "ListFee",
+    "method": "GET",
+    "path": "/v2/fees",
+    "description": "Returns a list of fees."
+  },
+  {
+    "operationId": "GetFee",
+    "method": "GET",
+    "path": "/v2/fees/{feeId}",
+    "description": "Get fee by id."
+  },
+  {
+    "operationId": "ListCreditNotes",
+    "method": "GET",
+    "path": "/v2/fees/{feeId}/creditnotes",
+    "description": "Return a list of credit notes for a given fee."
+  },
+  {
+    "operationId": "CreateCreditNote",
+    "method": "POST",
+    "path": "/v2/fees/{feeId}/creditnotes",
+    "description": "Create a credit note for a given fee."
+  },
+  {
+    "operationId": "DeleteCreditNote",
+    "method": "DELETE",
+    "path": "/v2/fees/{feeId}/creditnotes/{creditNoteId}",
+    "description": "Delete a credit note for a given fee."
+  },
+  {
+    "operationId": "GetCreditNote",
+    "method": "GET",
+    "path": "/v2/fees/{feeId}/creditnotes/{creditNoteId}",
+    "description": "Get a credit note by identifier for a given fee."
+  },
+  {
+    "operationId": "ListFeeStatuses",
+    "method": "GET",
+    "path": "/v2/fees/{feeId}/statuses",
+    "description": "Returns fee status history collection."
+  },
+  {
+    "operationId": "CreateFeeStatus",
+    "method": "POST",
+    "path": "/v2/fees/{feeId}/statuses",
+    "description": "Change fee status."
+  },
+  {
+    "operationId": "GetFeeStatus",
+    "method": "GET",
+    "path": "/v2/fees/{feeId}/statuses/{feeStatusId}",
+    "description": "Get a fee status"
+  },
+  {
+    "operationId": "FeeStatusExists",
+    "method": "HEAD",
+    "path": "/v2/fees/{feeId}/statuses/{feeStatusId}",
+    "description": "Checks fee status exists."
+  },
+  {
+    "operationId": "ListFundproviders",
+    "method": "GET",
+    "path": "/v2/fundproviders",
+    "description": "Returns a list of fund providers."
+  },
+  {
+    "operationId": "GetFundprovider",
+    "method": "GET",
+    "path": "/v2/fundproviders/{code}",
+    "description": "Returns fund providers for a given code."
+  },
+  {
+    "operationId": "ListFunds",
+    "method": "GET",
+    "path": "/v2/funds",
+    "description": "Returns a list of funds (feed and non-feed funds) and equities."
+  },
+  {
+    "operationId": "CreateFund",
+    "method": "POST",
+    "path": "/v2/funds",
+    "description": "Creates a non-feed fund."
+  },
+  {
+    "operationId": "GetFund",
+    "method": "GET",
+    "path": "/v2/funds/{fundId}",
+    "description": "Returns a fund/equity for a given fundId/equityId."
+  },
+  {
+    "operationId": "UpdateFund",
+    "method": "PUT",
+    "path": "/v2/funds/{fundId}",
+    "description": "Updates a non-feed fund for a given fund."
+  },
+  {
+    "operationId": "ListFundPrices",
+    "method": "GET",
+    "path": "/v2/funds/{fundId}/prices",
+    "description": "Returns a list of fund prices for a given fund."
+  },
+  {
+    "operationId": "ListFundsectors",
+    "method": "GET",
+    "path": "/v2/fundsectors",
+    "description": "Returns a list of fund sectors."
+  },
+  {
+    "operationId": "GetFundsector",
+    "method": "GET",
+    "path": "/v2/fundsectors/{code}",
+    "description": "Returns fund sectors for a given fund code."
+  },
+  {
+    "operationId": "ListIncomeStatements",
+    "method": "GET",
+    "path": "/v2/incomestatements",
+    "description": "Returns a list of income statements."
+  },
+  {
+    "operationId": "CreateIncomeStatement",
+    "method": "POST",
+    "path": "/v2/incomestatements",
+    "description": "Creates a new income statement."
+  },
+  {
+    "operationId": "DeleteIncomeStatement",
+    "method": "DELETE",
+    "path": "/v2/incomestatements/{incomeStatementId}",
+    "description": "Deletes an existing income statement."
+  },
+  {
+    "operationId": "GetIncomeStatement",
+    "method": "GET",
+    "path": "/v2/incomestatements/{incomeStatementId}",
+    "description": "Returns an income statement."
+  },
+  {
+    "operationId": "UpdateIncomeStatement",
+    "method": "PUT",
+    "path": "/v2/incomestatements/{incomeStatementId}",
+    "description": "Updates an income statement."
+  },
+  {
+    "operationId": "ListIncomeStatementItems",
+    "method": "GET",
+    "path": "/v2/incomestatements/{incomeStatementId}/items",
+    "description": "Returns a list of items for a given income statement."
+  },
+  {
+    "operationId": "CreateIncomeStatementItems",
+    "method": "POST",
+    "path": "/v2/incomestatements/{incomeStatementId}/items",
+    "description": "Creates income statement items for an income statement."
+  },
+  {
+    "operationId": "GetIncomeStatementItem",
+    "method": "GET",
+    "path": "/v2/incomestatements/{incomeStatementId}/items/{incomeStatementItemId}",
+    "description": "Returns a given item for a given income statement."
+  },
+  {
+    "operationId": "UpdateIncomeStatementItem",
+    "method": "PUT",
+    "path": "/v2/incomestatements/{incomeStatementId}/items/{incomeStatementItemId}",
+    "description": "Updates an income statement item for a given income statement."
+  },
+  {
+    "operationId": "ListInstalledApps",
+    "method": "GET",
+    "path": "/v2/installed_apps",
+    "description": "Returns a list of installed apps"
+  },
+  {
+    "operationId": "GetInstalledApp",
+    "method": "GET",
+    "path": "/v2/installed_apps/{appId}",
+    "description": "Returns an installed app"
+  },
+  {
+    "operationId": "ExistInstalledApp",
+    "method": "HEAD",
+    "path": "/v2/installed_apps/{appId}",
+    "description": "Checks if an installed app exists"
+  },
+  {
+    "operationId": "ListInstalledAppGroupSettings",
+    "method": "GET",
+    "path": "/v2/installed_apps/{appId}/group_settings",
+    "description": "Returns a list of group settings for a given installed app"
+  },
+  {
+    "operationId": "GetInstalledAppGroupSettings",
+    "method": "GET",
+    "path": "/v2/installed_apps/{appId}/group_settings/{groupId}",
+    "description": "Returns group settings for a given installed app and group"
+  },
+  {
+    "operationId": "UpdateInstalledAppGroupSettings",
+    "method": "PUT",
+    "path": "/v2/installed_apps/{appId}/group_settings/{groupId}",
+    "description": "Updates group settings for a given installed app and group"
+  },
+  {
+    "operationId": "ListInstalledAppUserSettings",
+    "method": "GET",
+    "path": "/v2/installed_apps/{appId}/user_settings",
+    "description": "Returns a lists of user settings for a given installed app"
+  },
+  {
+    "operationId": "GetInstalledAppUserSettings",
+    "method": "GET",
+    "path": "/v2/installed_apps/{appId}/user_settings/{userId}",
+    "description": "Returns user settings for a given installed app and user"
+  },
+  {
+    "operationId": "UpdateInstalledAppUserSettings",
+    "method": "PUT",
+    "path": "/v2/installed_apps/{appId}/user_settings/{userId}",
+    "description": "Updates user settings for a given installed app and user"
+  },
+  {
+    "operationId": "ListTenantProviderAtrTemplates",
+    "method": "GET",
+    "path": "/v2/installed_apps/atr_templates",
+    "description": "Retrieves a list of the ATR templates from the third party provider apps installed by the tenant."
+  },
+  {
+    "operationId": "GetTenantProviderAtrTemplate",
+    "method": "GET",
+    "path": "/v2/installed_apps/atr_templates/{id}",
+    "description": "Retrieves the details of an ATR template for the installed from a third party provider app."
+  },
+  {
+    "operationId": "AcceptTenantProviderAtrTemplate",
+    "method": "POST",
+    "path": "/v2/installed_apps/atr_templates/{id}/accept",
+    "description": "Allows a tenant to approve a third party ATR template, from an application the tenant has installed, making it available for use by the tenant.\nWhen installed the template is not initially active."
+  },
+  {
+    "operationId": "ListIntroducerPaymentRules",
+    "method": "GET",
+    "path": "/v2/introducerpaymentrules",
+    "description": "Returns a collection of introducer payment rules."
+  },
+  {
+    "operationId": "GetIntroducerPaymentRule",
+    "method": "GET",
+    "path": "/v2/introducerpaymentrules/{introducerPaymentRuleId}",
+    "description": "Returns an Introducer Payment Rule."
+  },
+  {
+    "operationId": "IntroducerPaymentRuleExists",
+    "method": "HEAD",
+    "path": "/v2/introducerpaymentrules/{introducerPaymentRuleId}",
+    "description": "Checks that the introducer payment rules exists."
+  },
+  {
+    "operationId": "ListLeads",
+    "method": "GET",
+    "path": "/v2/leads",
+    "description": "Returns a list of leads."
+  },
+  {
+    "operationId": "CreateLead",
+    "method": "POST",
+    "path": "/v2/leads",
+    "description": "Create a lead."
+  },
+  {
+    "operationId": "DeleteLead",
+    "method": "DELETE",
+    "path": "/v2/leads/{leadId}",
+    "description": "Deletes a given lead."
+  },
+  {
+    "operationId": "GetLead",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}",
+    "description": "Returns a given lead."
+  },
+  {
+    "operationId": "LeadExists",
+    "method": "HEAD",
+    "path": "/v2/leads/{leadId}",
+    "description": "Check if the lead exists."
+  },
+  {
+    "operationId": "UpdateLead",
+    "method": "PUT",
+    "path": "/v2/leads/{leadId}",
+    "description": "Updates a given lead."
+  },
+  {
+    "operationId": "ListLeadAddresses",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/addresses",
+    "description": "Returns a paged list of Address (AddressCollection)"
+  },
+  {
+    "operationId": "CreateLeadAddress",
+    "method": "POST",
+    "path": "/v2/leads/{leadId}/addresses",
+    "description": "Creates a new Address for the given Lead."
+  },
+  {
+    "operationId": "DeleteLeadAddress",
+    "method": "DELETE",
+    "path": "/v2/leads/{leadId}/addresses/{addressId}",
+    "description": "Deletes an existing Address for the given Lead."
+  },
+  {
+    "operationId": "GetLeadAddress",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/addresses/{addressId}",
+    "description": "Retrieves the Address for the given addressId."
+  },
+  {
+    "operationId": "UpdateLeadAddress",
+    "method": "PUT",
+    "path": "/v2/leads/{leadId}/addresses/{addressId}",
+    "description": "Updates an existing Address for the given Lead."
+  },
+  {
+    "operationId": "ListLeadContactdetails",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/contactdetails",
+    "description": "Returns a list of contact details for a given lead."
+  },
+  {
+    "operationId": "CreateLeadContactdetails",
+    "method": "POST",
+    "path": "/v2/leads/{leadId}/contactdetails",
+    "description": "Creates contact details for a given lead."
+  },
+  {
+    "operationId": "DeleteLeadContactdetail",
+    "method": "DELETE",
+    "path": "/v2/leads/{leadId}/contactdetails/{contactDetailId}",
+    "description": "Deletes contact details for a given lead."
+  },
+  {
+    "operationId": "GetLeadContactdetail",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/contactdetails/{contactDetailId}",
+    "description": "Returns a contact detail for a given lead and contact detail."
+  },
+  {
+    "operationId": "UpdateLeadContactdetail",
+    "method": "PUT",
+    "path": "/v2/leads/{leadId}/contactdetails/{contactDetailId}",
+    "description": "Updates contact details for a given lead."
+  },
+  {
+    "operationId": "GetLeadMarketingPreferences",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/marketing_preferences",
+    "description": "Returns lead's current marketing preferences."
+  },
+  {
+    "operationId": "UpdateLeadMarketingPreferences",
+    "method": "PUT",
+    "path": "/v2/leads/{leadId}/marketing_preferences",
+    "description": "Updates lead's marketing preferences."
+  },
+  {
+    "operationId": "ListLeadOpportunities",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/opportunities",
+    "description": "Returns a list of opportunity documents for a given lead."
+  },
+  {
+    "operationId": "CreateLeadOpportunity",
+    "method": "POST",
+    "path": "/v2/leads/{leadId}/opportunities",
+    "description": "Creates a new Opportunity for the given Lead."
+  },
+  {
+    "operationId": "GetLeadOpportunity",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/opportunities/{opportunityId}",
+    "description": "Returns an opportunity document for a given lead."
+  },
+  {
+    "operationId": "UpdateLeadOpporunity",
+    "method": "PUT",
+    "path": "/v2/leads/{leadId}/opportunities/{opportunityId}",
+    "description": "Updates an existing Opportunity for the given Lead."
+  },
+  {
+    "operationId": "ListLeadRelationships",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/relationships",
+    "description": "Returns a list of relationships for a given lead."
+  },
+  {
+    "operationId": "CreateLeadRelationship",
+    "method": "POST",
+    "path": "/v2/leads/{leadId}/relationships",
+    "description": "Creates a relationship for a given lead."
+  },
+  {
+    "operationId": "DeleteLeadRelationship",
+    "method": "DELETE",
+    "path": "/v2/leads/{leadId}/relationships/{relationshipId}",
+    "description": "Deletes a relationship for a given lead and relationship."
+  },
+  {
+    "operationId": "GetLeadRelationship",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/relationships/{relationshipId}",
+    "description": "Returns a relationship for a given lead and relationship."
+  },
+  {
+    "operationId": "UpdateLeadRelationship",
+    "method": "PUT",
+    "path": "/v2/leads/{leadId}/relationships/{relationshipId}",
+    "description": "Updates a relationship for the given lead and relationship."
+  },
+  {
+    "operationId": "ListLeadTags",
+    "method": "GET",
+    "path": "/v2/leads/{leadId}/tags",
+    "description": "Returns a list of tags for a given lead."
+  },
+  {
+    "operationId": "UpdateLeadTags",
+    "method": "PUT",
+    "path": "/v2/leads/{leadId}/tags",
+    "description": "Updates/Creates lead's tags."
+  },
+  {
+    "operationId": "RemoveLeadTag",
+    "method": "DELETE",
+    "path": "/v2/leads/{leadId}/tags/{tagName}",
+    "description": "Deletes an existing tag for a given lead."
+  },
+  {
+    "operationId": "AddLeadTag",
+    "method": "POST",
+    "path": "/v2/leads/{leadId}/tags/{tagName}",
+    "description": "Creates a new tag for a given lead."
+  },
+  {
+    "operationId": "ListLifecycles",
+    "method": "GET",
+    "path": "/v2/lifecycles",
+    "description": "Returns a list of lifecycles."
+  },
+  {
+    "operationId": "GetLifecycle",
+    "method": "GET",
+    "path": "/v2/lifecycles/{lifecycleId}",
+    "description": "Returns a lifecycle."
+  },
+  {
+    "operationId": "ListLifecycleTransitions",
+    "method": "GET",
+    "path": "/v2/lifecycles/{lifecycleId}/transitions",
+    "description": "Returns a list of transitions for a given lifecycle."
+  },
+  {
+    "operationId": "ListLifecycleStatuses",
+    "method": "GET",
+    "path": "/v2/lifecycles/statuses",
+    "description": "Returns a list of available lifecycle statuses"
+  },
+  {
+    "operationId": "ListModels",
+    "method": "GET",
+    "path": "/v2/models",
+    "description": "Returns a list of portfolio models."
+  },
+  {
+    "operationId": "CreateModel",
+    "method": "POST",
+    "path": "/v2/models",
+    "description": "Creates a portfolio model."
+  },
+  {
+    "operationId": "UpdateOrCreatePortfolioModel",
+    "method": "PUT",
+    "path": "/v2/models",
+    "description": "Updates or creates a portfolio model."
+  },
+  {
+    "operationId": "GetModel",
+    "method": "GET",
+    "path": "/v2/models/{modelId}",
+    "description": "Returns a portfolio model."
+  },
+  {
+    "operationId": "PatchModel",
+    "method": "PATCH",
+    "path": "/v2/models/{modelId}",
+    "description": "Patch update a model."
+  },
+  {
+    "operationId": "ActivatePortfolioModel",
+    "method": "POST",
+    "path": "/v2/models/{modelId}/active",
+    "description": "Activates or deactivates a portfolio model."
+  },
+  {
+    "operationId": "CreateDraftPortfolioModel",
+    "method": "POST",
+    "path": "/v2/models/draft",
+    "description": "Creates a draft portfolio model."
+  },
+  {
+    "operationId": "UpdateDraftPortfolioModel",
+    "method": "PUT",
+    "path": "/v2/models/draft/{modelId}",
+    "description": "Put update a draft portfolio model."
+  },
+  {
+    "operationId": "PublishDraftPortfolioModel",
+    "method": "POST",
+    "path": "/v2/models/draft/{modelId}/publish",
+    "description": "Publishes a draft portfolio model."
+  },
+  {
+    "operationId": "ListCampaignChannels",
+    "method": "GET",
+    "path": "/v2/opportunities/campaignchannels",
+    "description": "Returns a list of campaign channel for a given tenant."
+  },
+  {
+    "operationId": "CreateCampaignChannel",
+    "method": "POST",
+    "path": "/v2/opportunities/campaignchannels",
+    "description": "Creates a new Campaign Channel."
+  },
+  {
+    "operationId": "DeleteCampaignChannel",
+    "method": "DELETE",
+    "path": "/v2/opportunities/campaignchannels/{campaignChannelId}",
+    "description": "Deletes Campaign Channel for a given tenant"
+  },
+  {
+    "operationId": "UpdateCampaignChannel",
+    "method": "PUT",
+    "path": "/v2/opportunities/campaignchannels/{campaignChannelId}",
+    "description": "Updates an existing Campaign Channel."
+  },
+  {
+    "operationId": "ListOpportunityCampaigns",
+    "method": "GET",
+    "path": "/v2/opportunities/campaigns",
+    "description": "Returns a list of the Opportunity campaigns for a tenant."
+  },
+  {
+    "operationId": "CreateOpportunityCampaign",
+    "method": "POST",
+    "path": "/v2/opportunities/campaigns",
+    "description": "Creates a new Opportunity campaign for a tenant."
+  },
+  {
+    "operationId": "DeleteOpportunityCampaign",
+    "method": "DELETE",
+    "path": "/v2/opportunities/campaigns/{opportunityCampaignId}",
+    "description": "Deletes an Opportunity campaign. Only Opportunity campaigns that are not in use can be deleted."
+  },
+  {
+    "operationId": "UpdateOpportunityCampaign",
+    "method": "PUT",
+    "path": "/v2/opportunities/campaigns/{opportunityCampaignId}",
+    "description": "Updates an Opportunity campaign for a tenant."
+  },
+  {
+    "operationId": "ListCampaignTypes",
+    "method": "GET",
+    "path": "/v2/opportunities/campaigntypes",
+    "description": "Returns a list of campaign types for a given tenant."
+  },
+  {
+    "operationId": "CreateCampaignType",
+    "method": "POST",
+    "path": "/v2/opportunities/campaigntypes",
+    "description": "Creates a new Campaign Type."
+  },
+  {
+    "operationId": "DeleteCampaignType",
+    "method": "DELETE",
+    "path": "/v2/opportunities/campaigntypes/{campaignTypeId}",
+    "description": "Deletes Campaign Type for a given tenant"
+  },
+  {
+    "operationId": "UpdateCampaignType",
+    "method": "PUT",
+    "path": "/v2/opportunities/campaigntypes/{campaignTypeId}",
+    "description": "Updates an existing Campaign Type."
+  },
+  {
+    "operationId": "ListOpportunityPropositions",
+    "method": "GET",
+    "path": "/v2/opportunities/propositions",
+    "description": "Returns a list of the opportunity propositions for a tenant."
+  },
+  {
+    "operationId": "CreateOpportunityProposition",
+    "method": "POST",
+    "path": "/v2/opportunities/propositions",
+    "description": "Creates a new Opportunity proposition for a tenant."
+  },
+  {
+    "operationId": "DeleteOpportunityProposition",
+    "method": "DELETE",
+    "path": "/v2/opportunities/propositions/{propositionId}",
+    "description": "Deletes an existing Opportunity proposition for a tenant."
+  },
+  {
+    "operationId": "UpdateOpportunityProposition",
+    "method": "PUT",
+    "path": "/v2/opportunities/propositions/{propositionId}",
+    "description": "Updates an existing Opportunity proposition for a tenant."
+  },
+  {
+    "operationId": "ListOpportunityStatuses",
+    "method": "GET",
+    "path": "/v2/opportunities/statuses",
+    "description": "Returns a list of opportunity statuses for a given tenant"
+  },
+  {
+    "operationId": "CreateOpportunityStatus",
+    "method": "POST",
+    "path": "/v2/opportunities/statuses",
+    "description": "Creates a new Opportunity Status."
+  },
+  {
+    "operationId": "DeleteOpportunityStatus",
+    "method": "DELETE",
+    "path": "/v2/opportunities/statuses/{opportunityStatusId}",
+    "description": "Deletes an opportunity status for a given tenant"
+  },
+  {
+    "operationId": "UpdateOpportunityStatus",
+    "method": "PUT",
+    "path": "/v2/opportunities/statuses/{opportunityStatusId}",
+    "description": "Updates an existing Opportunity Status."
+  },
+  {
+    "operationId": "ListOpportunityTypes",
+    "method": "GET",
+    "path": "/v2/opportunities/types",
+    "description": "Returns a list of the opportunity types for a tenant."
+  },
+  {
+    "operationId": "CreateOpportunityType",
+    "method": "POST",
+    "path": "/v2/opportunities/types",
+    "description": "Creates a new Opportunity Type for a tenant."
+  },
+  {
+    "operationId": "DeleteOpportunityType",
+    "method": "DELETE",
+    "path": "/v2/opportunities/types/{opportunityTypeId}",
+    "description": "Deletes an Opportunity type. Only opportunity types that are not in use can be deleted."
+  },
+  {
+    "operationId": "GetOpportunityType",
+    "method": "GET",
+    "path": "/v2/opportunities/types/{opportunityTypeId}",
+    "description": "Returns the requested Opportunity type for a tenant."
+  },
+  {
+    "operationId": "UpdateOpportunityType",
+    "method": "PUT",
+    "path": "/v2/opportunities/types/{opportunityTypeId}",
+    "description": "Updates an Opportunity Type for a tenant."
+  },
+  {
+    "operationId": "GetPlan",
+    "method": "GET",
+    "path": "/v2/plans/{planId}",
+    "description": "Get a Plan"
+  },
+  {
+    "operationId": "PlanExists",
+    "method": "HEAD",
+    "path": "/v2/plans/{planId}",
+    "description": "Check that plan available for the user"
+  },
+  {
+    "operationId": "ListUnmatchedPlans",
+    "method": "GET",
+    "path": "/v2/plans/unmatched",
+    "description": "Gets a Collection of unmatched Plans."
+  },
+  {
+    "operationId": "ListPlantypes",
+    "method": "GET",
+    "path": "/v2/plantypes",
+    "description": "Returns a list of plan types."
+  },
+  {
+    "operationId": "ListGatedPlanTypes",
+    "method": "GET",
+    "path": "/v2/plantypes/adviser/{adviserId}",
+    "description": "Returns a list of gated plan types based on adviser multi-tie configuration."
+  },
+  {
+    "operationId": "ListProductproviders",
+    "method": "GET",
+    "path": "/v2/productproviders",
+    "description": "Returns a list of product providers."
+  },
+  {
+    "operationId": "GetProductprovider",
+    "method": "GET",
+    "path": "/v2/productproviders/{productProviderId}",
+    "description": "Returns a product provider."
+  },
+  {
+    "operationId": "ListQuestions",
+    "method": "GET",
+    "path": "/v2/questions",
+    "description": "Retrieves a list of questions associated with the current tenant. The returned list may be filtered."
+  },
+  {
+    "operationId": "GetQuestion",
+    "method": "GET",
+    "path": "/v2/questions/{questionId}",
+    "description": "Retrieves the details of a question."
+  },
+  {
+    "operationId": "ListRelationshiptypes",
+    "method": "GET",
+    "path": "/v2/relationshiptypes",
+    "description": "Returns a list of relationship types."
+  },
+  {
+    "operationId": "ListSplits",
+    "method": "GET",
+    "path": "/v2/splits",
+    "description": "Returns a collection of splits"
+  },
+  {
+    "operationId": "CreateSplit",
+    "method": "POST",
+    "path": "/v2/splits",
+    "description": "Creates a split document."
+  },
+  {
+    "operationId": "DeleteSplit",
+    "method": "DELETE",
+    "path": "/v2/splits/{splitId}",
+    "description": "Deletes a split document."
+  },
+  {
+    "operationId": "GetSplit",
+    "method": "GET",
+    "path": "/v2/splits/{splitId}",
+    "description": "Returns a split document."
+  },
+  {
+    "operationId": "SplitExists",
+    "method": "HEAD",
+    "path": "/v2/splits/{splitId}",
+    "description": "Checks that the split exists."
+  },
+  {
+    "operationId": "UpdateSplit",
+    "method": "PUT",
+    "path": "/v2/splits/{splitId}",
+    "description": "Updates a split document."
+  },
+  {
+    "operationId": "ListTags",
+    "method": "GET",
+    "path": "/v2/tags",
+    "description": "Returns a list of tags for the client and lead resources."
+  },
+  {
+    "operationId": "GetFeeModelTemplate",
+    "method": "GET",
+    "path": "/v2/templates/{templateId}",
+    "description": "Allows an api consumer to retrieve a single fee model template by id."
+  },
+  {
+    "operationId": "GetTenant",
+    "method": "GET",
+    "path": "/v2/tenants/{tenantId}",
+    "description": "Retrieves the tenant resource specified"
+  },
+  {
+    "operationId": "ListTimeEntries",
+    "method": "GET",
+    "path": "/v2/time_entries",
+    "description": "Returns a list of time entries."
+  },
+  {
+    "operationId": "BatchCreateTransactions",
+    "method": "POST",
+    "path": "/v2/transactions",
+    "description": "Creates a batch of transactions for different plans."
+  },
+  {
+    "operationId": "ListValuationBatches",
+    "method": "GET",
+    "path": "/v2/valuations/batches",
+    "description": "Returns a list of valuationbatch"
+  },
+  {
+    "operationId": "EnqueueValuationBatch",
+    "method": "POST",
+    "path": "/v2/valuations/batches",
+    "description": "Creates a new valuationbatch and enqueues it for importing"
+  },
+  {
+    "operationId": "DeleteValuationBatch",
+    "method": "DELETE",
+    "path": "/v2/valuations/batches/{batchId}",
+    "description": "Deletes an existing valuationbatch and undo any related valuations and transactions"
+  },
+  {
+    "operationId": "GetValuationBatch",
+    "method": "GET",
+    "path": "/v2/valuations/batches/{batchId}",
+    "description": "Returns a single valuationbatch"
+  },
+  {
+    "operationId": "ListValuationBatchResults",
+    "method": "GET",
+    "path": "/v2/valuations/batches/{batchId}/results",
+    "description": "Returns the results for a single valuationbatch."
+  }
+]

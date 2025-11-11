@@ -1,0 +1,2020 @@
+[
+  {
+    "service": "Monolith.ContractEnquiry",
+    "url": "https://monolith-contractenquiry.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "PostCePlanValuation",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations/ce",
+        "description": "Accepts a request to fetch valuation from provider",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanValuationRawResponse",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations/requests/{requestId}/response",
+        "description": "Returns the raw valuation response from provider",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListNotifications",
+        "method": "GET",
+        "path": "/v2/user/notifications",
+        "description": "Get the user's unread notifications",
+        "tags": [
+          "notifications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AcknowledgeNotifications",
+        "method": "POST",
+        "path": "/v2/user/notifications",
+        "description": "Mark one or more notifications as read",
+        "tags": [
+          "notifications"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Quotation",
+    "url": "https://microservice-quotation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListClientQuotes",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes",
+        "description": "Returns a list of quotes.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientQuote",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes",
+        "description": "Creates a new client quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientQuote",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+        "description": "Returns a client quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClientQuoteExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+        "description": "Checks that a quote exists for a given client.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AddClientQuoteApplicant",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+        "description": "Adds a secondary client owner to a given quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientQuoteResults",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results",
+        "description": "Returns a list of client quote results.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientQuoteResult",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results",
+        "description": "Creates a new client quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClientQuoteResultsExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}",
+        "description": "Checks that a quote result exists for a client quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientQuoteResult",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}",
+        "description": "Returns a client quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientQuoteResultProductBenefits",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/benefits",
+        "description": "This endpoint allows an API user to retrieve product details of a specific quote result or illustration result for a client.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientQuoteResultProductBenefits",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/benefits",
+        "description": "This endpoint allows an API user to update product details of a specific quote result or illustration result for a client.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "RecommendClientQuoteResult",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/recommend/{recommendationId}",
+        "description": "Creates a new client recommendation proposal from quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SetClientQuoteStatus",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/status/{status}",
+        "description": "Sets a new status for the client quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetQuoteResult",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/results/{quoteResultId}",
+        "description": "Returns a quote result for a given identifier.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListLeadQuotes",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/quotes",
+        "description": "Returns a list of quotes.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateLeadQuote",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/quotes",
+        "description": "Creates a new lead quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetLeadQuote",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}",
+        "description": "Returns a lead quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LeadQuoteExists",
+        "method": "HEAD",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}",
+        "description": "Checks that a quote exists for a given lead.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AddLeadQuoteApplicant",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}",
+        "description": "Adds a secondary lead owner to a given quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListLeadQuoteResults",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/results",
+        "description": "Returns a list of lead quote results.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateLeadQuoteResult",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/results",
+        "description": "Creates a new lead quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LeadQuoteResultsExists",
+        "method": "HEAD",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId}",
+        "description": "Checks that a quote result exists for a lead quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetLeadQuoteResult",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId}",
+        "description": "Returns a lead quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SetLeadQuoteStatus",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/status/{status}",
+        "description": "Sets a new status for the lead quote.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.TimeRecording",
+    "url": "https://microservice-timerecording.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListTimeEntries",
+        "method": "GET",
+        "path": "/v2/time_entries",
+        "description": "Returns a list of time entries.",
+        "tags": [
+          "timeentries"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.WebHooks",
+    "url": "https://monolith-webhooks.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "CreateSubscription",
+        "method": "POST",
+        "path": "/v1/subscriptions",
+        "description": "",
+        "tags": [
+          "subscriptions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSubscription",
+        "method": "DELETE",
+        "path": "/v1/subscriptions/{subscriptionId}",
+        "description": "",
+        "tags": [
+          "subscriptions"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Microservice.Brand",
+    "url": "https://microservice-brand.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "ListBrands",
+        "method": "GET",
+        "path": "/v1/brands",
+        "description": "Get brand for either current user or non-authenticated one.",
+        "tags": [
+          "brand"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListGroupBrands",
+        "method": "GET",
+        "path": "/v1/groups/{groupId}/brands",
+        "description": "Lists all brands for the specified group.",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateGroupBrand",
+        "method": "POST",
+        "path": "/v1/groups/{groupId}/brands",
+        "description": "Create brand",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetGroupBrand",
+        "method": "GET",
+        "path": "/v1/groups/{groupId}/brands/{brandId}",
+        "description": "Get a brand by id and groupId.",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchGroupBrand",
+        "method": "PATCH",
+        "path": "/v1/groups/{groupId}/brands/{brandId}",
+        "description": "Update brand",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteGroupBrand",
+        "method": "DELETE",
+        "path": "/v1/groups/{groupId}/brands/{brandId}",
+        "description": "Delete brand",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetGroupBrandClosest",
+        "method": "GET",
+        "path": "/v1/groups/{groupId}/brands/closest",
+        "description": "Get closest brand for specified group",
+        "tags": [
+          "closest"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUserMesBrands",
+        "method": "GET",
+        "path": "/v1/users/me/brands",
+        "description": "[DEPRECATED] Find brands for the current user using any filters if provided. Use 'v1/brands' instead.",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Monolith.Bcc",
+    "url": "https://monolith-bcc.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListBccErrorLogs",
+        "method": "GET",
+        "path": "/v2/emailerrorlog",
+        "description": "Returns an EmailErrorLog collection.",
+        "tags": [
+          "emailerrorlog"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetBccErrorLog",
+        "method": "GET",
+        "path": "/v2/emailerrorlog/{errorLogId}",
+        "description": "Returns a EntityDocument.",
+        "tags": [
+          "emailerrorlog"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.FactFind",
+    "url": "https://monolith-factfind.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListClientDependants",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/dependants",
+        "description": "Returns a list of dependants for a given client.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientDependant",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/dependants",
+        "description": "Creates a dependant for a given client.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientDependant",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+        "description": "Returns a dependant for a given client and dependant.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientDependant",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+        "description": "Updates a dependant for a given client.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientDependant",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+        "description": "Deletes a dependant for a given client.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientDisclosures",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/disclosures",
+        "description": "List disclosures for a given client.",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientDisclosure",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/disclosures",
+        "description": "Creates a disclosure for a given client.",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientDisclosure",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/disclosures/{disclosureId}",
+        "description": "Updates a disclosure for a given client.",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientDisclosure",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/disclosures/{disclosureId}",
+        "description": "Deletes a disclosure for a given client.",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientEmployments",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/employments",
+        "description": "Get a list of employments for a given client.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientEmployment",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/employments",
+        "description": "Create an employment for a given client.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientEmployment",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/employments/{employmentId}",
+        "description": "Get an employment for a given client.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientEmployment",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/employments/{employmentId}",
+        "description": "Updates an employment for a given client.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientEmployment",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/employments/{employmentId}",
+        "description": "Deletes a given employment.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientExpenditure",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/expenditures",
+        "description": "Creates an expenditure record for a client.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientExpenditures",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expenditures",
+        "description": "Returns a list of expenditure records for a client. The returned list may be filtered.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientExpenditure",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+        "description": "Updates a client's expenditure record.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientExpenditure",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+        "description": "Retrieves a client's expenditure record.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientExpenditure",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+        "description": "Deletes a client's expenditure record.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientIncomes",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/incomes",
+        "description": "Returns a list of incomes for a given client.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientIncome",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/incomes",
+        "description": "Creates an income record for a client.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientIncome",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+        "description": "Returns the income for a given client and income.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientIncome",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+        "description": "Updates a client's income record.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientIncome",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+        "description": "Deletes a client's income record.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientNotes",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/notes",
+        "description": "Returns the notes for a given client.",
+        "tags": [
+          "notes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateOrCreateClientNotes",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/notes",
+        "description": "Updates the notes for a given client.",
+        "tags": [
+          "notes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateContributionExpenditure",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contributions/{contributionId}/expenditures",
+        "description": "Creates a client expenditure record linked to a plan contribution record.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanWithdrawalIncome",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}/incomes",
+        "description": "Create a withdrawal income for a client.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTenantDocumentTypes",
+        "method": "GET",
+        "path": "/v2/disclosures/documentTypes",
+        "description": "List Document Types for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTenantDocumentType",
+        "method": "POST",
+        "path": "/v2/disclosures/documentTypes",
+        "description": "Add a new Document Type for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantDocumentType",
+        "method": "GET",
+        "path": "/v2/disclosures/documentTypes/{documentTypeId}",
+        "description": "Get Document Type by Id for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTenantDocumentType",
+        "method": "PUT",
+        "path": "/v2/disclosures/documentTypes/{documentTypeId}",
+        "description": "Update an existing Document Type for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTenantDocumentType",
+        "method": "DELETE",
+        "path": "/v2/disclosures/documentTypes/{documentTypeId}",
+        "description": "Delete an existing Document Type for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpenditureCategories",
+        "method": "GET",
+        "path": "/v2/expenditures/refdata/categories",
+        "description": "Retrieves List of all/matched categories based on the filter provided.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpenditureCategoryGroups",
+        "method": "GET",
+        "path": "/v2/expenditures/refdata/categorygroups",
+        "description": "Returns a list of expenditure category groups.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateExpenditureCategoryGroup",
+        "method": "POST",
+        "path": "/v2/expenditures/refdata/categorygroups",
+        "description": "Creates a new Expenditure Category Group.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateExpenditureCategoryGroup",
+        "method": "PUT",
+        "path": "/v2/expenditures/refdata/categorygroups/{categoryGroupId}",
+        "description": "Updates an existing Expenditure Category Group.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteExpenditureCategoryGroup",
+        "method": "DELETE",
+        "path": "/v2/expenditures/refdata/categorygroups/{categoryGroupId}",
+        "description": "Deletes Expenditure Category Group.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListRefdata",
+        "method": "GET",
+        "path": "/v2/incomes/refdata/{type}",
+        "description": "Get the list of Reference Data.",
+        "tags": [
+          "refdata"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Security",
+    "url": "https://microservice-security.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListAlternativeAssets",
+        "method": "GET",
+        "path": "/v2/alternativeassets",
+        "description": "Get a List of Alternative Asset Securities.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostAlternativeAssets",
+        "method": "POST",
+        "path": "/v2/alternativeassets",
+        "description": "Create Alternative Asset Securities.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutAlternativeAssets",
+        "method": "PUT",
+        "path": "/v2/alternativeassets",
+        "description": "Update Alternative Asset Securities.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAlternativeAsset",
+        "method": "GET",
+        "path": "/v2/alternativeassets/{securityId}",
+        "description": "Get an Alternative Asset Security by Security Id.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAlternativeAsset",
+        "method": "DELETE",
+        "path": "/v2/alternativeassets/{securityId}",
+        "description": "Delete an Alternative Asset Security by Security Id.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAssetClasses",
+        "method": "GET",
+        "path": "/v2/assetclasses",
+        "description": "List Asset Classes based on Asset Class Ids.",
+        "tags": [
+          "assetclasses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAssetClass",
+        "method": "GET",
+        "path": "/v2/assetclasses/{assetClassId}",
+        "description": "Get Asset Class based Asset Class Id",
+        "tags": [
+          "assetclasses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClassificationCategories",
+        "method": "GET",
+        "path": "/v2/classificationcategories",
+        "description": "List Classification Categories based on Classification Category Ids.",
+        "tags": [
+          "classificationcategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClassificationCategory",
+        "method": "GET",
+        "path": "/v2/classificationcategories/{classificationCategoryId}",
+        "description": "Get Classification Category based Classification Category Id.",
+        "tags": [
+          "classificationcategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCurrencies",
+        "method": "GET",
+        "path": "/v2/currencies",
+        "description": "Get a List of Currency Securities. A Id or a Currency Code or Security Id is required.",
+        "tags": [
+          "currencies"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostCurrencies",
+        "method": "POST",
+        "path": "/v2/currencies",
+        "description": "Create Currency Securities.",
+        "tags": [
+          "currencies"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutCurrencies",
+        "method": "PUT",
+        "path": "/v2/currencies",
+        "description": "Update Currency Securities.",
+        "tags": [
+          "currencies"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCurrency",
+        "method": "GET",
+        "path": "/v2/currencies/{securityId}",
+        "description": "Gets a Currency Security based on Security Id.",
+        "tags": [
+          "currencies"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteCurrency",
+        "method": "DELETE",
+        "path": "/v2/currencies/{securityId}",
+        "description": "Delete a Currency Security based on Security Id.",
+        "tags": [
+          "currencies"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCurrentPrices",
+        "method": "GET",
+        "path": "/v2/currentprices",
+        "description": "Get all current prices for the passed in securityIds",
+        "tags": [
+          "currentprices"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCurrentQuotes",
+        "method": "GET",
+        "path": "/v2/currentquotes",
+        "description": "Get all current prices for the passed in securityIds.",
+        "tags": [
+          "currentquotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListDividends",
+        "method": "GET",
+        "path": "/v2/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostDividends",
+        "method": "POST",
+        "path": "/v2/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchDividends",
+        "method": "PATCH",
+        "path": "/v2/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListEtfs",
+        "method": "GET",
+        "path": "/v2/etfs",
+        "description": "Get a List of ETF Securities based on Security Ids.",
+        "tags": [
+          "etfs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostEtfs",
+        "method": "POST",
+        "path": "/v2/etfs",
+        "description": "Create ETF Securities.",
+        "tags": [
+          "etfs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutEtfs",
+        "method": "PUT",
+        "path": "/v2/etfs",
+        "description": "Update ETF Securities.",
+        "tags": [
+          "etfs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetEtf",
+        "method": "GET",
+        "path": "/v2/etfs/{securityId}",
+        "description": "Get an ETF Security based on Security Id.",
+        "tags": [
+          "etfs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteEtf",
+        "method": "DELETE",
+        "path": "/v2/etfs/{securityId}",
+        "description": "Delete an ETF Security based on Security Id.",
+        "tags": [
+          "etfs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExchanges",
+        "method": "GET",
+        "path": "/v2/exchanges",
+        "description": "List Exchanges based on Exchange Codes.",
+        "tags": [
+          "exchanges"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExchange",
+        "method": "GET",
+        "path": "/v2/exchanges/{exchangeCode}",
+        "description": "Get an Exchange based on Exchange Code.",
+        "tags": [
+          "exchanges"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostFixedIncomes",
+        "method": "POST",
+        "path": "/v2/fixedincomes",
+        "description": "Create a Fixed Income Securities.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutFixedIncomes",
+        "method": "PUT",
+        "path": "/v2/fixedincomes",
+        "description": "Update Fixed Income Securities.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFixedIncomes",
+        "method": "GET",
+        "path": "/v2/fixedincomes",
+        "description": "Get a List of Fixed Income Securities based on Security Id.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFixedIncome",
+        "method": "GET",
+        "path": "/v2/fixedincomes/{securityId}",
+        "description": "Get a Fixed Income Security based on Security Id.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteFixedIncome",
+        "method": "DELETE",
+        "path": "/v2/fixedincomes/{securityId}",
+        "description": "Delete a Fixed Income Security based on Security Id.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFunds",
+        "method": "GET",
+        "path": "/v2/funds",
+        "description": "Get a List of Fund Securities based on Security Ids.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostFunds",
+        "method": "POST",
+        "path": "/v2/funds",
+        "description": "Create Fund Securities.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutFunds",
+        "method": "PUT",
+        "path": "/v2/funds",
+        "description": "Update Fund Securities.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFund",
+        "method": "GET",
+        "path": "/v2/funds/{securityId}",
+        "description": "Gets a Fund Security based on Security Id.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteFund",
+        "method": "DELETE",
+        "path": "/v2/funds/{securityId}",
+        "description": "Delete a Fund Security based on Security Id.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIssuers",
+        "method": "GET",
+        "path": "/v2/issuers",
+        "description": "Get a List of Issuers based on Issuer Ids or Security Group Id. At least 1 search criteria must be populated.",
+        "tags": [
+          "issuers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostIssuers",
+        "method": "POST",
+        "path": "/v2/issuers",
+        "description": "Create an Issuer.",
+        "tags": [
+          "issuers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutIssuers",
+        "method": "PUT",
+        "path": "/v2/issuers",
+        "description": "Update an Issuer",
+        "tags": [
+          "issuers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetIssuer",
+        "method": "GET",
+        "path": "/v2/issuers/{issuerId}",
+        "description": "Get an Issuer based on Issuer Id.",
+        "tags": [
+          "issuers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteIssuer",
+        "method": "DELETE",
+        "path": "/v2/issuers/{issuerId}",
+        "description": "Delete an Issuer based on Issuer Id.",
+        "tags": [
+          "issuers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIssuersByIds",
+        "method": "GET",
+        "path": "/v2/issuers/byids",
+        "description": "Get a List of Issuers based on Issuer Ids.",
+        "tags": [
+          "issuers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIssuersBySourceReferences",
+        "method": "GET",
+        "path": "/v2/issuers/bysourcereferences",
+        "description": "Get a Source Reference based on Source and Source Reference Id.",
+        "tags": [
+          "issuers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetMarketClosings",
+        "method": "GET",
+        "path": "/v2/marketclosings",
+        "description": "Get a Market Closing based on a set of years.",
+        "tags": [
+          "marketclosings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutMarketClosings",
+        "method": "PUT",
+        "path": "/v2/marketclosings",
+        "description": "Create or Update a Market Closing.",
+        "tags": [
+          "marketclosings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteMarketClosings",
+        "method": "DELETE",
+        "path": "/v2/marketclosings/{closingOn}",
+        "description": "Delete a Market Closing based on Closing On date.",
+        "tags": [
+          "marketclosings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostOptions",
+        "method": "POST",
+        "path": "/v2/options",
+        "description": "Create Option Securities.",
+        "tags": [
+          "options"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutOptions",
+        "method": "PUT",
+        "path": "/v2/options",
+        "description": "Update Option Securities.",
+        "tags": [
+          "options"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPoolFactor",
+        "method": "GET",
+        "path": "/v2/poolfactors",
+        "description": "Get all pool factors for the passed in securityIds where the PoolFactorOn date falls between poolfactorOnStart and poolfactorOnEnd, inclusively.",
+        "tags": [
+          "poolfactor"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutPoolFactors",
+        "method": "PUT",
+        "path": "/v2/poolfactors",
+        "description": "Creates any poolfactors that do not exist and updates any poolfactors that do exist (based on securityId and poolfactorOn).",
+        "tags": [
+          "poolfactor"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutPrices",
+        "method": "PUT",
+        "path": "/v2/prices",
+        "description": "Creates any prices that do not exist and updates any prices that do exist (based on securityId and pricedOn).",
+        "tags": [
+          "prices"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostPrices",
+        "method": "POST",
+        "path": "/v2/prices",
+        "description": "Creates any prices that do not exist and return any prices that errored.",
+        "tags": [
+          "prices"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProspectuses",
+        "method": "GET",
+        "path": "/v2/prospectuses",
+        "description": "List Prospectus based on Prospectus Ids.",
+        "tags": [
+          "prospectuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProspectus",
+        "method": "GET",
+        "path": "/v2/prospectuses/{prospectusId}",
+        "description": "Get Prospectus based on Prospectus Id.",
+        "tags": [
+          "prospectuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuotes",
+        "method": "GET",
+        "path": "/v2/quotes",
+        "description": "Get all prices for the passed in securityIds on the pricedOn date.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuotesPricedOn",
+        "method": "GET",
+        "path": "/v2/quotes/{pricedOn}",
+        "description": "Get all prices for the passed in securityIds where the pricedOn date falls between pricedOnStart and pricedOnEnd, inclusively.",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListRegions",
+        "method": "GET",
+        "path": "/v2/regions",
+        "description": "List Regions based Region Ids.",
+        "tags": [
+          "regions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRegion",
+        "method": "GET",
+        "path": "/v2/regions/{regionId}",
+        "description": "Get Region by Region Id.",
+        "tags": [
+          "regions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSectors",
+        "method": "GET",
+        "path": "/v2/sectors",
+        "description": "List Sector based on Sector Ids.",
+        "tags": [
+          "sectors"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSector",
+        "method": "GET",
+        "path": "/v2/sectors/{sectorId}",
+        "description": "Get Sector based on Sector Id.",
+        "tags": [
+          "sectors"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurities",
+        "method": "GET",
+        "path": "/v2/securities",
+        "description": "Gets a List of Securities based on SecurityIds, IdentifierSymbol, or Name.",
+        "tags": [
+          "securities"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSecurity",
+        "method": "GET",
+        "path": "/v2/securities/{securityId}",
+        "description": "Gets an individual Security based on SecurityId.",
+        "tags": [
+          "securities"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityDividends",
+        "method": "GET",
+        "path": "/v2/securities/{securityId}/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSecurityDividends",
+        "method": "DELETE",
+        "path": "/v2/securities/{securityId}/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSecurityPoolFactor",
+        "method": "DELETE",
+        "path": "/v2/securities/{securityId}/poolfactors/{poolFactorOn}",
+        "description": "Deletes a security pool factor based on securityId and poolfactorOn date.",
+        "tags": [
+          "poolfactor"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPrices",
+        "method": "GET",
+        "path": "/v2/securities/{securityId}/prices",
+        "description": "Get all prices for the passed in securityId.",
+        "tags": [
+          "prices"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSecurityPrice",
+        "method": "DELETE",
+        "path": "/v2/securities/{securityId}/prices/{pricedOn}",
+        "description": "Deletes a security price based on securityId and pricedOn date.",
+        "tags": [
+          "prices"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecuritiesByIdentifierSymbols",
+        "method": "GET",
+        "path": "/v2/securities/byidentifiersymbols",
+        "description": "Gets a List Securities based on Identifier Type, Identifier Symbols.",
+        "tags": [
+          "securities"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecuritiesByIds",
+        "method": "GET",
+        "path": "/v2/securities/byids",
+        "description": "Get a List of Securities based on SecurityIds",
+        "tags": [
+          "securities"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecuritiesBySourceReferences",
+        "method": "GET",
+        "path": "/v2/securities/bysourcereferences",
+        "description": "Gets a List Securities based on Sources and Source Reference Ids.",
+        "tags": [
+          "securities"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExistingSecurities",
+        "method": "POST",
+        "path": "/v2/securities/exist",
+        "description": "Returns a List of Security Ids and if they exist in the database. Max number of exists requests = 500",
+        "tags": [
+          "securities"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecuritiesV2",
+        "method": "GET",
+        "path": "/v2/securitiesV2",
+        "description": "Gets a List of Securities based on security filters.",
+        "tags": [
+          "securities"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityGroups",
+        "method": "GET",
+        "path": "/v2/securitygroups",
+        "description": "Get a List of Security Groups.",
+        "tags": [
+          "securitygroups"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostSecurityGroups",
+        "method": "POST",
+        "path": "/v2/securitygroups",
+        "description": "Create Security Groups.",
+        "tags": [
+          "securitygroups"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSecurityGroup",
+        "method": "GET",
+        "path": "/v2/securitygroups/{securityGroupId}",
+        "description": "Get a Security Group By Security Group Id.",
+        "tags": [
+          "securitygroups"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutSecurityGroups",
+        "method": "PUT",
+        "path": "/v2/securitygroups/{securityGroupId}",
+        "description": "Update a Security Group.",
+        "tags": [
+          "securitygroups"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSecurityGroup",
+        "method": "DELETE",
+        "path": "/v2/securitygroups/{securityGroupId}",
+        "description": "Delete a Security Group by SecurityGroupId.",
+        "tags": [
+          "securitygroups"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityGroupGroupSecurities",
+        "method": "GET",
+        "path": "/v2/securitygroups/{securityGroupId}/groupsecurities",
+        "description": "Get a Security GroupGroup Securities by filters.",
+        "tags": [
+          "securitygroups"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityGroupsSecurities",
+        "method": "GET",
+        "path": "/v2/securitygroups/securities",
+        "description": "Get a Security Group Securities by filters.",
+        "tags": [
+          "securitygroups"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityTypes",
+        "method": "GET",
+        "path": "/v2/securitytypes",
+        "description": "Get a List of Security Types.",
+        "tags": [
+          "securitytypes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListStocks",
+        "method": "GET",
+        "path": "/v2/stocks",
+        "description": "Delete a Security based on Security Id.",
+        "tags": [
+          "stocks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostStocks",
+        "method": "POST",
+        "path": "/v2/stocks",
+        "description": "Create Stock Securities.",
+        "tags": [
+          "stocks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutStocks",
+        "method": "PUT",
+        "path": "/v2/stocks",
+        "description": "Update Stock Securities.",
+        "tags": [
+          "stocks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetStock",
+        "method": "GET",
+        "path": "/v2/stocks/{securityId}",
+        "description": "Gets a Stock Security based on Security Id.",
+        "tags": [
+          "stocks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteStock",
+        "method": "DELETE",
+        "path": "/v2/stocks/{securityId}",
+        "description": "Delete a Security based on Security Id.",
+        "tags": [
+          "stocks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTenantCategories",
+        "method": "GET",
+        "path": "/v2/tenantcategories",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostTenantCategories",
+        "method": "POST",
+        "path": "/v2/tenantcategories",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchTenantCategories",
+        "method": "PATCH",
+        "path": "/v2/tenantcategories",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTenantCategory",
+        "method": "DELETE",
+        "path": "/v2/tenantcategories/{categoryId}",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantCategory",
+        "method": "GET",
+        "path": "/v2/tenantcategories/{tenantCategoryId}",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Expectation",
+    "url": "https://microservice-expectation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListExpectationBreakdownsByClient",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expectations/{expectationId}/breakdowns",
+        "description": "Returns a list of expectation breakdowns related to an expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationBreakdownExistsForClient",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId}",
+        "description": "Checks that an expectation breakdown record exists.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpectationBreakdownByClient",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId}",
+        "description": "Returns a list of expectation breakdowns related to an expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientExpectationsSummary",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expectations/aggregate",
+        "description": "Aggregates expectations by fee, commission and plan.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PublishExpectationCommand",
+        "method": "POST",
+        "path": "/v2/commands/Expectation",
+        "description": "Creates a new expectation request to trigger creation of a new income or migration expectation.",
+        "tags": [
+          "commands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PublishTenantExpectationDue",
+        "method": "POST",
+        "path": "/v2/commands/ExpectationSchedule",
+        "description": "Initialize the scheduling process.",
+        "tags": [
+          "commands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PublishReversalCommand",
+        "method": "POST",
+        "path": "/v2/commands/Reversal",
+        "description": "Creates a new expectation reversal request to trigger the reversal of an expectation.",
+        "tags": [
+          "commands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpectations",
+        "method": "GET",
+        "path": "/v2/expectations",
+        "description": "Returns a list of expectations.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpectation",
+        "method": "GET",
+        "path": "/v2/expectations/{expectationId}",
+        "description": "Returns a single expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationExists",
+        "method": "HEAD",
+        "path": "/v2/expectations/{expectationId}",
+        "description": "Checks that an expectation record exists.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationAdjustmentRequest",
+        "method": "POST",
+        "path": "/v2/expectations/{expectationId}/adjust",
+        "description": "Creates a new expectation adjustment for a given expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpectationBreakdowns",
+        "method": "GET",
+        "path": "/v2/expectations/{expectationId}/breakdowns",
+        "description": "Returns a list of expectation breakdowns related to an expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationBreakdownExists",
+        "method": "HEAD",
+        "path": "/v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId}",
+        "description": "Checks that an expectation breakdown record exists.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpectationBreakdown",
+        "method": "GET",
+        "path": "/v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId}",
+        "description": "Returns a single expectation breakdown.",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpectationAdjustmentRules",
+        "method": "GET",
+        "path": "/v2/expectations/adjustmentsrules",
+        "description": "Gets a collection of expectation adjustment rules.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateExpectationAdjustmentRule",
+        "method": "POST",
+        "path": "/v2/expectations/adjustmentsrules",
+        "description": "Creates a new expectation adjustment rule.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationAdjustmentRuleExists",
+        "method": "HEAD",
+        "path": "/v2/expectations/adjustmentsrules/{adjustmentRuleId}",
+        "description": "Checks that an expectation adjustment rule exists.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpectationAdjustmentRule",
+        "method": "GET",
+        "path": "/v2/expectations/adjustmentsrules/{adjustmentRuleId}",
+        "description": "Gets an expectation adjustment rule.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateExpectationAdjustmentRule",
+        "method": "PUT",
+        "path": "/v2/expectations/adjustmentsrules/{adjustmentRuleId}",
+        "description": "Updates an expectation adjustment rule.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteExpectationAdjustmentRule",
+        "method": "DELETE",
+        "path": "/v2/expectations/adjustmentsrules/{adjustmentRuleId}",
+        "description": "Deletes an expectation adjustment rule.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SetConfiguration",
+        "method": "PUT",
+        "path": "/v2/expectations/configuration",
+        "description": "Creates or Updates a tenant's configuration settings for expectations",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetConfiguration",
+        "method": "GET",
+        "path": "/v2/expectations/configuration",
+        "description": "Returns a tenant's configuration settings for expectations",
+        "tags": [
+          "expectation"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Rightbridge",
+    "url": "https://microservice-rightbridge.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  }
+]

@@ -1,0 +1,324 @@
+[
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "ExistsClientPlan",
+    "route": "clients/{clientId:me:headerConstraint(2)}/plans/{planId:int}",
+    "httpMethod": "Head"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "GetClientPlan",
+    "route": "clients/{clientId:me:headerConstraint(2)}/plans/{planId:int}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "ListClientPlans",
+    "route": "clients/{clientId:me:headerConstraint(2)}/plans",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "CreateClientPlans",
+    "route": "clients/{clientId:me:headerConstraint(2)}/plans",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "UpdateClientPlan",
+    "route": "clients/{clientId:me:headerConstraint(2)}/plans/{planId:int}",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "CreateTopupPlan",
+    "route": "clients/{clientId:me:headerConstraint(2)}/plans/{planId:int}",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "PlanExists",
+    "route": "plans/{planId:int}",
+    "httpMethod": "Head"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "GetPlan",
+    "route": "plans/{planId:int}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "operationId": "PatchClientPlan",
+    "route": "clients/{clientId:me:headerConstraint(2)}/plans/{planId:int}",
+    "httpMethod": "Patch"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanStatusController",
+    "operationId": "CreatePlanStatuses",
+    "route": "{planId}/statuses",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanStatusController",
+    "operationId": "ListClientPlanStatuses",
+    "route": "{planId}/statuses",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanStatusController",
+    "operationId": "GetPlanStatus",
+    "route": "{planId}/statuses/{planStatusId}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanValuationController",
+    "operationId": "ListClientPlanValuations",
+    "route": "{planId}/valuations",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanValuationController",
+    "operationId": "GetClientPlanValuation",
+    "route": "{planId}/valuations/{valuationId}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanValuationController",
+    "operationId": "CreatePlanValuations",
+    "route": "{planId}/valuations",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanValuationController",
+    "operationId": "UpdateClientPlanValuation",
+    "route": "{planId}/valuations/{valuationId}",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "operationId": "GetClientPlanTransaction",
+    "route": "v2/clients/{clientId:me}/plans/{planId}/transactions/{transactionId}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "operationId": "ClientPlanTransactionExists",
+    "route": "v2/clients/{clientId:me}/plans/{planId}/transactions/{transactionId}",
+    "httpMethod": "Head"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "operationId": "ListClientPlanTransactions",
+    "route": "v2/clients/{clientId:me}/plans/{planId}/transactions",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "operationId": "ListClientTransactions",
+    "route": "v2/clients/{clientId:me}/transactions",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "operationId": "BatchCreateTransactions",
+    "route": "v2/transactions",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "operationId": "BatchCreateClientTransactions",
+    "route": "v2/clients/{clientId}/transactions",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "operationId": "BatchCreateClientPlanTransactions",
+    "route": "v2/clients/{clientId}/plans/{planId}/transactions",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "operationId": "UpdateClientPlanTransaction",
+    "route": "v2/clients/{clientId:me}/plans/{planId}/transactions/{transactionId}",
+    "httpMethod": "Patch"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "FundController",
+    "operationId": "ListFundPrices",
+    "route": "{fundId}/prices",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "FundController",
+    "operationId": "GetFund",
+    "route": "{fundId}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "FundController",
+    "operationId": "UpdateFund",
+    "route": "{fundId}",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Monolith.Crm",
+    "controller": "ClientController",
+    "operationId": "UpdateClient",
+    "route": "{clientId:me}",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Monolith.Crm",
+    "controller": "ClientController",
+    "operationId": "ClientExists",
+    "route": "{clientId:me}",
+    "httpMethod": "Head"
+  },
+  {
+    "repository": "Microservice.ProviderIntegration",
+    "controller": "AccountController",
+    "operationId": "PutAccountModel",
+    "route": "{accountNumber}/model",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Microservice.ProviderIntegration",
+    "controller": "AccountController",
+    "operationId": "PutMoneyMovementInstuction",
+    "route": "{accountNumber}/moneymovements",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Monolith.Atr",
+    "controller": "AtrTemplateController",
+    "operationId": "UpdateAtrTemplate",
+    "route": "{templateId}",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Monolith.Atr",
+    "controller": "AtrTemplateController",
+    "operationId": "GetAtrTemplateV2",
+    "route": "{templateId}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Atr",
+    "controller": "AtrInstalledAppTemplateController",
+    "operationId": "GetTenantProviderAtrTemplate",
+    "route": "{id}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Atr",
+    "controller": "AtrProviderTemplateController",
+    "operationId": "GetProviderAtrTemplate",
+    "route": "{templateId}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.Atr",
+    "controller": "AtrProviderTemplateController",
+    "operationId": "ActivateProviderAtrTemplate",
+    "route": "{templateId}/activate",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "IncomeController",
+    "operationId": "ListClientIncomes",
+    "route": "incomes",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "IncomeController",
+    "operationId": "GetClientIncome",
+    "route": "incomes/{incomeId}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "IncomeController",
+    "operationId": "CreateClientIncome",
+    "route": "incomes",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "IncomeController",
+    "operationId": "UpdateClientIncome",
+    "route": "incomes/{incomeId}",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "IncomeController",
+    "operationId": "DeleteClientIncome",
+    "route": "incomes/{incomeId}",
+    "httpMethod": "Delete"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "ExpenditureController",
+    "operationId": "CreateClientExpenditure",
+    "route": "expenditures",
+    "httpMethod": "Post"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "ExpenditureController",
+    "operationId": "UpdateClientExpenditure",
+    "route": "expenditures/{expenditureId}",
+    "httpMethod": "Put"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "ExpenditureController",
+    "operationId": "GetClientExpenditure",
+    "route": "expenditures/{expenditureId}",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "ExpenditureController",
+    "operationId": "ListClientExpenditures",
+    "route": "expenditures",
+    "httpMethod": "Get"
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "ExpenditureController",
+    "operationId": "DeleteClientExpenditure",
+    "route": "expenditures/{expenditureId}",
+    "httpMethod": "Delete"
+  }
+]

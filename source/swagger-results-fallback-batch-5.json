@@ -1,0 +1,539 @@
+[
+  {
+    "service": "Microservice.Federation",
+    "url": "https://microservice-federation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "TenantFederationExists",
+        "method": "HEAD",
+        "path": "/v2/tenants/{tenantid}/federation",
+        "description": "",
+        "tags": [
+          "tenant configuration"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.ProviderCodes",
+    "url": "https://microservice-providercodes.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListAdviserProviderCodes",
+        "method": "GET",
+        "path": "/v2/productproviders/{providerId}/advisers/{adviserId}/codes",
+        "description": "Returns a list of Providers Codes allocated to an Adviser that were issued by a Provider.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProviderCodes",
+        "method": "GET",
+        "path": "/v2/productproviders/{providerId}/codes",
+        "description": "Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateProviderCode",
+        "method": "POST",
+        "path": "/v2/productproviders/{providerId}/codes",
+        "description": "Creates an allocated Provider Code issued by a Provider.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProviderCode",
+        "method": "GET",
+        "path": "/v2/productproviders/{providerId}/codes/{providerCodeId}",
+        "description": "Returns a specific allocated Provider Code issued by a Provider.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateProviderCode",
+        "method": "PUT",
+        "path": "/v2/productproviders/{providerId}/codes/{providerCodeId}",
+        "description": "Updates an allocated Provider Code issued by a Provider.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteProviderCode",
+        "method": "DELETE",
+        "path": "/v2/productproviders/{providerId}/codes/{providerCodeId}",
+        "description": "Deletes an allocated Provider Code issued by a Provider.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProviderCodeCombos",
+        "method": "GET",
+        "path": "/v2/productproviders/{providerId}/codes/combos",
+        "description": "Computes and returns the list of Provider Code that are available for a specific group or adviser.\r\nReturns each code config along with the codes associated to the group/adviser and their provider cod",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProviderCodeConfigs",
+        "method": "GET",
+        "path": "/v2/productproviders/{providerId}/codes/config",
+        "description": "Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateProviderCodeConfig",
+        "method": "POST",
+        "path": "/v2/productproviders/{providerId}/codes/config",
+        "description": "Creates a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProviderCodeConfig",
+        "method": "GET",
+        "path": "/v2/productproviders/{providerId}/codes/config/{configId}",
+        "description": "Returns a specific Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateProviderCodeConfig",
+        "method": "PUT",
+        "path": "/v2/productproviders/{providerId}/codes/config/{configId}",
+        "description": "Updates a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteProviderCodeConfig",
+        "method": "DELETE",
+        "path": "/v2/productproviders/{providerId}/codes/config/{configId}",
+        "description": "Deletes a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProviderCodesSystem",
+        "method": "GET",
+        "path": "/v2/productproviders/{providerId}/codes/system",
+        "description": "For system reach only. Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.",
+        "tags": [
+          "providercodes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProviderCodeConfigsAttributes",
+        "method": "GET",
+        "path": "/v2/productproviders/codes/config/attributes",
+        "description": "Returns a list of Provider Code config attributes for a tenant.",
+        "tags": [
+          "providercodesconfigattributes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateProviderCodeConfigAttribute",
+        "method": "POST",
+        "path": "/v2/productproviders/codes/config/attributes",
+        "description": "Creates a Provider Code config attribute for a tenant.",
+        "tags": [
+          "providercodesconfigattributes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchProviderCodeConfigAttribute",
+        "method": "PATCH",
+        "path": "/v2/productproviders/codes/config/attributes/{configAttributeId}",
+        "description": "Patches a Provider Code config attribute for a tenant.",
+        "tags": [
+          "providercodesconfigattributes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteProviderCodeConfigAttribute",
+        "method": "DELETE",
+        "path": "/v2/productproviders/codes/config/attributes/{configAttributeId}",
+        "description": "Deletes a Provider Code config attribute for a tenant.",
+        "tags": [
+          "providercodesconfigattributes"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.DPA",
+    "url": "https://microservice-dpa.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListClientDpaPolicyAgreements",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/dpa_agreements",
+        "description": "Returns a list of client's DPA policy agreements.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientDpaPolicyAgreement",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/dpa_agreements",
+        "description": "Creates a new DPA policy agreement for a client.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientDpaPolicyAgreement",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/dpa_agreements/{agreementId}",
+        "description": "Returns a single DPA policy agreement for a client.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListDpaPolicies",
+        "method": "GET",
+        "path": "/v2/dpa_policies",
+        "description": "Returns a list of DPA policies.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateDPAPolicy",
+        "method": "POST",
+        "path": "/v2/dpa_policies",
+        "description": "Creates a new DPA policy which will become the current DPA policy when created (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDpaPolicy",
+        "method": "GET",
+        "path": "/v2/dpa_policies/{policyId}",
+        "description": "Returns a single DPA policy.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateDPAPolicy",
+        "method": "PUT",
+        "path": "/v2/dpa_policies/{policyId}",
+        "description": "Updates an existing DPA policy.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteDPAPolicy",
+        "method": "DELETE",
+        "path": "/v2/dpa_policies/{policyId}",
+        "description": "Deletes an existing DPA policy. Only policies that are not associated with client agreements can be deleted.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchDPAPolicy",
+        "method": "PATCH",
+        "path": "/v2/dpa_policies/{policyId}",
+        "description": "Updates an existing DPA policy.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCurrentDPAPolicy",
+        "method": "GET",
+        "path": "/v2/dpa_policies/current",
+        "description": "Returns the current default DPA policy (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateCurrentDPAPolicy",
+        "method": "PUT",
+        "path": "/v2/dpa_policies/current",
+        "description": "Updates the current DPA policy (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteCurrentDPAPolicy",
+        "method": "DELETE",
+        "path": "/v2/dpa_policies/current",
+        "description": "Deletes the current default DPA policy (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchCurrentDPAPolicy",
+        "method": "PATCH",
+        "path": "/v2/dpa_policies/current",
+        "description": "Updates the current default DPA policy (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.CFF",
+    "url": "https://microservice-cff.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListCffSegments",
+        "method": "GET",
+        "path": "/v2/cff_segments",
+        "description": "Returns CFF profile segments.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCffSegment",
+        "method": "GET",
+        "path": "/v2/cff_segments/{segmentId}",
+        "description": "Returns a particular CFF segment.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCffSegmentCompletion",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/cff_segments/{segmentId}/completion",
+        "description": "Returns completion for a particular segment.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateCffSegmentCompletion",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/cff_segments/{segmentId}/completion",
+        "description": "Updates completion for a particular CFF segment.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCffSegmentState",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/cff_segments/{segmentId}/state",
+        "description": "Returns state for a particular segment.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateCffSegmentState",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/cff_segments/{segmentId}/state",
+        "description": "Updates a state for a particular Cff segment. Please be advised that though there is no size restriction for the particular state key the entire state data could not occupy more than 1 MB.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCffSegmentsCompletions",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/cff_segments/completions",
+        "description": "Returns a collection of completions for the specified segments.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Avatar",
+    "url": "https://microservice-avatar.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "GetAvatar",
+        "method": "GET",
+        "path": "/v2/avatars",
+        "description": "Get Avatar url for client",
+        "tags": [
+          "avatars"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAvatar",
+        "method": "DELETE",
+        "path": "/v2/avatars",
+        "description": "Deletes Avatar object for client",
+        "tags": [
+          "avatars"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAvatarSignedurl",
+        "method": "GET",
+        "path": "/v2/avatars/signedurl",
+        "description": "Get Avatar signed url for client for PUT",
+        "tags": [
+          "signedurl"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.DataSharing",
+    "url": "https://microservice-datasharing.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.PropertyProvider",
+    "url": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListPropertyAddressesSearch",
+        "method": "GET",
+        "path": "/v2/properties/addresses/search",
+        "description": "Searches addresses by the specified query.",
+        "tags": [
+          "search"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.ProviderDocuments",
+    "url": "https://microservice-providerdocuments.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListProductProviderDocuments",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/providerdocuments",
+        "description": "List product provider documents.",
+        "tags": [
+          "providerdocuments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProductProviderDocumentObject",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/providerdocuments/{documentId}/object",
+        "description": "Get a product provider document object.",
+        "tags": [
+          "providerdocuments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProductProviderDocumentCategories",
+        "method": "GET",
+        "path": "/v2/providerdocuments/categories",
+        "description": "List product provider document categories.",
+        "tags": [
+          "providerdocuments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProductProviderDocumentCategory",
+        "method": "GET",
+        "path": "/v2/providerdocuments/categories/{categoryId}",
+        "description": "Get a product provider document category.",
+        "tags": [
+          "providerdocuments"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Scheduler",
+    "url": "https://microservice-scheduler.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [],
+    "swaggerVersion": "1.0"
+  },
+  {
+    "service": "Monolith.IdVerification",
+    "url": "https://monolith-idverification.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  }
+]

@@ -1,0 +1,1019 @@
+[
+  {
+    "service": "Microservice.PortfolioReporting",
+    "url": "https://microservice-portfolioreporting.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.Valuation",
+    "url": "https://monolith-valuation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "EnqueueValuationBatch",
+        "method": "POST",
+        "path": "/v2/valuations/batches",
+        "description": "Creates a new valuationbatch and enqueues it for importing",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListValuationBatches",
+        "method": "GET",
+        "path": "/v2/valuations/batches",
+        "description": "Returns a list of valuationbatch",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteValuationBatch",
+        "method": "DELETE",
+        "path": "/v2/valuations/batches/{batchId}",
+        "description": "Deletes an existing valuationbatch and undo any related valuations and transactions",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetValuationBatch",
+        "method": "GET",
+        "path": "/v2/valuations/batches/{batchId}",
+        "description": "Returns a single valuationbatch",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListValuationBatchResults",
+        "method": "GET",
+        "path": "/v2/valuations/batches/{batchId}/results",
+        "description": "Returns the results for a single valuationbatch.",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Trading",
+    "url": "https://monolith-trading.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Requirement",
+    "url": "https://microservice-requirement.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "GetClientEnrollmentSummary",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/clientenrollmentsummary",
+        "description": "Gets client enrollments summary.",
+        "tags": [
+          "clientenrollmentsummary"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientObjectives",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/objectives",
+        "description": "Returns a list of client objectives.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "CreateClientObjectives",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/objectives",
+        "description": "Creates a client objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientObjective",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/objectives/{objectiveId}",
+        "description": "Gets a client objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ClientObjectiveExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/objectives/{objectiveId}",
+        "description": "Checks that a given client objective exists.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientObjective",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/objectives/{objectiveId}",
+        "description": "Updates a client objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientObjective",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/objectives/{objectiveId}",
+        "description": "Delete a client objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LinkClientObjectiveOpportunity",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/objectives/{objectiveId}/opportunity/{opportunityId}",
+        "description": "Link opportunity to client objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UnlinkClientObjectiveOpportunity",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/objectives/{objectiveId}/opportunity/{opportunityId}",
+        "description": "Unlink opportunity to client objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListLeadObjectives",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/objectives",
+        "description": "Returns a list of lead objectives.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateLeadObjective",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/objectives",
+        "description": "Creates a lead objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetLeadObjective",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/objectives/{objectiveId}",
+        "description": "Gets a lead objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LeadObjectiveExists",
+        "method": "HEAD",
+        "path": "/v2/leads/{leadId}/objectives/{objectiveId}",
+        "description": "Checks that a given lead objective exists",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateLeadObjective",
+        "method": "PUT",
+        "path": "/v2/leads/{leadId}/objectives/{objectiveId}",
+        "description": "Updates a lead objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteLeadObjective",
+        "method": "DELETE",
+        "path": "/v2/leads/{leadId}/objectives/{objectiveId}",
+        "description": "Delete a lead objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LinkLeadObjectiveOpportunity",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/objectives/{objectiveId}/opportunity/{opportunityId}",
+        "description": "Link opportunity to lead objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UnlinkLeadObjectiveOpportunity",
+        "method": "DELETE",
+        "path": "/v2/leads/{leadId}/objectives/{objectiveId}/opportunity/{opportunityId}",
+        "description": "Unlink opportunity to lead objective.",
+        "tags": [
+          "objectives"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListObjectiveCategory",
+        "method": "GET",
+        "path": "/v2/objective/categories",
+        "description": "List all objective categories.",
+        "tags": [
+          "objectivecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateObjectiveCategory",
+        "method": "POST",
+        "path": "/v2/objective/categories",
+        "description": "Create a objective category.",
+        "tags": [
+          "objectivecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateObjectiveCategory",
+        "method": "PUT",
+        "path": "/v2/objective/categories/{categoryId}",
+        "description": "Update a objective category.",
+        "tags": [
+          "objectivecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteObjectiveCategory",
+        "method": "DELETE",
+        "path": "/v2/objective/categories/{categoryId}",
+        "description": "Delete a objective category.",
+        "tags": [
+          "objectivecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateGoalAllocation",
+        "method": "POST",
+        "path": "/v2/objectives/{objectiveId}/allocations",
+        "description": "Creates Goal Allocation.",
+        "tags": [
+          "allocations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListGoalAllocation",
+        "method": "GET",
+        "path": "/v2/objectives/{objectiveId}/allocations",
+        "description": "List goal allocations.",
+        "tags": [
+          "allocations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetGoalAllocation",
+        "method": "GET",
+        "path": "/v2/objectives/{objectiveId}/allocations/{allocationId}",
+        "description": "Gets a Goal Allocation.",
+        "tags": [
+          "allocations"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.FinexFundImporter",
+    "url": "https://monolith-finexfundimporter.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [],
+    "swaggerVersion": "1.0"
+  },
+  {
+    "service": "Microservice.DocuSign",
+    "url": "https://microservice-docusign.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "UpdateDocuSignEnvelope",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/docusign_envelopes/{envelopeId}",
+        "description": "UpdateAsync eSignature Envelope",
+        "tags": [
+          "docusignenvelopes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SignDocuSignEnvelope",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/docusign_envelopes/{envelopeId}/sign_url",
+        "description": "Get sign URL of eSignature Envelope",
+        "tags": [
+          "signurl"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SendESignatureEnvelope",
+        "method": "POST",
+        "path": "/v2/clients/docusign_envelopes",
+        "description": "Send eSignature Envelope to the client",
+        "tags": [
+          "docusignenvelopes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDocuSignEnvelope",
+        "method": "GET",
+        "path": "/v2/clients/docusign_envelopes/{envelopeId}",
+        "description": "Get eSignature Envelope",
+        "tags": [
+          "docusignenvelopes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteEnvelope",
+        "method": "DELETE",
+        "path": "/v2/clients/docusign_envelopes/{envelopeId}",
+        "description": "Delete eSignature Envelope",
+        "tags": [
+          "docusignenvelopes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SendDocuSignEnvelopeNotification",
+        "method": "POST",
+        "path": "/v2/clients/docusign_envelopes/{envelopeId}/notifications",
+        "description": "Sends envelope notification",
+        "tags": [
+          "notifications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateDocuSignEnvelopeSigners",
+        "method": "PUT",
+        "path": "/v2/clients/docusign_envelopes/{envelopeId}/signers",
+        "description": "UpdateAsync Envelope Signers in the third party docuSign and in the DB",
+        "tags": [
+          "signers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ProcessDocuSignEvent",
+        "method": "POST",
+        "path": "/v2/docusign_events",
+        "description": "",
+        "tags": [
+          "docusignevents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDocuSignFieldAnchors",
+        "method": "GET",
+        "path": "/v2/docusign_field_anchors",
+        "description": "Gets list of field anchors",
+        "tags": [
+          "docusignfieldanchors"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.ChangeNotification",
+    "url": "https://microservice-changenotification.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "ListClientChanges",
+        "method": "GET",
+        "path": "/v1/client/{partyId}/changes",
+        "description": "Return a paged collection of changes.",
+        "tags": [
+          "changes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientChange",
+        "method": "POST",
+        "path": "/v1/client/{partyId}/changes",
+        "description": "Creates a change log entry for the client.",
+        "tags": [
+          "changes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientChange",
+        "method": "GET",
+        "path": "/v1/client/{partyId}/changes/{eventId}",
+        "description": "Get the specified event.",
+        "tags": [
+          "changes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientChange",
+        "method": "HEAD",
+        "path": "/v1/client/{partyId}/changes/{eventId}",
+        "description": "Get the specified event.",
+        "tags": [
+          "changes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListEventsSubscribe",
+        "method": "GET",
+        "path": "/v1/events/subscribe",
+        "description": "Get a list of subscriptions for the party.",
+        "tags": [
+          "subscribe"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateEventSubscribe",
+        "method": "POST",
+        "path": "/v1/events/subscribe",
+        "description": "Add a new subscription for the party based on given request.",
+        "tags": [
+          "subscribe"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSubscribe",
+        "method": "GET",
+        "path": "/v1/events/subscribe/{noun}",
+        "description": "Get subscription details for the party for the specified noun.",
+        "tags": [
+          "subscribes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateSubscribe",
+        "method": "PUT",
+        "path": "/v1/events/subscribe/{noun}",
+        "description": "Update the subscription settings for the party based on the noun.",
+        "tags": [
+          "subscribes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSubscribe",
+        "method": "DELETE",
+        "path": "/v1/events/subscribe/{noun}",
+        "description": "Deletes the subscription settings for the party based on noun.",
+        "tags": [
+          "subscribes"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Microservice.iMps",
+    "url": "https://microservice-imps.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "CreateProviderModel",
+        "method": "POST",
+        "path": "/v2/apps/{appId}/models",
+        "description": "Creates a new provider model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProviderModels",
+        "method": "GET",
+        "path": "/v2/apps/{appId}/models",
+        "description": "Returns a list of provider models.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProviderModel",
+        "method": "GET",
+        "path": "/v2/apps/{appId}/models/{modelId}",
+        "description": "Returns a provider model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteProviderModel",
+        "method": "DELETE",
+        "path": "/v2/apps/{appId}/models/{modelId}",
+        "description": "Returns a provider model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantProviderModels",
+        "method": "GET",
+        "path": "/v2/installed_apps/models",
+        "description": "Returns a list of provider models.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantProviderModel",
+        "method": "GET",
+        "path": "/v2/installed_apps/models/{modelId}",
+        "description": "Returns a provider model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AcceptModel",
+        "method": "POST",
+        "path": "/v2/installed_apps/models/{modelId}/accept",
+        "description": "Accepts a provider model for use by a firm.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Atr",
+    "url": "https://monolith-atr.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListAtrTemplates",
+        "method": "GET",
+        "path": "/v2/atr_templates",
+        "description": "Returns a list of ATR templates.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAtrTemplate",
+        "method": "GET",
+        "path": "/v2/atr_templates/{atrTemplateId}",
+        "description": "Returns an ATR template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAtrSystemCategories",
+        "method": "GET",
+        "path": "/v2/atr/system_categories",
+        "description": "Retrieves a list of the ATR system categories.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "CreateProviderAtrTemplate",
+        "method": "POST",
+        "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates",
+        "description": "Creates a new 3rd party ATR template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListProviderAtrTemplates",
+        "method": "GET",
+        "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates",
+        "description": "Returns a list of the ATR template details associated with a third party provider application.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetProviderAtrTemplate",
+        "method": "GET",
+        "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates/{templateId}",
+        "description": "Retrieves details of a third party ATR template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ActivateProviderAtrTemplate",
+        "method": "POST",
+        "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates/{templateId}/activate",
+        "description": "Activates or deactivates a third party provider template. Only active templates can be accepted by tenants.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "UpdateProvideAtrTemplateAssetModel",
+        "method": "PUT",
+        "path": "/v2/attitudeToRisk/apps/{appId}/atr_templates/{templateId}/asset_model",
+        "description": "Updates the asset model associated with a third party provider template with a new set of risk profiles.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAtrTemplate",
+        "method": "POST",
+        "path": "/v2/attitudeToRisk/atr_templates",
+        "description": "Creates a new ATR template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListAtrTemplatesV2",
+        "method": "GET",
+        "path": "/v2/attitudeToRisk/atr_templates",
+        "description": "Retrieves a list of all the ATR templates or those that match the filter provided.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "UpdateAtrTemplate",
+        "method": "PUT",
+        "path": "/v2/attitudeToRisk/atr_templates/{templateId}",
+        "description": "Updates an existing ATR Template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetAtrTemplateV2",
+        "method": "GET",
+        "path": "/v2/attitudeToRisk/atr_templates/{templateId}",
+        "description": "Retrieves an ATR template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "PatchAtrTemplate",
+        "method": "PATCH",
+        "path": "/v2/attitudeToRisk/atr_templates/{templateId}",
+        "description": "Updates an existing ATR template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "DeleteAtrTemplateV2",
+        "method": "DELETE",
+        "path": "/v2/attitudeToRisk/atr_templates/{templateId}",
+        "description": "Deletes an ATR template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ActivateAtrTemplate",
+        "method": "POST",
+        "path": "/v2/attitudeToRisk/atr_templates/{templateId}/active",
+        "description": "Activates/Deactivates a ATR template.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListClientAtrAnswers",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/atr",
+        "description": "Allows an API consumer to retrieve all the Attitude to Risk (ATR) answers for a given client.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientAtrAnswer",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/atr",
+        "description": "Allows an API consumer to submit an ATR for a given client.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientAtrAnswer",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/atr/{atrAnswerId}",
+        "description": "Allows an API consumer to get a single ATR answer for a given client.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientAtrAnswerResult",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/atr/{atrAnswerId}/result",
+        "description": "Updates an existing Atr Answer Result for a given client.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientAtr",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/attitudeToRisk",
+        "description": "Submits a client ATR.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListClientAtrs",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/attitudeToRisk",
+        "description": "Returns a list of the ATRs for a client.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetClientAtr",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/attitudeToRisk/{atrId}",
+        "description": "Returns an ATR for a client.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "PatchClientAtr",
+        "method": "PATCH",
+        "path": "/v2/clients/{clientId}/attitudeToRisk/{atrId}",
+        "description": "Updates an existing client ATR.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "DeleteClientAtr",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/attitudeToRisk/{atrId}",
+        "description": "Deletes a client's ATR.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "UpdateClientAtrResult",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/attitudeToRisk/{atrId}/result",
+        "description": "Update result for a client atr",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListTenantProviderAtrTemplates",
+        "method": "GET",
+        "path": "/v2/installed_apps/atr_templates",
+        "description": "Retrieves a list of the ATR templates from the third party provider apps installed by the tenant.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetTenantProviderAtrTemplate",
+        "method": "GET",
+        "path": "/v2/installed_apps/atr_templates/{id}",
+        "description": "Retrieves the details of an ATR template for the installed from a third party provider app.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "AcceptTenantProviderAtrTemplate",
+        "method": "POST",
+        "path": "/v2/installed_apps/atr_templates/{id}/accept",
+        "description": "Allows a tenant to approve a third party ATR template, from an application the tenant has installed, making it available for use by the tenant.\r\nWhen installed the template is not initially active.",
+        "tags": [
+          "attitudetorisk"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "CreateRiskProfile",
+        "method": "POST",
+        "path": "/v2/riskprofiles",
+        "description": "Creates a new Risk Profile.",
+        "tags": [
+          "riskprofiles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListRiskProfiles",
+        "method": "GET",
+        "path": "/v2/riskprofiles",
+        "description": "Retrieves a list of all the risk profiles or those that match the filter provided.",
+        "tags": [
+          "riskprofiles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRiskProfile",
+        "method": "GET",
+        "path": "/v2/riskprofiles/{riskProfileId}",
+        "description": "Retrieves an Risk Profile.",
+        "tags": [
+          "riskprofiles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchRiskProfile",
+        "method": "PATCH",
+        "path": "/v2/riskprofiles/{riskProfileId}",
+        "description": "Patch risk profile",
+        "tags": [
+          "riskprofiles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ArchiveRiskProfile",
+        "method": "POST",
+        "path": "/v2/riskprofiles/{riskProfileId}/archive",
+        "description": "Archive the Risk Profile",
+        "tags": [
+          "riskprofiles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UnarchiveRiskProfile",
+        "method": "POST",
+        "path": "/v2/riskprofiles/{riskProfileId}/unarchive",
+        "description": "Unarchive the Risk Profile",
+        "tags": [
+          "riskprofiles"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Organization",
+    "url": "https://monolith-organization.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "GetTenantDetail",
+        "method": "GET",
+        "path": "/v2/tenants/{tenantId}",
+        "description": "Returns Tenant Detail.",
+        "tags": [
+          "tenant"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTenantDetail",
+        "method": "PUT",
+        "path": "/v2/tenants/{tenantId}",
+        "description": "Updates Tenant Detail.",
+        "tags": [
+          "tenant"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantAddress",
+        "method": "GET",
+        "path": "/v2/tenants/{tenantId}/address",
+        "description": "Returns Tenant Address.",
+        "tags": [
+          "tenant"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTenantAddress",
+        "method": "PUT",
+        "path": "/v2/tenants/{tenantId}/address",
+        "description": "Updates Tenant Address.",
+        "tags": [
+          "tenant"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantStatus",
+        "method": "GET",
+        "path": "/v2/tenants/{tenantId}/status",
+        "description": "Returns Tenant Status.",
+        "tags": [
+          "tenant"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTenantStatus",
+        "method": "PUT",
+        "path": "/v2/tenants/{tenantId}/status",
+        "description": "Updates Tenant Status.",
+        "tags": [
+          "tenant"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  }
+]
