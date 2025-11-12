@@ -1,0 +1,5306 @@
+[
+  {
+    "service": "Microservice.Recommend",
+    "url": "https://microservice-recommend.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListJourneyTypes",
+        "method": "GET",
+        "path": "/v2/advice/journeytypes",
+        "description": "List journey types",
+        "tags": [
+          "journeytypes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetJourneyType",
+        "method": "GET",
+        "path": "/v2/advice/journeytypes/{journeyTypeId}",
+        "description": "Get journey type.",
+        "tags": [
+          "journeytypes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAdviceReferenceData",
+        "method": "GET",
+        "path": "/v2/advice/referencedata",
+        "description": "Allows an API consumer to retrieve advice reference data.",
+        "tags": [
+          "fundingsource"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAdviceTemplate",
+        "method": "POST",
+        "path": "/v2/advice/templates",
+        "description": "Create advice template.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAdviceTemplates",
+        "method": "GET",
+        "path": "/v2/advice/templates",
+        "description": "List advice templates",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAdviceTemplate",
+        "method": "DELETE",
+        "path": "/v2/advice/templates/{templateId}",
+        "description": "Delete advice template.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAdviceTemplate",
+        "method": "GET",
+        "path": "/v2/advice/templates/{templateId}",
+        "description": "Get advice template.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchAdviceTemplate",
+        "method": "PATCH",
+        "path": "/v2/advice/templates/{templateId}",
+        "description": "Patch advice template.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CloneAdviceTemplate",
+        "method": "POST",
+        "path": "/v2/advice/templates/{templateId}",
+        "description": "Clone Advice template.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAdviceTemplateStep",
+        "method": "POST",
+        "path": "/v2/advice/templates/{templateId}/steps",
+        "description": "Create advice template step.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAdviceTemplateSteps",
+        "method": "GET",
+        "path": "/v2/advice/templates/{templateId}/steps",
+        "description": "List advice templates",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateAdviceTemplateStep",
+        "method": "PUT",
+        "path": "/v2/advice/templates/{templateId}/steps/{stepId}",
+        "description": "Update advice template step",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAdviceTemplateStep",
+        "method": "GET",
+        "path": "/v2/advice/templates/{templateId}/steps/{stepId}",
+        "description": "Get advice template step.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAdviceTemplateStep",
+        "method": "DELETE",
+        "path": "/v2/advice/templates/{templateId}/steps/{stepId}",
+        "description": "Delete advice template step.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAdviceTemplateStepTransitions",
+        "method": "GET",
+        "path": "/v2/advice/templates/{templateId}/steptransitions",
+        "description": "List advice template step transitions.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAdviceTemplateStepTransition",
+        "method": "POST",
+        "path": "/v2/advice/templates/{templateId}/steptransitions",
+        "description": "Create Advice template step transition.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAdviceTemplateStepTransition",
+        "method": "GET",
+        "path": "/v2/advice/templates/{templateId}/steptransitions/{stepTransitionId}",
+        "description": "Get Advice template step transition.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutAdviceTemplateStepTransition",
+        "method": "PUT",
+        "path": "/v2/advice/templates/{templateId}/steptransitions/{stepTransitionId}",
+        "description": "Put Advice template step transition.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAdviceTemplateStepTransition",
+        "method": "DELETE",
+        "path": "/v2/advice/templates/{templateId}/steptransitions/{stepTransitionId}",
+        "description": "Delete Advice template step transition.",
+        "tags": [
+          "advicetemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientInvestmentPreferences",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/investmentPreferences",
+        "description": "List client investment preferences",
+        "tags": [
+          "clientinvestmentpreference"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientInvestmentPreferences",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/investmentPreferences",
+        "description": "Create client investment preference",
+        "tags": [
+          "clientinvestmentpreference"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientInvestmentPreferences",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/investmentPreferences/{clientInvestmentPreferenceId}",
+        "description": "Get client investment preference.",
+        "tags": [
+          "clientinvestmentpreference"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientInvestmentPreferences",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/investmentPreferences/{clientInvestmentPreferenceId}",
+        "description": "Update client investment preference",
+        "tags": [
+          "clientinvestmentpreference"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientInvestmentPreferenceUsingObjective",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/objectives/{objectivesId}/InvestmentPreferences",
+        "description": "Allows an API consumer to retrieve a client investment preference for objective.",
+        "tags": [
+          "clientinvestmentpreference"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientInvestmentPreferenceWithObjective",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/objectives/{objectivesId}/InvestmentPreferences",
+        "description": "Links an investment preference to a objective.",
+        "tags": [
+          "clientinvestmentpreference"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientRecommendation",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/recommendations2",
+        "description": "Creates a client recommendation.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListClientRecommendations",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/recommendations2",
+        "description": "Returns a list of client recommendations.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "PatchClientRecommendation",
+        "method": "PATCH",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}",
+        "description": "Allows an API consumer to update a recommendation for a given client.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetClientRecommendation",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}",
+        "description": "Gets a recommendation.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "DeleteClientRecommendation",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}",
+        "description": "Deletes a recommendation.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "CreateRecommendationProposal",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals",
+        "description": "Creates a recommendation proposal.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListRecommendationProposals",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals",
+        "description": "Lists recommendation proposals.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetRecommendationProposal",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}",
+        "description": "Gets a recommendation proposal.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "DeleteRecommendationProposal",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}",
+        "description": "Deletes a recommendation proposal.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "UpdateRecommendationProposal",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}",
+        "description": "Updates a recommendation proposal.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "PatchRecommendationProposal",
+        "method": "PATCH",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}",
+        "description": "Patch a recommendation proposal.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateBankAccount",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts",
+        "description": "Create a back account for a given proposal and client.",
+        "tags": [
+          "bankaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListBankAccounts",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts",
+        "description": "Lists bank accounts for a given proposal and client.",
+        "tags": [
+          "bankaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetBankAccount",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts/{bankAccountId}",
+        "description": "Returns a bank account for a given proposal and client.",
+        "tags": [
+          "bankaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateBankAccount",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts/{bankAccountId}",
+        "description": "Updates a recommendation proposal bankaccount.",
+        "tags": [
+          "bankaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteBankAccount",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts/{bankAccountId}",
+        "description": "Deletes a bank account against a proposal.",
+        "tags": [
+          "bankaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateProposalBeneficiaries",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/beneficiaries",
+        "description": "Create a beneficiaries for a given proposal and client.",
+        "tags": [
+          "proposalbeneficiary"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProposalBeneficiaries",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/beneficiaries",
+        "description": "Lists beneficiaries for a given proposal and client.",
+        "tags": [
+          "proposalbeneficiary"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateProposalBeneficiaries",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/beneficiaries",
+        "description": "Updates beneficiaries for a given proposal and client.",
+        "tags": [
+          "proposalbeneficiary"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProposalBeneficiary",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/beneficiaries/{beneficiaryId}",
+        "description": "Returns a beneficiary for a given proposal and client.",
+        "tags": [
+          "proposalbeneficiary"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteProposalBeneficiary",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/beneficiaries/{beneficiaryId}",
+        "description": "Delete a beneficiary for a given proposal and client.",
+        "tags": [
+          "proposalbeneficiary"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateFundingSource",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/fundingsources",
+        "description": "Allows an API consumer to create a funding source for the client in context.",
+        "tags": [
+          "fundingsource"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFundingSource",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/fundingsources",
+        "description": "Allows an API consumer to retrieve a funding source list.",
+        "tags": [
+          "fundingsource"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateFundingSource",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/fundingsources/{fundingSourceId}",
+        "description": "Allows an API consumer to update a funding source for the client in context.",
+        "tags": [
+          "fundingsource"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteFundingSource",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/fundingsources/{fundingSourceId}",
+        "description": "Allows an API consumer to delete a funding source for the client in context.",
+        "tags": [
+          "fundingsource"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFundingSource",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/fundingsources/{fundingSourceId}",
+        "description": "Allows an API consumer to retrieve a single funding source.",
+        "tags": [
+          "fundingsource"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientInvestmentPreference",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/InvestmentPreferences",
+        "description": "Allows an API consumer to retrieve a client investment preference for service case.",
+        "tags": [
+          "investmentpreference"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientInvestmentPreference",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/servicecases/{serviceCaseId}/InvestmentPreferences",
+        "description": "Links a InvestmentPreference to a service case.",
+        "tags": [
+          "investmentpreference"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListInvestmentPreferenceQuestions",
+        "method": "GET",
+        "path": "/v2/investmentpreferences/questions",
+        "description": "List investment preference questions",
+        "tags": [
+          "investmentpreferencequestion"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateInvestmentPreferenceQuestion",
+        "method": "POST",
+        "path": "/v2/investmentpreferences/questions",
+        "description": "Create investment preference question.",
+        "tags": [
+          "investmentpreferencequestion"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetInvestmentPreferenceQuestion",
+        "method": "GET",
+        "path": "/v2/investmentpreferences/questions/{questionId}",
+        "description": "Get investment preference question.",
+        "tags": [
+          "investmentpreferencequestion"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateInvestmentPreferenceQuestion",
+        "method": "PUT",
+        "path": "/v2/investmentpreferences/questions/{questionId}",
+        "description": "Update investment preference question",
+        "tags": [
+          "investmentpreferencequestion"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanRecommendationProposals",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/recommendations/proposals",
+        "description": "Lists recommendation proposals.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRebalances",
+        "method": "GET",
+        "path": "/v2/rebalances",
+        "description": "Get a list of rebalance requests for a tenant.",
+        "tags": [
+          "rebalance"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateRebalance",
+        "method": "POST",
+        "path": "/v2/rebalances",
+        "description": "Post a new rebalance request.",
+        "tags": [
+          "rebalance"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRebalance",
+        "method": "GET",
+        "path": "/v2/rebalances/{id}",
+        "description": "Get a rebalance request by Id.",
+        "tags": [
+          "rebalance"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRebalanceItems",
+        "method": "GET",
+        "path": "/v2/rebalances/{id}/items",
+        "description": "Get a list of rebalance request items for a tenant.",
+        "tags": [
+          "rebalance"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRebalanceSettings",
+        "method": "GET",
+        "path": "/v2/rebalances/settings",
+        "description": "Returns the default settings for rebalances.",
+        "tags": [
+          "rebalance"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateRebalanceSettings",
+        "method": "PUT",
+        "path": "/v2/rebalances/settings",
+        "description": "Modifies the default settings for rebalances.",
+        "tags": [
+          "rebalance"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTenantRecommendationCategory",
+        "method": "POST",
+        "path": "/v2/recommendations2/categories",
+        "description": "Create a recommendation category document.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListTenantRecommendationCategories",
+        "method": "GET",
+        "path": "/v2/recommendations2/categories",
+        "description": "Returns a paged collection of recommendation category documents.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "UpdateTenantRecommendationCategory",
+        "method": "PUT",
+        "path": "/v2/recommendations2/categories/{categoryId}",
+        "description": "Returns a recommendation category document.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetTenantRecommendationCategory",
+        "method": "GET",
+        "path": "/v2/recommendations2/categories/{categoryId}",
+        "description": "Returns a recommendation category document.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "DeleteTenantRecommendationCategory",
+        "method": "DELETE",
+        "path": "/v2/recommendations2/categories/{categoryId}",
+        "description": "Deletes a recommendation category.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "CreateTenantRecommendationSubCategory",
+        "method": "POST",
+        "path": "/v2/recommendations2/subcategories",
+        "description": "Creates a recommendation subcategory.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListTenantRecommendationSubCategories",
+        "method": "GET",
+        "path": "/v2/recommendations2/subcategories",
+        "description": "Returns a paged collection of recommendation subcategory documents.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "UpdateTenantRecommendationSubCategory",
+        "method": "PUT",
+        "path": "/v2/recommendations2/subcategories/{subCategoryId}",
+        "description": "Returns a recommendation subcategory document.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetTenantRecommendationSubCategory",
+        "method": "GET",
+        "path": "/v2/recommendations2/subcategories/{subCategoryId}",
+        "description": "Returns a recommendation subcategory document.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "DeleteTenantRecommendationSubCategory",
+        "method": "DELETE",
+        "path": "/v2/recommendations2/subcategories/{subCategoryId}",
+        "description": "Deletes a recommendation subcategory.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "PatchServiceCaseRecommendations",
+        "method": "PATCH",
+        "path": "/v2/servicecases/{serviceCaseId}/recommendations",
+        "description": "Updates a list of recommendation priorities for service case.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListServiceCaseRecommendations",
+        "method": "GET",
+        "path": "/v2/servicecases/{serviceCaseId}/recommendations",
+        "description": "Returns a list of service case recommendations.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetServiceCaseRecommendation",
+        "method": "GET",
+        "path": "/v2/servicecases/{serviceCaseId}/recommendations/{recommendationId}",
+        "description": "Returns a service case recommendation.",
+        "tags": [
+          "recommendations"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Recommend",
+    "url": "https://microservice-recommend.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Content",
+    "url": "https://microservice-content.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListClientVideos",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/media/videos",
+        "description": "Returns a list of client videos.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientVideo",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/media/videos",
+        "description": "Creates a single client video.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientVideo",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/media/videos/{videoId}",
+        "description": "Returns a given client video",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientVideo",
+        "method": "PATCH",
+        "path": "/v2/clients/{clientId}/media/videos/{videoId}",
+        "description": "Updates a client video.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "MAPlayerWebhookURI",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/media/videos/{videoId}/analytics/webhook",
+        "description": "Posts video player analytics events for a single shared client video.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "MAPlayerClientVideoConfigURI",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/media/videos/{videoId}/player",
+        "description": "Returns player configuration",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GenerateClientVideoReport",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/media/videos/{videoId}/report",
+        "description": "Generates a client video report",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientVideoInstances",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/media/videos/instances",
+        "description": "Returns a list of client videos.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientVideoInstance",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/media/videos/instances",
+        "description": "Creates a single client video.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientVideoInstances",
+        "method": "PATCH",
+        "path": "/v2/clients/{clientId}/media/videos/instances/{id}",
+        "description": "Updates a client video.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PlayerWebhookURI",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/media/videos/instances/{id}/webhook",
+        "description": "Posts video player analytics events for a single shared client video.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientVideoInstance",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/media/videos/instances/{instanceId}",
+        "description": "Returns a given client video",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GenerateClientVideoReport1",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/media/videos/instances/{instanceId}/report",
+        "description": "Generates a client video report",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "BulkShareVideosToClients",
+        "method": "POST",
+        "path": "/v2/clients/media/videos/bulk/share",
+        "description": "Creates a client video.",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateBulkVideoShared",
+        "method": "POST",
+        "path": "/v2/clients/media/videos/bulk/shared",
+        "description": "Creates a client video.",
+        "tags": [
+          "bulkvideoshared"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListBulkVideoShared",
+        "method": "GET",
+        "path": "/v2/clients/media/videos/bulk/shared",
+        "description": "Returns a list of bulk video shared.",
+        "tags": [
+          "bulkvideoshared"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetBulkVideoShared",
+        "method": "GET",
+        "path": "/v2/clients/media/videos/bulk/shared/{bulkVideoSharedId}",
+        "description": "Returns a given bulk video shared.",
+        "tags": [
+          "bulkvideoshared"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "VideoReportCallbackNotificationUrl",
+        "method": "POST",
+        "path": "/v2/clients/media/videos/report/callback",
+        "description": "Downloads client video report",
+        "tags": [
+          "clientvideo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListVideos",
+        "method": "GET",
+        "path": "/v2/media/videos",
+        "description": "Returns a list of videos.",
+        "tags": [
+          "video"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetVideo",
+        "method": "GET",
+        "path": "/v2/media/videos/{videoId}",
+        "description": "Returns a given video.",
+        "tags": [
+          "video"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "MAPlayerPreviewVideoConfigURI",
+        "method": "GET",
+        "path": "/v2/media/videos/{videoId}/player",
+        "description": "Returns player configuration for previewing a given video.",
+        "tags": [
+          "video"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ProcessVideoContentZip",
+        "method": "POST",
+        "path": "/v2/media/videos/import",
+        "description": "Importing content which creates a video record with other assets from a zip file or folder from S3 bucket.",
+        "tags": [
+          "video"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetUserProviderSubscriptions",
+        "method": "GET",
+        "path": "/v2/users/{userId}/media/video/subscriptions",
+        "description": "Returns a list of video provider subscriptions",
+        "tags": [
+          "video"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Content",
+    "url": "https://microservice-content.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "CreateResource",
+        "method": "POST",
+        "path": "/v1/resource",
+        "description": "Create a resource",
+        "tags": [
+          "resources"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListResources",
+        "method": "GET",
+        "path": "/v1/resource",
+        "description": "List all available resources",
+        "tags": [
+          "resources"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateResourcesBulk",
+        "method": "POST",
+        "path": "/v1/resource/bulk",
+        "description": "Bulk upload",
+        "tags": [
+          "bulk"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Monolith.Portfolio",
+    "url": "https://monolith-portfolio.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListGatedPlanTypesByAdviserId",
+        "method": "GET",
+        "path": "/v2/advisers/{adviserId}/planTypes",
+        "description": "Returns a list of gated plan types based on adviser multi-tie configuration.",
+        "tags": [
+          "advisers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProductProvidersByAdviserId",
+        "method": "GET",
+        "path": "/v2/advisers/{adviserId}/productProviders",
+        "description": "Returns a list of product providers based on multi-tie configuration.",
+        "tags": [
+          "advisers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListBeneficiariesForClient",
+        "method": "GET",
+        "path": "/v2/beneficiaries/clients/{clientId}",
+        "description": "List beneficiaries by Client Id.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListBeneficiariesForPersonalContact",
+        "method": "GET",
+        "path": "/v2/beneficiaries/personalContacts/{personalContactId}",
+        "description": "List beneficiaries by Personal Contact Id.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientAssets",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/assets",
+        "description": "Returns a list of assets for the given client.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientAssets",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/assets",
+        "description": "Creates the asset for a given client.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientAsset",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/assets/{assetId}",
+        "description": "Returns the asset for a given client and asset.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientAsset",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/assets/{assetId}",
+        "description": "Updates the asset for a given client and asset.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientAsset",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/assets/{assetId}",
+        "description": "Deletes the asset for a given client and asset.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientAssetValuations",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/assets/{assetId}/valuations",
+        "description": "Returns a list of valuations on a given client and asset.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAssetValuations",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/assets/{assetId}/valuations",
+        "description": "Creates a valuation on a given client and asset.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientAssetValuation",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId}",
+        "description": "Returns an association on a valuation for a given client, asset and valuation.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientAssetValuation",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId}",
+        "description": "Updates or creates an association on a valuation for a given client, asset and valuation.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientAssetValuation",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId}",
+        "description": "Deletes an association on a valuation for a given client, asset and valuation.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAssetsTimeSeries",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/assets/valuations/timeseries",
+        "description": "Returns an asset valuations history for a client as a time and value series.",
+        "tags": [
+          "timeseries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientBeneficiaries",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/beneficiaries",
+        "description": "Returns a BeneficiaryCollection, which is a collection of beneficiaries for a client.\r\nDiscriminator TrustBeneficiary.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientBeneficiaries",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/beneficiaries",
+        "description": "Updates Beneficiary collection (add new and update existing) for a given client.\r\nDiscriminator TrustBeneficiary.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientBeneficiaries",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/beneficiaries",
+        "description": "Deletes beneficiary or beneficiaries for a given client.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientBeneficiary",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/beneficiaries/{beneficiaryId}",
+        "description": "Get beneficiary for a given client.\r\nDiscriminator TrustBeneficiary.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientsContributions",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/contributions",
+        "description": "Gets a collection of client contributions",
+        "tags": [
+          "contributions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientFinancialSummaryByCategory",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/financialsummarybycategory",
+        "description": "Allows an API consumer to get a client portfolio information and totals grouped by categories.",
+        "tags": [
+          "financialsummarybycategory"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientsHoldings",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/holdings",
+        "description": "Returns a list of plan's fund holdings across client plans.",
+        "tags": [
+          "holdings"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListClientPlans",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans",
+        "description": "Returns a list of plans for a given client.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlans",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans",
+        "description": "Creates a plan for a given client.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientPlan",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/plans/{planId}",
+        "description": "Checks a plan exists for a given client and plan.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlan",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}",
+        "description": "Returns a plan for a given client and plan.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTopupPlan",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}",
+        "description": "Creates a plan for a given client.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlan",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}",
+        "description": "Deletes the client plan by the given client id and plan id.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchClientPlan",
+        "method": "PATCH",
+        "path": "/v2/clients/{clientId}/plans/{planId}",
+        "description": "Patch update a client plan for given client id and plan id.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlan",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}",
+        "description": "Updates a plan for a given client.",
+        "tags": [
+          "plans",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansBeneficiaries",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/beneficiaries",
+        "description": "Returns a list of beneficiaries for a given client and plan.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlansBeneficiaries",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/beneficiaries",
+        "description": "Updates or creates the beneficiary for a given client and plan.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanBeneficiaries",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/beneficiaries",
+        "description": "Deletes beneficiary or beneficiaries for a given plan.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanBeneficiary",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/beneficiaries/{beneficiaryId}",
+        "description": "Get beneficiary for a given client and plan.\r\nDiscriminator PlanBeneficiary.",
+        "tags": [
+          "beneficiaries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanContact",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contacts",
+        "description": "Creates a client plan contact",
+        "tags": [
+          "contacts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanContacts",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contacts",
+        "description": "Gets a collection of Plan's contacts",
+        "tags": [
+          "contacts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanContact",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contacts/{contactId}",
+        "description": "Gets a plan's contact",
+        "tags": [
+          "contacts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanContact",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contacts/{contactId}",
+        "description": "Deletes the client plan contact by the given contact id and plan id.",
+        "tags": [
+          "contacts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanContributions",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contributions",
+        "description": "Returns list of contributions for a given client and plan.",
+        "tags": [
+          "contributions",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanContributions",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contributions",
+        "description": "Creates a contribution for a given client and plan.",
+        "tags": [
+          "contributions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanContribution",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contributions/{contributionId}",
+        "description": "Returns a contribution for a given client and plan.",
+        "tags": [
+          "contributions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanContribution",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contributions/{contributionId}",
+        "description": "Updates a contribution for a given client and plan.",
+        "tags": [
+          "contributions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanContribution",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contributions/{contributionId}",
+        "description": "Deletes a contribution for a given plan.",
+        "tags": [
+          "contributions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanFundproposal",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fundproposal",
+        "description": "Returns a fund proposals from holidings for a given client and plan.",
+        "tags": [
+          "fundproposal"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanFundproposal",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fundproposal",
+        "description": "Updates or creates a fund proposal for a given client and plan.",
+        "tags": [
+          "fundproposal"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanFundproposal",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fundproposal",
+        "description": "Deletes fund proposals from holdings for a given client and plan.",
+        "tags": [
+          "fundproposal"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanHoldings",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/holdings",
+        "description": "Returns a list of fund holdings for a given client and plan.",
+        "tags": [
+          "holdings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanHoldings",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/holdings",
+        "description": "Creates fund holdings for a given client and plan.",
+        "tags": [
+          "holdings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanHolding",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}",
+        "description": "Returns a fund holding for a given client, plan and holding.",
+        "tags": [
+          "holdings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanHolding",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}",
+        "description": "Updates a fund holding for a given client, plan and holding.",
+        "tags": [
+          "holdings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanHoldingTransactions",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}/transactions",
+        "description": "Returns a list of fund holdings transactions for a given client, plan and holding.",
+        "tags": [
+          "fundtransactions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanHoldingTransaction",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}/transactions/{transactionId}",
+        "description": "Returns a fund holdings transaction for a given client, plan, holding and transaction.",
+        "tags": [
+          "fundtransactions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansLivesAssured",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/livesassured",
+        "description": "Returns a list of Lives Assured for the plan.",
+        "tags": [
+          "livesassured"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlansLivesAssured",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/livesassured",
+        "description": "Creates or updates the list of Lives Assured for the plan. A maximum of 6 lives assured can be added.",
+        "tags": [
+          "livesassured"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetMISPortfolioAllocations",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/misportfolioallocations",
+        "description": "Get MIS Portfolio Allocations",
+        "tags": [
+          "misportfolioallocations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutMISPortfolioAllocations",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/misportfolioallocations",
+        "description": "Create or Update MIS Portfolio Allocations",
+        "tags": [
+          "misportfolioallocations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteMISPortfolioAllocations",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/misportfolioallocations",
+        "description": "Delete MIS Portfolio Allocations",
+        "tags": [
+          "misportfolioallocations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanType",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/plantype",
+        "description": "Change plan to a new type",
+        "tags": [
+          "plantype"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansPurposes",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/purposes",
+        "description": "Returns a list of purposes for a given client and plan.",
+        "tags": [
+          "purposes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlansPurposes",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/purposes",
+        "description": "Creates or updates the purpose for a given client and plan.",
+        "tags": [
+          "purposes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanStatuses",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/statuses",
+        "description": "Creates status history for a given client and plan.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanStatuses",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/statuses",
+        "description": "Returns a list of status histories for a given client and plan.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanStatus",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/statuses/{planStatusId}",
+        "description": "Retrieves a specific history record",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanTransactions",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/transactions",
+        "description": "Returns a list of transactions for a client plan.",
+        "tags": [
+          "transactions",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "BatchCreateClientPlanTransactions",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/transactions",
+        "description": "Creates a batch of transactions for a particular client and plan.",
+        "tags": [
+          "transactions",
+          "beta"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetClientPlanTransaction",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/transactions/{transactionId}",
+        "description": "Gets a single transaction by id.",
+        "tags": [
+          "transactions",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClientPlanTransactionExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/plans/{planId}/transactions/{transactionId}",
+        "description": "Check to see if a transaction exists.",
+        "tags": [
+          "transactions",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanTransaction",
+        "method": "PATCH",
+        "path": "/v2/clients/{clientId}/plans/{planId}/transactions/{transactionId}",
+        "description": "Updates a client plan transaction.",
+        "tags": [
+          "transactions",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanTransactionSummaryByCategory",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/transactions/summarybycategory",
+        "description": "Returns a summary of client plan transactions for a plan grouped by category within the specified date range.",
+        "tags": [
+          "summarybycategory"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanValuations",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations",
+        "description": "Returns a list of valuations for a given client and plan.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanValuations",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations",
+        "description": "Creates a valuation for a given client and plan.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanValuation",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations/{valuationId}",
+        "description": "Returns a valuation on a given client, plan and valuation.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanValuation",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations/{valuationId}",
+        "description": "Updates a valuation on a given client, plan and valuation.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanValuation",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations/{valuationId}",
+        "description": "Deletes a valuation for a given client and plan.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanWithdrawals",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals",
+        "description": "Creates a withdrawal for a given client and plan.",
+        "tags": [
+          "withdrawals"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanWithdrawals",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals",
+        "description": "Returns a list of withdrawal for a given client and plan.",
+        "tags": [
+          "withdrawals",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanWithdrawal",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}",
+        "description": "Returns a withdrawal for a given client, plan and withdrawal.",
+        "tags": [
+          "withdrawals"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanWithdrawal",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}",
+        "description": "Updates a withdrawal for a given client, plan and withdrawal.",
+        "tags": [
+          "withdrawals"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanWithdrawal",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}",
+        "description": "Deletes a withdrawal for a given client, plan and withdrawal.",
+        "tags": [
+          "withdrawals"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientValuations",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/valuations",
+        "description": "Returns a list of plan valuations for a given client.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlansTimeSeries",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/valuations/timeseries",
+        "description": "Returns a plan valuations history for a client as a time and value series.",
+        "tags": [
+          "timeseries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientTransactions",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/transactions",
+        "description": "Returns a list of transactions for a client.",
+        "tags": [
+          "transactions",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "BatchCreateClientTransactions",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/transactions",
+        "description": "Creates a batch of transactions for different plans for a particular client.",
+        "tags": [
+          "transactions",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientTransactionSummaryByCategory",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/transactions/summarybycategory",
+        "description": "Returns a summary of client transactions grouped by category within the specified date range.",
+        "tags": [
+          "summarybycategory"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientTransactionTimeSeries",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/transactions/timeseries",
+        "description": "Returns a transaction history for a client as a time and value series.",
+        "tags": [
+          "timeseries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientsWithdrawals",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/withdrawals",
+        "description": "Returns list of plan's Withdrawals",
+        "tags": [
+          "withdrawals"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDeliveryMethods",
+        "method": "GET",
+        "path": "/v2/deliverymethods",
+        "description": "Get Delivery Methods.",
+        "tags": [
+          "delivery methods"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFundBenchmarks",
+        "method": "GET",
+        "path": "/v2/fundbenchmarks",
+        "description": "Returns a list of funds benchmarks.",
+        "tags": [
+          "fundbenchmarks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFundBenchmark",
+        "method": "GET",
+        "path": "/v2/fundbenchmarks/{fundBenchmarkId}",
+        "description": "Returns a fund benchmark by the given fundBenchmarkId.",
+        "tags": [
+          "fundbenchmarks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFundproviders",
+        "method": "GET",
+        "path": "/v2/fundproviders",
+        "description": "Returns a list of fund providers.",
+        "tags": [
+          "fundproviders"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFundprovider",
+        "method": "GET",
+        "path": "/v2/fundproviders/{code}",
+        "description": "Returns fund providers for a given code.",
+        "tags": [
+          "fundproviders"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "FundProviderExists",
+        "method": "HEAD",
+        "path": "/v2/fundproviders/{code}",
+        "description": "Check whether a fund provider exists by its code or not",
+        "tags": [
+          "fundproviders"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFunds",
+        "method": "GET",
+        "path": "/v2/funds",
+        "description": "Returns a list of funds (feed and non-feed funds) and equities.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateFund",
+        "method": "POST",
+        "path": "/v2/funds",
+        "description": "Creates a non-feed fund.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFund",
+        "method": "GET",
+        "path": "/v2/funds/{fundId}",
+        "description": "Returns a fund/equity for a given fundId/equityId.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateFund",
+        "method": "PUT",
+        "path": "/v2/funds/{fundId}",
+        "description": "Updates a non-feed fund for a given fund.",
+        "tags": [
+          "funds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFundPrices",
+        "method": "GET",
+        "path": "/v2/funds/{fundId}/prices",
+        "description": "Returns a list of fund prices for a given fund.",
+        "tags": [
+          "fundprices"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFundsPrices",
+        "method": "GET",
+        "path": "/v2/funds/prices",
+        "description": "Returns a list of funds prices",
+        "tags": [
+          "fundprices"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFundsectors",
+        "method": "GET",
+        "path": "/v2/fundsectors",
+        "description": "Returns a list of fund sectors.",
+        "tags": [
+          "fundsectors"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFundsector",
+        "method": "GET",
+        "path": "/v2/fundsectors/{code}",
+        "description": "Returns fund sectors for a given fund code.",
+        "tags": [
+          "fundsectors"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListLifecycles",
+        "method": "GET",
+        "path": "/v2/lifecycles",
+        "description": "Returns a list of lifecycles.",
+        "tags": [
+          "lifecycles",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetLifecycle",
+        "method": "GET",
+        "path": "/v2/lifecycles/{lifecycleId}",
+        "description": "Returns a lifecycle.",
+        "tags": [
+          "lifecycles",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListLifecycleTransitions",
+        "method": "GET",
+        "path": "/v2/lifecycles/{lifecycleId}/transitions",
+        "description": "Returns a list of transitions for a given lifecycle.",
+        "tags": [
+          "lifecycles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListLifecycleStatuses",
+        "method": "GET",
+        "path": "/v2/lifecycles/statuses",
+        "description": "Returns a list of available lifecycle statuses",
+        "tags": [
+          "lifecycles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListModelplans",
+        "method": "GET",
+        "path": "/v2/modelplans",
+        "description": "Gets a collection of modelplans for a tenant",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateModel",
+        "method": "POST",
+        "path": "/v2/models",
+        "description": "Creates a portfolio model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateOrCreatePortfolioModel",
+        "method": "PUT",
+        "path": "/v2/models",
+        "description": "Updates or creates a portfolio model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListModels",
+        "method": "GET",
+        "path": "/v2/models",
+        "description": "Returns a list of portfolio models.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetModel",
+        "method": "GET",
+        "path": "/v2/models/{modelId}",
+        "description": "Returns a portfolio model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchModel",
+        "method": "PATCH",
+        "path": "/v2/models/{modelId}",
+        "description": "Patch update a model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ActivatePortfolioModel",
+        "method": "POST",
+        "path": "/v2/models/{modelId}/active",
+        "description": "Activates or deactivates a portfolio model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateDraftPortfolioModel",
+        "method": "POST",
+        "path": "/v2/models/draft",
+        "description": "Creates a draft portfolio model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteDraftPortfolioModel",
+        "method": "DELETE",
+        "path": "/v2/models/draft/{modelId}",
+        "description": "Deletes a tenant draft portfolio model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateDraftPortfolioModel",
+        "method": "PUT",
+        "path": "/v2/models/draft/{modelId}",
+        "description": "Put update a draft portfolio model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PublishDraftPortfolioModel",
+        "method": "POST",
+        "path": "/v2/models/draft/{modelId}/publish",
+        "description": "Publishes a draft portfolio model.",
+        "tags": [
+          "models"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanPurposes",
+        "method": "GET",
+        "path": "/v2/planpurposes",
+        "description": "Returns a list of plan purposes for a specific tenant.",
+        "tags": [
+          "planpurposes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlans",
+        "method": "GET",
+        "path": "/v2/plans",
+        "description": "Gets a Collection of Plans.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchPlan",
+        "method": "PATCH",
+        "path": "/v2/plans/{planId}",
+        "description": "Updates a plan for given plan id.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PlanExists",
+        "method": "HEAD",
+        "path": "/v2/plans/{planId}",
+        "description": "Check that plan available for the user",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlan",
+        "method": "GET",
+        "path": "/v2/plans/{planId}",
+        "description": "Get a Plan",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanDeliveryMethods",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/plandeliverymethod",
+        "description": "Get Plan Delivery Method.",
+        "tags": [
+          "plan delivery method"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SavePlanDeliveryMethod",
+        "method": "PUT",
+        "path": "/v2/plans/{planId}/plandeliverymethod",
+        "description": "Save Plan Delivery Method.",
+        "tags": [
+          "plan delivery method"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanDeliveryMethodsProposed",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/plandeliverymethod/proposed",
+        "description": "Get Proposed Plan Delivery Method.",
+        "tags": [
+          "plan delivery method"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SavePlanDeliveryMethodProposed",
+        "method": "PUT",
+        "path": "/v2/plans/{planId}/plandeliverymethod/proposed",
+        "description": "Save Proposed Plan Delivery Method.",
+        "tags": [
+          "plan delivery method"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanUsers",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/users",
+        "description": "Get a collection of plan users.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanTags",
+        "method": "GET",
+        "path": "/v2/plans/tags",
+        "description": "Gets a collection of Tag Names",
+        "tags": [
+          "tags"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUnmatchedPlan",
+        "method": "POST",
+        "path": "/v2/plans/unmatched",
+        "description": "Create an unmatched plan.",
+        "tags": [
+          "unmatchedplans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUnmatchedPlans",
+        "method": "GET",
+        "path": "/v2/plans/unmatched",
+        "description": "Gets a Collection of unmatched Plans.",
+        "tags": [
+          "unmatchedplans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUnmatchedExistingPlan",
+        "method": "POST",
+        "path": "/v2/plans/unmatched/{planId}",
+        "description": "Create an unmatched plan, linking it to an existing plan ID.",
+        "tags": [
+          "unmatchedplans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetUnmatchedPlan",
+        "method": "GET",
+        "path": "/v2/plans/unmatched/{planId}",
+        "description": "Get an unmatched plan.",
+        "tags": [
+          "unmatchedplans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchUnmatchedPlan",
+        "method": "PATCH",
+        "path": "/v2/plans/unmatched/{planId}",
+        "description": "Patch update an unmatched plan.",
+        "tags": [
+          "unmatchedplans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "MatchPlan",
+        "method": "POST",
+        "path": "/v2/plans/unmatched/{planId}/match",
+        "description": "Create a Match Plan",
+        "tags": [
+          "unmatchedplans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlantypes",
+        "method": "GET",
+        "path": "/v2/plantypes",
+        "description": "Returns a list of plan types.",
+        "tags": [
+          "plantypes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlantype",
+        "method": "GET",
+        "path": "/v2/plantypes/{name}",
+        "description": "Retrieves a plan type by name and default region code",
+        "tags": [
+          "plantypes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanTypeByNameAndRegion",
+        "method": "GET",
+        "path": "/v2/plantypes/{name}/{regionCode}",
+        "description": "Retrieves a plan type by name and region code",
+        "tags": [
+          "plantypes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanTypeLifecycles",
+        "method": "GET",
+        "path": "/v2/plantypes/{name}/lifecycles",
+        "description": "Retrieves a list of lifecycles associated with the specified planType",
+        "tags": [
+          "lifecycles",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanTypeLifecycle",
+        "method": "GET",
+        "path": "/v2/plantypes/{name}/lifecycles/{lifecycleId}",
+        "description": "Retrieves a lifecycle by plan type name and lifecycle id",
+        "tags": [
+          "lifecycles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListGatedPlanTypes",
+        "method": "GET",
+        "path": "/v2/plantypes/adviser/{adviserId}",
+        "description": "Returns a list of gated plan types based on adviser multi-tie configuration.",
+        "tags": [
+          "plantypes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProductProviderWrapperConfigs",
+        "method": "GET",
+        "path": "/v2/productproviders/{productProviderId}/wrapperconfigs",
+        "description": "Gets a collection of wrapper configs",
+        "tags": [
+          "productproviders"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListMultiTiedConfigProductProvider",
+        "method": "GET",
+        "path": "/v2/productproviders/adviser/{adviserPartyId}",
+        "description": "Returns a list of product providers based on multi-tie configuration.",
+        "tags": [
+          "productproviders"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProductProviderPrograms",
+        "method": "GET",
+        "path": "/v2/productproviders/programs",
+        "description": "Returns a list of Product Provider Programs.",
+        "tags": [
+          "productproviders"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPrograms",
+        "method": "GET",
+        "path": "/v2/programs",
+        "description": "Get all programs.",
+        "tags": [
+          "programs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SavePrograms",
+        "method": "PUT",
+        "path": "/v2/programs",
+        "description": "Insert a new or Update an existing Program for a Tenant",
+        "tags": [
+          "programs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProgram",
+        "method": "GET",
+        "path": "/v2/programs/{programId}",
+        "description": "Return the program based on the ProgramId",
+        "tags": [
+          "programs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProgramPlansInvalid",
+        "method": "GET",
+        "path": "/v2/programs/{programId}/plans/invalid",
+        "description": "Return plans that have invalid program plantypes",
+        "tags": [
+          "programs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "BatchCreateTransactions",
+        "method": "POST",
+        "path": "/v2/transactions",
+        "description": "Creates a batch of transactions for different plans.",
+        "tags": [
+          "transactions",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTransferEligibility",
+        "method": "GET",
+        "path": "/v2/transfereligibility/provider/{targetProductProviderId}/plantype/{targetPlanTypeId}",
+        "description": "Returns a list of all eligible plan types for a given target plan type and target provider.",
+        "tags": [
+          "transfereligibility"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUserPlans",
+        "method": "GET",
+        "path": "/v2/users/{userId}/plans",
+        "description": "Get a collection of plans for a user.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetUserPlansExist",
+        "method": "POST",
+        "path": "/v2/users/{userId}/plans/exist",
+        "description": "",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListWithdrawalSubTypes",
+        "method": "GET",
+        "path": "/v2/withdrawalsubtype",
+        "description": "Returns a list of withdrawal sub types configuration.",
+        "tags": [
+          "withdrawalsubtypes"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Portfolio",
+    "url": "https://monolith-portfolio.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "ListAssetTypesV1",
+        "method": "GET",
+        "path": "/v1/assettypes",
+        "description": "Get all of the asset types.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAssetTypeV1",
+        "method": "GET",
+        "path": "/v1/assettypes/{assetTypeId}",
+        "description": "Return the specified asset type by id.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAssetTypeV12",
+        "method": "HEAD",
+        "path": "/v1/assettypes/{assetTypeId}",
+        "description": "Return the specified asset type by id.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientAssetsV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/assets",
+        "description": "Get all assets for the specified client.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientAssetV1",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/assets",
+        "description": "Create a new Asset.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientAssetV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/assets/{assetId}",
+        "description": "Get an asset for the specified client by Id.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientAssetV11",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/assets/{assetId}",
+        "description": "Get an asset for the specified client by Id.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientAssetV1",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/assets/{assetId}",
+        "description": "Update asset.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientAssetV1",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/assets/{assetId}",
+        "description": "Delete asset.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientAssetValuationsV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/assets/{assetId}/valuations",
+        "description": "Get all assets for the specified client.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAssetValuationV1",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/assets/{assetId}/valuations",
+        "description": "Create an assetValuation.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientAssetValuationV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/assets/{assetId}/valuations/{assetValuationId}",
+        "description": "Get an asset Valuation by assetId and AssetValuationId",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientAssetValuationV1",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/assets/{assetId}/valuations/{assetValuationId}",
+        "description": "Update assetValuation.",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientAssetValuationV1",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/assets/{assetId}/valuations/{assetValuationId}",
+        "description": "",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientAssetValuationsV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/assets/valuations",
+        "description": "Get all assets for the specified client.\r\nTODO: Move this to SummaryController, and have GetAssetSummary endpoint",
+        "tags": [
+          "assets"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientsFeesV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/fees",
+        "description": "Returns a list of fees for a given client.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientFinancialsummary",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/financialsummary",
+        "description": "Get a summary of a Portfolio",
+        "tags": [
+          "financialsummary"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientFinancialsummarybycategory",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/financialsummarybycategory",
+        "description": "Get a categorised summary of a clients entire Portfolio",
+        "tags": [
+          "financialsummary"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans",
+        "description": "",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/{planId}",
+        "description": "Get the specified Plan",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchClientPlanV1",
+        "method": "PATCH",
+        "path": "/v1/clients/{clientId}/plans/{planId}",
+        "description": "",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansActivities",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/{planId}/activities",
+        "description": "",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanActivity",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/{planId}/activities",
+        "description": "",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansContributionsV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/{planId}/contributions",
+        "description": "Get the plan contributions",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanContributionV1",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/{planId}/contributions",
+        "description": "",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanFeeV1",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/{planId}/fees",
+        "description": "",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansSubplans",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/{planId}/subplans",
+        "description": "Get the subplans for a Plan",
+        "tags": [
+          "subplans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanValuationsV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/{planId}/valuations",
+        "description": "Get a list of valuations for the plan for the logged in user.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanValuationV1",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/{planId}/valuations",
+        "description": "Adds a new manual valuation for the plan.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanValuationV1",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/{planId}/valuations/{valuationId}",
+        "description": "Returns a single valuation resource for the specified valuationId",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanValuationV1",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/{planId}/valuations/{valuationId}",
+        "description": "Updates an existing manually added valuation. Should this be restricted to the original creator?",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanValuationV1",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/{planId}/valuations/{valuationId}",
+        "description": "Deletes an existing manually added valuation.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanValuationsTimeseries",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/{planId}/valuations/timeseries",
+        "description": "Get a list of aggregated valuations for the plan for the logged in user.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansCreditcards",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/creditcards",
+        "description": "Get all plans of type credit card for the client",
+        "tags": [
+          "creditcards"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlansCreditcard",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/creditcards",
+        "description": "Create credit card plan\r\nOnly pre-existing plans are supported by the api at this time.",
+        "tags": [
+          "creditcards"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientCreditcard",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/creditcards/{planId}",
+        "description": "Get the specified Plan",
+        "tags": [
+          "creditcards"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientCreditcard",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/creditcards/{planId}",
+        "description": "Update Credit Card plan",
+        "tags": [
+          "creditcards"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientCreditcard",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/creditcards/{planId}",
+        "description": "Delete Credit Card plan",
+        "tags": [
+          "creditcards"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansCurrentaccounts",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/currentaccounts",
+        "description": "Returns a collection of investment plans (current accounts) for the specified client.",
+        "tags": [
+          "currentaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlansCurrentaccount",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/currentaccounts",
+        "description": "Create investment plan (currrent account)\r\nOnly pre-existing plans are supported by the api at this time.\r\nNote - this controller will create a plan of type Investment.",
+        "tags": [
+          "currentaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientCurrentaccount",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/currentaccounts/{planId}",
+        "description": "Get the specified Plan (current account)",
+        "tags": [
+          "currentaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientCurrentaccount",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/currentaccounts/{planId}",
+        "description": "Update investment plan (current account)",
+        "tags": [
+          "currentaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientCurrentaccount",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/currentaccounts/{planId}",
+        "description": "Delete investment plan (current account)",
+        "tags": [
+          "currentaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansInvestments",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/investments",
+        "description": "Returns a collection of investment plans for the specified client.",
+        "tags": [
+          "investments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlansInvestment",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/investments",
+        "description": "Create investment plan\r\nOnly pre-existing plans are supported by the api at this time.",
+        "tags": [
+          "investments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientInvestment",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/investments/{planId}",
+        "description": "Get the specified Plan",
+        "tags": [
+          "investments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientInvestment",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/investments/{planId}",
+        "description": "Update investment plan",
+        "tags": [
+          "investments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientInvestment",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/investments/{planId}",
+        "description": "Delete investment plan",
+        "tags": [
+          "investments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansLoans",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/loans",
+        "description": "Get all plans of type loan for the client",
+        "tags": [
+          "loans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlansLoan",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/loans",
+        "description": "Create Loan plan\r\nOnly pre-existing plans are supported by the api at this time.",
+        "tags": [
+          "loans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientLoan",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/loans/{planId}",
+        "description": "Get the specified Plan",
+        "tags": [
+          "loans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientLoan",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/loans/{planId}",
+        "description": "Update Loan plan",
+        "tags": [
+          "loans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientLoan",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/loans/{planId}",
+        "description": "Delete loan plan",
+        "tags": [
+          "loans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansMortgages",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/mortgages",
+        "description": "Get all plans of type mortgage for the client",
+        "tags": [
+          "mortgages"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlansMortgage",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/mortgages",
+        "description": "Create mortgage plan\r\nOnly pre-existing plans are supported by the api at this time.",
+        "tags": [
+          "mortgages"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientMortgage",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/mortgages/{planId}",
+        "description": "Get the specified Plan",
+        "tags": [
+          "mortgages"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientMortgage",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/mortgages/{planId}",
+        "description": "Update mortgage plan",
+        "tags": [
+          "mortgages"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientMortgage",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/mortgages/{planId}",
+        "description": "Delete mortgage plan",
+        "tags": [
+          "mortgages"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansPensions",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/pensions",
+        "description": "Get all plans of type pension for the client",
+        "tags": [
+          "pensions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlansPension",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/pensions",
+        "description": "Create pension plan\r\nOnly pre-existing plans are supported by the api at this time.",
+        "tags": [
+          "pensions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPension",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/pensions/{planId}",
+        "description": "Get the specified Plan",
+        "tags": [
+          "pensions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPension",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/pensions/{planId}",
+        "description": "Update pension plan",
+        "tags": [
+          "pensions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPension",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/pensions/{planId}",
+        "description": "Delete pension plan",
+        "tags": [
+          "pensions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansProtections",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/protections",
+        "description": "Get all plans of type mortgage for the client",
+        "tags": [
+          "protections"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlansProtection",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/protections",
+        "description": "Create protection plan\r\nOnly pre-existing plans are supported by the api at this time.",
+        "tags": [
+          "protections"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientProtection",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/protections/{planId}",
+        "description": "Get the specified Plan",
+        "tags": [
+          "protections"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientProtection",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/protections/{planId}",
+        "description": "Update protection plan",
+        "tags": [
+          "protections"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientProtection",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/protections/{planId}",
+        "description": "Delete protection plan",
+        "tags": [
+          "protections"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansSavingsaccounts",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/savingsaccounts",
+        "description": "Returns a collection of investment plans (savings accounts) for the specified client.",
+        "tags": [
+          "savingsaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlansSavingsaccount",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/plans/savingsaccounts",
+        "description": "Create investment plan (savings account)\r\nOnly pre-existing plans are supported by the api at this time.\r\nNote - this controller will create a plan of type Investment.",
+        "tags": [
+          "savingsaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientSavingsaccount",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/savingsaccounts/{planId}",
+        "description": "Get the specified Plan",
+        "tags": [
+          "savingsaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientSavingsaccount",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/plans/savingsaccounts/{planId}",
+        "description": "Update investment plan (savings account)",
+        "tags": [
+          "savingsaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientSavingsaccount",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/plans/savingsaccounts/{planId}",
+        "description": "Delete investment plan (savings account)",
+        "tags": [
+          "savingsaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansValuations",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/valuations",
+        "description": "Get a list of valuations for the plan for the logged in user.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientValuation",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/valuations/{valuationId}",
+        "description": "Returns a single valuation resource for the specified valuationId",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansValuationsPropertyvaluations",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/valuations/propertyvaluations",
+        "description": "",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlansValuationsTimeseries",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/plans/valuations/timeseries",
+        "description": "Get a list of aggregated valuations for all the plans for the logged in user.",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientQuotesActivities",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/quotes/{quoteId}/activities",
+        "description": "",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientQuoteActivity",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/quotes/{quoteId}/activities",
+        "description": "",
+        "tags": [
+          "quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientValuationsAssetliabilityTimeseries",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/valuations/assetliability_timeseries",
+        "description": "Get a list of aggregated valuations for assets and for liabilites for all the plans and accounts for the logged in user.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientValuationsPortfolioValuations",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/valuations/portfolio_valuations",
+        "description": "Get a list of valuations for all plans for the logged in user.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "RefreshClientValuation",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/valuations/refresh",
+        "description": "Request new electronic valuations for all plans in the clients portfolio where this is possible.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientValuationsTimeseries",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/valuations/timeseries",
+        "description": "Get a list of aggregated valuations for all the plans and accounts for the logged in user.",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlansSearch",
+        "method": "POST",
+        "path": "/v1/plans/search",
+        "description": "Search for plans valued for the provider between from and to date using a given type.  Returns collection of PlanDocument object.",
+        "tags": [
+          "search"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlansSearchid",
+        "method": "POST",
+        "path": "/v1/plans/searchids",
+        "description": "Search for plans valued for the provider between from and to date using a given type.  Returns collection of PlanDocument object.",
+        "tags": [
+          "searchids"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetImport",
+        "method": "GET",
+        "path": "/v1/plans/transactions/imports/{batchId}",
+        "description": "Returns plan transaction import results for the batch id provided.",
+        "tags": [
+          "imports"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlantypesV1",
+        "method": "GET",
+        "path": "/v1/plantypes",
+        "description": "Get PlanType list",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlantype",
+        "method": "GET",
+        "path": "/v1/plantypes/{planTypeId}",
+        "description": "Get a PlanType",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPortfolioCategoriesV1",
+        "method": "GET",
+        "path": "/v1/portfoliocategories",
+        "description": "Get all Portfolio Categories",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsPortfolioCategoryV1",
+        "method": "HEAD",
+        "path": "/v1/portfoliocategories/{name}",
+        "description": "Check if Portfolio category exists",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPortfolioCategoryV1",
+        "method": "GET",
+        "path": "/v1/portfoliocategories/{name}",
+        "description": "Get Portfolio category by name",
+        "tags": [
+          "plans"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Monolith.Entitlement",
+    "url": "https://monolith-entitlement.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListOperations",
+        "method": "GET",
+        "path": "/v2/{application}/operations",
+        "description": "Returns a list of operations for a given application.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetOperation",
+        "method": "GET",
+        "path": "/v2/{application}/operations/{operationId}",
+        "description": "Returns an operation for a given application.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListDelegates",
+        "method": "GET",
+        "path": "/v2/delegate",
+        "description": "Lists delegates for a user.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ValidateDelegate",
+        "method": "HEAD",
+        "path": "/v2/delegate/{delegateGuid}/validate",
+        "description": "Validates if a delegate is valid for a subject.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateRole",
+        "method": "POST",
+        "path": "/v2/roles",
+        "description": "Creates a role.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListRoles",
+        "method": "GET",
+        "path": "/v2/roles",
+        "description": "Returns a list of roles.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRole",
+        "method": "GET",
+        "path": "/v2/roles/{roleId}",
+        "description": "Returns a role.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateRole",
+        "method": "PUT",
+        "path": "/v2/roles/{roleId}",
+        "description": "Updates a role.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListRoleOperations",
+        "method": "GET",
+        "path": "/v2/roles/{roleId}/operations",
+        "description": "Returns a list of role operations.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateRoleOperation",
+        "method": "POST",
+        "path": "/v2/roles/{roleId}/operations/{operationId}",
+        "description": "Creates a role operation.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteRoleOperation",
+        "method": "DELETE",
+        "path": "/v2/roles/{roleId}/operations/{operationId}",
+        "description": "Deletes a role operation.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSupportIPAddresses",
+        "method": "GET",
+        "path": "/v2/support/IPAddress",
+        "description": "Returns a list of support IP addresses.",
+        "tags": [
+          "entitlement",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateIPAddress",
+        "method": "POST",
+        "path": "/v2/tenants/{tenantId}/IPAddress",
+        "description": "",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIPAddresses",
+        "method": "GET",
+        "path": "/v2/tenants/{tenantId}/IPAddress",
+        "description": "",
+        "tags": [
+          "entitlement",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteIPAddress",
+        "method": "DELETE",
+        "path": "/v2/tenants/{tenantId}/IPAddress/{ipAddressId}",
+        "description": "Deletes a IP Address.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTenantLegacyAppLicences",
+        "method": "GET",
+        "path": "/v2/tenants/{tenantId}/LegacyApplicences",
+        "description": "Returns tenant application licences.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantLicence",
+        "method": "GET",
+        "path": "/v2/tenants/{tenantId}/licence",
+        "description": "Returns tenant licence.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTenantPreferenceDetails",
+        "method": "GET",
+        "path": "/v2/tenants/{tenantId}/preferences",
+        "description": "Returns a list of tenant preference details.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTenantPreferenceDetail",
+        "method": "PUT",
+        "path": "/v2/tenants/{tenantId}/preferences/{name}",
+        "description": "Update tenant preference detail information.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantSupport",
+        "method": "GET",
+        "path": "/v2/tenants/{tenantId}/support",
+        "description": "Returns an tenant support entity for a given tenant id.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTenantSupport",
+        "method": "PUT",
+        "path": "/v2/tenants/{tenantId}/support",
+        "description": "Update tenant support information.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetLoginDetails",
+        "method": "GET",
+        "path": "/v2/user/Login",
+        "description": "Checks whether the user is authorised to access ui-io.",
+        "tags": [
+          "logins"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUserDetail",
+        "method": "POST",
+        "path": "/v2/users",
+        "description": "Creates a user.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ListUsersDetails",
+        "method": "GET",
+        "path": "/v2/users",
+        "description": "Returns a list of users.",
+        "tags": [
+          "entitlement",
+          "beta"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "UpdateUserDetail",
+        "method": "PUT",
+        "path": "/v2/users/{userId}",
+        "description": "Updates a user.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "GetUserDetail",
+        "method": "GET",
+        "path": "/v2/users/{userId}",
+        "description": "Returns a user.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ExistsUserDetails",
+        "method": "HEAD",
+        "path": "/v2/users/{userId}",
+        "description": "Checks that user exists.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUserActivity",
+        "method": "GET",
+        "path": "/v2/users/{userId}/activity",
+        "description": "Returns a list of user activities.",
+        "tags": [
+          "entitlement",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUserGroup",
+        "method": "POST",
+        "path": "/v2/users/{userId}/groups",
+        "description": "Associate a user to a group.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUserGroups",
+        "method": "GET",
+        "path": "/v2/users/{userId}/groups",
+        "description": "Returns a list of user groups.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetUserGroup",
+        "method": "GET",
+        "path": "/v2/users/{userId}/groups/{userGroupId}",
+        "description": "Returns a user group association.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteUserGroup",
+        "method": "DELETE",
+        "path": "/v2/users/{userId}/groups/{userGroupId}",
+        "description": "Deletes a user group association.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUserRoles",
+        "method": "GET",
+        "path": "/v2/users/{userId}/roles",
+        "description": "Returns a list of user roles.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUserRole",
+        "method": "POST",
+        "path": "/v2/users/{userId}/roles/{roleId}",
+        "description": "Associates a user to a role.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetUserRole",
+        "method": "GET",
+        "path": "/v2/users/{userId}/roles/{roleId}",
+        "description": "Returns a user role.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsUserRole",
+        "method": "HEAD",
+        "path": "/v2/users/{userId}/roles/{roleId}",
+        "description": "Checks that a user role exists.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteUserRole",
+        "method": "DELETE",
+        "path": "/v2/users/{userId}/roles/{roleId}",
+        "description": "Deletes a user role.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SetAsCurrentUserRole",
+        "method": "POST",
+        "path": "/v2/users/{userId}/roles/{roleId}/current",
+        "description": "Sets the given role to be the user's current/default role.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateUserStatus",
+        "method": "PUT",
+        "path": "/v2/users/{userId}/status",
+        "description": "Updates user status.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateUsername",
+        "method": "PUT",
+        "path": "/v2/users/{userId}/username",
+        "description": "Updates username.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Entitlement",
+    "url": "https://monolith-entitlement.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Cashflow",
+    "url": "https://microservice-cashflow.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListCashflowSnapshotDetails",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/servicecases/{servicecaseId}/snapshots",
+        "description": "List Cashflow Snapshot",
+        "tags": [
+          "snapshots"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Cashflow",
+    "url": "https://microservice-cashflow.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "CreateCashflow",
+        "method": "POST",
+        "path": "/api/Cashflow",
+        "description": "",
+        "tags": [
+          "cashflows"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateEtlcontrollerBulk-delete",
+        "method": "POST",
+        "path": "/api/etlcontroller/bulk-delete",
+        "description": "",
+        "tags": [
+          "bulk-delete"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateEtlcontrollerClientExist",
+        "method": "POST",
+        "path": "/api/etlcontroller/clientExists",
+        "description": "",
+        "tags": [
+          "clientexists"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetEtlcontrollerGet-client",
+        "method": "GET",
+        "path": "/api/etlcontroller/get-client",
+        "description": "",
+        "tags": [
+          "get-clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateEtlcontrollerGld-delete",
+        "method": "POST",
+        "path": "/api/etlcontroller/gld-delete",
+        "description": "",
+        "tags": [
+          "gld-delete"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateEtlcontrollersIsModifiedByMigrationUser",
+        "method": "POST",
+        "path": "/api/etlcontroller/isModifiedByMigrationUser",
+        "description": "",
+        "tags": [
+          "ismodifiedbymigrationuser"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateIntelligent-officeCode-authentication",
+        "method": "POST",
+        "path": "/api/intelligent-office/code-authentication",
+        "description": "",
+        "tags": [
+          "code-authentication"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateIntelligent-officeImport-client",
+        "method": "POST",
+        "path": "/api/intelligent-office/import-client",
+        "description": "",
+        "tags": [
+          "import-client"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateIntelligent-officeImportable-plan",
+        "method": "POST",
+        "path": "/api/intelligent-office/importable-plans",
+        "description": "",
+        "tags": [
+          "importable-plans"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateIntelligent-officeInitiate",
+        "method": "POST",
+        "path": "/api/intelligent-office/initiate",
+        "description": "",
+        "tags": [
+          "initiate"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetIntelligent-officeRedirect-url",
+        "method": "GET",
+        "path": "/api/intelligent-office/redirect-url",
+        "description": "",
+        "tags": [
+          "redirect-urls"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "Refresh-tokenIntelligent-office",
+        "method": "POST",
+        "path": "/api/intelligent-office/refresh-token",
+        "description": "",
+        "tags": [
+          "refresh-token"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSalesforce-ssoLogin",
+        "method": "GET",
+        "path": "/api/salesforce-sso/login",
+        "description": "",
+        "tags": [
+          "login"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Microservice.MoneyMovement",
+    "url": "https://microservice-moneymovement.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListTests",
+        "method": "GET",
+        "path": "/v2/test",
+        "description": "",
+        "tags": [
+          "test only"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.MoneyMovement",
+    "url": "https://microservice-moneymovement.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.AuthorDataProvider",
+    "url": "https://monolith-authordataprovider.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "CreateAuthorDatum",
+        "method": "POST",
+        "path": "/v2/author/data",
+        "description": "",
+        "tags": [
+          "data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAuthorImage",
+        "method": "POST",
+        "path": "/v2/author/image",
+        "description": "",
+        "tags": [
+          "image"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.AuthorDataProvider",
+    "url": "https://monolith-authordataprovider.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.PlanApplication",
+    "url": "https://microservice-planapplication.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "SearchPlanApplications",
+        "method": "GET",
+        "path": "/v2/applications",
+        "description": "Returns a list of plan applications.",
+        "tags": [
+          "planapplicationssearch"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanApplicationDocumentTemplates",
+        "method": "GET",
+        "path": "/v2/applications/doctemplates",
+        "description": "Returns a list of Plan Application Document Templates.",
+        "tags": [
+          "planapplicationdocumenttemplate"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanApplicationDocTemplate",
+        "method": "POST",
+        "path": "/v2/applications/doctemplates",
+        "description": "Create a new Plan Application Document Template.",
+        "tags": [
+          "planapplicationdocumenttemplate"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanApplicationDocTemplate",
+        "method": "DELETE",
+        "path": "/v2/applications/doctemplates/{planApplicationDocTemplateId}",
+        "description": "Delete Plan Application Document Template.",
+        "tags": [
+          "planapplicationdocumenttemplate"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanApplicationDocumentConfigs",
+        "method": "POST",
+        "path": "/v2/applications/documentconfigs",
+        "description": "Gets all the document templates and managed documents for a plan application that are relevant to the provided context(s).",
+        "tags": [
+          "planapplicationdocumentconfig"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanApplicationDocumentUploads",
+        "method": "GET",
+        "path": "/v2/applications/docuploads",
+        "description": "Returns a list of Plan Application Document Uploads.",
+        "tags": [
+          "planapplicationdocumentupload"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanApplicationDocUpload",
+        "method": "POST",
+        "path": "/v2/applications/docuploads",
+        "description": "Create a new Plan Application Document Upload.",
+        "tags": [
+          "planapplicationdocumentupload"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanApplicationDocUpload",
+        "method": "DELETE",
+        "path": "/v2/applications/docuploads/{planApplicationDocUploadId}",
+        "description": "Delete Plan Application Document Upload.",
+        "tags": [
+          "planapplicationdocumentupload"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanApplicationManagedDocuments",
+        "method": "GET",
+        "path": "/v2/applications/manageddocuments",
+        "description": "Returns a list of Plan Application Managed Documents.",
+        "tags": [
+          "planapplicationmanageddocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanApplicationManagedDocument",
+        "method": "POST",
+        "path": "/v2/applications/manageddocuments",
+        "description": "Create a new Plan Application Managed Document.",
+        "tags": [
+          "planapplicationmanageddocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanApplicationManagedDocument",
+        "method": "DELETE",
+        "path": "/v2/applications/manageddocuments/{planApplicationManagedDocumentId}",
+        "description": "Delete Plan Application Managed Document.",
+        "tags": [
+          "planapplicationmanageddocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListRefApplicationStatuses",
+        "method": "GET",
+        "path": "/v2/applications/referencestatus",
+        "description": "Returns a list of Application Reference Statuses.",
+        "tags": [
+          "planapplicationrefstatus"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanApplications",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/applications",
+        "description": "Returns a list of Plan Applications.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanApplication",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications",
+        "description": "Creates a new Plan Application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanApplication",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/applications/{applicationId}",
+        "description": "Retrieves a single Plan Application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanApplication",
+        "method": "PUT",
+        "path": "/v2/plans/{planId}/applications/{applicationId}",
+        "description": "Updates Plan Application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanApplication",
+        "method": "DELETE",
+        "path": "/v2/plans/{planId}/applications/{applicationId}",
+        "description": "Deletes a Plan Application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchPlanApplication",
+        "method": "PATCH",
+        "path": "/v2/plans/{planId}/applications/{applicationId}",
+        "description": "Patch the plan application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanApplicationAdditionalQuestions",
+        "method": "PUT",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/additionalquestions",
+        "description": "Updates the Additional Questions for a Plan Application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClonePlanApplication",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/clone",
+        "description": "Clone Plan Application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanApplicationDocuments",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/documents",
+        "description": "Returns a list of Plan Application Documents.",
+        "tags": [
+          "planapplicationdocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanApplicationDocument",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/documents",
+        "description": "Creates a new Plan Application Document.",
+        "tags": [
+          "planapplicationdocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanApplicationDocument",
+        "method": "DELETE",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/documents/{documentId}",
+        "description": "Deletes a Plan Application Document.",
+        "tags": [
+          "planapplicationdocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanApplicationDocumentRecipients",
+        "method": "PUT",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/documents/{documentId}/recipients",
+        "description": "Update plan application document recipients",
+        "tags": [
+          "planapplicationdocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "eSignPlanApplicationDocuments",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/documents/esign",
+        "description": "eSign documents for a Plan Application.",
+        "tags": [
+          "planapplicationdocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanApplicationESignStatus",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/documents/esign/status",
+        "description": "Envelope status of eSign documents for a Plan Application.",
+        "tags": [
+          "planapplicationdocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GeneratePlanApplicationDocuments",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/documents/generate",
+        "description": "Generate documents for a Plan Application.",
+        "tags": [
+          "planapplicationdocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ESignSinglePlanApplicationEnvelope",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/envelope/esign",
+        "description": "Electronically sign single plan application envelope.",
+        "tags": [
+          "planapplicationenvelope"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LockPlanApplication",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/lock",
+        "description": "Lock plan Application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanApplicationStatusHistory",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/statuses",
+        "description": "Returns a list of Plan Application Statuses.",
+        "tags": [
+          "planapplicationstatusupdate"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanApplicationStatus",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/statuses",
+        "description": "Creates a new Plan Application Status.",
+        "tags": [
+          "planapplicationstatusupdate"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UnlockPlanApplication",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/{applicationId}/unlock",
+        "description": "Unlock Plan Application.",
+        "tags": [
+          "planapplications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SearchPlanApplicationDocuments",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/applications/documents",
+        "description": "Returns a list of Documents.",
+        "tags": [
+          "planapplicationdocument"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanApplicationEnvelopes",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/applications/envelopes",
+        "description": "Get all plan application envelopes.",
+        "tags": [
+          "planapplicationenvelope"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanApplicationEnvelope",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/envelopes",
+        "description": "Creates plan application envelope.",
+        "tags": [
+          "planapplicationenvelope"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanApplicationEnvelope",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/applications/envelopes/{envelopeId}",
+        "description": "Get plan application envelop.",
+        "tags": [
+          "planapplicationenvelope"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchPlanApplicationEnvelope",
+        "method": "PATCH",
+        "path": "/v2/plans/{planId}/applications/envelopes/{envelopeId}",
+        "description": "Patch plan application envelope.",
+        "tags": [
+          "planapplicationenvelope"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanApplicationEnvelope",
+        "method": "DELETE",
+        "path": "/v2/plans/{planId}/applications/envelopes/{envelopeId}",
+        "description": "Delete plan application envelop.",
+        "tags": [
+          "planapplicationenvelope"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ESignMultiPlanApplicationEnvelope",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/envelopes/{envelopeId}/esign",
+        "description": "Electronically sign multi plan application envelope.",
+        "tags": [
+          "planapplicationenvelope"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SendApplicationEnvelopeNotification",
+        "method": "POST",
+        "path": "/v2/plans/{planId}/applications/envelopes/{envelopeId}/notify",
+        "description": "Sends the application envelope notification.",
+        "tags": [
+          "planapplicationenvelope"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.PlanApplication",
+    "url": "https://microservice-planapplication.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Notifications",
+    "url": "https://microservice-notifications.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListAlertTypes",
+        "method": "GET",
+        "path": "/v2/alerttypes",
+        "description": "Get a collection of alert types.",
+        "tags": [
+          "alerts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAlertType",
+        "method": "GET",
+        "path": "/v2/alerttypes/{alertTypeId}",
+        "description": "Get an alert type by id.",
+        "tags": [
+          "alerts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUserAlertSubscriptions",
+        "method": "GET",
+        "path": "/v2/users/{userId}/alertsubscriptions",
+        "description": "Returns a list of alert subscriptions for a user.",
+        "tags": [
+          "alerts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUserAlertSubscription",
+        "method": "POST",
+        "path": "/v2/users/{userId}/alertsubscriptions",
+        "description": "Creates a new alert subscription for a user.",
+        "tags": [
+          "alerts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetUserAlertSubscription",
+        "method": "GET",
+        "path": "/v2/users/{userId}/alertsubscriptions/{alertSubscriptionId}",
+        "description": "Returns an alert subscription for a user by id.",
+        "tags": [
+          "alerts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ChangeUserAlertSubscription",
+        "method": "PUT",
+        "path": "/v2/users/{userId}/alertsubscriptions/{alertSubscriptionId}",
+        "description": "Updates an alert subscription for a user.",
+        "tags": [
+          "alerts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteUserAlertSubscription",
+        "method": "DELETE",
+        "path": "/v2/users/{userId}/alertsubscriptions/{alertSubscriptionId}",
+        "description": "Deletes an existing alert subscription for a user.",
+        "tags": [
+          "alerts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateChannelSubscription",
+        "method": "POST",
+        "path": "/v2/users/{userId}/channels/subscriptions",
+        "description": "Creates a channel subscription for a user.",
+        "tags": [
+          "channelsubscriptions"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListChannelSubscriptions",
+        "method": "GET",
+        "path": "/v2/users/{userId}/channels/subscriptions",
+        "description": "Lists channel subscriptions for a user.",
+        "tags": [
+          "channelsubscriptions"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteChannelSubscription",
+        "method": "DELETE",
+        "path": "/v2/users/{userId}/channels/subscriptions/{subscriptionId}",
+        "description": "Deletes a channel subscription for a user.",
+        "tags": [
+          "channelsubscriptions"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Notifications",
+    "url": "https://microservice-notifications.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Author",
+    "url": "https://microservice-author.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Author",
+    "url": "https://microservice-author.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "ListCategories",
+        "method": "GET",
+        "path": "/v1/categories",
+        "description": "List template categories",
+        "tags": [
+          "categories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateCategory",
+        "method": "POST",
+        "path": "/v1/categories",
+        "description": "Create a template category",
+        "tags": [
+          "categories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCategory",
+        "method": "GET",
+        "path": "/v1/categories/{categoryId}",
+        "description": "Get a specified category",
+        "tags": [
+          "categories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteCategory",
+        "method": "DELETE",
+        "path": "/v1/categories/{categoryId}",
+        "description": "Delete a template category",
+        "tags": [
+          "categories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchCategory",
+        "method": "PATCH",
+        "path": "/v1/categories/{categoryId}",
+        "description": "Update a template category",
+        "tags": [
+          "categories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateEsignPreprocess",
+        "method": "POST",
+        "path": "/v1/esign/preprocess",
+        "description": "",
+        "tags": [
+          "preprocess"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetOptionSecurity",
+        "method": "GET",
+        "path": "/v1/options/security",
+        "description": "Get template security options",
+        "tags": [
+          "security"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateOptionSecurity",
+        "method": "PUT",
+        "path": "/v1/options/security",
+        "description": "Update template security options",
+        "tags": [
+          "security"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetOptionVersioning",
+        "method": "GET",
+        "path": "/v1/options/versioning",
+        "description": "Get template versioning options",
+        "tags": [
+          "versioning"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateOptionVersioning",
+        "method": "PUT",
+        "path": "/v1/options/versioning",
+        "description": "Update template versioning options",
+        "tags": [
+          "versioning"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListOutputs",
+        "method": "GET",
+        "path": "/v1/output",
+        "description": "List generated documents",
+        "tags": [
+          "outputs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetOutput",
+        "method": "GET",
+        "path": "/v1/output/{outputId}",
+        "description": "Get details for a specified output document",
+        "tags": [
+          "outputs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteOutput",
+        "method": "DELETE",
+        "path": "/v1/output/{outputId}",
+        "description": "",
+        "tags": [
+          "outputs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetOutputDownload",
+        "method": "GET",
+        "path": "/v1/output/{outputId}/download",
+        "description": "Download generated document",
+        "tags": [
+          "download"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlugin",
+        "method": "GET",
+        "path": "/v1/plugin",
+        "description": "Get latest plugin details",
+        "tags": [
+          "plugins"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPluginDownload",
+        "method": "GET",
+        "path": "/v1/plugin/download",
+        "description": "Download plugin installer",
+        "tags": [
+          "download"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPluginsFormats",
+        "method": "GET",
+        "path": "/v1/plugin/formats",
+        "description": "Get formatting configuration",
+        "tags": [
+          "formats"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateSave",
+        "method": "POST",
+        "path": "/v1/plugin/save/{templateVersionId}",
+        "description": "",
+        "tags": [
+          "saves"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPluginSchema",
+        "method": "GET",
+        "path": "/v1/plugin/schema",
+        "description": "Download data source schema",
+        "tags": [
+          "schema"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProviderTemplates",
+        "method": "GET",
+        "path": "/v1/provider_templates",
+        "description": "List provider templates",
+        "tags": [
+          "providertemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListReviews",
+        "method": "GET",
+        "path": "/v1/reviews",
+        "description": "List reviews",
+        "tags": [
+          "reviews"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateReview",
+        "method": "POST",
+        "path": "/v1/reviews",
+        "description": "",
+        "tags": [
+          "reviews"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetReview",
+        "method": "GET",
+        "path": "/v1/reviews/{reviewId}",
+        "description": "Get a specified review",
+        "tags": [
+          "reviews"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteReview",
+        "method": "DELETE",
+        "path": "/v1/reviews/{reviewId}",
+        "description": "",
+        "tags": [
+          "reviews"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateReviewComplete",
+        "method": "POST",
+        "path": "/v1/reviews/{reviewId}/complete",
+        "description": "Complete the specified review",
+        "tags": [
+          "complete"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetReviewDownload",
+        "method": "GET",
+        "path": "/v1/reviews/{reviewId}/download",
+        "description": "Download review document",
+        "tags": [
+          "download"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateReviewUpload",
+        "method": "POST",
+        "path": "/v1/reviews/{reviewId}/upload",
+        "description": "Upload a modified review document",
+        "tags": [
+          "upload"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplates",
+        "method": "GET",
+        "path": "/v1/templates",
+        "description": "List templates",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplate",
+        "method": "POST",
+        "path": "/v1/templates",
+        "description": "Create template",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplate",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}",
+        "description": "Get specified template",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTemplate",
+        "method": "DELETE",
+        "path": "/v1/templates/{templateId}",
+        "description": "Delete template",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchTemplate",
+        "method": "PATCH",
+        "path": "/v1/templates/{templateId}",
+        "description": "Update template",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateClone",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/clone",
+        "description": "Clone a specified template",
+        "tags": [
+          "clone"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplateDownload",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/download",
+        "description": "Download the latest version of specified template",
+        "tags": [
+          "download"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateGenerate",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/generate",
+        "description": "Generate a document for a specified template using supplied criteria",
+        "tags": [
+          "generate"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplatePublish",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/publish",
+        "description": "Publish template",
+        "tags": [
+          "publish"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateRestore",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/restore",
+        "description": "",
+        "tags": [
+          "restore"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplateVersions",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/versions",
+        "description": "List template versions for a specified template",
+        "tags": [
+          "versions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplateVersion",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/versions/{versionId}",
+        "description": "Get details for specified template version",
+        "tags": [
+          "versions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateVersion",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/versions/{versionId}",
+        "description": "Upload a modified template version",
+        "tags": [
+          "versions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTemplateVersion",
+        "method": "DELETE",
+        "path": "/v1/templates/{templateId}/versions/{versionId}",
+        "description": "Delete a specified template version",
+        "tags": [
+          "versions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateVersionDatum",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/versions/{versionId}/data",
+        "description": "",
+        "tags": [
+          "data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateVersionDemote",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/versions/{versionId}/demote",
+        "description": "Demote template version",
+        "tags": [
+          "demote"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplateVersionDownload",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/versions/{versionId}/download",
+        "description": "Download specified template version",
+        "tags": [
+          "download"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateVersionGenerate",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/versions/{versionId}/generate",
+        "description": "Generate a document for a specified template version using supplied criteria",
+        "tags": [
+          "generate"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateVersionPromote",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/versions/{versionId}/promote",
+        "description": "Promote template version",
+        "tags": [
+          "promote"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplateVersionsPrompts",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/versions/{versionId}/prompts",
+        "description": "",
+        "tags": [
+          "prompts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplateVersionsVariables",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/versions/{versionId}/variables",
+        "description": "",
+        "tags": [
+          "variables"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateWithdraw",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/withdraw",
+        "description": "Withdraw a published template",
+        "tags": [
+          "withdraw"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateUpload",
+        "method": "POST",
+        "path": "/v1/templates/upload",
+        "description": "Upload a template exported from another environment",
+        "tags": [
+          "upload"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListVersions",
+        "method": "GET",
+        "path": "/v1/versions",
+        "description": "List all template versions",
+        "tags": [
+          "versions"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  }
+]

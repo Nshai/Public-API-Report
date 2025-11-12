@@ -1,0 +1,4605 @@
+[
+  {
+    "service": "Microservice.Quotation",
+    "url": "https://microservice-quotation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListClientQuotes",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes",
+        "description": "Returns a list of quotes.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientQuote",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes",
+        "description": "Creates a new client quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientQuote",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+        "description": "Returns a client quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClientQuoteExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+        "description": "Checks that a quote exists for a given client.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AddClientQuoteApplicant",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}",
+        "description": "Adds a secondary client owner to a given quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientQuoteResults",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results",
+        "description": "Returns a list of client quote results.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientQuoteResult",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results",
+        "description": "Creates a new client quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClientQuoteResultsExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}",
+        "description": "Checks that a quote result exists for a client quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientQuoteResult",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}",
+        "description": "Returns a client quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientQuoteResultProductBenefits",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/benefits",
+        "description": "This endpoint allows an API user to retrieve product details of a specific quote result or illustration result for a client.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientQuoteResultProductBenefits",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/benefits",
+        "description": "This endpoint allows an API user to update product details of a specific quote result or illustration result for a client.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "RecommendClientQuoteResult",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/recommend/{recommendationId}",
+        "description": "Creates a new client recommendation proposal from quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SetClientQuoteStatus",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/quotes/{quoteId}/status/{status}",
+        "description": "Sets a new status for the client quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetQuoteResult",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/quotes/results/{quoteResultId}",
+        "description": "Returns a quote result for a given identifier.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListLeadQuotes",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/quotes",
+        "description": "Returns a list of quotes.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateLeadQuote",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/quotes",
+        "description": "Creates a new lead quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetLeadQuote",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}",
+        "description": "Returns a lead quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LeadQuoteExists",
+        "method": "HEAD",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}",
+        "description": "Checks that a quote exists for a given lead.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AddLeadQuoteApplicant",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}",
+        "description": "Adds a secondary lead owner to a given quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListLeadQuoteResults",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/results",
+        "description": "Returns a list of lead quote results.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateLeadQuoteResult",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/results",
+        "description": "Creates a new lead quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LeadQuoteResultsExists",
+        "method": "HEAD",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId}",
+        "description": "Checks that a quote result exists for a lead quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetLeadQuoteResult",
+        "method": "GET",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId}",
+        "description": "Returns a lead quote result.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SetLeadQuoteStatus",
+        "method": "POST",
+        "path": "/v2/leads/{leadId}/quotes/{quoteId}/status/{status}",
+        "description": "Sets a new status for the lead quote.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "client_financial_data.quotes"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Quotation",
+    "url": "https://microservice-quotation.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.TimeRecording",
+    "url": "https://microservice-timerecording.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListTimeEntries",
+        "method": "GET",
+        "path": "/v2/time_entries",
+        "description": "Returns a list of time entries.",
+        "tags": [
+          "timeentries"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.TimeRecording",
+    "url": "https://microservice-timerecording.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "ListClientTimeEntries",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/time_entries",
+        "description": "Get the client time entries by filter",
+        "tags": [
+          "timeentries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientTimeEntriesCalculateTotal",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/time_entries/calculate_totals",
+        "description": "Calculate Totals for client",
+        "tags": [
+          "calculatetotals"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSetting",
+        "method": "GET",
+        "path": "/v1/settings",
+        "description": "Get configuration",
+        "tags": [
+          "settings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateSetting",
+        "method": "PUT",
+        "path": "/v1/settings",
+        "description": "Create or Update configuration",
+        "tags": [
+          "settings"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTimeEntry",
+        "method": "POST",
+        "path": "/v1/time_entries",
+        "description": "Create a time entry",
+        "tags": [
+          "timeentries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTimeEntries",
+        "method": "GET",
+        "path": "/v1/time_entries",
+        "description": "Get the time entries by filter",
+        "tags": [
+          "timeentries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTimeEntry",
+        "method": "PUT",
+        "path": "/v1/time_entries/{entryId}",
+        "description": "Edit a time entry",
+        "tags": [
+          "timeentries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTimeEntry",
+        "method": "GET",
+        "path": "/v1/time_entries/{entryId}",
+        "description": "Get a time entry by Entry Id",
+        "tags": [
+          "timeentries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTimeEntry",
+        "method": "DELETE",
+        "path": "/v1/time_entries/{entryId}",
+        "description": "Delete a time entry",
+        "tags": [
+          "timeentries"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTimeEntryCategory",
+        "method": "POST",
+        "path": "/v1/time_entries/categories",
+        "description": "Create a time category for tenant",
+        "tags": [
+          "categories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTimeEntriesCategories",
+        "method": "GET",
+        "path": "/v1/time_entries/categories",
+        "description": "Get the time categories by filter",
+        "tags": [
+          "categories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateCategory",
+        "method": "PUT",
+        "path": "/v1/time_entries/categories/{categoryId}",
+        "description": "Edit a time category",
+        "tags": [
+          "categories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateCategoryDelete",
+        "method": "POST",
+        "path": "/v1/time_entries/categories/{categoryId}/delete",
+        "description": "Delete a time category",
+        "tags": [
+          "delete"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTimeEntryPeriod",
+        "method": "POST",
+        "path": "/v1/time_entries/periods",
+        "description": "Create a period time entry",
+        "tags": [
+          "periods"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePeriod",
+        "method": "PUT",
+        "path": "/v1/time_entries/periods/{periodId}",
+        "description": "Edit a period time entry",
+        "tags": [
+          "periods"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPeriod",
+        "method": "GET",
+        "path": "/v1/time_entries/periods/{periodId}",
+        "description": "Get a period time entry by Period Id",
+        "tags": [
+          "periods"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePeriod",
+        "method": "DELETE",
+        "path": "/v1/time_entries/periods/{periodId}",
+        "description": "Delete a period time entry and related to this time entries",
+        "tags": [
+          "periods"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Monolith.WebHooks",
+    "url": "https://monolith-webhooks.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.WebHooks",
+    "url": "https://monolith-webhooks.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "CreateSubscription",
+        "method": "POST",
+        "path": "/v1/subscriptions",
+        "description": "",
+        "tags": [
+          "subscriptions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSubscription",
+        "method": "DELETE",
+        "path": "/v1/subscriptions/{subscriptionId}",
+        "description": "",
+        "tags": [
+          "subscriptions"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Microservice.Brand",
+    "url": "https://microservice-brand.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Brand",
+    "url": "https://microservice-brand.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "ListBrands",
+        "method": "GET",
+        "path": "/v1/brands",
+        "description": "Get brand for either current user or non-authenticated one.",
+        "tags": [
+          "brand"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListGroupBrands",
+        "method": "GET",
+        "path": "/v1/groups/{groupId}/brands",
+        "description": "Lists all brands for the specified group.",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateGroupBrand",
+        "method": "POST",
+        "path": "/v1/groups/{groupId}/brands",
+        "description": "Create brand",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetGroupBrand",
+        "method": "GET",
+        "path": "/v1/groups/{groupId}/brands/{brandId}",
+        "description": "Get a brand by id and groupId.",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchGroupBrand",
+        "method": "PATCH",
+        "path": "/v1/groups/{groupId}/brands/{brandId}",
+        "description": "Update brand",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteGroupBrand",
+        "method": "DELETE",
+        "path": "/v1/groups/{groupId}/brands/{brandId}",
+        "description": "Delete brand",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetGroupBrandClosest",
+        "method": "GET",
+        "path": "/v1/groups/{groupId}/brands/closest",
+        "description": "Get closest brand for specified group",
+        "tags": [
+          "closest"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUserMesBrands",
+        "method": "GET",
+        "path": "/v1/users/me/brands",
+        "description": "[DEPRECATED] Find brands for the current user using any filters if provided. Use 'v1/brands' instead.",
+        "tags": [
+          "brands"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Monolith.Bcc",
+    "url": "https://monolith-bcc.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListBccErrorLogs",
+        "method": "GET",
+        "path": "/v2/emailerrorlog",
+        "description": "Returns an EmailErrorLog collection.",
+        "tags": [
+          "emailerrorlog"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetBccErrorLog",
+        "method": "GET",
+        "path": "/v2/emailerrorlog/{errorLogId}",
+        "description": "Returns a EntityDocument.",
+        "tags": [
+          "emailerrorlog"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Bcc",
+    "url": "https://monolith-bcc.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.FactFind",
+    "url": "https://monolith-factfind.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListClientDependants",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/dependants",
+        "description": "Returns a list of dependants for a given client.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientDependant",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/dependants",
+        "description": "Creates a dependant for a given client.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientDependant",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+        "description": "Returns a dependant for a given client and dependant.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientDependant",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+        "description": "Updates a dependant for a given client.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientDependant",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/dependants/{dependantId}",
+        "description": "Deletes a dependant for a given client.",
+        "tags": [
+          "dependants",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientDisclosures",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/disclosures",
+        "description": "List disclosures for a given client.",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientDisclosure",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/disclosures",
+        "description": "Creates a disclosure for a given client.",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientDisclosure",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/disclosures/{disclosureId}",
+        "description": "Updates a disclosure for a given client.",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientDisclosure",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/disclosures/{disclosureId}",
+        "description": "Deletes a disclosure for a given client.",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientEmployments",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/employments",
+        "description": "Get a list of employments for a given client.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientEmployment",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/employments",
+        "description": "Create an employment for a given client.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientEmployment",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/employments/{employmentId}",
+        "description": "Get an employment for a given client.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientEmployment",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/employments/{employmentId}",
+        "description": "Updates an employment for a given client.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientEmployment",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/employments/{employmentId}",
+        "description": "Deletes a given employment.",
+        "tags": [
+          "employments"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientExpenditure",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/expenditures",
+        "description": "Creates an expenditure record for a client.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientExpenditures",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expenditures",
+        "description": "Returns a list of expenditure records for a client. The returned list may be filtered.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientExpenditure",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+        "description": "Updates a client's expenditure record.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientExpenditure",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+        "description": "Retrieves a client's expenditure record.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientExpenditure",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/expenditures/{expenditureId}",
+        "description": "Deletes a client's expenditure record.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientIncomes",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/incomes",
+        "description": "Returns a list of incomes for a given client.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientIncome",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/incomes",
+        "description": "Creates an income record for a client.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientIncome",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+        "description": "Returns the income for a given client and income.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientIncome",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+        "description": "Updates a client's income record.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientIncome",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/incomes/{incomeId}",
+        "description": "Deletes a client's income record.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientNotes",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/notes",
+        "description": "Returns the notes for a given client.",
+        "tags": [
+          "notes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateOrCreateClientNotes",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/notes",
+        "description": "Updates the notes for a given client.",
+        "tags": [
+          "notes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateContributionExpenditure",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/contributions/{contributionId}/expenditures",
+        "description": "Creates a client expenditure record linked to a plan contribution record.",
+        "tags": [
+          "expenditures",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanWithdrawalIncome",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}/incomes",
+        "description": "Create a withdrawal income for a client.",
+        "tags": [
+          "incomes",
+          "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTenantDocumentTypes",
+        "method": "GET",
+        "path": "/v2/disclosures/documentTypes",
+        "description": "List Document Types for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTenantDocumentType",
+        "method": "POST",
+        "path": "/v2/disclosures/documentTypes",
+        "description": "Add a new Document Type for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantDocumentType",
+        "method": "GET",
+        "path": "/v2/disclosures/documentTypes/{documentTypeId}",
+        "description": "Get Document Type by Id for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTenantDocumentType",
+        "method": "PUT",
+        "path": "/v2/disclosures/documentTypes/{documentTypeId}",
+        "description": "Update an existing Document Type for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTenantDocumentType",
+        "method": "DELETE",
+        "path": "/v2/disclosures/documentTypes/{documentTypeId}",
+        "description": "Delete an existing Document Type for a tenant",
+        "tags": [
+          "disclosures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpenditureCategories",
+        "method": "GET",
+        "path": "/v2/expenditures/refdata/categories",
+        "description": "Retrieves List of all/matched categories based on the filter provided.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpenditureCategoryGroups",
+        "method": "GET",
+        "path": "/v2/expenditures/refdata/categorygroups",
+        "description": "Returns a list of expenditure category groups.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateExpenditureCategoryGroup",
+        "method": "POST",
+        "path": "/v2/expenditures/refdata/categorygroups",
+        "description": "Creates a new Expenditure Category Group.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateExpenditureCategoryGroup",
+        "method": "PUT",
+        "path": "/v2/expenditures/refdata/categorygroups/{categoryGroupId}",
+        "description": "Updates an existing Expenditure Category Group.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteExpenditureCategoryGroup",
+        "method": "DELETE",
+        "path": "/v2/expenditures/refdata/categorygroups/{categoryGroupId}",
+        "description": "Deletes Expenditure Category Group.",
+        "tags": [
+          "expenditures"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListRefdata",
+        "method": "GET",
+        "path": "/v2/incomes/refdata/{type}",
+        "description": "Get the list of Reference Data.",
+        "tags": [
+          "refdata"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.FactFind",
+    "url": "https://monolith-factfind.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "GetClientAdviceareas",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/adviceareas",
+        "description": "Get the advice areas for the specified user",
+        "tags": [
+          "factfind"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientAdviceareas",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/adviceareas",
+        "description": "Update AdviceAreas for the given clientId, Create one with the given info in the request when doesn't exist",
+        "tags": [
+          "factfind"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientBudgets",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/budgets",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientBudget",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/budgets",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientBudget",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/budgets/{budgetId}",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientBudget",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/budgets/{budgetId}",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchClientBudget",
+        "method": "PATCH",
+        "path": "/v1/clients/{clientId}/budgets/{budgetId}",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientBudget",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/budgets/{budgetId}",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientDependants",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/dependants",
+        "description": "Get Dependants",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientDependant",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/dependants",
+        "description": "Create a Dependant",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientDependant",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/dependants/{dependantId}",
+        "description": "Get the specified Dependant",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientDependant",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/dependants/{dependantId}",
+        "description": "Get the specified Dependant",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientDependant",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/dependants/{dependantId}",
+        "description": "Update the specified Dependant",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientDependant",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/dependants/{dependantId}",
+        "description": "Delete the specified Dependant",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientEmploymenthistories",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/employmenthistories",
+        "description": "Get the Employment Histories",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientEmploymenthistory",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/employmenthistories",
+        "description": "Create the Employment History",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientEmploymenthistory",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/employmenthistories/{employmentHistoryId}",
+        "description": "Get the specified Employment History",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientEmploymenthistory",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/employmenthistories/{employmentHistoryId}",
+        "description": "Get the specified Employment History",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientEmploymenthistory",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/employmenthistories/{employmentHistoryId}",
+        "description": "Update the Employment History",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientEmploymenthistory",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/employmenthistories/{employmentHistoryId}",
+        "description": "Delete the Employment History",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientEmployments",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/employments",
+        "description": "Get Employments",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientEmployment",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/employments",
+        "description": "Create an Employment",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientEmployment",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/employments/{employmentId}",
+        "description": "Get the specified Employment",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientEmployment",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/employments/{employmentId}",
+        "description": "Get the specified Employment",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientEmployment",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/employments/{employmentId}",
+        "description": "Update the specified Employment",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientEmployment",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/employments/{employmentId}",
+        "description": "Delete the specified Employment",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientEmploymentsMovetohistory",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/employments/{employmentId}/movetohistory",
+        "description": "Move the specified Employment to History",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientExpenditure",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/expenditure",
+        "description": "Gets Expenditure if any, for the specified client id/for the client of the current context.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientExpenditure",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/expenditure",
+        "description": "Gets Expenditure if any, for the specified client id/for the client of the current context.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientExpenditure",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/expenditure",
+        "description": "Updates an Expenditure for a client OR for the client of the current context, if none found then adds a new default expenditure for a client.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientExpenditure",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/expenditure",
+        "description": "Deletes an Expenditure for a client OR for the client of the current context.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientExpendituresExpenses",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/expenditure/expenses",
+        "description": "Gets all Expenses for the specified client id OR for the client of the current context's Expenditure.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientExpenditureExpense",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/expenditure/expenses",
+        "description": "Creates an Expense for a specified client OR for the client of the current context AND Specified Expenditure ID.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientsExpenditureExpenses",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/expenditure/expenses",
+        "description": "Updates a collection of Expenses for a client OR for the client of the current context's Expenditure.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientExpense",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/expenditure/expenses/{expenseId}",
+        "description": "Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientExpense",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/expenditure/expenses/{expenseId}",
+        "description": "Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientExpense",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/expenditure/expenses/{expenseId}",
+        "description": "Updates an Expense for a client OR for the client of the current context's Expenditure.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientExpense",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/expenditure/expenses/{expenseId}",
+        "description": "Deletes an Expense for a client OR for the client of the current context's Expenditure.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientFactfinds",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/factfinds",
+        "description": "",
+        "tags": [
+          "factfind"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientFactfind",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/factfinds",
+        "description": "",
+        "tags": [
+          "factfind"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientFactfind",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/factfinds/{factfindId}",
+        "description": "",
+        "tags": [
+          "factfind"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientFactfind",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/factfinds/{factfindId}",
+        "description": "",
+        "tags": [
+          "factfind"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientFactfindDeclaration",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/factfinds/{factfindId}/declaration",
+        "description": "(TODO) Get the specified Declaration",
+        "tags": [
+          "factfind"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientFactfindsDisclosures",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/factfinds/{factfindId}/disclosures",
+        "description": "Get DisclosureCollection for specified client",
+        "tags": [
+          "factfind"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientGoals",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/goals",
+        "description": "Get all Client Goals",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientGoal",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/goals",
+        "description": "Create a Client Goal",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientGoal",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/goals/{goalId}",
+        "description": "Get the specified Client Goal",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientGoal",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/goals/{goalId}",
+        "description": "Get the specified Client Goal",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientGoal",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/goals/{goalId}",
+        "description": "Update a Goal",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientGoal",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/goals/{goalId}",
+        "description": "Delete a Goal",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientGoalLinktoplan",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/goals/{goalId}/linktoplan",
+        "description": "Link a Goal to a Plan",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "MarkascompletedClientGoal",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/goals/{goalId}/markascompleted",
+        "description": "Mark a Goal as Completed",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "MarkasincompleteClientGoal",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/goals/{goalId}/markasincomplete",
+        "description": "Mark a Goal as Incomplete",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientGoalUnlink",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/goals/{goalId}/unlink",
+        "description": "Unlink a Goal from an Account or Plan",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientIncomes",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/incomes",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientIncome",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/incomes",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientsIncomes",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/incomes",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientIncome",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/incomes/{incomeId}",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientIncome",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/incomes/{incomeId}",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientIncome",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/incomes/{incomeId}",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientIncome",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/incomes/{incomeId}",
+        "description": "",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientLiabilities",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/liabilities",
+        "description": "Gets all Liabilities for the specified client id OR for the client of the current context.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientLiability",
+        "method": "POST",
+        "path": "/v1/clients/{clientId}/liabilities",
+        "description": "Creates a Liability for a specified client OR for the client of the current context.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientLiability",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/liabilities/{liabilityId}",
+        "description": "Gets Liability if any, for the specified client id/for the client of the current context and liability Id.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientLiability",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/liabilities/{liabilityId}",
+        "description": "Gets Liability if any, for the specified client id/for the client of the current context and liability Id.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientLiability",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/liabilities/{liabilityId}",
+        "description": "Updates a Liability for a client OR for the client of the current context.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientLiability",
+        "method": "DELETE",
+        "path": "/v1/clients/{clientId}/liabilities/{liabilityId}",
+        "description": "Deletes a Liability for a client OR for the client of the current context.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientsExpensecategories",
+        "method": "GET",
+        "path": "/v1/clients/expensecategories",
+        "description": "Gets all Expense Categories.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpensecategory",
+        "method": "GET",
+        "path": "/v1/clients/expensecategories/{expenseCategoryId}",
+        "description": "Gets an Expense Category if any, for the specified Expense Category Id.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsExpensecategory",
+        "method": "HEAD",
+        "path": "/v1/clients/expensecategories/{expenseCategoryId}",
+        "description": "Gets an Expense Category if any, for the specified Expense Category Id.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientsExpensegroups",
+        "method": "GET",
+        "path": "/v1/clients/expensegroups",
+        "description": "Gets all Expense Groups.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpensegroup",
+        "method": "GET",
+        "path": "/v1/clients/expensegroups/{expenseGroupId}",
+        "description": "Gets an Expense Group if any, for the specified Expense Group Id.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsExpensegroup",
+        "method": "HEAD",
+        "path": "/v1/clients/expensegroups/{expenseGroupId}",
+        "description": "Gets an Expense Group if any, for the specified Expense Group Id.",
+        "tags": [
+          "clients"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Microservice.Security",
+    "url": "https://microservice-security.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListAlternativeAssets",
+        "method": "GET",
+        "path": "/v2/alternativeassets",
+        "description": "Get a List of Alternative Asset Securities.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostAlternativeAssets",
+        "method": "POST",
+        "path": "/v2/alternativeassets",
+        "description": "Create Alternative Asset Securities.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutAlternativeAssets",
+        "method": "PUT",
+        "path": "/v2/alternativeassets",
+        "description": "Update Alternative Asset Securities.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAlternativeAsset",
+        "method": "GET",
+        "path": "/v2/alternativeassets/{securityId}",
+        "description": "Get an Alternative Asset Security by Security Id.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAlternativeAsset",
+        "method": "DELETE",
+        "path": "/v2/alternativeassets/{securityId}",
+        "description": "Delete an Alternative Asset Security by Security Id.",
+        "tags": [
+          "alternativeassets"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAssetClasses",
+        "method": "GET",
+        "path": "/v2/assetclasses",
+        "description": "List Asset Classes based on Asset Class Ids.",
+        "tags": [
+          "assetclasses"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAssetClass",
+        "method": "GET",
+        "path": "/v2/assetclasses/{assetClassId}",
+        "description": "Get Asset Class based Asset Class Id",
+        "tags": [
+          "assetclasses"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClassificationCategories",
+        "method": "GET",
+        "path": "/v2/classificationcategories",
+        "description": "List Classification Categories based on Classification Category Ids.",
+        "tags": [
+          "classificationcategories"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClassificationCategory",
+        "method": "GET",
+        "path": "/v2/classificationcategories/{classificationCategoryId}",
+        "description": "Get Classification Category based Classification Category Id.",
+        "tags": [
+          "classificationcategories"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCurrencies",
+        "method": "GET",
+        "path": "/v2/currencies",
+        "description": "Get a List of Currency Securities. A Id or a Currency Code or Security Id is required.",
+        "tags": [
+          "currencies"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostCurrencies",
+        "method": "POST",
+        "path": "/v2/currencies",
+        "description": "Create Currency Securities.",
+        "tags": [
+          "currencies"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutCurrencies",
+        "method": "PUT",
+        "path": "/v2/currencies",
+        "description": "Update Currency Securities.",
+        "tags": [
+          "currencies"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCurrency",
+        "method": "GET",
+        "path": "/v2/currencies/{securityId}",
+        "description": "Gets a Currency Security based on Security Id.",
+        "tags": [
+          "currencies"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteCurrency",
+        "method": "DELETE",
+        "path": "/v2/currencies/{securityId}",
+        "description": "Delete a Currency Security based on Security Id.",
+        "tags": [
+          "currencies"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCurrentPrices",
+        "method": "GET",
+        "path": "/v2/currentprices",
+        "description": "Get all current prices for the passed in securityIds",
+        "tags": [
+          "currentprices"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCurrentQuotes",
+        "method": "GET",
+        "path": "/v2/currentquotes",
+        "description": "Get all current prices for the passed in securityIds.",
+        "tags": [
+          "currentquotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListDividends",
+        "method": "GET",
+        "path": "/v2/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostDividends",
+        "method": "POST",
+        "path": "/v2/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchDividends",
+        "method": "PATCH",
+        "path": "/v2/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListEtfs",
+        "method": "GET",
+        "path": "/v2/etfs",
+        "description": "Get a List of ETF Securities based on Security Ids.",
+        "tags": [
+          "etfs"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostEtfs",
+        "method": "POST",
+        "path": "/v2/etfs",
+        "description": "Create ETF Securities.",
+        "tags": [
+          "etfs"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutEtfs",
+        "method": "PUT",
+        "path": "/v2/etfs",
+        "description": "Update ETF Securities.",
+        "tags": [
+          "etfs"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetEtf",
+        "method": "GET",
+        "path": "/v2/etfs/{securityId}",
+        "description": "Get an ETF Security based on Security Id.",
+        "tags": [
+          "etfs"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteEtf",
+        "method": "DELETE",
+        "path": "/v2/etfs/{securityId}",
+        "description": "Delete an ETF Security based on Security Id.",
+        "tags": [
+          "etfs"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExchanges",
+        "method": "GET",
+        "path": "/v2/exchanges",
+        "description": "List Exchanges based on Exchange Codes.",
+        "tags": [
+          "exchanges"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExchange",
+        "method": "GET",
+        "path": "/v2/exchanges/{exchangeCode}",
+        "description": "Get an Exchange based on Exchange Code.",
+        "tags": [
+          "exchanges"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostFixedIncomes",
+        "method": "POST",
+        "path": "/v2/fixedincomes",
+        "description": "Create a Fixed Income Securities.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutFixedIncomes",
+        "method": "PUT",
+        "path": "/v2/fixedincomes",
+        "description": "Update Fixed Income Securities.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFixedIncomes",
+        "method": "GET",
+        "path": "/v2/fixedincomes",
+        "description": "Get a List of Fixed Income Securities based on Security Id.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFixedIncome",
+        "method": "GET",
+        "path": "/v2/fixedincomes/{securityId}",
+        "description": "Get a Fixed Income Security based on Security Id.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteFixedIncome",
+        "method": "DELETE",
+        "path": "/v2/fixedincomes/{securityId}",
+        "description": "Delete a Fixed Income Security based on Security Id.",
+        "tags": [
+          "fixedincomes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFunds",
+        "method": "GET",
+        "path": "/v2/funds",
+        "description": "Get a List of Fund Securities based on Security Ids.",
+        "tags": [
+          "funds"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostFunds",
+        "method": "POST",
+        "path": "/v2/funds",
+        "description": "Create Fund Securities.",
+        "tags": [
+          "funds"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutFunds",
+        "method": "PUT",
+        "path": "/v2/funds",
+        "description": "Update Fund Securities.",
+        "tags": [
+          "funds"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFund",
+        "method": "GET",
+        "path": "/v2/funds/{securityId}",
+        "description": "Gets a Fund Security based on Security Id.",
+        "tags": [
+          "funds"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteFund",
+        "method": "DELETE",
+        "path": "/v2/funds/{securityId}",
+        "description": "Delete a Fund Security based on Security Id.",
+        "tags": [
+          "funds"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIssuers",
+        "method": "GET",
+        "path": "/v2/issuers",
+        "description": "Get a List of Issuers based on Issuer Ids or Security Group Id. At least 1 search criteria must be populated.",
+        "tags": [
+          "issuers"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostIssuers",
+        "method": "POST",
+        "path": "/v2/issuers",
+        "description": "Create an Issuer.",
+        "tags": [
+          "issuers"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutIssuers",
+        "method": "PUT",
+        "path": "/v2/issuers",
+        "description": "Update an Issuer",
+        "tags": [
+          "issuers"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetIssuer",
+        "method": "GET",
+        "path": "/v2/issuers/{issuerId}",
+        "description": "Get an Issuer based on Issuer Id.",
+        "tags": [
+          "issuers"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteIssuer",
+        "method": "DELETE",
+        "path": "/v2/issuers/{issuerId}",
+        "description": "Delete an Issuer based on Issuer Id.",
+        "tags": [
+          "issuers"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIssuersByIds",
+        "method": "GET",
+        "path": "/v2/issuers/byids",
+        "description": "Get a List of Issuers based on Issuer Ids.",
+        "tags": [
+          "issuers"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIssuersBySourceReferences",
+        "method": "GET",
+        "path": "/v2/issuers/bysourcereferences",
+        "description": "Get a Source Reference based on Source and Source Reference Id.",
+        "tags": [
+          "issuers"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetMarketClosings",
+        "method": "GET",
+        "path": "/v2/marketclosings",
+        "description": "Get a Market Closing based on a set of years.",
+        "tags": [
+          "marketclosings"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutMarketClosings",
+        "method": "PUT",
+        "path": "/v2/marketclosings",
+        "description": "Create or Update a Market Closing.",
+        "tags": [
+          "marketclosings"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteMarketClosings",
+        "method": "DELETE",
+        "path": "/v2/marketclosings/{closingOn}",
+        "description": "Delete a Market Closing based on Closing On date.",
+        "tags": [
+          "marketclosings"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostOptions",
+        "method": "POST",
+        "path": "/v2/options",
+        "description": "Create Option Securities.",
+        "tags": [
+          "options"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutOptions",
+        "method": "PUT",
+        "path": "/v2/options",
+        "description": "Update Option Securities.",
+        "tags": [
+          "options"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPoolFactor",
+        "method": "GET",
+        "path": "/v2/poolfactors",
+        "description": "Get all pool factors for the passed in securityIds where the PoolFactorOn date falls between poolfactorOnStart and poolfactorOnEnd, inclusively.",
+        "tags": [
+          "poolfactor"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutPoolFactors",
+        "method": "PUT",
+        "path": "/v2/poolfactors",
+        "description": "Creates any poolfactors that do not exist and updates any poolfactors that do exist (based on securityId and poolfactorOn).",
+        "tags": [
+          "poolfactor"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutPrices",
+        "method": "PUT",
+        "path": "/v2/prices",
+        "description": "Creates any prices that do not exist and updates any prices that do exist (based on securityId and pricedOn).",
+        "tags": [
+          "prices"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostPrices",
+        "method": "POST",
+        "path": "/v2/prices",
+        "description": "Creates any prices that do not exist and return any prices that errored.",
+        "tags": [
+          "prices"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListProspectuses",
+        "method": "GET",
+        "path": "/v2/prospectuses",
+        "description": "List Prospectus based on Prospectus Ids.",
+        "tags": [
+          "prospectuses"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetProspectus",
+        "method": "GET",
+        "path": "/v2/prospectuses/{prospectusId}",
+        "description": "Get Prospectus based on Prospectus Id.",
+        "tags": [
+          "prospectuses"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuotes",
+        "method": "GET",
+        "path": "/v2/quotes",
+        "description": "Get all prices for the passed in securityIds on the pricedOn date.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuotesPricedOn",
+        "method": "GET",
+        "path": "/v2/quotes/{pricedOn}",
+        "description": "Get all prices for the passed in securityIds where the pricedOn date falls between pricedOnStart and pricedOnEnd, inclusively.",
+        "tags": [
+          "quotes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListRegions",
+        "method": "GET",
+        "path": "/v2/regions",
+        "description": "List Regions based Region Ids.",
+        "tags": [
+          "regions"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRegion",
+        "method": "GET",
+        "path": "/v2/regions/{regionId}",
+        "description": "Get Region by Region Id.",
+        "tags": [
+          "regions"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSectors",
+        "method": "GET",
+        "path": "/v2/sectors",
+        "description": "List Sector based on Sector Ids.",
+        "tags": [
+          "sectors"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSector",
+        "method": "GET",
+        "path": "/v2/sectors/{sectorId}",
+        "description": "Get Sector based on Sector Id.",
+        "tags": [
+          "sectors"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurities",
+        "method": "GET",
+        "path": "/v2/securities",
+        "description": "Gets a List of Securities based on SecurityIds, IdentifierSymbol, or Name.",
+        "tags": [
+          "securities"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSecurity",
+        "method": "GET",
+        "path": "/v2/securities/{securityId}",
+        "description": "Gets an individual Security based on SecurityId.",
+        "tags": [
+          "securities"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityDividends",
+        "method": "GET",
+        "path": "/v2/securities/{securityId}/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSecurityDividends",
+        "method": "DELETE",
+        "path": "/v2/securities/{securityId}/dividends",
+        "description": "",
+        "tags": [
+          "dividends"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSecurityPoolFactor",
+        "method": "DELETE",
+        "path": "/v2/securities/{securityId}/poolfactors/{poolFactorOn}",
+        "description": "Deletes a security pool factor based on securityId and poolfactorOn date.",
+        "tags": [
+          "poolfactor"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPrices",
+        "method": "GET",
+        "path": "/v2/securities/{securityId}/prices",
+        "description": "Get all prices for the passed in securityId.",
+        "tags": [
+          "prices"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSecurityPrice",
+        "method": "DELETE",
+        "path": "/v2/securities/{securityId}/prices/{pricedOn}",
+        "description": "Deletes a security price based on securityId and pricedOn date.",
+        "tags": [
+          "prices"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecuritiesByIdentifierSymbols",
+        "method": "GET",
+        "path": "/v2/securities/byidentifiersymbols",
+        "description": "Gets a List Securities based on Identifier Type, Identifier Symbols.",
+        "tags": [
+          "securities"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecuritiesByIds",
+        "method": "GET",
+        "path": "/v2/securities/byids",
+        "description": "Get a List of Securities based on SecurityIds",
+        "tags": [
+          "securities"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecuritiesBySourceReferences",
+        "method": "GET",
+        "path": "/v2/securities/bysourcereferences",
+        "description": "Gets a List Securities based on Sources and Source Reference Ids.",
+        "tags": [
+          "securities"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExistingSecurities",
+        "method": "POST",
+        "path": "/v2/securities/exist",
+        "description": "Returns a List of Security Ids and if they exist in the database. Max number of exists requests = 500",
+        "tags": [
+          "securities"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecuritiesV2",
+        "method": "GET",
+        "path": "/v2/securitiesV2",
+        "description": "Gets a List of Securities based on security filters.",
+        "tags": [
+          "securities"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityGroups",
+        "method": "GET",
+        "path": "/v2/securitygroups",
+        "description": "Get a List of Security Groups.",
+        "tags": [
+          "securitygroups"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostSecurityGroups",
+        "method": "POST",
+        "path": "/v2/securitygroups",
+        "description": "Create Security Groups.",
+        "tags": [
+          "securitygroups"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSecurityGroup",
+        "method": "GET",
+        "path": "/v2/securitygroups/{securityGroupId}",
+        "description": "Get a Security Group By Security Group Id.",
+        "tags": [
+          "securitygroups"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutSecurityGroups",
+        "method": "PUT",
+        "path": "/v2/securitygroups/{securityGroupId}",
+        "description": "Update a Security Group.",
+        "tags": [
+          "securitygroups"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSecurityGroup",
+        "method": "DELETE",
+        "path": "/v2/securitygroups/{securityGroupId}",
+        "description": "Delete a Security Group by SecurityGroupId.",
+        "tags": [
+          "securitygroups"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityGroupGroupSecurities",
+        "method": "GET",
+        "path": "/v2/securitygroups/{securityGroupId}/groupsecurities",
+        "description": "Get a Security GroupGroup Securities by filters.",
+        "tags": [
+          "securitygroups"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityGroupsSecurities",
+        "method": "GET",
+        "path": "/v2/securitygroups/securities",
+        "description": "Get a Security Group Securities by filters.",
+        "tags": [
+          "securitygroups"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSecurityTypes",
+        "method": "GET",
+        "path": "/v2/securitytypes",
+        "description": "Get a List of Security Types.",
+        "tags": [
+          "securitytypes"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListStocks",
+        "method": "GET",
+        "path": "/v2/stocks",
+        "description": "Delete a Security based on Security Id.",
+        "tags": [
+          "stocks"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostStocks",
+        "method": "POST",
+        "path": "/v2/stocks",
+        "description": "Create Stock Securities.",
+        "tags": [
+          "stocks"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PutStocks",
+        "method": "PUT",
+        "path": "/v2/stocks",
+        "description": "Update Stock Securities.",
+        "tags": [
+          "stocks"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetStock",
+        "method": "GET",
+        "path": "/v2/stocks/{securityId}",
+        "description": "Gets a Stock Security based on Security Id.",
+        "tags": [
+          "stocks"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteStock",
+        "method": "DELETE",
+        "path": "/v2/stocks/{securityId}",
+        "description": "Delete a Security based on Security Id.",
+        "tags": [
+          "stocks"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTenantCategories",
+        "method": "GET",
+        "path": "/v2/tenantcategories",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PostTenantCategories",
+        "method": "POST",
+        "path": "/v2/tenantcategories",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchTenantCategories",
+        "method": "PATCH",
+        "path": "/v2/tenantcategories",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTenantCategory",
+        "method": "DELETE",
+        "path": "/v2/tenantcategories/{categoryId}",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTenantCategory",
+        "method": "GET",
+        "path": "/v2/tenantcategories/{tenantCategoryId}",
+        "description": "",
+        "tags": [
+          "tenantcategories"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data",
+          "openid",
+          "myprofile",
+          "security",
+          "fund_data"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Security",
+    "url": "https://microservice-security.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Expectation",
+    "url": "https://microservice-expectation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListExpectationBreakdownsByClient",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expectations/{expectationId}/breakdowns",
+        "description": "Returns a list of expectation breakdowns related to an expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationBreakdownExistsForClient",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId}",
+        "description": "Checks that an expectation breakdown record exists.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpectationBreakdownByClient",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId}",
+        "description": "Returns a list of expectation breakdowns related to an expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientExpectationsSummary",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/expectations/aggregate",
+        "description": "Aggregates expectations by fee, commission and plan.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PublishExpectationCommand",
+        "method": "POST",
+        "path": "/v2/commands/Expectation",
+        "description": "Creates a new expectation request to trigger creation of a new income or migration expectation.",
+        "tags": [
+          "commands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PublishTenantExpectationDue",
+        "method": "POST",
+        "path": "/v2/commands/ExpectationSchedule",
+        "description": "Initialize the scheduling process.",
+        "tags": [
+          "commands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PublishReversalCommand",
+        "method": "POST",
+        "path": "/v2/commands/Reversal",
+        "description": "Creates a new expectation reversal request to trigger the reversal of an expectation.",
+        "tags": [
+          "commands"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpectations",
+        "method": "GET",
+        "path": "/v2/expectations",
+        "description": "Returns a list of expectations.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpectation",
+        "method": "GET",
+        "path": "/v2/expectations/{expectationId}",
+        "description": "Returns a single expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationExists",
+        "method": "HEAD",
+        "path": "/v2/expectations/{expectationId}",
+        "description": "Checks that an expectation record exists.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationAdjustmentRequest",
+        "method": "POST",
+        "path": "/v2/expectations/{expectationId}/adjust",
+        "description": "Creates a new expectation adjustment for a given expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpectationBreakdowns",
+        "method": "GET",
+        "path": "/v2/expectations/{expectationId}/breakdowns",
+        "description": "Returns a list of expectation breakdowns related to an expectation.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationBreakdownExists",
+        "method": "HEAD",
+        "path": "/v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId}",
+        "description": "Checks that an expectation breakdown record exists.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpectationBreakdown",
+        "method": "GET",
+        "path": "/v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId}",
+        "description": "Returns a single expectation breakdown.",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListExpectationAdjustmentRules",
+        "method": "GET",
+        "path": "/v2/expectations/adjustmentsrules",
+        "description": "Gets a collection of expectation adjustment rules.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateExpectationAdjustmentRule",
+        "method": "POST",
+        "path": "/v2/expectations/adjustmentsrules",
+        "description": "Creates a new expectation adjustment rule.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExpectationAdjustmentRuleExists",
+        "method": "HEAD",
+        "path": "/v2/expectations/adjustmentsrules/{adjustmentRuleId}",
+        "description": "Checks that an expectation adjustment rule exists.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetExpectationAdjustmentRule",
+        "method": "GET",
+        "path": "/v2/expectations/adjustmentsrules/{adjustmentRuleId}",
+        "description": "Gets an expectation adjustment rule.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateExpectationAdjustmentRule",
+        "method": "PUT",
+        "path": "/v2/expectations/adjustmentsrules/{adjustmentRuleId}",
+        "description": "Updates an expectation adjustment rule.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteExpectationAdjustmentRule",
+        "method": "DELETE",
+        "path": "/v2/expectations/adjustmentsrules/{adjustmentRuleId}",
+        "description": "Deletes an expectation adjustment rule.",
+        "tags": [
+          "adjustmentsrules"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.config.adjustment"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SetConfiguration",
+        "method": "PUT",
+        "path": "/v2/expectations/configuration",
+        "description": "Creates or Updates a tenant's configuration settings for expectations",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetConfiguration",
+        "method": "GET",
+        "path": "/v2/expectations/configuration",
+        "description": "Returns a tenant's configuration settings for expectations",
+        "tags": [
+          "expectation"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "firm_data.expectation"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Expectation",
+    "url": "https://microservice-expectation.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.PortfolioReporting",
+    "url": "https://microservice-portfolioreporting.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.PortfolioReporting",
+    "url": "https://microservice-portfolioreporting.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.Valuation",
+    "url": "https://monolith-valuation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "EnqueueValuationBatch",
+        "method": "POST",
+        "path": "/v2/valuations/batches",
+        "description": "Creates a new valuationbatch and enqueues it for importing",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListValuationBatches",
+        "method": "GET",
+        "path": "/v2/valuations/batches",
+        "description": "Returns a list of valuationbatch",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteValuationBatch",
+        "method": "DELETE",
+        "path": "/v2/valuations/batches/{batchId}",
+        "description": "Deletes an existing valuationbatch and undo any related valuations and transactions",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetValuationBatch",
+        "method": "GET",
+        "path": "/v2/valuations/batches/{batchId}",
+        "description": "Returns a single valuationbatch",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListValuationBatchResults",
+        "method": "GET",
+        "path": "/v2/valuations/batches/{batchId}/results",
+        "description": "Returns the results for a single valuationbatch.",
+        "tags": [
+          "bulkvaluations"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Valuation",
+    "url": "https://monolith-valuation.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  }
+]

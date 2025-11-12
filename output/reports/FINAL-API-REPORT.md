@@ -2,11 +2,11 @@
 
 ## Executive Summary
 
-- **Total Unique Public APIs**: 1565
+- **Total Unique Public APIs**: 1844
 - **APIs on Developer Portal**: 391
-- **Hidden Public APIs**: 1174
-- **APIs with Tags**: 1565
-- **APIs with Service Information**: 1231
+- **Hidden Public APIs**: 1453
+- **APIs with Tags**: 1844
+- **APIs with Service Information**: 1510
 - **Documentation Ignore Operations Matched**: 83/83 (100%)
 
 ## Data Sources
@@ -32,9 +32,17 @@
 | abort | CreateInstanceAbort | POST | /v1/instances/{instanceId}/abort |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | accountrecovery | CreateConfirmation | POST | /forgotpassword/confirmation/{forgotPasswordId} |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
 | accountrecovery | CreateForgotpassword | POST | /forgotpassword |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
+| accountrecovery | CreateV1AccountsRecoveryForgotpasswordEmailrecovery | POST | /membership/v1/accounts/recovery/forgotpassword/emailrecovery |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountrecovery | CreateV1AccountsRecoveryForgotusername | POST | /membership/v1/accounts/recovery/forgotusername |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountrecovery | CreateV1AccountsRecoveryVerifyIdentityQuestion | POST | /membership/v1/accounts/recovery/verify_identity_questions |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | accountrecovery | GetConfirmation | GET | /forgotpassword/confirmation/{forgotPasswordId} |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
 | accountrecovery | GetForgotpassword | GET | /forgotpassword |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
+| accountrecovery | GetRecovery | GET | /membership/v1/accounts/recovery/{recoveryCode} |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | accountrecovery | GetResetpassword | GET | /forgotpassword/resetpassword/{forgotPasswordId} |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
+| accountrecovery | GetV1AccountRecoveryForgotpassword | GET | /membership/v1/accounts/recovery/forgotpassword |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountrecovery | GetV1AccountRecoveryForgotpasswordConfirmation | GET | /membership/v1/accounts/recovery/forgotpassword/confirmation |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountrecovery | GetV1AccountRecoveryForgotusername | GET | /membership/v1/accounts/recovery/forgotusername |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountrecovery | GetV1AccountRecoveryForgotusernameConfirmation | GET | /membership/v1/accounts/recovery/forgotusername/confirmation |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | accounts | AccountDocumentExists | HEAD | /v2/accounts/{accountId}/documents/{documentId} | Checks if required document exists | N/A | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | accounts | AccountDocumentObjectExists | HEAD | /v2/accounts/{accountId}/documents/{documentId}/object | Checks if required account document is uploaded. | N/A | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | accounts | AccountExists | HEAD | /v2/accounts/{accountId} | Check the account is available | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -48,7 +56,14 @@
 | accounts | UpdateAccount | PUT | /v2/accounts | Updates username | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | accounts | UpdateAccountDocument | PUT | /v2/accounts/{accountId}/documents/{documentId} | Updates the specified account document | N/A | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | accounts | UpdateAccountDocumentObject | PUT | /v2/accounts/{accountId}/documents/{documentId}/object | Uploads a file object associated with the specified account document | N/A | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| accountsecurity | CreateUserAuthenticate | POST | /v1/users/authenticate |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountsecurity | CreateV1AccountsSecurityChangepassword | POST | /membership/v1/accounts/security/changepassword |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountsecurity | GetPassword | GET | /v1/users/password/{username} |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountsecurity | GetV1Account | GET | /membership/v1/accounts |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountsecurity | GetV1AccountsSecurityChangepassword | GET | /membership/v1/accounts/security/changepassword | Redirects back to change password after token expired on Post UpdatePassword | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | accountsecurity | GetVerify | GET | /membership/v2/emails/verify/{token} |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| accountsecurity | UpdateclaimsUser | POST | /v1/users/{subject}/updateclaims |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| actioned | CreateInsightActioned | POST | /v1/insights/{insightId}/actioned |  | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
 | actions | CreateMessageAction | POST | /v1/messages/{messageId}/actions | Link action to secure message. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | activate | initiateactivation | POST | /v2/users/{userId}/activate | Creates an activation process for a given user. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | activates | activateuser | POST | /v2/users/activate/{token} | Checks token and if OK returns value + deletes token | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -121,12 +136,12 @@
 | addresses | UpdatePersonalContactAddress | PUT | /v2/clients/{clientId}/personalcontacts/{personalContactId}/addresses/{addressId} | Update an existing address. | client_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | addresses | UpdateProductproviderAddress | PUT | /v2/productproviders/{productProviderId}/addresses/{addressId} | Updates an existing Address for the given Product provider. | client_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | addresses | UpdateTnccoachAddress | PUT | /v2/tnc_coaches/{tnc_coachId}/addresses/{addressId} | Updates an existing Address for the given TnC Coach. | client_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
-| adjustmentsrules | CreateExpectationAdjustmentRule | POST | /v2/expectations/adjustmentsrules | Creates a new expectation adjustment rule. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| adjustmentsrules | DeleteExpectationAdjustmentRule | DELETE | /v2/expectations/adjustmentsrules/{adjustmentRuleId} | Deletes an expectation adjustment rule. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| adjustmentsrules | ExpectationAdjustmentRuleExists | HEAD | /v2/expectations/adjustmentsrules/{adjustmentRuleId} | Checks that an expectation adjustment rule exists. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| adjustmentsrules | GetExpectationAdjustmentRule | GET | /v2/expectations/adjustmentsrules/{adjustmentRuleId} | Gets an expectation adjustment rule. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| adjustmentsrules | ListExpectationAdjustmentRules | GET | /v2/expectations/adjustmentsrules | Gets a collection of expectation adjustment rules. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| adjustmentsrules | UpdateExpectationAdjustmentRule | PUT | /v2/expectations/adjustmentsrules/{adjustmentRuleId} | Updates an expectation adjustment rule. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| adjustmentsrules | CreateExpectationAdjustmentRule | POST | /v2/expectations/adjustmentsrules | Creates a new expectation adjustment rule. | openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| adjustmentsrules | DeleteExpectationAdjustmentRule | DELETE | /v2/expectations/adjustmentsrules/{adjustmentRuleId} | Deletes an expectation adjustment rule. | openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| adjustmentsrules | ExpectationAdjustmentRuleExists | HEAD | /v2/expectations/adjustmentsrules/{adjustmentRuleId} | Checks that an expectation adjustment rule exists. | openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| adjustmentsrules | GetExpectationAdjustmentRule | GET | /v2/expectations/adjustmentsrules/{adjustmentRuleId} | Gets an expectation adjustment rule. | openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| adjustmentsrules | ListExpectationAdjustmentRules | GET | /v2/expectations/adjustmentsrules | Gets a collection of expectation adjustment rules. | openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| adjustmentsrules | UpdateExpectationAdjustmentRule | PUT | /v2/expectations/adjustmentsrules/{adjustmentRuleId} | Updates an expectation adjustment rule. | openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment, openid, myprofile, firm_data, firm_data.config.adjustment | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
 | advicetemplates | CloneAdviceTemplate | POST | /v2/advice/templates/{templateId} | Clone Advice template. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | advicetemplates | CreateAdviceTemplate | POST | /v2/advice/templates | Create advice template. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | advicetemplates | CreateAdviceTemplateStep | POST | /v2/advice/templates/{templateId}/steps | Create advice template step. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
@@ -155,21 +170,21 @@
 | agreementtemplates | ListAgreementTemplates | GET | /v2/agreements/communication-templates | Returns a list of agreement templates. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | agreementtemplates | PostAgreementTemplate | POST | /v2/agreements/communication-templates | Creates an agreement template. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | agreementtemplates | PutAgreementTemplate | PUT | /v2/agreements/communication-templates/{templateId} | Updates an agreement template. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
-| alerts | ChangeUserAlertSubscription | PUT | /v2/users/{userId}/alertsubscriptions/{alertSubscriptionId} | Updates an alert subscription for a user. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| alerts | CreateUserAlertSubscription | POST | /v2/users/{userId}/alertsubscriptions | Creates a new alert subscription for a user. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| alerts | DeleteUserAlertSubscription | DELETE | /v2/users/{userId}/alertsubscriptions/{alertSubscriptionId} | Deletes an existing alert subscription for a user. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| alerts | GetAlertType | GET | /v2/alerttypes/{alertTypeId} | Get an alert type by id. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| alerts | GetUserAlertSubscription | GET | /v2/users/{userId}/alertsubscriptions/{alertSubscriptionId} | Returns an alert subscription for a user by id. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| alerts | ListAlertTypes | GET | /v2/alerttypes | Get a collection of alert types. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| alerts | ListUserAlertSubscriptions | GET | /v2/users/{userId}/alertsubscriptions | Returns a list of alert subscriptions for a user. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| allocations | CreateGoalAllocation | POST | /v2/objectives/{objectiveId}/allocations | Creates Goal Allocation. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| allocations | GetGoalAllocation | GET | /v2/objectives/{objectiveId}/allocations/{allocationId} | Gets a Goal Allocation. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| allocations | ListGoalAllocation | GET | /v2/objectives/{objectiveId}/allocations | List goal allocations. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| alternativeassets | DeleteAlternativeAsset | DELETE | /v2/alternativeassets/{securityId} | Delete an Alternative Asset Security by Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| alternativeassets | GetAlternativeAsset | GET | /v2/alternativeassets/{securityId} | Get an Alternative Asset Security by Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| alternativeassets | ListAlternativeAssets | GET | /v2/alternativeassets | Get a List of Alternative Asset Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| alternativeassets | PostAlternativeAssets | POST | /v2/alternativeassets | Create Alternative Asset Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| alternativeassets | PutAlternativeAssets | PUT | /v2/alternativeassets | Update Alternative Asset Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| alerts | ChangeUserAlertSubscription | PUT | /v2/users/{userId}/alertsubscriptions/{alertSubscriptionId} | Updates an alert subscription for a user. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| alerts | CreateUserAlertSubscription | POST | /v2/users/{userId}/alertsubscriptions | Creates a new alert subscription for a user. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| alerts | DeleteUserAlertSubscription | DELETE | /v2/users/{userId}/alertsubscriptions/{alertSubscriptionId} | Deletes an existing alert subscription for a user. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| alerts | GetAlertType | GET | /v2/alerttypes/{alertTypeId} | Get an alert type by id. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| alerts | GetUserAlertSubscription | GET | /v2/users/{userId}/alertsubscriptions/{alertSubscriptionId} | Returns an alert subscription for a user by id. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| alerts | ListAlertTypes | GET | /v2/alerttypes | Get a collection of alert types. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| alerts | ListUserAlertSubscriptions | GET | /v2/users/{userId}/alertsubscriptions | Returns a list of alert subscriptions for a user. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| allocations | CreateGoalAllocation | POST | /v2/objectives/{objectiveId}/allocations | Creates Goal Allocation. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| allocations | GetGoalAllocation | GET | /v2/objectives/{objectiveId}/allocations/{allocationId} | Gets a Goal Allocation. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| allocations | ListGoalAllocation | GET | /v2/objectives/{objectiveId}/allocations | List goal allocations. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| alternativeassets | DeleteAlternativeAsset | DELETE | /v2/alternativeassets/{securityId} | Delete an Alternative Asset Security by Security Id. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| alternativeassets | GetAlternativeAsset | GET | /v2/alternativeassets/{securityId} | Get an Alternative Asset Security by Security Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| alternativeassets | ListAlternativeAssets | GET | /v2/alternativeassets | Get a List of Alternative Asset Securities. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| alternativeassets | PostAlternativeAssets | POST | /v2/alternativeassets | Create Alternative Asset Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| alternativeassets | PutAlternativeAssets | PUT | /v2/alternativeassets | Update Alternative Asset Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | apply | CreateCampaignSegmentsApply | POST | /v1/campaigns/{campaignId}/segments/apply |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | appointments | CreateAppointment | POST | /v2/activities/appointments | Creates an appointment. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | appointments | DeleteAppointment | DELETE | /v2/activities/appointments/{appointmentId} | Deletes a given appointment. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -233,13 +248,28 @@
 | apps, beta | UpdateInstalledAppUserSettings | PUT | /v2/installed_apps/{appId}/user_settings/{userId} | Updates user settings for a given installed app and user | openid, myprofile, apps | Yes | N/A | Public Swagger v2 |
 | apps, beta | VerifyAppClaims | POST | /v2/apps/{appId}/claims/verify | Verifies claims for a given app | apps, client_data, client_financial_data, client_financial_data.quotes, firm_data, firm_data.incomestatements, myprofile, openid | No | Microservice.AppD | Service Swagger (Microservice.AppD) |
 | archive | CreateCampaigntemplateArchive | POST | /v1/campaigntemplates/{templateId}/archive |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
-| assetclasses | GetAssetClass | GET | /v2/assetclasses/{assetClassId} | Get Asset Class based Asset Class Id | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| assetclasses | ListAssetClasses | GET | /v2/assetclasses | List Asset Classes based on Asset Class Ids. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| assetclasses | GetAssetClass | GET | /v2/assetclasses/{assetClassId} | Get Asset Class based Asset Class Id | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| assetclasses | ListAssetClasses | GET | /v2/assetclasses | List Asset Classes based on Asset Class Ids. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| assets | CreateAssetValuationV1 | POST | /v1/clients/{clientId}/assets/{assetId}/valuations | Create an assetValuation. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | assets | CreateClientAssets | POST | /v2/clients/{clientId}/assets | Creates the asset for a given client. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| assets | CreateClientAssetV1 | POST | /v1/clients/{clientId}/assets | Create a new Asset. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | assets | DeleteClientAsset | DELETE | /v2/clients/{clientId}/assets/{assetId} | Deletes the asset for a given client and asset. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| assets | DeleteClientAssetV1 | DELETE | /v1/clients/{clientId}/assets/{assetId} | Delete asset. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | DeleteClientAssetValuationV1 | DELETE | /v1/clients/{clientId}/assets/{assetId}/valuations/{assetValuationId} |  | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | GetAssetTypeV1 | GET | /v1/assettypes/{assetTypeId} | Return the specified asset type by id. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | GetAssetTypeV12 | HEAD | /v1/assettypes/{assetTypeId} | Return the specified asset type by id. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | assets | GetClientAsset | GET | /v2/clients/{clientId}/assets/{assetId} | Returns the asset for a given client and asset. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| assets | GetClientAssetV1 | GET | /v1/clients/{clientId}/assets/{assetId} | Get an asset for the specified client by Id. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | GetClientAssetV11 | HEAD | /v1/clients/{clientId}/assets/{assetId} | Get an asset for the specified client by Id. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | GetClientAssetValuationsV1 | GET | /v1/clients/{clientId}/assets/valuations | Get all assets for the specified client. TODO: Move this to SummaryController, and have GetAssetSummary endpoint | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | GetClientAssetValuationV1 | GET | /v1/clients/{clientId}/assets/{assetId}/valuations/{assetValuationId} | Get an asset Valuation by assetId and AssetValuationId | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | ListAssetTypesV1 | GET | /v1/assettypes | Get all of the asset types. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | assets | ListClientAssets | GET | /v2/clients/{clientId}/assets | Returns a list of assets for the given client. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| assets | ListClientAssetsV1 | GET | /v1/clients/{clientId}/assets | Get all assets for the specified client. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | ListClientAssetValuationsV1 | GET | /v1/clients/{clientId}/assets/{assetId}/valuations | Get all assets for the specified client. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | assets | UpdateClientAsset | PUT | /v2/clients/{clientId}/assets/{assetId} | Updates the asset for a given client and asset. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| assets | UpdateClientAssetV1 | PUT | /v1/clients/{clientId}/assets/{assetId} | Update asset. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| assets | UpdateClientAssetValuationV1 | PUT | /v1/clients/{clientId}/assets/{assetId}/valuations/{assetValuationId} | Update assetValuation. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | attachments | CreateMessagesAttachments | POST | /v1/messages/{secureMessageId}/attachments | Upload attachments to a specific secure message. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | attachments | DeleteMessageAttachment | DELETE | /v1/messages/{secureMessageId}/attachments/{attachmentId} | Delete an attachment for a specific secure messages. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | attachments | ListClientEmailsAttachments | GET | /v1/clients/{clientId}/emails/{emailId}/attachments |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
@@ -276,15 +306,16 @@
 | avatars | DeleteAvatar | DELETE | /v2/avatars | Deletes Avatar object for client | N/A | No | Microservice.Avatar | Service Swagger (Microservice.Avatar) |
 | avatars | GetAvatar | GET | /v2/avatars | Get Avatar url for client | N/A | No | Microservice.Avatar | Service Swagger (Microservice.Avatar) |
 | bandingtemplates | BandingTemplateExists | HEAD | /v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId} | Check for the existence of a specific banding template. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
-| bandingtemplates | GetAdviserBandingtemplate | GET | /v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId} | Get banding template for adviser by Id. | firm_data, myprofile, openid | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| bandingtemplates | GetAdviserBandingtemplate | GET | /v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId} | Get banding template for adviser by Id. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | bandingtemplates | GetBandingTemplate | GET | /v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId} | Returns a single banding template for an adviser. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
-| bandingtemplates | ListAdviserBandingtemplates | GET | /v2/advisers/{adviserId}/bandingtemplates | Get all banding templates for adviser | firm_data, myprofile, openid | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| bandingtemplates | ListAdviserBandingtemplates | GET | /v2/advisers/{adviserId}/bandingtemplates | Get all banding templates for adviser | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | bandingtemplates | ListBandingTemplates | GET | /v2/advisers/{adviserId}/bandingtemplates | Returns a list of banding templates for an adviser. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | bankaccounts | CreateBankAccount | POST | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts | Create a back account for a given proposal and client. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | bankaccounts | DeleteBankAccount | DELETE | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts/{bankAccountId} | Deletes a bank account against a proposal. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | bankaccounts | GetBankAccount | GET | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts/{bankAccountId} | Returns a bank account for a given proposal and client. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | bankaccounts | ListBankAccounts | GET | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts | Lists bank accounts for a given proposal and client. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | bankaccounts | UpdateBankAccount | PUT | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/bankaccounts/{bankAccountId} | Updates a recommendation proposal bankaccount. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
+| batch | GetAppsInstalled | GET | /v1/batch/installed_apps | Returns the list of applications by each tenant and each user | N/A | No | Microservice.AppD | Service Swagger (Microservice.AppD) |
 | beneficiaries | DeleteClientBeneficiaries | DELETE | /v2/clients/{clientId}/beneficiaries | Deletes beneficiary or beneficiaries for a given client. | client_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | beneficiaries | DeleteClientPlanBeneficiaries | DELETE | /v2/clients/{clientId}/plans/{planId}/beneficiaries | Deletes beneficiary or beneficiaries for a given plan. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | beneficiaries | GetClientBeneficiary | GET | /v2/clients/{clientId}/beneficiaries/{beneficiaryId} | Get beneficiary for a given client. Discriminator TrustBeneficiary. | client_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
@@ -305,6 +336,7 @@
 | bulk | CreateBulkMessage | POST | /v1/messages/bulk | Creates a bulk message. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | bulk | CreateBulkMessageAttachment | POST | /v1/messages/bulk/{bulkId}/attachments | Creates a bulk message attachments. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | bulk | CreateBulkMessageRecipients | POST | /v1/messages/bulk/{bulkId}/recipients | Creates a list of bulk message recipients. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
+| bulk | CreateResourcesBulk | POST | /v1/resource/bulk | Bulk upload | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
 | bulk | DeleteBulkMessageAttachment | DELETE | /v1/messages/bulk/{bulkId}/attachments/{attachmentId} | Deletes the bulk message attachment. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | bulk | DeleteBulkMessageRecipients | DELETE | /v1/messages/bulk/{bulkId}/recipients | Deletes a list of bulk message recipients. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | bulk | GetBulkMessage | GET | /v1/messages/bulk/{bulkId} | Gets a bulk message by id. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
@@ -314,6 +346,7 @@
 | bulk | RevokeBulkMessage | POST | /v1/messages/bulk/{bulkId}/revoke | Revokes a bulk message. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | bulk | SendBulk | POST | /v1/messages/bulk/{bulkId}/send | Starts the processing the bulk message. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | bulk | UpdateBulkMessage | PUT | /v1/messages/bulk/{bulkId} | Updates an existing bulk message. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
+| bulk-delete | CreateEtlcontrollerBulk-delete | POST | /api/etlcontroller/bulk-delete |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | bulkvaluations | DeleteValuationBatch | DELETE | /v2/valuations/batches/{batchId} | Deletes an existing valuationbatch and undo any related valuations and transactions | openid, myprofile, valuation_batch.app, valuation_batch | Yes | N/A | Public Swagger v2 |
 | bulkvaluations | EnqueueValuationBatch | POST | /v2/valuations/batches | Creates a new valuationbatch and enqueues it for importing | openid, myprofile, valuation_batch.app, valuation_batch | Yes | N/A | Public Swagger v2 |
 | bulkvaluations | GetValuationBatch | GET | /v2/valuations/batches/{batchId} | Returns a single valuationbatch | openid, myprofile, valuation_batch.app, valuation_batch | Yes | N/A | Public Swagger v2 |
@@ -322,6 +355,8 @@
 | bulkvideoshared | CreateBulkVideoShared | POST | /v2/clients/media/videos/bulk/shared | Creates a client video. | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
 | bulkvideoshared | GetBulkVideoShared | GET | /v2/clients/media/videos/bulk/shared/{bulkVideoSharedId} | Returns a given bulk video shared. | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
 | bulkvideoshared | ListBulkVideoShared | GET | /v2/clients/media/videos/bulk/shared | Returns a list of bulk video shared. | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
+| calculatetotals | CreateClientTimeEntriesCalculateTotal | POST | /v1/clients/{clientId}/time_entries/calculate_totals | Calculate Totals for client | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
+| campaigndata | ListCampaigndata | GET | /v1/campaigndata |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | campaignids | UpdateCampaignCampaignId | PUT | /v1/campaigns/{campaignId}/{status} | Update campaign status | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | campaigns | CreateCampaign | POST | /v1/campaigns | Creates campaign details | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | campaigns | DeleteCampaign | DELETE | /v1/campaigns/{campaignId} | Deletes the specified campaign | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
@@ -334,16 +369,20 @@
 | campaigntemplates | GetCampaigntemplate | GET | /v1/campaigntemplates/{templateId} |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | campaigntemplates | ListCampaigntemplates | GET | /v1/campaigntemplates |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | campaigntemplates | PatchCampaigntemplate | PATCH | /v1/campaigntemplates/{templateId} | Updates a campaign template | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
-| cashreceipts | CreateCashReceipts | POST | /v2/cashreceipts | Create an array of cash receipts. | N/A | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
-| cashreceipts | GetCashReceipt | GET | /v2/cashreceipts/{cashReceiptId} | Get a cash receipt. | N/A | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
-| cashreceipts | ListCashReceipts | GET | /v2/cashreceipts | Gets a Collection of Cash Receipts. | N/A | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
-| cashreceipts | PatchCashReceipt | PATCH | /v2/cashreceipts/{cashReceiptId} | Updates a cash receipt for given cashReceipt id. | N/A | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
-| cashreceipts | UpdateCashReceipt | PUT | /v2/cashreceipts/{cashReceiptId} | Update a cash receipt. | N/A | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| cashflows | CreateCashflow | POST | /api/Cashflow |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
+| cashreceipts | CreateCashReceipts | POST | /v2/cashreceipts | Create an array of cash receipts. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| cashreceipts | GetCashReceipt | GET | /v2/cashreceipts/{cashReceiptId} | Get a cash receipt. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| cashreceipts | ListCashReceipts | GET | /v2/cashreceipts | Gets a Collection of Cash Receipts. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| cashreceipts | PatchCashReceipt | PATCH | /v2/cashreceipts/{cashReceiptId} | Updates a cash receipt for given cashReceipt id. | openid, myprofile, firm_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| cashreceipts | UpdateCashReceipt | PUT | /v2/cashreceipts/{cashReceiptId} | Update a cash receipt. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | categories | CreateCategory | POST | /v1/categories | Create a template category | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
+| categories | CreateTimeEntryCategory | POST | /v1/time_entries/categories | Create a time category for tenant | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
 | categories | DeleteCategory | DELETE | /v1/categories/{categoryId} | Delete a template category | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | categories | GetCategory | GET | /v1/categories/{categoryId} | Get a specified category | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | categories | ListCategories | GET | /v1/categories | List template categories | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
+| categories | ListTimeEntriesCategories | GET | /v1/time_entries/categories | Get the time categories by filter | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
 | categories | PatchCategory | PATCH | /v1/categories/{categoryId} | Update a template category | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
+| categories | UpdateCategory | PUT | /v1/time_entries/categories/{categoryId} | Edit a time category | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
 | cff | GetCffSegment | GET | /v2/cff_segments/{segmentId} | Returns a particular CFF segment. | N/A | No | Microservice.CFF | Service Swagger (Microservice.CFF) |
 | cff | GetCffSegmentCompletion | GET | /v2/clients/{clientId}/cff_segments/{segmentId}/completion | Returns completion for a particular segment. | N/A | No | Microservice.CFF | Service Swagger (Microservice.CFF) |
 | cff | GetCffSegmentState | GET | /v2/clients/{clientId}/cff_segments/{segmentId}/state | Returns state for a particular segment. | N/A | No | Microservice.CFF | Service Swagger (Microservice.CFF) |
@@ -357,9 +396,9 @@
 | changes | ExistsClientChange | HEAD | /v1/client/{partyId}/changes/{eventId} | Get the specified event. | N/A | No | Microservice.ChangeNotification | Service Swagger (Microservice.ChangeNotification) |
 | changes | GetClientChange | GET | /v1/client/{partyId}/changes/{eventId} | Get the specified event. | N/A | No | Microservice.ChangeNotification | Service Swagger (Microservice.ChangeNotification) |
 | changes | ListClientChanges | GET | /v1/client/{partyId}/changes | Return a paged collection of changes. | N/A | No | Microservice.ChangeNotification | Service Swagger (Microservice.ChangeNotification) |
-| channelsubscriptions | CreateChannelSubscription | POST | /v2/users/{userId}/channels/subscriptions | Creates a channel subscription for a user. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| channelsubscriptions | DeleteChannelSubscription | DELETE | /v2/users/{userId}/channels/subscriptions/{subscriptionId} | Deletes a channel subscription for a user. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
-| channelsubscriptions | ListChannelSubscriptions | GET | /v2/users/{userId}/channels/subscriptions | Lists channel subscriptions for a user. | N/A | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| channelsubscriptions | CreateChannelSubscription | POST | /v2/users/{userId}/channels/subscriptions | Creates a channel subscription for a user. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| channelsubscriptions | DeleteChannelSubscription | DELETE | /v2/users/{userId}/channels/subscriptions/{subscriptionId} | Deletes a channel subscription for a user. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
+| channelsubscriptions | ListChannelSubscriptions | GET | /v2/users/{userId}/channels/subscriptions | Lists channel subscriptions for a user. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Notifications | Service Swagger (Microservice.Notifications) |
 | charges | CreateClientPlanCharge | POST | /v2/clients/{clientId}/plans/{planId}/charges | Creates a new charge for a client's plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | charges | DeleteClientPlanCharge | DELETE | /v2/clients/{clientId}/plans/{planId}/charges/{chargeId} | Deletes an existing charge for a client's plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | charges | GetClientPlanCharge | GET | /v2/clients/{clientId}/plans/{planId}/charges/{chargeId} | Returns a single charge for a client's plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
@@ -370,11 +409,15 @@
 | checklistitems | GetCheckListItem | GET | /v2/checklists/items/{itemId} | Get a checklist item. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | checklistitems | ListCheckListItems | GET | /v2/checklists/items | List all Check list items. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | checklistitems | UpdateCheckListItem | PUT | /v2/checklists/items/{itemId} | Update a check list item. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
-| classificationcategories | GetClassificationCategory | GET | /v2/classificationcategories/{classificationCategoryId} | Get Classification Category based Classification Category Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| classificationcategories | ListClassificationCategories | GET | /v2/classificationcategories | List Classification Categories based on Classification Category Ids. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| claims | ListParties | GET | /v1/claims/party/{partyId} | Gets the User Info for specified user by party Id. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| claims | ListSubjects | GET | /v1/claims/subject/{subject} | Gets the User Info for specified user by subject. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| claims | ListTenants | GET | /v1/claims/tenant/{id} | Gets the tenant info | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| classificationcategories | GetClassificationCategory | GET | /v2/classificationcategories/{classificationCategoryId} | Get Classification Category based Classification Category Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| classificationcategories | ListClassificationCategories | GET | /v2/classificationcategories | List Classification Categories based on Classification Category Ids. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | clientcategories | GetClientCategory | GET | /v2/clientcategories/{clientCategoryId} |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clientcategories | ListClientCategories | GET | /v2/clientcategories | Returns a list of client categories. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
-| clientenrollmentsummary | GetClientEnrollmentSummary | GET | /v2/clients/{clientId}/clientenrollmentsummary | Gets client enrollments summary. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| clientenrollmentsummary | GetClientEnrollmentSummary | GET | /v2/clients/{clientId}/clientenrollmentsummary | Gets client enrollments summary. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| clientexists | CreateEtlcontrollerClientExist | POST | /api/etlcontroller/clientExists |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | clientinvestmentpreference | CreateClientInvestmentPreferences | POST | /v2/clients/{clientId}/investmentPreferences | Create client investment preference | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | clientinvestmentpreference | GetClientInvestmentPreferences | GET | /v2/clients/{clientId}/investmentPreferences/{clientInvestmentPreferenceId} | Get client investment preference. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | clientinvestmentpreference | GetClientInvestmentPreferenceUsingObjective | GET | /v2/clients/{clientId}/objectives/{objectivesId}/InvestmentPreferences | Allows an API consumer to retrieve a client investment preference for objective. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
@@ -383,14 +426,74 @@
 | clientinvestmentpreference | UpdateClientInvestmentPreferenceWithObjective | PUT | /v2/clients/{clientId}/objectives/{objectivesId}/InvestmentPreferences | Links an investment preference to a objective. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | clients | ClientExists | HEAD | /v2/clients/{clientId} | Checks the client exists. | openid, myprofile, client_data | Yes | Monolith.Crm | Public Swagger v2 + GitHub Monolith.Crm |
 | clients | CreateClient | POST | /v2/clients | Creates a client. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| clients | CreateClientBudget | POST | /v1/clients/{clientId}/budgets |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | CreateClientContact | POST | /v1/clients/{partyId}/contacts | Create a Contact Detail | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | CreateClientEmploymenthistory | POST | /v1/clients/{clientId}/employmenthistories | Create the Employment History | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | CreateClientEmploymentsMovetohistory | POST | /v1/clients/{clientId}/employments/{employmentId}/movetohistory | Move the specified Employment to History | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | CreateClientExpenditureExpense | POST | /v1/clients/{clientId}/expenditure/expenses | Creates an Expense for a specified client OR for the client of the current context AND Specified Expenditure ID. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | CreateClientGoal | POST | /v1/clients/{clientId}/goals | Create a Client Goal | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | CreateClientGoalLinktoplan | POST | /v1/clients/{clientId}/goals/{goalId}/linktoplan | Link a Goal to a Plan | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | CreateClientGoalUnlink | POST | /v1/clients/{clientId}/goals/{goalId}/unlink | Unlink a Goal from an Account or Plan | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | CreateClientLiability | POST | /v1/clients/{clientId}/liabilities | Creates a Liability for a specified client OR for the client of the current context. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | DeleteClient | DELETE | /v2/clients/{clientId} | Deletes a given client. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| clients | DeleteClientBudget | DELETE | /v1/clients/{clientId}/budgets/{budgetId} |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | DeleteClientContact | DELETE | /v1/clients/{partyId}/contacts/{contactId} | Delete the specified Contact Details | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | DeleteClientEmploymenthistory | DELETE | /v1/clients/{clientId}/employmenthistories/{employmentHistoryId} | Delete the Employment History | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | DeleteClientExpense | DELETE | /v1/clients/{clientId}/expenditure/expenses/{expenseId} | Deletes an Expense for a client OR for the client of the current context's Expenditure. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | DeleteClientGoal | DELETE | /v1/clients/{clientId}/goals/{goalId} | Delete a Goal | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | DeleteClientLiability | DELETE | /v1/clients/{clientId}/liabilities/{liabilityId} | Deletes a Liability for a client OR for the client of the current context. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClient | HEAD | /v1/clients/{partyId} |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | ExistsClientBudget | HEAD | /v1/clients/{clientId}/budgets/{budgetId} |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientContact | HEAD | /v1/clients/{partyId}/contacts/{contactId} | Get the specified Contact Details | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | ExistsClientDependant | HEAD | /v1/clients/{clientId}/dependants/{dependantId} | Get the specified Dependant | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientEmployment | HEAD | /v1/clients/{clientId}/employments/{employmentId} | Get the specified Employment | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientEmploymenthistory | HEAD | /v1/clients/{clientId}/employmenthistories/{employmentHistoryId} | Get the specified Employment History | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientExpenditure | HEAD | /v1/clients/{clientId}/expenditure | Gets Expenditure if any, for the specified client id/for the client of the current context. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientExpense | HEAD | /v1/clients/{clientId}/expenditure/expenses/{expenseId} | Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientGoal | HEAD | /v1/clients/{clientId}/goals/{goalId} | Get the specified Client Goal | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientIncome | HEAD | /v1/clients/{clientId}/incomes/{incomeId} |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientLiability | HEAD | /v1/clients/{clientId}/liabilities/{liabilityId} | Gets Liability if any, for the specified client id/for the client of the current context and liability Id. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsClientServicecase | HEAD | /v1/clients/{clientId}/servicecases/{serviceCaseId} |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | ExistsExpensecategory | HEAD | /v1/clients/expensecategories/{expenseCategoryId} | Gets an Expense Category if any, for the specified Expense Category Id. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ExistsExpensegroup | HEAD | /v1/clients/expensegroups/{expenseGroupId} | Gets an Expense Group if any, for the specified Expense Group Id. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | GetClient | GET | /v2/clients/{clientId} | Returns a clients for a given client. | openid, myprofile, client_data, client_identification_data | Yes | N/A | Public Swagger v2 |
+| clients | GetClientBudget | GET | /v1/clients/{clientId}/budgets/{budgetId} |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | GetClientContact | GET | /v1/clients/{partyId}/contacts/{contactId} | Get the specified Contact Details | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | GetClientDataprotection | GET | /v1/clients/{clientId}/dataprotection | Get DataProtection for client | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | GetClientEmploymenthistory | GET | /v1/clients/{clientId}/employmenthistories/{employmentHistoryId} | Get the specified Employment History | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | GetClientExpense | GET | /v1/clients/{clientId}/expenditure/expenses/{expenseId} | Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | GetClientGoal | GET | /v1/clients/{clientId}/goals/{goalId} | Get the specified Client Goal | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | GetClientIdentityverification | GET | /v1/clients/{clientId}/identityverification |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | GetClientLiability | GET | /v1/clients/{clientId}/liabilities/{liabilityId} | Gets Liability if any, for the specified client id/for the client of the current context and liability Id. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | GetExpensecategory | GET | /v1/clients/expensecategories/{expenseCategoryId} | Gets an Expense Category if any, for the specified Expense Category Id. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | GetExpensegroup | GET | /v1/clients/expensegroups/{expenseGroupId} | Gets an Expense Group if any, for the specified Expense Group Id. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | ListAllClientsRelatedUser | GET | /v2/users/{userId}/Clients | Returns a list of quick search clients for the user. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | ListClientBudgets | GET | /v1/clients/{clientId}/budgets |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ListClientContacts | GET | /v1/clients/{partyId}/contacts | Get Contact Details | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | ListClientEmploymenthistories | GET | /v1/clients/{clientId}/employmenthistories | Get the Employment Histories | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ListClientExpendituresExpenses | GET | /v1/clients/{clientId}/expenditure/expenses | Gets all Expenses for the specified client id OR for the client of the current context's Expenditure. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ListClientGoals | GET | /v1/clients/{clientId}/goals | Get all Client Goals | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | ListClientInfo | GET | /v2/clients/info | Returns a list of clients information | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | ListClientLiabilities | GET | /v1/clients/{clientId}/liabilities | Gets all Liabilities for the specified client id OR for the client of the current context. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | ListClients | GET | /v2/clients | Returns a list of clients. | openid, myprofile, client_data, client_identification_data | Yes | N/A | Public Swagger v2 |
+| clients | ListClientsAdvisers | GET | /v1/clients/{partyId}/advisers | Get advisers for clients. The first one is the servicing adviser. Others will be added in future releases | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clients | ListClientSegments | GET | /v2/clients/client_segments | Retrieves a list of the available clients' segments. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | clients | ListClientServiceStatuses | GET | /v2/clients/service_statuses | Retrieves a list of the available clients' service statuses. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | ListClientsExpensecategories | GET | /v1/clients/expensecategories | Gets all Expense Categories. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ListClientsExpensegroups | GET | /v1/clients/expensegroups | Gets all Expense Groups. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | ListClientsProfessionalcontacts | GET | /v1/clients/{clientId}/professionalcontacts | Gets a list of professional contacts | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | MarkascompletedClientGoal | POST | /v1/clients/{clientId}/goals/{goalId}/markascompleted | Mark a Goal as Completed | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | MarkasdefaultClientContact | PATCH | /v1/clients/{partyId}/contacts/{contactId}/markasdefault | Mark the specified Contact Detail as default. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | MarkasincompleteClientGoal | POST | /v1/clients/{clientId}/goals/{goalId}/markasincomplete | Mark a Goal as Incomplete | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | PatchClientBudget | PATCH | /v1/clients/{clientId}/budgets/{budgetId} |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | UpdateClient | PUT | /v2/clients/{clientId} | Updates a client for a given client. | openid, myprofile, client_data | Yes | Monolith.Crm | Public Swagger v2 + GitHub Monolith.Crm |
+| clients | UpdateClientContact | PUT | /v1/clients/{partyId}/contacts/{contactId} | Update the specified Contact Details | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | UpdateClientEmploymenthistory | PUT | /v1/clients/{clientId}/employmenthistories/{employmentHistoryId} | Update the Employment History | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | UpdateClientExpense | PUT | /v1/clients/{clientId}/expenditure/expenses/{expenseId} | Updates an Expense for a client OR for the client of the current context's Expenditure. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | UpdateClientGoal | PUT | /v1/clients/{clientId}/goals/{goalId} | Update a Goal | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | UpdateClientLiability | PUT | /v1/clients/{clientId}/liabilities/{liabilityId} | Updates a Liability for a client OR for the client of the current context. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | UpdateClientsExpenditureExpenses | PUT | /v1/clients/{clientId}/expenditure/expenses | Updates a collection of Expenses for a client OR for the client of the current context's Expenditure. | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | UpdateClientsIncomes | PUT | /v1/clients/{clientId}/incomes |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clientvideo | BulkShareVideosToClients | POST | /v2/clients/media/videos/bulk/share | Creates a client video. | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
 | clientvideo | CreateClientVideo | POST | /v2/clients/{clientId}/media/videos | Creates a single client video. | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
 | clientvideo | CreateClientVideoInstance | POST | /v2/clients/{clientId}/media/videos/instances | Creates a single client video. | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
@@ -408,6 +511,7 @@
 | clientvideo | VideoReportCallbackNotificationUrl | POST | /v2/clients/media/videos/report/callback | Downloads client video report | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
 | clone | CreateTemplateClone | POST | /v1/templates/{templateId}/clone | Clone a specified template | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | closest | GetGroupBrandClosest | GET | /v1/groups/{groupId}/brands/closest | Get closest brand for specified group | N/A | No | Microservice.Brand | Service Swagger (Microservice.Brand) |
+| code-authentication | CreateIntelligent-officeCode-authentication | POST | /api/intelligent-office/code-authentication |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | commands | PublishExpectationCommand | POST | /v2/commands/Expectation | Creates a new expectation request to trigger creation of a new income or migration expectation. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
 | commands | PublishReversalCommand | POST | /v2/commands/Reversal | Creates a new expectation reversal request to trigger the reversal of an expectation. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
 | commands | PublishTenantExpectationDue | POST | /v2/commands/ExpectationSchedule | Initialize the scheduling process. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
@@ -431,12 +535,14 @@
 | configuration | DeleteQuicksightConfiguration | DELETE | /v2/quicksight/configurations | Delete quicksight configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | configuration | DeleteQuicksightFolderConfiguration | DELETE | /v2/quicksight/configurations/folders/{id} | Deletes a quicksight folder configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | configuration | DeleteQuicksightGroupConfiguration | DELETE | /v2/quicksight/configurations/groups/{id} | Deletes a quicksight group configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
+| configuration | GetClientConfiguration | GET | /v1/clients/{clientId}/configuration | Return user client storage configuration | N/A | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | configuration | GetEmailConfiguration | GET | /v1/emails/configuration |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | configuration | GetQuicksightConfiguration | GET | /v2/quicksight/configurations | Get quicksight configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | configuration | GetQuicksightFolderConfiguration | GET | /v2/quicksight/configurations/folders/{id} | Gets quicksight folder configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | configuration | GetQuicksightGroupConfiguration | GET | /v2/quicksight/configurations/groups/{id} | Gets quicksight group configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | configuration | ListQuicksightFolderConfiguration | GET | /v2/quicksight/configurations/folders | Gets a collection of quicksight folder configurations. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | configuration | ListQuicksightGroupConfiguration | GET | /v2/quicksight/configurations/groups | Gets list of quicksight group configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
+| configuration | UpdateClientConfiguration | PUT | /v1/clients/{clientId}/configuration | Updates user client storage configuration | N/A | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | configuration | UpdateEmailConfiguration | PUT | /v1/emails/configuration |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | configuration | UpdateQuicksightConfiguration | PUT | /v2/quicksight/configurations | Create quicksight configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | configuration | UpdateQuicksightFolderConfiguration | PUT | /v2/quicksight/configurations/folders/{id} | Updates a quicksight folder configuration. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
@@ -478,21 +584,43 @@
 | contributions | ListClientsContributions | GET | /v2/clients/{clientId}/contributions | Gets a collection of client contributions | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | contributions | UpdateClientPlanContribution | PUT | /v2/clients/{clientId}/plans/{planId}/contributions/{contributionId} | Updates a contribution for a given client and plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | contributions, beta | ListClientPlanContributions | GET | /v2/clients/{clientId}/plans/{planId}/contributions | Returns list of contributions for a given client and plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| corporates | CreateCorporate | POST | /v1/corporates |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | CreateCorporateContact | POST | /v1/corporates/{partyId}/contacts | Create a Contact Detail | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | DeleteCorporateContact | DELETE | /v1/corporates/{partyId}/contacts/{contactId} | Delete the specified Contact Details | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | ExistsCorporate | HEAD | /v1/corporates/{partyId} |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | ExistsCorporateContact | HEAD | /v1/corporates/{partyId}/contacts/{contactId} | Get the specified Contact Details | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | GetCorporate | GET | /v1/corporates/{partyId} |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | GetCorporateContact | GET | /v1/corporates/{partyId}/contacts/{contactId} | Get the specified Contact Details | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | ListCorporateContacts | GET | /v1/corporates/{partyId}/contacts | Get Contact Details | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | MarkasdefaultCorporateContact | PATCH | /v1/corporates/{partyId}/contacts/{contactId}/markasdefault | Mark the specified Contact Detail as default. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | UpdateCorporate | PUT | /v1/corporates/{partyId} |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| corporates | UpdateCorporateContact | PUT | /v1/corporates/{partyId}/contacts/{contactId} | Update the specified Contact Details | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| counties | ListCountriesCounties | GET | /v1/countries/{countryCode}/counties | Get list of Counties for the specified country | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | countries | GetCountry | GET | /v2/countries/{countryId} | Returns the specified Country resource. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | countries | ListCountries | GET | /v2/countries | Returns a list of countries. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | createinstance | CreateinstanceCommon | POST | /v1/templates/common/{templateIdentifier}/createinstance | Create instance for specific template | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | createinvestor | CreateInvestor | PUT | /v2/provider/{providerId}/investors |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
+| creditcards | CreateClientPlansCreditcard | POST | /v1/clients/{clientId}/plans/creditcards | Create credit card plan Only pre-existing plans are supported by the api at this time. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| creditcards | DeleteClientCreditcard | DELETE | /v1/clients/{clientId}/plans/creditcards/{planId} | Delete Credit Card plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| creditcards | GetClientCreditcard | GET | /v1/clients/{clientId}/plans/creditcards/{planId} | Get the specified Plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| creditcards | ListClientPlansCreditcards | GET | /v1/clients/{clientId}/plans/creditcards | Get all plans of type credit card for the client | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| creditcards | UpdateClientCreditcard | PUT | /v1/clients/{clientId}/plans/creditcards/{planId} | Update Credit Card plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | creditnotes | CreateCreditNote | POST | /v2/fees/{feeId}/creditnotes | Create a credit note for a given fee. | openid, myprofile, firm_data, firm_data.creditnote | Yes | N/A | Public Swagger v2 |
 | creditnotes | DeleteCreditNote | DELETE | /v2/fees/{feeId}/creditnotes/{creditNoteId} | Delete a credit note for a given fee. | openid, myprofile, firm_data, firm_data.creditnote | Yes | N/A | Public Swagger v2 |
 | creditnotes | GetCreditNote | GET | /v2/fees/{feeId}/creditnotes/{creditNoteId} | Get a credit note by identifier for a given fee. | openid, myprofile, firm_data, firm_data.creditnote | Yes | N/A | Public Swagger v2 |
 | creditnotes | ListCreditNotes | GET | /v2/fees/{feeId}/creditnotes | Return a list of credit notes for a given fee. | openid, myprofile, firm_data, firm_data.creditnote | Yes | N/A | Public Swagger v2 |
-| currencies | DeleteCurrency | DELETE | /v2/currencies/{securityId} | Delete a Currency Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| currencies | GetCurrency | GET | /v2/currencies/{securityId} | Gets a Currency Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| currencies | ListCurrencies | GET | /v2/currencies | Get a List of Currency Securities. A Id or a Currency Code or Security Id is required. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| currencies | PostCurrencies | POST | /v2/currencies | Create Currency Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| currencies | PutCurrencies | PUT | /v2/currencies | Update Currency Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| currentprices | ListCurrentPrices | GET | /v2/currentprices | Get all current prices for the passed in securityIds | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| currentquotes | ListCurrentQuotes | GET | /v2/currentquotes | Get all current prices for the passed in securityIds. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| currencies | DeleteCurrency | DELETE | /v2/currencies/{securityId} | Delete a Currency Security based on Security Id. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| currencies | GetCurrency | GET | /v2/currencies/{securityId} | Gets a Currency Security based on Security Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| currencies | ListCurrencies | GET | /v2/currencies | Get a List of Currency Securities. A Id or a Currency Code or Security Id is required. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| currencies | PostCurrencies | POST | /v2/currencies | Create Currency Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| currencies | PutCurrencies | PUT | /v2/currencies | Update Currency Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| currentaccounts | CreateClientPlansCurrentaccount | POST | /v1/clients/{clientId}/plans/currentaccounts | Create investment plan (currrent account) Only pre-existing plans are supported by the api at this time. Note - this controller will create a plan of type Investment. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| currentaccounts | DeleteClientCurrentaccount | DELETE | /v1/clients/{clientId}/plans/currentaccounts/{planId} | Delete investment plan (current account) | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| currentaccounts | GetClientCurrentaccount | GET | /v1/clients/{clientId}/plans/currentaccounts/{planId} | Get the specified Plan (current account) | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| currentaccounts | ListClientPlansCurrentaccounts | GET | /v1/clients/{clientId}/plans/currentaccounts | Returns a collection of investment plans (current accounts) for the specified client. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| currentaccounts | UpdateClientCurrentaccount | PUT | /v1/clients/{clientId}/plans/currentaccounts/{planId} | Update investment plan (current account) | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| currentprices | ListCurrentPrices | GET | /v2/currentprices | Get all current prices for the passed in securityIds | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| currentquotes | ListCurrentQuotes | GET | /v2/currentquotes | Get all current prices for the passed in securityIds. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | customquestions | CreateQuestion | POST | /v2/questions | Creates a new question. | client_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | customquestions | DeleteQuestion | DELETE | /v2/questions/{questionId} | Deletes a question. | client_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | customquestions | GetQuestion | GET | /v2/questions/{questionId} | Retrieves the details of a question. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
@@ -515,6 +643,7 @@
 | defaultbranding | GetDefaultBranding | GET | /v2/report/branding/default/{id} | Gets a default  branding configuration | N/A | No | Monolith.Report | Service Swagger (Monolith.Report) |
 | defaultbranding | UpdateDefaultBranding | PUT | /v2/report/branding/default/{id} |  | N/A | No | Monolith.Report | Service Swagger (Monolith.Report) |
 | defaultsender | DefaultsenderEmail | GET | /v1/emails/defaultsender |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
+| delete | CreateCategoryDelete | POST | /v1/time_entries/categories/{categoryId}/delete | Delete a time category | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
 | delivery methods | GetDeliveryMethods | GET | /v2/deliverymethods | Get Delivery Methods. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | demote | CreateTemplateVersionDemote | POST | /v1/templates/{templateId}/versions/{versionId}/demote | Demote template version | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | dependants, beta | CreateClientDependant | POST | /v2/clients/{clientId}/dependants | Creates a dependant for a given client. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
@@ -536,11 +665,11 @@
 | disclosures | ListTenantDocumentTypes | GET | /v2/disclosures/documentTypes | List Document Types for a tenant | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | disclosures | UpdateClientDisclosure | PUT | /v2/clients/{clientId}/disclosures/{disclosureId} | Updates a disclosure for a given client. | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | disclosures | UpdateTenantDocumentType | PUT | /v2/disclosures/documentTypes/{documentTypeId} | Update an existing Document Type for a tenant | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
-| dividends | DeleteSecurityDividends | DELETE | /v2/securities/{securityId}/dividends |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| dividends | ListDividends | GET | /v2/dividends |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| dividends | ListSecurityDividends | GET | /v2/securities/{securityId}/dividends |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| dividends | PatchDividends | PATCH | /v2/dividends |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| dividends | PostDividends | POST | /v2/dividends |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| dividends | DeleteSecurityDividends | DELETE | /v2/securities/{securityId}/dividends |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| dividends | ListDividends | GET | /v2/dividends |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| dividends | ListSecurityDividends | GET | /v2/securities/{securityId}/dividends |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| dividends | PatchDividends | PATCH | /v2/dividends |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| dividends | PostDividends | POST | /v2/dividends |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | document | ListDocuments | GET | /v2/clients/{clientId}/plans/{planId}/documents | Returns a list of PlanDocument Collection | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | documentbinderconfigs | GetBinderSettings | GET | /v2/DocumentBinderConfig | Get Binder Settings | N/A | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documentbinders | CreateDocumentBinder | POST | /v2/clients/{clientId}/documentbinders | Creates a new document binder | N/A | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
@@ -569,26 +698,37 @@
 | documents | DocumentConfigurationExists | HEAD | /v2/documents/configurations/{id} | Checks that a storage configuration exists by id | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | DocumentExists | HEAD | /v2/documents/{documentId} | Checks if required document exists | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | DocumentObjectExists | HEAD | /v2/documents/{documentId}/object | Checks if required document is uploaded. | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| documents | ExistsClientDocument | HEAD | /v1/clients/{clientId}/documents/{documentId} | Returns document data from private storage | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
+| documents | ExistsDocument | HEAD | /v1/documents/{documentId} | Returns document data from private storage | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | GetAdviserDocument | GET | /v2/advisers/{adviserId}/documents/{documentId} | Gets a single adviser document by id | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger + Documentation Ignore |
 | documents | GetAdviserDocumentObject | GET | /v2/advisers/{adviserId}/documents/{documentId}/object | Gets a single adviser document object | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | GetAdviserManagedDocument | GET | /v2/advisers/{adviserId}/documents/managed/{key} | Retrieve a managed document by key | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | GetClientDocument | GET | /v2/clients/{clientId}/documents/{documentId} | Returns a document for a given client and document. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| documents | GetClientDocumentContent | GET | /v1/clients/{clientId}/documents/{documentId}/content | Returns document content from private storage | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | GetClientDocumentObject | GET | /v2/clients/{clientId}/documents/{documentId}/object | Returns a file object for a given client and document. | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | GetDocument | GET | /v2/documents/{documentId} | Gets a single document by id | openid, myprofile, client_financial_data, documents | Yes | N/A | Public Swagger v2 |
 | documents | GetDocumentConfiguration | GET | /v2/documents/configurations/{id} | Gets a storage configuration by id | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| documents | GetDocumentContent | GET | /v1/documents/{documentId}/content | Returns document content from private storage | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | GetDocumentObject | GET | /v2/documents/{documentId}/object | Gets a single document object | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| documents | GetDocumentStatistics | GET | /v1/documents/statistics | Provides total amount of storage currently used and the total amount available | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
+| documents | GetDocumentStatisticsNewDocuments | GET | /v1/documents/statistics/new_documents | Provides amount of documents shared with user since his last visit | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | ListAdviserDocuments | GET | /v2/advisers/{adviserId}/documents | List all adviser documents | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger + Documentation Ignore |
 | documents | ListClientDocuments | GET | /v2/clients/{clientId}/documents | Returns a list of documents for a given client. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | documents | ListClientDocumentsByFolder | GET | /v2/clients/{clientId}/documentfolders/{documentFolderId}/documents | Returns a list of client documents for given folder. | openid, myprofile, client_financial_data, documents | Yes | N/A | Public Swagger v2 |
+| documents | ListDocumentAdvisersIds | GET | /v1/documents/adviser/ids | Returns document guids for all documents shared by the adviser from office. It filters based on the current AdviserGuid and UserGuid in the user context (token). This only works where reach=user. | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | ListDocumentConfigurations | GET | /v2/documents/configurations | Gets list of storage configurations | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| documents | ListDocumentFilters | GET | /v1/documents/filter | Return user documents from private storage filtered by documents owner - client or adviser documents | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | MoveDocument | POST | /v2/documents/{documentId}/move | Moves the document object to target configuration. | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | SetDefaultDocumentConfiguration | POST | /v2/documents/configurations/{id}/default | Sets the default storage configuration | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| documents | ShareDocument | POST | /v1/documents/{documentId}/share | Shares a document to public. Any user who has a access to client record will be able to view this document | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
+| documents | UnshareDocument | POST | /v1/documents/{documentId}/unshare | Unshares document. Document will be available only to owner | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | UpdateAdviserDocument | PUT | /v2/advisers/{adviserId}/documents/{documentId} | Updates the specified adviser document | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger + Documentation Ignore |
 | documents | UpdateAdviserDocumentObject | PUT | /v2/advisers/{adviserId}/documents/{documentId}/object | Uploads a file object associated with the specified adviser document | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | UpdateClientDocument | PUT | /v2/clients/{clientId}/documents/{documentId} | Updates a document for a given client and document. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | documents | UpdateClientDocumentObject | PUT | /v2/clients/{clientId}/documents/{documentId}/object | Updates a file object for a given client and document. | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | UpdateDocument | PUT | /v2/documents/{documentId} | Updates the specified document | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | UpdateDocumentConfiguration | PUT | /v2/documents/configurations/{id} | Updates a storage configuration | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| documents | UpdateDocumentContent | PUT | /v1/documents/{documentId}/content | Updates document contents | client_financial_data, documents, myprofile, openid | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | UpdateDocumentObject | PUT | /v2/documents/{documentId}/object | Uploads a file object associated with the specified document | client_financial_data, documents, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | docusignenvelopes | DeleteEnvelope | DELETE | /v2/clients/docusign_envelopes/{envelopeId} | Delete eSignature Envelope | N/A | No | Microservice.DocuSign | Service Swagger (Microservice.DocuSign) |
 | docusignenvelopes | GetDocuSignEnvelope | GET | /v2/clients/docusign_envelopes/{envelopeId} | Get eSignature Envelope | N/A | No | Microservice.DocuSign | Service Swagger (Microservice.DocuSign) |
@@ -679,27 +819,27 @@
 | entitlement, beta | ListUserActivity | GET | /v2/users/{userId}/activity | Returns a list of user activities. | apps, client_data, client_financial_data, client_financial_data.quotes, firm_data, firm_data.incomestatements, myprofile, openid | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
 | entitlement, beta | ListUsers | GET | /v2/users | Deprecated: Get a list of users. Some specific filtering is optionally supported The following fields are supported for equals (eq) operator username, email, status and lastLoginAt The following fi | apps, client_data, client_financial_data, client_financial_data.quotes, firm_data, firm_data.incomestatements, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | entitlement, beta | ListUsersDetails | GET | /v2/users | Returns a list of users. | apps, client_data, client_financial_data, client_financial_data.quotes, firm_data, firm_data.incomestatements, myprofile, openid | No | Monolith.Entitlement | Service Swagger + Documentation Ignore |
-| etfs | DeleteEtf | DELETE | /v2/etfs/{securityId} | Delete an ETF Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| etfs | GetEtf | GET | /v2/etfs/{securityId} | Get an ETF Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| etfs | ListEtfs | GET | /v2/etfs | Get a List of ETF Securities based on Security Ids. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| etfs | PostEtfs | POST | /v2/etfs | Create ETF Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| etfs | PutEtfs | PUT | /v2/etfs | Update ETF Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| exchanges | GetExchange | GET | /v2/exchanges/{exchangeCode} | Get an Exchange based on Exchange Code. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| exchanges | ListExchanges | GET | /v2/exchanges | List Exchanges based on Exchange Codes. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| etfs | DeleteEtf | DELETE | /v2/etfs/{securityId} | Delete an ETF Security based on Security Id. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| etfs | GetEtf | GET | /v2/etfs/{securityId} | Get an ETF Security based on Security Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| etfs | ListEtfs | GET | /v2/etfs | Get a List of ETF Securities based on Security Ids. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| etfs | PostEtfs | POST | /v2/etfs | Create ETF Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| etfs | PutEtfs | PUT | /v2/etfs | Update ETF Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| exchanges | GetExchange | GET | /v2/exchanges/{exchangeCode} | Get an Exchange based on Exchange Code. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| exchanges | ListExchanges | GET | /v2/exchanges | List Exchanges based on Exchange Codes. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | execute | CreateCampaignExecute | POST | /v1/campaigns/{campaignId}/execute | Initiate a specified campaign | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
-| expectation | ExpectationAdjustmentRequest | POST | /v2/expectations/{expectationId}/adjust | Creates a new expectation adjustment for a given expectation. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | ExpectationBreakdownExists | HEAD | /v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId} | Checks that an expectation breakdown record exists. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | ExpectationBreakdownExistsForClient | HEAD | /v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId} | Checks that an expectation breakdown record exists. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | ExpectationExists | HEAD | /v2/expectations/{expectationId} | Checks that an expectation record exists. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | GetConfiguration | GET | /v2/expectations/configuration | Returns a tenant's configuration settings for expectations | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | GetExpectation | GET | /v2/expectations/{expectationId} | Returns a single expectation. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | GetExpectationBreakdown | GET | /v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId} | Returns a single expectation breakdown. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | GetExpectationBreakdownByClient | GET | /v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId} | Returns a list of expectation breakdowns related to an expectation. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | ListClientExpectationsSummary | GET | /v2/clients/{clientId}/expectations/aggregate | Aggregates expectations by fee, commission and plan. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | ListExpectationBreakdowns | GET | /v2/expectations/{expectationId}/breakdowns | Returns a list of expectation breakdowns related to an expectation. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | ListExpectationBreakdownsByClient | GET | /v2/clients/{clientId}/expectations/{expectationId}/breakdowns | Returns a list of expectation breakdowns related to an expectation. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | ListExpectations | GET | /v2/expectations | Returns a list of expectations. | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
-| expectation | SetConfiguration | PUT | /v2/expectations/configuration | Creates or Updates a tenant's configuration settings for expectations | N/A | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | ExpectationAdjustmentRequest | POST | /v2/expectations/{expectationId}/adjust | Creates a new expectation adjustment for a given expectation. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | ExpectationBreakdownExists | HEAD | /v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId} | Checks that an expectation breakdown record exists. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | ExpectationBreakdownExistsForClient | HEAD | /v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId} | Checks that an expectation breakdown record exists. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | ExpectationExists | HEAD | /v2/expectations/{expectationId} | Checks that an expectation record exists. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | GetConfiguration | GET | /v2/expectations/configuration | Returns a tenant's configuration settings for expectations | openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | GetExpectation | GET | /v2/expectations/{expectationId} | Returns a single expectation. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | GetExpectationBreakdown | GET | /v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId} | Returns a single expectation breakdown. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | GetExpectationBreakdownByClient | GET | /v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId} | Returns a list of expectation breakdowns related to an expectation. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | ListClientExpectationsSummary | GET | /v2/clients/{clientId}/expectations/aggregate | Aggregates expectations by fee, commission and plan. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | ListExpectationBreakdowns | GET | /v2/expectations/{expectationId}/breakdowns | Returns a list of expectation breakdowns related to an expectation. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | ListExpectationBreakdownsByClient | GET | /v2/clients/{clientId}/expectations/{expectationId}/breakdowns | Returns a list of expectation breakdowns related to an expectation. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | ListExpectations | GET | /v2/expectations | Returns a list of expectations. | openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation, openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
+| expectation | SetConfiguration | PUT | /v2/expectations/configuration | Creates or Updates a tenant's configuration settings for expectations | openid, myprofile, firm_data, firm_data.expectation | No | Microservice.Expectation | Service Swagger (Microservice.Expectation) |
 | expenditures | CreateExpenditureCategoryGroup | POST | /v2/expenditures/refdata/categorygroups | Creates a new Expenditure Category Group. | client_financial_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | expenditures | DeleteExpenditureCategoryGroup | DELETE | /v2/expenditures/refdata/categorygroups/{categoryGroupId} | Deletes Expenditure Category Group. | client_financial_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | expenditures | ListExpenditureCategories | GET | /v2/expenditures/refdata/categories | Retrieves List of all/matched categories based on the filter provided. | client_financial_data, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
@@ -711,6 +851,17 @@
 | expenditures, beta | GetClientExpenditure | GET | /v2/clients/{clientId}/expenditures/{expenditureId} | Retrieves a client's expenditure record. | openid, myprofile, client_financial_data | Yes | Monolith.FactFind | Public Swagger v2 + GitHub Monolith.FactFind |
 | expenditures, beta | ListClientExpenditures | GET | /v2/clients/{clientId}/expenditures | Returns a list of expenditure records for a client. The returned list may be filtered. | openid, myprofile, client_financial_data | Yes | Monolith.FactFind | Public Swagger v2 + GitHub Monolith.FactFind |
 | expenditures, beta | UpdateClientExpenditure | PUT | /v2/clients/{clientId}/expenditures/{expenditureId} | Updates a client's expenditure record. | openid, myprofile, client_financial_data | Yes | Monolith.FactFind | Public Swagger v2 + GitHub Monolith.FactFind |
+| externalaccounts | CreateV1ExternalAccount | POST | /membership/v1/external_accounts |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| externalaccounts | ListV1ExternalAccounts | GET | /membership/v1/external_accounts |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| externalaccounts | UpdateExternalAccount | PUT | /membership/v1/external_accounts/{externalAccountId} |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| factfind | CreateClientFactfind | POST | /v1/clients/{clientId}/factfinds |  | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| factfind | ExistsClientFactfind | HEAD | /v1/clients/{clientId}/factfinds/{factfindId} |  | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| factfind | GetClientAdviceareas | GET | /v1/clients/{clientId}/adviceareas | Get the advice areas for the specified user | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| factfind | GetClientFactfind | GET | /v1/clients/{clientId}/factfinds/{factfindId} |  | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| factfind | GetClientFactfindDeclaration | GET | /v1/clients/{clientId}/factfinds/{factfindId}/declaration | (TODO) Get the specified Declaration | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| factfind | ListClientFactfinds | GET | /v1/clients/{clientId}/factfinds |  | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| factfind | ListClientFactfindsDisclosures | GET | /v1/clients/{clientId}/factfinds/{factfindId}/disclosures | Get DisclosureCollection for specified client | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| factfind | UpdateClientAdviceareas | PUT | /v1/clients/{clientId}/adviceareas | Update AdviceAreas for the given clientId, Create one with the given info in the request when doesn't exist | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | federation_settings | CreateFederationSettings | PUT | /v2/federation_settings/{domain} | Creates or updates federation settings. | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
 | federation_settings | DeleteFederationSettings | DELETE | /v2/federation_settings/{domain} | Delete federation settings for domain | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
 | feemodels | GetFeeModel | GET | /v2/feemodels/{feeModelId} | Get fee model by id. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
@@ -718,6 +869,7 @@
 | feemodeltemplates | GetFeeModelTemplate | GET | /v2/templates/{templateId} | Allows an api consumer to retrieve a single fee model template by id. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | fees | CreateClientFees | POST | /v2/clients/{clientId}/fees | Create client fee. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | fees | CreateClientPlanFee | POST | /v2/clients/{clientId}/plans/{planId}/fees/{feeId} | Links an existing Fee to the given Plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| fees | CreateClientPlanFeeV1 | POST | /v1/clients/{clientId}/plans/{planId}/fees |  | client_financial_data, firm_data, firm_data.fee, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | fees | DeleteClientFee | DELETE | /v2/clients/{clientId}/fees/{feeId} | Deletes the fee. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | fees | DeleteClientPlanFee | DELETE | /v2/clients/{clientId}/plans/{planId}/fees/{feeId} | Removes the link between the Fee and the plan, does not delete the actual Fee. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | fees | GetClientFee | GET | /v2/clients/{clientId}/fees/{feeId} | Get client fee by id. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
@@ -726,6 +878,7 @@
 | fees | GetPlanFees | GET | /v2/plans/{planId}/fees | Gets a collection of fee linked to the given plan. | client_financial_data, firm_data, firm_data.fee, myprofile, openid | No | Monolith.Charging | Service Swagger (Monolith.Charging) |
 | fees | ListClientFees | GET | /v2/clients/{clientId}/fees | Returns a list of fees for a client. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | fees | ListClientPlanFees | GET | /v2/clients/{clientId}/plans/{planId}/fees | Gets a collection of fee linked to the given plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| fees | ListClientsFeesV1 | GET | /v1/clients/{clientId}/fees | Returns a list of fees for a given client. | client_financial_data, firm_data, firm_data.fee, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | fees | ListFee | GET | /v2/fees | Returns a list of fees. | openid, myprofile, firm_data, firm_data.fee | Yes | N/A | Public Swagger v2 |
 | fees | UpdateClientFee | PUT | /v2/clients/{clientId}/fees/{feeId} | Update client fee. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | fees | UpdateClientFeeDates | PATCH | /v2/clients/{clientId}/fees/{feeId} | Update client fee dates. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
@@ -733,18 +886,20 @@
 | financialprofile | GetClientFinancialProfile | GET | /v2/clients/{clientId}/financialProfile | Gets financial profile for a given client. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | financialprofile | PatchClientFinancialProfile | PATCH | /v2/clients/{clientId}/financialProfile | Patch client's financial profile. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | financialprofile | UpdateClientFinancialProfile | PUT | /v2/clients/{clientId}/financialProfile | Updates client's financial profile. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| financialsummary | GetClientFinancialsummary | GET | /v1/clients/{clientId}/financialsummary | Get a summary of a Portfolio | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| financialsummary | GetClientFinancialsummarybycategory | GET | /v1/clients/{clientId}/financialsummarybycategory | Get a categorised summary of a clients entire Portfolio | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | financialsummarybycategory | GetClientFinancialSummaryByCategory | GET | /v2/clients/{clientId}/financialsummarybycategory | Allows an API consumer to get a client portfolio information and totals grouped by categories. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
-| fixedincomes | DeleteFixedIncome | DELETE | /v2/fixedincomes/{securityId} | Delete a Fixed Income Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| fixedincomes | GetFixedIncome | GET | /v2/fixedincomes/{securityId} | Get a Fixed Income Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| fixedincomes | ListFixedIncomes | GET | /v2/fixedincomes | Get a List of Fixed Income Securities based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| fixedincomes | PostFixedIncomes | POST | /v2/fixedincomes | Create a Fixed Income Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| fixedincomes | PutFixedIncomes | PUT | /v2/fixedincomes | Update Fixed Income Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| fixedincomes | DeleteFixedIncome | DELETE | /v2/fixedincomes/{securityId} | Delete a Fixed Income Security based on Security Id. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| fixedincomes | GetFixedIncome | GET | /v2/fixedincomes/{securityId} | Get a Fixed Income Security based on Security Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| fixedincomes | ListFixedIncomes | GET | /v2/fixedincomes | Get a List of Fixed Income Securities based on Security Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| fixedincomes | PostFixedIncomes | POST | /v2/fixedincomes | Create a Fixed Income Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| fixedincomes | PutFixedIncomes | PUT | /v2/fixedincomes | Update Fixed Income Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | folder | GetQuicksightSharedFolder | GET | /v2/quicksight/folders/{folderId} | Gets a quicksight folder. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | folder | ListQuicksightSharedFolder | GET | /v2/quicksight/folders | Gets a collection of folders. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | folderpermission | DeleteQuicksightSharedFolderPermission | DELETE | /v2/quicksight/folders/{folderId}/permissions | Deletes permission for quicksight shared folder to specified user or group | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | folderpermission | ListQuicksightSharedFolderPermission | GET | /v2/quicksight/folders/{folderId}/permissions | Lists permissions for quicksight shared folder | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | folderpermission | UpdateQuicksightSharedFolderPermission | PUT | /v2/quicksight/folders/{folderId}/permissions | Adds permission for quicksight shared folder to specified user or group | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
-| forecasts | CreateForecast | POST | /v2/forecasts |  | N/A | No | Microservice.CashflowEngine | Service Swagger (Microservice.CashflowEngine) |
+| forecasts | CreateForecast | POST | /v2/forecasts |  | openid, myprofile, client_financial_data, openid, myprofile, client_financial_data, openid, myprofile, client_financial_data | No | Microservice.CashflowEngine | Service Swagger (Microservice.CashflowEngine) |
 | formats | ListPluginsFormats | GET | /v1/plugin/formats | Get formatting configuration | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | forwardincometo | ForwardIncomeToOperation | POST | /v2/advisers/{adviserId}/forwardincometo | Creates a new event to indicate that income should be forwarded to a different adviser. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | fundbenchmarks | GetFundBenchmark | GET | /v2/fundbenchmarks/{fundBenchmarkId} | Returns a fund benchmark by the given fundBenchmarkId. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
@@ -765,11 +920,11 @@
 | fundproviders | GetFundprovider | GET | /v2/fundproviders/{code} | Returns fund providers for a given code. | openid, myprofile, fund_data | Yes | N/A | Public Swagger v2 |
 | fundproviders | ListFundproviders | GET | /v2/fundproviders | Returns a list of fund providers. | openid, myprofile, fund_data | Yes | N/A | Public Swagger v2 |
 | funds | CreateFund | POST | /v2/funds | Creates a non-feed fund. | openid, myprofile, fund_data | Yes | N/A | Public Swagger v2 |
-| funds | DeleteFund | DELETE | /v2/funds/{securityId} | Delete a Fund Security based on Security Id. | fund_data, myprofile, openid | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| funds | DeleteFund | DELETE | /v2/funds/{securityId} | Delete a Fund Security based on Security Id. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | funds | GetFund | GET | /v2/funds/{fundId} | Returns a fund/equity for a given fundId/equityId. | openid, myprofile, fund_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
 | funds | ListFunds | GET | /v2/funds | Returns a list of funds (feed and non-feed funds) and equities. | openid, myprofile, fund_data | Yes | N/A | Public Swagger v2 |
-| funds | PostFunds | POST | /v2/funds | Create Fund Securities. | fund_data, myprofile, openid | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| funds | PutFunds | PUT | /v2/funds | Update Fund Securities. | fund_data, myprofile, openid | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| funds | PostFunds | POST | /v2/funds | Create Fund Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| funds | PutFunds | PUT | /v2/funds | Update Fund Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | funds | UpdateFund | PUT | /v2/funds/{fundId} | Updates a non-feed fund for a given fund. | openid, myprofile, fund_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
 | fundsectors | GetFundsector | GET | /v2/fundsectors/{code} | Returns fund sectors for a given fund code. | openid, myprofile, fund_data | Yes | N/A | Public Swagger v2 |
 | fundsectors | ListFundsectors | GET | /v2/fundsectors | Returns a list of fund sectors. | openid, myprofile, fund_data | Yes | N/A | Public Swagger v2 |
@@ -777,13 +932,20 @@
 | fundtransactions | ListClientPlanHoldingTransactions | GET | /v2/clients/{clientId}/plans/{planId}/holdings/{holdingId}/transactions | Returns a list of fund holdings transactions for a given client, plan and holding. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | generate | CreateTemplateGenerate | POST | /v1/templates/{templateId}/generate | Generate a document for a specified template using supplied criteria | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | generate | CreateTemplateVersionGenerate | POST | /v1/templates/{templateId}/versions/{versionId}/generate | Generate a document for a specified template version using supplied criteria | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
+| get-clients | GetEtlcontrollerGet-client | GET | /api/etlcontroller/get-client |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | getadditionalquestions | GetAdditionalQuestions | POST | /v2/providers/{providerId}/getadditionalquestions |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
+| gld-delete | CreateEtlcontrollerGld-delete | POST | /api/etlcontroller/gld-delete |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | goalprojections | CreateGoalprojection | POST | /v2/goalprojections |  | N/A | No | Microservice.CashflowEngine | Service Swagger (Microservice.CashflowEngine) |
 | groups | CreateGroup | POST | /v2/groups | Creates a group. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| groups | CreateGroupHost | POST | /v1/groups/{groupId}/hosts | Create host | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | groups | GetGroup | GET | /v2/groups/{groupId} | Returns the given group. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
+| groups | GetGroupHost | GET | /v1/groups/{groupId}/hosts/{host} | Get specific host | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | groups | GetGroupLineage | GET | /v2/groups/{groupId}/lineage | Returns a given group lineage. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | groups | GroupExists | HEAD | /v2/groups/{groupId} | Checks a given group exists. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| groups | ListGroupHosts | GET | /v1/groups/{groupId}/hosts | List hosts | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| groups | ListGroupHostsSuggest | GET | /v1/groups/{groupId}/hosts/suggest | Suggest hosts for group | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | groups | ListGroups | GET | /v2/groups | Returns a list of groups. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
+| groups | ListGroupsLineage | GET | /v1/groups/{groupId}/lineage | Get lineage of specified group | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | groups | UpdateGroup | PUT | /v2/groups/{groupId} | Updates a given group. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | groups | UpdateGroupParent | POST | /v2/groups/{groupId}/changeParent | Updates the parent group for a group. System reach only. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | history | ListInstancesHistory | GET | /v1/instances/{instanceId}/history |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
@@ -792,6 +954,7 @@
 | holdings | ListClientPlanHoldings | GET | /v2/clients/{clientId}/plans/{planId}/holdings | Returns a list of fund holdings for a given client and plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | holdings | ListClientsHoldings | GET | /v2/clients/{clientId}/holdings | Returns a list of plan's fund holdings across client plans. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger + Documentation Ignore |
 | holdings | UpdateClientPlanHolding | PUT | /v2/clients/{clientId}/plans/{planId}/holdings/{holdingId} | Updates a fund holding for a given client, plan and holding. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| holidays | ListHolidays | GET | /v1/holidays | Returns holidays by ISO region code for the given date range. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | households | CreateHousehold | POST | /v2/households | Creates a household. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | households | CreateHouseholdGrouping | POST | /v2/households/{householdId}/groupings | Creates a household grouping. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | households | DeleteHousehold | DELETE | /v2/households/{householdId} | Deletes a household. Any clients associated with the household are not deleted. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -809,6 +972,9 @@
 | illustrations | GenerateQuoteIllustration | POST | /v2/quotes/illustrations/generate |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | illustrations | PatchIllustrationStatus | PATCH | /v2/illustrations/{illustrationId} |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | image | CreateAuthorImage | POST | /v2/author/image |  | N/A | No | Monolith.AuthorDataProvider | Service Swagger (Monolith.AuthorDataProvider) |
+| import-client | CreateIntelligent-officeImport-client | POST | /api/intelligent-office/import-client |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
+| importable-plans | CreateIntelligent-officeImportable-plan | POST | /api/intelligent-office/importable-plans |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
+| imports | GetImport | GET | /v1/plans/transactions/imports/{batchId} | Returns plan transaction import results for the batch id provided. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | incomes, beta | CreateClientIncome | POST | /v2/clients/{clientId}/incomes | Creates an income record for a client. | openid, myprofile, client_financial_data | Yes | Monolith.FactFind | Public Swagger v2 + GitHub Monolith.FactFind |
 | incomes, beta | CreateClientPlanWithdrawalIncome | POST | /v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId}/incomes | Create a withdrawal income for a client. | apps, client_data, client_financial_data, client_financial_data.quotes, firm_data, firm_data.incomestatements, myprofile, openid | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | incomes, beta | DeleteClientIncome | DELETE | /v2/clients/{clientId}/incomes/{incomeId} | Deletes a client's income record. | openid, myprofile, client_financial_data | Yes | Monolith.FactFind | Public Swagger v2 + GitHub Monolith.FactFind |
@@ -825,8 +991,18 @@
 | incomestatements, beta | UpdateIncomeStatement | PUT | /v2/incomestatements/{incomeStatementId} | Updates an income statement. | openid, myprofile, firm_data.incomestatements | Yes | N/A | Public Swagger v2 |
 | incomestatements, beta | UpdateIncomeStatementItem | PUT | /v2/incomestatements/{incomeStatementId}/items/{incomeStatementItemId} | Updates an income statement item for a given income statement. | openid, myprofile, firm_data.incomestatements | Yes | N/A | Public Swagger v2 |
 | initialise | GetTemplateInitialise | GET | /v1/templates/{templateId}/initialise | Initialise workflow service for specified template | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
+| initiate | CreateIntelligent-officeInitiate | POST | /api/intelligent-office/initiate |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | insights | CreateClientInsight | POST | /v2/clients/{clientId}/insights | Create a Client Insight. | N/A | No | Microservice.Insight | Service Swagger + Documentation Ignore |
+| insights | CreateInsight | POST | /v1/insights | Create a specified insight. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
+| insights | ExistsInsight | HEAD | /v1/insights/{insightId} | Get the specified insight. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
 | insights | GetClientInsights | GET | /v2/clients/{clientId}/insights | Returns a list of the insights associated with the client. | N/A | No | Microservice.Insight | Service Swagger + Documentation Ignore |
+| insights | GetInsight | GET | /v1/insights/{insightId} | Get the specified insight. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
+| insights | ListClientsInsights | GET | /v1/clients/{clientId}/insights | Get a paged and OData filtered list of insights for the client with id clientId. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
+| insights | ListInsights | GET | /v1/insights | Get a paged and OData filtered list of insights for the logged in user. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
+| insighttypes | ExistsInsighttype | HEAD | /v1/insighttypes/{code} | Get a insight type for the logged in user based on insight type code. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
+| insighttypes | GetInsighttype | GET | /v1/insighttypes/{code} | Get a insight type for the logged in user based on insight type code. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
+| insighttypes | ListInsighttypes | GET | /v1/insighttypes | Get a list of insight types for the logged in user. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
+| insighttypes | UpdateInsighttype | PUT | /v1/insighttypes/{code} | Update the settings for a insight type for the logged in user. | N/A | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
 | instances | CreateInstance | POST | /v1/migrate/instances/{instanceId} |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | instances | GetInstance | GET | /v1/instances/{instanceId} |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | instances | ListInstances | GET | /v1/instances |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
@@ -844,31 +1020,45 @@
 | investmentpreferencequestion | GetInvestmentPreferenceQuestion | GET | /v2/investmentpreferences/questions/{questionId} | Get investment preference question. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | investmentpreferencequestion | ListInvestmentPreferenceQuestions | GET | /v2/investmentpreferences/questions | List investment preference questions | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | investmentpreferencequestion | UpdateInvestmentPreferenceQuestion | PUT | /v2/investmentpreferences/questions/{questionId} | Update investment preference question | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
-| issuers | DeleteIssuer | DELETE | /v2/issuers/{issuerId} | Delete an Issuer based on Issuer Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| issuers | GetIssuer | GET | /v2/issuers/{issuerId} | Get an Issuer based on Issuer Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| issuers | ListIssuers | GET | /v2/issuers | Get a List of Issuers based on Issuer Ids or Security Group Id. At least 1 search criteria must be populated. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| issuers | ListIssuersByIds | GET | /v2/issuers/byids | Get a List of Issuers based on Issuer Ids. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| issuers | ListIssuersBySourceReferences | GET | /v2/issuers/bysourcereferences | Get a Source Reference based on Source and Source Reference Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| issuers | PostIssuers | POST | /v2/issuers | Create an Issuer. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| issuers | PutIssuers | PUT | /v2/issuers | Update an Issuer | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| investments | CreateClientPlansInvestment | POST | /v1/clients/{clientId}/plans/investments | Create investment plan Only pre-existing plans are supported by the api at this time. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| investments | DeleteClientInvestment | DELETE | /v1/clients/{clientId}/plans/investments/{planId} | Delete investment plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| investments | GetClientInvestment | GET | /v1/clients/{clientId}/plans/investments/{planId} | Get the specified Plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| investments | ListClientPlansInvestments | GET | /v1/clients/{clientId}/plans/investments | Returns a collection of investment plans for the specified client. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| investments | UpdateClientInvestment | PUT | /v1/clients/{clientId}/plans/investments/{planId} | Update investment plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| ismodifiedbymigrationuser | CreateEtlcontrollersIsModifiedByMigrationUser | POST | /api/etlcontroller/isModifiedByMigrationUser |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
+| issuers | DeleteIssuer | DELETE | /v2/issuers/{issuerId} | Delete an Issuer based on Issuer Id. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| issuers | GetIssuer | GET | /v2/issuers/{issuerId} | Get an Issuer based on Issuer Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| issuers | ListIssuers | GET | /v2/issuers | Get a List of Issuers based on Issuer Ids or Security Group Id. At least 1 search criteria must be populated. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| issuers | ListIssuersByIds | GET | /v2/issuers/byids | Get a List of Issuers based on Issuer Ids. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| issuers | ListIssuersBySourceReferences | GET | /v2/issuers/bysourcereferences | Get a Source Reference based on Source and Source Reference Id. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| issuers | PostIssuers | POST | /v2/issuers | Create an Issuer. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| issuers | PutIssuers | PUT | /v2/issuers | Update an Issuer | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | journeytypes | GetJourneyType | GET | /v2/advice/journeytypes/{journeyTypeId} | Get journey type. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | journeytypes | ListJourneyTypes | GET | /v2/advice/journeytypes | List journey types | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | jumplinks | GetJumplink | GET | /v2/jumplinks/{jumpLinkId} |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | jumplinks | ListJumplinks | GET | /v2/jumplinks |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | leads | AssignLeadDocument | POST | /v2/leads/{leadId}/documents/{documentId} | Adds the specified owner to the specified document | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | leads | CreateLead | POST | /v2/leads | Create a lead. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| leads | CreateLeadContact | POST | /v1/leads/{partyId}/contacts | Create a Contact Detail | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | DeleteLead | DELETE | /v2/leads/{leadId} | Deletes a given lead. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| leads | DeleteLeadContact | DELETE | /v1/leads/{partyId}/contacts/{contactId} | Delete the specified Contact Details | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | DeleteLeadDocument | DELETE | /v2/leads/{leadId}/documents/{documentId} | Deletes document's metadata for specified lead | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| leads | ExistsLead | HEAD | /v1/leads/{partyId} |  | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| leads | ExistsLeadContact | HEAD | /v1/leads/{partyId}/contacts/{contactId} | Get the specified Contact Details | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | GetLead | GET | /v2/leads/{leadId} | Returns a given lead. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| leads | GetLeadContact | GET | /v1/leads/{partyId}/contacts/{contactId} | Get the specified Contact Details | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | GetLeadDocument | GET | /v2/leads/{leadId}/documents/{documentId} | Gets a single lead document by id | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | leads | GetLeadDocumentObject | GET | /v2/leads/{leadId}/documents/{documentId}/object | Gets a single lead document object | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | leads | LeadDocumentExists | HEAD | /v2/leads/{leadId}/documents/{documentId} | Checks if required lead document exists | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | leads | LeadDocumentObjectExists | HEAD | /v2/leads/{leadId}/documents/{documentId}/object | Checks if required lead document is uploaded. | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | leads | LeadExists | HEAD | /v2/leads/{leadId} | Check if the lead exists. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| leads | ListLeadContacts | GET | /v1/leads/{partyId}/contacts | Get Contact Details | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | ListLeadDocuments | GET | /v2/leads/{leadId}/documents | List all lead documents | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | leads | ListLeads | GET | /v2/leads | Returns a list of leads. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | leads | ListLeadStatuses | GET | /v2/leads/statuses | Get a list of leadStatus | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| leads | MarkasdefaultLeadContact | PATCH | /v1/leads/{partyId}/contacts/{contactId}/markasdefault | Mark the specified Contact Detail as default. | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | UpdateLead | PUT | /v2/leads/{leadId} | Updates a given lead. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| leads | UpdateLeadContact | PUT | /v1/leads/{partyId}/contacts/{contactId} | Update the specified Contact Details | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | UpdateLeadDocument | PUT | /v2/leads/{leadId}/documents/{documentId} | Updates the specified document | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | leads | UpdateLeadDocumentObject | PUT | /v2/leads/{leadId}/documents/{documentId}/object | Uploads a file object associated with the specified lead document | client_data, myprofile, openid | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | legacyapps | ListLegacyApps | GET | /v2/users/{userId}/legacyapps | Returns a list of apps with permission for the user | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
@@ -878,18 +1068,24 @@
 | lifecycles, beta | GetLifecycle | GET | /v2/lifecycles/{lifecycleId} | Returns a lifecycle. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | lifecycles, beta | ListLifecycles | GET | /v2/lifecycles | Returns a list of lifecycles. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | lifecycles, beta | ListPlanTypeLifecycles | GET | /v2/plantypes/{name}/lifecycles | Retrieves a list of lifecycles associated with the specified planType | apps, client_data, client_financial_data, client_financial_data.quotes, firm_data, firm_data.incomestatements, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
-| lifeexpectancies | CreateLifeexpectancy | POST | /v2/lifeexpectancy |  | N/A | No | Microservice.CashflowEngine | Service Swagger (Microservice.CashflowEngine) |
+| lifeexpectancies | CreateLifeexpectancy | POST | /v2/lifeexpectancy |  | openid, myprofile, client_financial_data, openid, myprofile, client_financial_data, openid, myprofile, client_financial_data | No | Microservice.CashflowEngine | Service Swagger (Microservice.CashflowEngine) |
 | livesassured | ListClientPlansLivesAssured | GET | /v2/clients/{clientId}/plans/{planId}/livesassured | Returns a list of Lives Assured for the plan. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | livesassured | UpdateClientPlansLivesAssured | PUT | /v2/clients/{clientId}/plans/{planId}/livesassured | Creates or updates the list of Lives Assured for the plan. A maximum of 6 lives assured can be added. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| loans | CreateClientPlansLoan | POST | /v1/clients/{clientId}/plans/loans | Create Loan plan Only pre-existing plans are supported by the api at this time. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| loans | DeleteClientLoan | DELETE | /v1/clients/{clientId}/plans/loans/{planId} | Delete loan plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| loans | GetClientLoan | GET | /v1/clients/{clientId}/plans/loans/{planId} | Get the specified Plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| loans | ListClientPlansLoans | GET | /v1/clients/{clientId}/plans/loans | Get all plans of type loan for the client | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| loans | UpdateClientLoan | PUT | /v1/clients/{clientId}/plans/loans/{planId} | Update Loan plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| login | GetSalesforce-ssoLogin | GET | /api/salesforce-sso/login |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | logins | GetLoginDetails | GET | /v2/user/Login | Checks whether the user is authorised to access ui-io. | N/A | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
 | mails | CreateMail | POST | /v1/mail | Send a templated email Attachments are sent as multi part content | N/A | No | Microservice.Email | Service Swagger (Microservice.Email) |
 | mandrill | CreateMaileventMandrill | POST | /v1/mailevents/mandrill | Accept callbacks from Mandrill webhook | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | mandrill | ExistsMaileventMandrill | HEAD | /v1/mailevents/mandrill | Allows Mandrill to confirm that the endpoint exists | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | markasread | MarkasreadMessage | POST | /v1/messages/{secureMessageId}/markasread | Mark a specific message as read. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | markasunread | MarkasunreadMessage | POST | /v1/messages/{secureMessageId}/markasunread | Mark a specific message as unread. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
-| marketclosings | DeleteMarketClosings | DELETE | /v2/marketclosings/{closingOn} | Delete a Market Closing based on Closing On date. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| marketclosings | GetMarketClosings | GET | /v2/marketclosings | Get a Market Closing based on a set of years. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| marketclosings | PutMarketClosings | PUT | /v2/marketclosings | Create or Update a Market Closing. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| marketclosings | DeleteMarketClosings | DELETE | /v2/marketclosings/{closingOn} | Delete a Market Closing based on Closing On date. | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| marketclosings | GetMarketClosings | GET | /v2/marketclosings | Get a Market Closing based on a set of years. | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| marketclosings | PutMarketClosings | PUT | /v2/marketclosings | Create or Update a Market Closing. | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | marketing | MarketingWidget | GET | /v1/widgets/marketing |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | marketingpreferences, beta | GetClientMarketingPreferences | GET | /v2/clients/{clientId}/marketing_preferences | Returns client's current marketing preferences. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | marketingpreferences, beta | GetLeadMarketingPreferences | GET | /v2/leads/{leadId}/marketing_preferences | Returns lead's current marketing preferences. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
@@ -902,6 +1098,9 @@
 | messages | ListClientMessages | GET | /v1/clients/{clientId}/messages | Get a list of secure messages for the client. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | messages | ListMessages | GET | /v1/messages | Get secure messages for the specified filter. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | messages | UpdateMessage | PUT | /v1/messages/{secureMessageId} | Updates an existing secure message. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
+| misportfolioallocations | DeleteMISPortfolioAllocations | DELETE | /v2/clients/{clientId}/plans/{planId}/misportfolioallocations | Delete MIS Portfolio Allocations | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| misportfolioallocations | GetMISPortfolioAllocations | GET | /v2/clients/{clientId}/plans/{planId}/misportfolioallocations | Get MIS Portfolio Allocations | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| misportfolioallocations | PutMISPortfolioAllocations | PUT | /v2/clients/{clientId}/plans/{planId}/misportfolioallocations | Create or Update MIS Portfolio Allocations | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | models | AcceptModel | POST | /v2/installed_apps/models/{modelId}/accept | Accepts a provider model for use by a firm. | apps, firm_data, myprofile, openid | No | Microservice.iMps | Service Swagger (Microservice.iMps) |
 | models | ActivatePortfolioModel | POST | /v2/models/{modelId}/active | Activates or deactivates a portfolio model. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | models | CreateDraftPortfolioModel | POST | /v2/models/draft | Creates a draft portfolio model. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
@@ -924,6 +1123,11 @@
 | money movement fees | ListPlanTransferInstructionFees | GET | /v2/plans/{planId}/transferInstructionFees | Gets a collection of transfer instruction fees linked to the given plan. | N/A | No | Monolith.Charging | Service Swagger (Monolith.Charging) |
 | money movement fees | UpdatePlanSecurityTransferInstructionFees | PUT | /v2/plans/{planId}/securityTransferInstructionFees | Replaces all of the security transfer instruction and fee relationships for the plan with everything in the request body, any security transfer instruction and fee relationships not passed in will be | N/A | No | Monolith.Charging | Service Swagger (Monolith.Charging) |
 | money movement fees | UpdatePlanTransferInstructionFees | PUT | /v2/plans/{planId}/transferInstructionFees | Replaces all of the transfer instruction and fee relationships for the plan with everything in the request body, any transfer instruction and fee relationships not passed in will be removed. | N/A | No | Monolith.Charging | Service Swagger (Monolith.Charging) |
+| mortgages | CreateClientPlansMortgage | POST | /v1/clients/{clientId}/plans/mortgages | Create mortgage plan Only pre-existing plans are supported by the api at this time. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| mortgages | DeleteClientMortgage | DELETE | /v1/clients/{clientId}/plans/mortgages/{planId} | Delete mortgage plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| mortgages | GetClientMortgage | GET | /v1/clients/{clientId}/plans/mortgages/{planId} | Get the specified Plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| mortgages | ListClientPlansMortgages | GET | /v1/clients/{clientId}/plans/mortgages | Get all plans of type mortgage for the client | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| mortgages | UpdateClientMortgage | PUT | /v1/clients/{clientId}/plans/mortgages/{planId} | Update mortgage plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | movedown | CreateTemplateStepMoveDown | POST | /v1/templates/{templateId}/steps/{stepId}/moveDown |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | moveup | CreateTemplateStepMoveUp | POST | /v1/templates/{templateId}/steps/{stepId}/moveUp |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | nationalities | GetNationality | GET | /v2/nationalities/{nationalityId} | Returns the specified nationality resource. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -939,26 +1143,26 @@
 | oauthclients | GetOauthClient | GET | /v2/oauth_clients/{clientId} |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
 | oauthclients | ListOauthClients | GET | /v2/oauth_clients |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
 | oauthclients | PatchOauthClient | PATCH | /v2/oauth_clients/{clientId} |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
-| objectivecategories | CreateObjectiveCategory | POST | /v2/objective/categories | Create a objective category. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectivecategories | DeleteObjectiveCategory | DELETE | /v2/objective/categories/{categoryId} | Delete a objective category. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectivecategories | ListObjectiveCategory | GET | /v2/objective/categories | List all objective categories. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectivecategories | UpdateObjectiveCategory | PUT | /v2/objective/categories/{categoryId} | Update a objective category. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | ClientObjectiveExists | HEAD | /v2/clients/{clientId}/objectives/{objectiveId} | Checks that a given client objective exists. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | CreateClientObjectives | POST | /v2/clients/{clientId}/objectives | Creates a client objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | CreateLeadObjective | POST | /v2/leads/{leadId}/objectives | Creates a lead objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | DeleteClientObjective | DELETE | /v2/clients/{clientId}/objectives/{objectiveId} | Delete a client objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | DeleteLeadObjective | DELETE | /v2/leads/{leadId}/objectives/{objectiveId} | Delete a lead objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | GetClientObjective | GET | /v2/clients/{clientId}/objectives/{objectiveId} | Gets a client objective. | N/A | No | Microservice.Requirement | Service Swagger + Documentation Ignore |
-| objectives | GetLeadObjective | GET | /v2/leads/{leadId}/objectives/{objectiveId} | Gets a lead objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | LeadObjectiveExists | HEAD | /v2/leads/{leadId}/objectives/{objectiveId} | Checks that a given lead objective exists | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | LinkClientObjectiveOpportunity | POST | /v2/clients/{clientId}/objectives/{objectiveId}/opportunity/{opportunityId} | Link opportunity to client objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | LinkLeadObjectiveOpportunity | POST | /v2/leads/{leadId}/objectives/{objectiveId}/opportunity/{opportunityId} | Link opportunity to lead objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | ListClientObjectives | GET | /v2/clients/{clientId}/objectives | Returns a list of client objectives. | N/A | No | Microservice.Requirement | Service Swagger + Documentation Ignore |
-| objectives | ListLeadObjectives | GET | /v2/leads/{leadId}/objectives | Returns a list of lead objectives. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | UnlinkClientObjectiveOpportunity | DELETE | /v2/clients/{clientId}/objectives/{objectiveId}/opportunity/{opportunityId} | Unlink opportunity to client objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | UnlinkLeadObjectiveOpportunity | DELETE | /v2/leads/{leadId}/objectives/{objectiveId}/opportunity/{opportunityId} | Unlink opportunity to lead objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | UpdateClientObjective | PUT | /v2/clients/{clientId}/objectives/{objectiveId} | Updates a client objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
-| objectives | UpdateLeadObjective | PUT | /v2/leads/{leadId}/objectives/{objectiveId} | Updates a lead objective. | N/A | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectivecategories | CreateObjectiveCategory | POST | /v2/objective/categories | Create a objective category. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectivecategories | DeleteObjectiveCategory | DELETE | /v2/objective/categories/{categoryId} | Delete a objective category. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectivecategories | ListObjectiveCategory | GET | /v2/objective/categories | List all objective categories. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectivecategories | UpdateObjectiveCategory | PUT | /v2/objective/categories/{categoryId} | Update a objective category. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | ClientObjectiveExists | HEAD | /v2/clients/{clientId}/objectives/{objectiveId} | Checks that a given client objective exists. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | CreateClientObjectives | POST | /v2/clients/{clientId}/objectives | Creates a client objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | CreateLeadObjective | POST | /v2/leads/{leadId}/objectives | Creates a lead objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | DeleteClientObjective | DELETE | /v2/clients/{clientId}/objectives/{objectiveId} | Delete a client objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | DeleteLeadObjective | DELETE | /v2/leads/{leadId}/objectives/{objectiveId} | Delete a lead objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | GetClientObjective | GET | /v2/clients/{clientId}/objectives/{objectiveId} | Gets a client objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger + Documentation Ignore |
+| objectives | GetLeadObjective | GET | /v2/leads/{leadId}/objectives/{objectiveId} | Gets a lead objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | LeadObjectiveExists | HEAD | /v2/leads/{leadId}/objectives/{objectiveId} | Checks that a given lead objective exists | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | LinkClientObjectiveOpportunity | POST | /v2/clients/{clientId}/objectives/{objectiveId}/opportunity/{opportunityId} | Link opportunity to client objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | LinkLeadObjectiveOpportunity | POST | /v2/leads/{leadId}/objectives/{objectiveId}/opportunity/{opportunityId} | Link opportunity to lead objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | ListClientObjectives | GET | /v2/clients/{clientId}/objectives | Returns a list of client objectives. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger + Documentation Ignore |
+| objectives | ListLeadObjectives | GET | /v2/leads/{leadId}/objectives | Returns a list of lead objectives. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | UnlinkClientObjectiveOpportunity | DELETE | /v2/clients/{clientId}/objectives/{objectiveId}/opportunity/{opportunityId} | Unlink opportunity to client objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | UnlinkLeadObjectiveOpportunity | DELETE | /v2/leads/{leadId}/objectives/{objectiveId}/opportunity/{opportunityId} | Unlink opportunity to lead objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | UpdateClientObjective | PUT | /v2/clients/{clientId}/objectives/{objectiveId} | Updates a client objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
+| objectives | UpdateLeadObjective | PUT | /v2/leads/{leadId}/objectives/{objectiveId} | Updates a lead objective. | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | No | Microservice.Requirement | Service Swagger (Microservice.Requirement) |
 | ondemand | CreateTemplateCreateinstanceOndemand | POST | /v1/templates/{templateId}/createinstance/ondemand | Create instance for specific template | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | operation logging | Logs | GET | /v2/providerintegrations/logs | Retrieve a list of operation log entries for the specified provider. The returned list is always sorted in timestamp order. | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | operation logging | PlanApplicationLogs | GET | /v2/providerintegrations/planapplicationlogs |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
@@ -995,21 +1199,48 @@
 | opportunities | UpdateOpportunityProposition | PUT | /v2/opportunities/propositions/{propositionId} | Updates an existing Opportunity proposition for a tenant. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | opportunities | UpdateOpportunityStatus | PUT | /v2/opportunities/statuses/{opportunityStatusId} | Updates an existing Opportunity Status. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | opportunities | UpdateOpportunityType | PUT | /v2/opportunities/types/{opportunityTypeId} | Updates an Opportunity Type for a tenant. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
-| options | PostOptions | POST | /v2/options | Create Option Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| options | PutOptions | PUT | /v2/options | Update Option Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| options | PostOptions | POST | /v2/options | Create Option Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| options | PutOptions | PUT | /v2/options | Update Option Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | output | GetSecureMessageTrail | POST | /v1/clients/{clientId}/messages/output | Get a secure message trail in pdf file. | N/A | No | Microservice.SecureMessaging | Service Swagger (Microservice.SecureMessaging) |
 | outputs | DeleteOutput | DELETE | /v1/output/{outputId} |  | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | outputs | GetOutput | GET | /v1/output/{outputId} | Get details for a specified output document | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | outputs | ListOutputs | GET | /v1/output | List generated documents | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
+| parties | ExistsParty | HEAD | /v1/parties/{partyId} |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| parties, people | CreateXContact | POST | /v1/{x}/{partyId}/contacts | Create a contact detail for the specified party or authenticated user. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| parties, people | DeleteV1XContact | DELETE | /v1/{x}/{partyId}/contacts/{contactId} | Delete specified contact for a specified party Id or authenticated user. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| parties, people | ExistsV1XContact | HEAD | /v1/{x}/{partyId}/contacts/{contactId} | Get specific contact detail for the specified party or authenticated user. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| parties, people | GetV1XContact | GET | /v1/{x}/{partyId}/contacts/{contactId} | Get specific contact detail for the specified party or authenticated user. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| parties, people | ListV1XContacts | GET | /v1/{x}/{partyId}/contacts | Get contact details for the specified party or authenticated user. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| parties, people | MarkasdefaultV1XContact | PATCH | /v1/{x}/{partyId}/contacts/{contactId}/markasdefault | Mark an existing contact as default. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| parties, people | UpdateV1XContact | PUT | /v1/{x}/{partyId}/contacts/{contactId} | Update the contact details for the specified party or authenticated user. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | passkeys | CreateAccountPasskeysAuthenticate | POST | /v2/accounts/{subject}/passkeys/authenticate | Verifies the user authenticated by FIDO is valid and processes user login | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | passwordpolicy | GetPasswordPolicy | GET | /v2/oauth_clients/{clientId}/passwordpolicy |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
 | passwordpolicy | UpdatePasswordPolicy | PUT | /v2/oauth_clients/{clientId}/passwordpolicy |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
+| pensions | CreateClientPlansPension | POST | /v1/clients/{clientId}/plans/pensions | Create pension plan Only pre-existing plans are supported by the api at this time. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| pensions | DeleteClientPension | DELETE | /v1/clients/{clientId}/plans/pensions/{planId} | Delete pension plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| pensions | GetClientPension | GET | /v1/clients/{clientId}/plans/pensions/{planId} | Get the specified Plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| pensions | ListClientPlansPensions | GET | /v1/clients/{clientId}/plans/pensions | Get all plans of type pension for the client | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| pensions | UpdateClientPension | PUT | /v1/clients/{clientId}/plans/pensions/{planId} | Update pension plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| people | CreatePerson | POST | /v1/people | (TODO) Create a Person | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| people | ExistsPerson | HEAD | /v1/people/{partyId} | (TODO) Get the specified Person | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| people | GetPerson | GET | /v1/people/{partyId} | (TODO) Get the specified Person | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| people | UpdatePerson | PUT | /v1/people/{partyId} | (TODO) Update a Person | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| periods | CreateTimeEntryPeriod | POST | /v1/time_entries/periods | Create a period time entry | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
+| periods | DeletePeriod | DELETE | /v1/time_entries/periods/{periodId} | Delete a period time entry and related to this time entries | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
+| periods | GetPeriod | GET | /v1/time_entries/periods/{periodId} | Get a period time entry by Period Id | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
+| periods | UpdatePeriod | PUT | /v1/time_entries/periods/{periodId} | Edit a period time entry | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
 | personalcontacts | CreatePersonalContact | POST | /v2/clients/{clientId}/personalContacts | Add a new personal contact for a given client | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | personalcontacts | DeletePersonalContact | DELETE | /v2/clients/{clientId}/personalContacts/{personalContactId} | Delete an existing personal contact | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | personalcontacts | GetPersonalContact | GET | /v2/clients/{clientId}/personalContacts/{personalContactId} | Get given personal contact for a given client | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | personalcontacts | ListPersonalContacts | GET | /v2/clients/{clientId}/personalContacts | List personal contacts for a given client. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | personalcontacts | PatchPersonalContact | PATCH | /v2/clients/{clientId}/personalContacts/{personalContactId} | Patch an existing personal contact | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | personalcontacts | UpdatePersonalContact | PUT | /v2/clients/{clientId}/personalContacts/{personalContactId} | Update an existing personal contact. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
+| pfp | CreatePfpVerifyEmail | POST | /membership/v1/registrations/pfp/{token}/verify_email |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| pfp | CreateV1RegistrationsPfp | POST | /membership/v1/registrations/pfp |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| pfp | CreateV1RegistrationsPfpVerifyIdentityQuestion | POST | /membership/v1/registrations/pfp/verify_identity_questions |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| pfp | GetPfp | GET | /membership/v1/registrations/pfp/{token} |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| pfp | GetV1RegistrationsPfpRegistrationExpired | GET | /membership/v1/registrations/pfp/registration_expired |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
+| pfp | GetV1RegistrationsPfpVerifyIdentityQuestions | GET | /membership/v1/registrations/pfp/verify_identity_questions |  | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | phones | CreateAccountPhone | POST | /v2/accounts/{subject}/phones | Creates a phone for given account. | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | phones | CreateAccountPhoneMakeprimary | POST | /v2/accounts/{subject}/phones/{phoneId}/makeprimary | Makes the given phone primary for a given account. | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
 | phones | CreateAccountPhoneMakeverified | POST | /v2/accounts/{subject}/phones/{phoneId}/makeverified | Verifies a phone for a given account. | N/A | No | Microservice.Membership | Service Swagger (Microservice.Membership) |
@@ -1062,24 +1293,45 @@
 | planapplicationstatusupdate | ListPlanApplicationStatusHistory | GET | /v2/plans/{planId}/applications/{applicationId}/statuses | Returns a list of Plan Application Statuses. | N/A | No | Microservice.PlanApplication | Service Swagger (Microservice.PlanApplication) |
 | planpurposes | ListPlanPurposes | GET | /v2/planpurposes | Returns a list of plan purposes for a specific tenant. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | CreateClientOpportunityPlan | POST | /v2/clients/{clientId}/opportunities/{opportunityId}/plans/{planId} | Updates an opportunity with a plan for a given client, opportunity and plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| plans | CreateClientPlanActivity | POST | /v1/clients/{clientId}/plans/{planId}/activities |  | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | CreateClientPlanContributionV1 | POST | /v1/clients/{clientId}/plans/{planId}/contributions |  | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | CreateClientPlans | POST | /v2/clients/{clientId}/plans | Creates a plan for a given client. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
+| plans | CreateClientPlanValuationV1 | POST | /v1/clients/{clientId}/plans/{planId}/valuations | Adds a new manual valuation for the plan. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | CreateClientServicecasePlan | POST | /v2/clients/{clientId}/servicecases/{serviceCaseId}/plans/{planId} | Creates an association with a service on a plan for a given client, service and plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | plans | CreateTopupPlan | POST | /v2/clients/{clientId}/plans/{planId} | Creates a plan for a given client. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
 | plans | DeleteClientOpportunityPlan | DELETE | /v2/clients/{clientId}/opportunities/{opportunityId}/plans/{planId} | Deletes an opportunity from a plan for a given client, opportunity and plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | plans | DeleteClientPlan | DELETE | /v2/clients/{clientId}/plans/{planId} | Deletes the client plan by the given client id and plan id. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
+| plans | DeleteClientPlanValuationV1 | DELETE | /v1/clients/{clientId}/plans/{planId}/valuations/{valuationId} | Deletes an existing manually added valuation. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | DeleteClientServicecasePlan | DELETE | /v2/clients/{clientId}/servicecases/{serviceCaseId}/plans/{planId} | Deletes an association on a service with a plan for a given client, service and plan. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | plans | ExistsClientPlan | HEAD | /v2/clients/{clientId}/plans/{planId} | Checks a plan exists for a given client and plan. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
+| plans | ExistsPortfolioCategoryV1 | HEAD | /v1/portfoliocategories/{name} | Check if Portfolio category exists | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | GetClientPlan | GET | /v2/clients/{clientId}/plans/{planId} | Returns a plan for a given client and plan. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
+| plans | GetClientPlanV1 | GET | /v1/clients/{clientId}/plans/{planId} | Get the specified Plan | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | GetClientPlanValuationV1 | GET | /v1/clients/{clientId}/plans/{planId}/valuations/{valuationId} | Returns a single valuation resource for the specified valuationId | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | GetClientValuation | GET | /v1/clients/{clientId}/plans/valuations/{valuationId} | Returns a single valuation resource for the specified valuationId | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | GetPlan | GET | /v2/plans/{planId} | Get a Plan | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
+| plans | GetPortfolioCategoryV1 | GET | /v1/portfoliocategories/{name} | Get Portfolio category by name | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | GetUserPlansExist | POST | /v2/users/{userId}/plans/exist |  | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | ListClientPlans | GET | /v2/clients/{clientId}/plans | Returns a list of plans for a given client. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
+| plans | ListClientPlansActivities | GET | /v1/clients/{clientId}/plans/{planId}/activities |  | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListClientPlansContributionsV1 | GET | /v1/clients/{clientId}/plans/{planId}/contributions | Get the plan contributions | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListClientPlansV1 | GET | /v1/clients/{clientId}/plans |  | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListClientPlansValuations | GET | /v1/clients/{clientId}/plans/valuations | Get a list of valuations for the plan for the logged in user. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListClientPlansValuationsPropertyvaluations | GET | /v1/clients/{clientId}/plans/valuations/propertyvaluations |  | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListClientPlansValuationsTimeseries | GET | /v1/clients/{clientId}/plans/valuations/timeseries | Get a list of aggregated valuations for all the plans for the logged in user. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListClientPlanValuationsTimeseries | GET | /v1/clients/{clientId}/plans/{planId}/valuations/timeseries | Get a list of aggregated valuations for the plan for the logged in user. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListClientPlanValuationsV1 | GET | /v1/clients/{clientId}/plans/{planId}/valuations | Get a list of valuations for the plan for the logged in user. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | ListModelplans | GET | /v2/modelplans | Gets a collection of modelplans for a tenant | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | ListPlans | GET | /v2/plans | Gets a Collection of Plans. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListPlantypesV1 | GET | /v1/plantypes | Get PlanType list | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | ListPlanUsers | GET | /v2/plans/{planId}/users | Get a collection of plan users. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plans | ListPortfolioCategoriesV1 | GET | /v1/portfoliocategories | Get all Portfolio Categories | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | ListUserPlans | GET | /v2/users/{userId}/plans | Get a collection of plans for a user. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | PatchClientPlan | PATCH | /v2/clients/{clientId}/plans/{planId} | Patch update a client plan for given client id and plan id. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
+| plans | PatchClientPlanV1 | PATCH | /v1/clients/{clientId}/plans/{planId} |  | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | PatchPlan | PATCH | /v2/plans/{planId} | Updates a plan for given plan id. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | PlanExists | HEAD | /v2/plans/{planId} | Check that plan available for the user | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
+| plans | UpdateClientPlanValuationV1 | PUT | /v1/clients/{clientId}/plans/{planId}/valuations/{valuationId} | Updates an existing manually added valuation. Should this be restricted to the original creator? | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans, beta | UpdateClientPlan | PUT | /v2/clients/{clientId}/plans/{planId} | Updates a plan for a given client. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
 | plantype | UpdatePlanType | PUT | /v2/clients/{clientId}/plans/{planId}/plantype | Change plan to a new type | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plantypes | GetPlantype | GET | /v2/plantypes/{name} | Retrieves a plan type by name and default region code | firm_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
@@ -1087,19 +1339,19 @@
 | plantypes | ListGatedPlanTypes | GET | /v2/plantypes/adviser/{adviserId} | Returns a list of gated plan types based on adviser multi-tie configuration. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | plantypes | ListPlantypes | GET | /v2/plantypes | Returns a list of plan types. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | plugins | GetPlugin | GET | /v1/plugin | Get latest plugin details | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
-| poolfactor | DeleteSecurityPoolFactor | DELETE | /v2/securities/{securityId}/poolfactors/{poolFactorOn} | Deletes a security pool factor based on securityId and poolfactorOn date. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| poolfactor | ListPoolFactor | GET | /v2/poolfactors | Get all pool factors for the passed in securityIds where the PoolFactorOn date falls between poolfactorOnStart and poolfactorOnEnd, inclusively. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| poolfactor | PutPoolFactors | PUT | /v2/poolfactors | Creates any poolfactors that do not exist and updates any poolfactors that do exist (based on securityId and poolfactorOn). | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| poolfactor | DeleteSecurityPoolFactor | DELETE | /v2/securities/{securityId}/poolfactors/{poolFactorOn} | Deletes a security pool factor based on securityId and poolfactorOn date. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| poolfactor | ListPoolFactor | GET | /v2/poolfactors | Get all pool factors for the passed in securityIds where the PoolFactorOn date falls between poolfactorOnStart and poolfactorOnEnd, inclusively. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| poolfactor | PutPoolFactors | PUT | /v2/poolfactors | Creates any poolfactors that do not exist and updates any poolfactors that do exist (based on securityId and poolfactorOn). | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | portfolioreport | CreatePortfolioReportRequest | POST | /v2/clients/{clientId}/reports/portfolio |  | N/A | No | Monolith.Report | Service Swagger (Monolith.Report) |
 | portfolioreport | GetPortfolioReportObject | GET | /v2/clients/{clientId}/reports/portfolio/{id}/object | Gets a object as stream | N/A | No | Monolith.Report | Service Swagger (Monolith.Report) |
 | portfolioreport | GetPortfolioReportRequest | GET | /v2/clients/{clientId}/reports/portfolio/{id} | Retrieves item by id | N/A | No | Monolith.Report | Service Swagger (Monolith.Report) |
 | portfolioreport | ListClientReportBranding | GET | /v2/clients/{clientId}/reports/portfolio/branding | Returns a BrandingDocumentCollection. | N/A | No | Monolith.Report | Service Swagger (Monolith.Report) |
 | preferences | ListTenantsPreferences | GET | /v2/tenants/{tenantId}/preferences | List tenant preferences. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | preprocess | CreateEsignPreprocess | POST | /v1/esign/preprocess |  | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
-| prices | DeleteSecurityPrice | DELETE | /v2/securities/{securityId}/prices/{pricedOn} | Deletes a security price based on securityId and pricedOn date. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| prices | GetPrices | GET | /v2/securities/{securityId}/prices | Get all prices for the passed in securityId. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| prices | PostPrices | POST | /v2/prices | Creates any prices that do not exist and return any prices that errored. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| prices | PutPrices | PUT | /v2/prices | Creates any prices that do not exist and updates any prices that do exist (based on securityId and pricedOn). | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| prices | DeleteSecurityPrice | DELETE | /v2/securities/{securityId}/prices/{pricedOn} | Deletes a security price based on securityId and pricedOn date. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| prices | GetPrices | GET | /v2/securities/{securityId}/prices | Get all prices for the passed in securityId. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| prices | PostPrices | POST | /v2/prices | Creates any prices that do not exist and return any prices that errored. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| prices | PutPrices | PUT | /v2/prices | Creates any prices that do not exist and updates any prices that do exist (based on securityId and pricedOn). | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | productproviders | CreateProductProvider | POST | /v2/productproviders | Creates a new product provider. | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger + Documentation Ignore |
 | productproviders | CreateProductproviderLink | POST | /v2/productproviders/{productProviderId}/link/{linkedProductProviderId} | Returns updated ProductProvider resource | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | productproviders | DeleteProductproviderLink | DELETE | /v2/productproviders/{productProviderId}/link/{linkedProductProviderId} | Delete the linked ProductProvider | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -1108,6 +1360,7 @@
 | productproviders | ListMultiTiedConfigProductProvider | GET | /v2/productproviders/adviser/{adviserPartyId} | Returns a list of product providers based on multi-tie configuration. | firm_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | productproviders | ListProductProviderPrograms | GET | /v2/productproviders/programs | Returns a list of Product Provider Programs. | firm_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | productproviders | ListProductproviders | GET | /v2/productproviders | Returns a list of product providers. | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
+| productproviders | ListProductproviderSearches | GET | /v1/productproviders/search | Search Product Providers by name | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | productproviders | ListProductProviderWrapperConfigs | GET | /v2/productproviders/{productProviderId}/wrapperconfigs | Gets a collection of wrapper configs | firm_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | productproviders | ProductProviderExists | HEAD | /v2/productproviders/{productProviderId} | Check the Product provider is available | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | productproviders | UpdateProductProvider | PUT | /v2/productproviders/{productProviderId} | Updates a product provider. | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -1132,8 +1385,13 @@
 | proposalbeneficiary | GetProposalBeneficiary | GET | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/beneficiaries/{beneficiaryId} | Returns a beneficiary for a given proposal and client. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | proposalbeneficiary | ListProposalBeneficiaries | GET | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/beneficiaries | Lists beneficiaries for a given proposal and client. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
 | proposalbeneficiary | UpdateProposalBeneficiaries | PUT | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId}/beneficiaries | Updates beneficiaries for a given proposal and client. | N/A | No | Microservice.Recommend | Service Swagger (Microservice.Recommend) |
-| prospectuses | GetProspectus | GET | /v2/prospectuses/{prospectusId} | Get Prospectus based on Prospectus Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| prospectuses | ListProspectuses | GET | /v2/prospectuses | List Prospectus based on Prospectus Ids. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| prospectuses | GetProspectus | GET | /v2/prospectuses/{prospectusId} | Get Prospectus based on Prospectus Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| prospectuses | ListProspectuses | GET | /v2/prospectuses | List Prospectus based on Prospectus Ids. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| protections | CreateClientPlansProtection | POST | /v1/clients/{clientId}/plans/protections | Create protection plan Only pre-existing plans are supported by the api at this time. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| protections | DeleteClientProtection | DELETE | /v1/clients/{clientId}/plans/protections/{planId} | Delete protection plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| protections | GetClientProtection | GET | /v1/clients/{clientId}/plans/protections/{planId} | Get the specified Plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| protections | ListClientPlansProtections | GET | /v1/clients/{clientId}/plans/protections | Get all plans of type mortgage for the client | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| protections | UpdateClientProtection | PUT | /v1/clients/{clientId}/plans/protections/{planId} | Update protection plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | provider configuration | DeleteProviderEndpoints | DELETE | /v2/providers/{providerId}/endpoints/{endpointType} | removes endpoint of type for a provider | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | provider configuration | GetAllProviderEndpoints | GET | /v2/providers/endpointTypes | gets all avaiable endpoint types with a collection of actions that type would support | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | provider configuration | getDeclarations | POST | /v2/providerintegrations/getDeclarations |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
@@ -1144,45 +1402,26 @@
 | provider tenant configuration | DeleteProviderTenant | DELETE | /v2/providers/{providerId}/providerTenants |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | provider tenant configuration | GetProviderTenant | GET | /v2/providers/{providerId}/providerTenants |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | provider tenant configuration | UpdateProviderTenant | PUT | /v2/providers/{providerId}/providerTenants |  | N/A | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
-| providercodes | CreateProviderCode | POST | /v2/productproviders/{providerId}/codes | Creates an allocated Provider Code issued by a Provider. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | CreateProviderCodeConfig | POST | /v2/productproviders/{providerId}/codes/config | Creates a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | DeleteProviderCode | DELETE | /v2/productproviders/{providerId}/codes/{providerCodeId} | Deletes an allocated Provider Code issued by a Provider. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | DeleteProviderCodeConfig | DELETE | /v2/productproviders/{providerId}/codes/config/{configId} | Deletes a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | GetProviderCode | GET | /v2/productproviders/{providerId}/codes/{providerCodeId} | Returns a specific allocated Provider Code issued by a Provider. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | GetProviderCodeConfig | GET | /v2/productproviders/{providerId}/codes/config/{configId} | Returns a specific Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | ListAdviserProviderCodes | GET | /v2/productproviders/{providerId}/advisers/{adviserId}/codes | Returns a list of Providers Codes allocated to an Adviser that were issued by a Provider. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | ListProviderCodeCombos | GET | /v2/productproviders/{providerId}/codes/combos | Computes and returns the list of Provider Code that are available for a specific group or adviser. Returns each code config along with the codes associated to the group/adviser and their provider cod | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | ListProviderCodeConfigs | GET | /v2/productproviders/{providerId}/codes/config | Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | ListProviderCodes | GET | /v2/productproviders/{providerId}/codes | Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | ListProviderCodesSystem | GET | /v2/productproviders/{providerId}/codes/system | For system reach only. Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | UpdateProviderCode | PUT | /v2/productproviders/{providerId}/codes/{providerCodeId} | Updates an allocated Provider Code issued by a Provider. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodes | UpdateProviderCodeConfig | PUT | /v2/productproviders/{providerId}/codes/config/{configId} | Updates a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodesconfigattributes | CreateProviderCodeConfigAttribute | POST | /v2/productproviders/codes/config/attributes | Creates a Provider Code config attribute for a tenant. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodesconfigattributes | DeleteProviderCodeConfigAttribute | DELETE | /v2/productproviders/codes/config/attributes/{configAttributeId} | Deletes a Provider Code config attribute for a tenant. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodesconfigattributes | GetProviderCodeConfigsAttributes | GET | /v2/productproviders/codes/config/attributes | Returns a list of Provider Code config attributes for a tenant. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providercodesconfigattributes | PatchProviderCodeConfigAttribute | PATCH | /v2/productproviders/codes/config/attributes/{configAttributeId} | Patches a Provider Code config attribute for a tenant. | N/A | No | Microservice.ProviderCodes | Service Swagger (Microservice.ProviderCodes) |
-| providerdocuments | GetProductProviderDocumentCategory | GET | /v2/providerdocuments/categories/{categoryId} | Get a product provider document category. | N/A | No | Microservice.ProviderDocuments | Service Swagger (Microservice.ProviderDocuments) |
-| providerdocuments | GetProductProviderDocumentObject | GET | /v2/clients/{clientId}/plans/{planId}/providerdocuments/{documentId}/object | Get a product provider document object. | N/A | No | Microservice.ProviderDocuments | Service Swagger (Microservice.ProviderDocuments) |
-| providerdocuments | ListProductProviderDocumentCategories | GET | /v2/providerdocuments/categories | List product provider document categories. | N/A | No | Microservice.ProviderDocuments | Service Swagger (Microservice.ProviderDocuments) |
-| providerdocuments | ListProductProviderDocuments | GET | /v2/clients/{clientId}/plans/{planId}/providerdocuments | List product provider documents. | N/A | No | Microservice.ProviderDocuments | Service Swagger (Microservice.ProviderDocuments) |
 | providertemplates | ListProviderTemplates | GET | /v1/provider_templates | List provider templates | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | publish | CreateTemplatePublish | POST | /v1/templates/{templateId}/publish | Publish template | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | purposes | ListClientPlansPurposes | GET | /v2/clients/{clientId}/plans/{planId}/purposes | Returns a list of purposes for a given client and plan. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | purposes | UpdateClientPlansPurposes | PUT | /v2/clients/{clientId}/plans/{planId}/purposes | Creates or updates the purpose for a given client and plan. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
-| quotes | AddLeadQuoteApplicant | POST | /v2/leads/{leadId}/quotes/{quoteId} | Adds a secondary lead owner to a given quote. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | CreateLeadQuote | POST | /v2/leads/{leadId}/quotes | Creates a new lead quote. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | CreateLeadQuoteResult | POST | /v2/leads/{leadId}/quotes/{quoteId}/results | Creates a new lead quote result. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | GetLeadQuote | GET | /v2/leads/{leadId}/quotes/{quoteId} | Returns a lead quote. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | GetLeadQuoteResult | GET | /v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId} | Returns a lead quote result. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | GetQuoteResult | GET | /v2/clients/{clientId}/quotes/results/{quoteResultId} | Returns a quote result for a given identifier. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | LeadQuoteExists | HEAD | /v2/leads/{leadId}/quotes/{quoteId} | Checks that a quote exists for a given lead. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | LeadQuoteResultsExists | HEAD | /v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId} | Checks that a quote result exists for a lead quote. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | ListLeadQuoteResults | GET | /v2/leads/{leadId}/quotes/{quoteId}/results | Returns a list of lead quote results. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | ListLeadQuotes | GET | /v2/leads/{leadId}/quotes | Returns a list of quotes. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | ListQuotes | GET | /v2/quotes | Get all prices for the passed in securityIds on the pricedOn date. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| quotes | ListQuotesPricedOn | GET | /v2/quotes/{pricedOn} | Get all prices for the passed in securityIds where the pricedOn date falls between pricedOnStart and pricedOnEnd, inclusively. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| quotes | RecommendClientQuoteResult | POST | /v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/recommend/{recommendationId} | Creates a new client recommendation proposal from quote result. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
-| quotes | SetLeadQuoteStatus | POST | /v2/leads/{leadId}/quotes/{quoteId}/status/{status} | Sets a new status for the lead quote. | client_financial_data, client_financial_data.quotes, myprofile, openid | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | AddLeadQuoteApplicant | POST | /v2/leads/{leadId}/quotes/{quoteId} | Adds a secondary lead owner to a given quote. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | CreateClientQuoteActivity | POST | /v1/clients/{clientId}/quotes/{quoteId}/activities |  | client_financial_data, client_financial_data.quotes, fund_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| quotes | CreateLeadQuote | POST | /v2/leads/{leadId}/quotes | Creates a new lead quote. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | CreateLeadQuoteResult | POST | /v2/leads/{leadId}/quotes/{quoteId}/results | Creates a new lead quote result. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | GetLeadQuote | GET | /v2/leads/{leadId}/quotes/{quoteId} | Returns a lead quote. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | GetLeadQuoteResult | GET | /v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId} | Returns a lead quote result. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | GetQuoteResult | GET | /v2/clients/{clientId}/quotes/results/{quoteResultId} | Returns a quote result for a given identifier. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | LeadQuoteExists | HEAD | /v2/leads/{leadId}/quotes/{quoteId} | Checks that a quote exists for a given lead. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | LeadQuoteResultsExists | HEAD | /v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId} | Checks that a quote result exists for a lead quote. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | ListClientQuotesActivities | GET | /v1/clients/{clientId}/quotes/{quoteId}/activities |  | client_financial_data, client_financial_data.quotes, fund_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| quotes | ListLeadQuoteResults | GET | /v2/leads/{leadId}/quotes/{quoteId}/results | Returns a list of lead quote results. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | ListLeadQuotes | GET | /v2/leads/{leadId}/quotes | Returns a list of quotes. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | ListQuotes | GET | /v2/quotes | Get all prices for the passed in securityIds on the pricedOn date. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| quotes | ListQuotesPricedOn | GET | /v2/quotes/{pricedOn} | Get all prices for the passed in securityIds where the pricedOn date falls between pricedOnStart and pricedOnEnd, inclusively. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| quotes | RecommendClientQuoteResult | POST | /v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId}/recommend/{recommendationId} | Creates a new client recommendation proposal from quote result. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
+| quotes | SetLeadQuoteStatus | POST | /v2/leads/{leadId}/quotes/{quoteId}/status/{status} | Sets a new status for the lead quote. | openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes, openid, myprofile, client_financial_data, client_financial_data.quotes | No | Microservice.Quotation | Service Swagger (Microservice.Quotation) |
 | quotes, beta | AddClientQuoteApplicant | POST | /v2/clients/{clientId}/quotes/{quoteId} | Adds a secondary client owner to a given quote. | openid, myprofile, client_financial_data, client_financial_data.quotes | Yes | N/A | Public Swagger v2 |
 | quotes, beta | ClientQuoteExists | HEAD | /v2/clients/{clientId}/quotes/{quoteId} | Checks that a quote exists for a given client. | openid, myprofile, client_financial_data, client_financial_data.quotes | Yes | N/A | Public Swagger v2 |
 | quotes, beta | ClientQuoteResultsExists | HEAD | /v2/clients/{clientId}/quotes/{quoteId}/results/{quoteResultId} | Checks that a quote result exists for a client quote. | openid, myprofile, client_financial_data, client_financial_data.quotes | Yes | N/A | Public Swagger v2 |
@@ -1239,9 +1478,11 @@
 | recommendations | UpdateRecommendationProposal | PUT | /v2/clients/{clientId}/recommendations2/{recommendationId}/proposals/{proposalId} | Updates a recommendation proposal. | N/A | No | Microservice.Recommend | Service Swagger + Documentation Ignore |
 | recommendations | UpdateTenantRecommendationCategory | PUT | /v2/recommendations2/categories/{categoryId} | Returns a recommendation category document. | N/A | No | Microservice.Recommend | Service Swagger + Documentation Ignore |
 | recommendations | UpdateTenantRecommendationSubCategory | PUT | /v2/recommendations2/subcategories/{subCategoryId} | Returns a recommendation subcategory document. | N/A | No | Microservice.Recommend | Service Swagger + Documentation Ignore |
+| redirect-urls | GetIntelligent-officeRedirect-url | GET | /api/intelligent-office/redirect-url |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | refdata | ListRefdata | GET | /v2/incomes/refdata/{type} | Get the list of Reference Data. | N/A | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
-| regions | GetRegion | GET | /v2/regions/{regionId} | Get Region by Region Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| regions | ListRegions | GET | /v2/regions | List Regions based Region Ids. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| refresh-token | Refresh-tokenIntelligent-office | POST | /api/intelligent-office/refresh-token |  | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
+| regions | GetRegion | GET | /v2/regions/{regionId} | Get Region by Region Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| regions | ListRegions | GET | /v2/regions | List Regions based Region Ids. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | relationships | CreateAccountRelationship | POST | /v2/accounts/{accountId}/relationships | Creates a new Relationship for the given Account. | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | CreateClientRelationship | POST | /v2/clients/{clientId}/relationships | Creates a relationship for a given client. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | relationships | CreateClientRelationshipAccess | POST | /v2/clients/{clientId}/relationships/{relationshipId}/access | Grants access for the Relationship relation to the Relationship subject. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
@@ -1253,6 +1494,7 @@
 | relationships | DeleteClientRelationshipAccess | DELETE | /v2/clients/{clientId}/relationships/{relationshipId}/access | Revokes access from the Relationship relation to the Relationship subject. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | relationships | DeleteLeadRelationship | DELETE | /v2/leads/{leadId}/relationships/{relationshipId} | Deletes a relationship for a given lead and relationship. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | relationships | DeletePersonalContactRelationship | DELETE | /v2/clients/{clientId}/personalcontacts/{personalContactId}/relationships/{relationshipId} | Delete an existing relationship | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| relationships | ExistsClientRelationship | HEAD | /v1/clients/{clientId}/relationships/{relationshipId} | Get the specified Relationship | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | GetClientRelationship | GET | /v2/clients/{clientId}/relationships/{relationshipId} | Returns a relationship for a given client and relationship. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | relationships | GetLeadRelationship | GET | /v2/leads/{leadId}/relationships/{relationshipId} | Returns a relationship for a given lead and relationship. | openid, myprofile, client_data | Yes | N/A | Public Swagger v2 |
 | relationships | GetPersonalContactRelationship | GET | /v2/clients/{clientId}/personalcontacts/{personalContactId}/relationships/{relationshipId} | Get given relationhsip for a given personal contact | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -1290,6 +1532,8 @@
 | reportgrouptorole | ListQuicksightGroupToIoRole | GET | /v2/roles/{roleId}/reportgroups | Gets a collection of report groups related to a role. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | requirements | GetClientRequirement | GET | /v2/clients/{clientId}/requirements/{requirementId} | Gets a requirement. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
 | requirements | ListClientRequirements | GET | /v2/clients/{clientId}/requirements | Returns a list of requirements. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
+| resources | CreateResource | POST | /v1/resource | Create a resource | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
+| resources | ListResources | GET | /v1/resource | List all available resources | N/A | No | Microservice.Content | Service Swagger (Microservice.Content) |
 | restart | CreateInstanceRestart | POST | /v1/instances/{instanceId}/restart |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | restore | CreateTemplateRestore | POST | /v1/templates/{templateId}/restore |  | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | resume | CreateInstanceResume | POST | /v1/instances/{instanceId}/resume |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
@@ -1304,31 +1548,42 @@
 | riskprofiles | ListRiskProfiles | GET | /v2/riskprofiles | Retrieves a list of all the risk profiles or those that match the filter provided. | N/A | No | Monolith.Atr | Service Swagger (Monolith.Atr) |
 | riskprofiles | PatchRiskProfile | PATCH | /v2/riskprofiles/{riskProfileId} | Patch risk profile | N/A | No | Monolith.Atr | Service Swagger (Monolith.Atr) |
 | riskprofiles | UnarchiveRiskProfile | POST | /v2/riskprofiles/{riskProfileId}/unarchive | Unarchive the Risk Profile | N/A | No | Monolith.Atr | Service Swagger (Monolith.Atr) |
+| roles | ExistsRole | HEAD | /v1/roles/{roleId} |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | roles | ListTemplatesRoles | GET | /v1/templates/{templateId}/roles | List template roles | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | roles | UpdateTemplatesRoles | PUT | /v1/templates/{templateId}/roles |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | saves | CreateSave | POST | /v1/plugin/save/{templateVersionId} |  | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
+| savingsaccounts | CreateClientPlansSavingsaccount | POST | /v1/clients/{clientId}/plans/savingsaccounts | Create investment plan (savings account) Only pre-existing plans are supported by the api at this time. Note - this controller will create a plan of type Investment. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| savingsaccounts | DeleteClientSavingsaccount | DELETE | /v1/clients/{clientId}/plans/savingsaccounts/{planId} | Delete investment plan (savings account) | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| savingsaccounts | GetClientSavingsaccount | GET | /v1/clients/{clientId}/plans/savingsaccounts/{planId} | Get the specified Plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| savingsaccounts | ListClientPlansSavingsaccounts | GET | /v1/clients/{clientId}/plans/savingsaccounts | Returns a collection of investment plans (savings accounts) for the specified client. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| savingsaccounts | UpdateClientSavingsaccount | PUT | /v1/clients/{clientId}/plans/savingsaccounts/{planId} | Update investment plan (savings account) | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | schema | GetPluginSchema | GET | /v1/plugin/schema | Download data source schema | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
-| search | ListPropertyAddressesSearch | GET | /v2/properties/addresses/search | Searches addresses by the specified query. | N/A | No | Microservice.PropertyProvider | Service Swagger (Microservice.PropertyProvider) |
+| search | CreateLeadsContactsSearch | POST | /v1/leads/contacts/search |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| search | CreatePlansSearch | POST | /v1/plans/search | Search for plans valued for the provider between from and to date using a given type.  Returns collection of PlanDocument object. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| search, clients | CreateClientsContactsSearch | POST | /v1/clients/contacts/search |  | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| search, clients | CreateClientsSearch | POST | /v1/clients/search | Searchs clients using  filters and ordering specified in request | client_data, client_identification_data, firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| search, leads | CreateLeadsSearch | POST | /v1/leads/search | Searchs leads using filters and ordering specified in request | client_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | searches | ListClientsSearch | GET | /v2/clients/search | Returns a list of quick search clients for the user. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
-| sectors | GetSector | GET | /v2/sectors/{sectorId} | Get Sector based on Sector Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| sectors | ListSectors | GET | /v2/sectors | List Sector based on Sector Ids. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securities | GetSecurity | GET | /v2/securities/{securityId} | Gets an individual Security based on SecurityId. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securities | ListExistingSecurities | POST | /v2/securities/exist | Returns a List of Security Ids and if they exist in the database. Max number of exists requests = 500 | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securities | ListSecurities | GET | /v2/securities | Gets a List of Securities based on SecurityIds, IdentifierSymbol, or Name. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securities | ListSecuritiesByIdentifierSymbols | GET | /v2/securities/byidentifiersymbols | Gets a List Securities based on Identifier Type, Identifier Symbols. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securities | ListSecuritiesByIds | GET | /v2/securities/byids | Get a List of Securities based on SecurityIds | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securities | ListSecuritiesBySourceReferences | GET | /v2/securities/bysourcereferences | Gets a List Securities based on Sources and Source Reference Ids. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securities | ListSecuritiesV2 | GET | /v2/securitiesV2 | Gets a List of Securities based on security filters. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| searchids | CreatePlansSearchid | POST | /v1/plans/searchids | Search for plans valued for the provider between from and to date using a given type.  Returns collection of PlanDocument object. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| sectors | GetSector | GET | /v2/sectors/{sectorId} | Get Sector based on Sector Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| sectors | ListSectors | GET | /v2/sectors | List Sector based on Sector Ids. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securities | GetSecurity | GET | /v2/securities/{securityId} | Gets an individual Security based on SecurityId. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securities | ListExistingSecurities | POST | /v2/securities/exist | Returns a List of Security Ids and if they exist in the database. Max number of exists requests = 500 | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securities | ListSecurities | GET | /v2/securities | Gets a List of Securities based on SecurityIds, IdentifierSymbol, or Name. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securities | ListSecuritiesByIdentifierSymbols | GET | /v2/securities/byidentifiersymbols | Gets a List Securities based on Identifier Type, Identifier Symbols. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securities | ListSecuritiesByIds | GET | /v2/securities/byids | Get a List of Securities based on SecurityIds | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securities | ListSecuritiesBySourceReferences | GET | /v2/securities/bysourcereferences | Gets a List Securities based on Sources and Source Reference Ids. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securities | ListSecuritiesV2 | GET | /v2/securitiesV2 | Gets a List of Securities based on security filters. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | security | GetOptionSecurity | GET | /v1/options/security | Get template security options | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
 | security | UpdateOptionSecurity | PUT | /v1/options/security | Update template security options | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
-| securitygroups | DeleteSecurityGroup | DELETE | /v2/securitygroups/{securityGroupId} | Delete a Security Group by SecurityGroupId. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securitygroups | GetSecurityGroup | GET | /v2/securitygroups/{securityGroupId} | Get a Security Group By Security Group Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securitygroups | ListSecurityGroupGroupSecurities | GET | /v2/securitygroups/{securityGroupId}/groupsecurities | Get a Security GroupGroup Securities by filters. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securitygroups | ListSecurityGroups | GET | /v2/securitygroups | Get a List of Security Groups. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securitygroups | ListSecurityGroupsSecurities | GET | /v2/securitygroups/securities | Get a Security Group Securities by filters. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securitygroups | PostSecurityGroups | POST | /v2/securitygroups | Create Security Groups. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securitygroups | PutSecurityGroups | PUT | /v2/securitygroups/{securityGroupId} | Update a Security Group. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| securitytypes | ListSecurityTypes | GET | /v2/securitytypes | Get a List of Security Types. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securitygroups | DeleteSecurityGroup | DELETE | /v2/securitygroups/{securityGroupId} | Delete a Security Group by SecurityGroupId. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securitygroups | GetSecurityGroup | GET | /v2/securitygroups/{securityGroupId} | Get a Security Group By Security Group Id. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securitygroups | ListSecurityGroupGroupSecurities | GET | /v2/securitygroups/{securityGroupId}/groupsecurities | Get a Security GroupGroup Securities by filters. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securitygroups | ListSecurityGroups | GET | /v2/securitygroups | Get a List of Security Groups. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securitygroups | ListSecurityGroupsSecurities | GET | /v2/securitygroups/securities | Get a Security Group Securities by filters. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securitygroups | PostSecurityGroups | POST | /v2/securitygroups | Create Security Groups. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securitygroups | PutSecurityGroups | PUT | /v2/securitygroups/{securityGroupId} | Update a Security Group. | openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data, openid, myprofile, firm_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| securitytypes | ListSecurityTypes | GET | /v2/securitytypes | Get a List of Security Types. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | segments | GetCampaignSegment | GET | /v1/campaigns/{campaignId}/segments |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | segments | UpdateCampaignSegments | PUT | /v1/campaigns/{campaignId}/segments |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | send | SendClientEmail | POST | /v1/clients/{clientId}/emails/{emailId}/send |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
@@ -1356,6 +1611,7 @@
 | servicecasestatus | ListServiceCaseStatuses | GET | /v2/servicecases/statuses | Returns a list of ServiceCase statuses. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | servicehistories | GetClientServiceRecord | GET | /v2/clients/{clientId}/servicehistory/{clientServiceRecordId} | Returns a client service record. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | servicehistories | ListClientServiceHistory | GET | /v2/clients/{clientId}/servicehistory | Returns a list of client service history. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| servicestatuses | ListServicestatuses | GET | /v1/servicestatuses |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | session | GetBeginsession | GET | /session/beginsession |  | N/A | No | Microservice.Identity | Service Swagger (Microservice.Identity) |
 | session | GetQuicksightSessionEmbedUrl | GET | /v2/quicksight/session/embed-url | Generates a session URL and authorization code that you can use to embed the Amazon QuickSight console in your web server code. | N/A | No | Microservice.Quicksight | Service Swagger (Microservice.Quicksight) |
 | settings | CreateOrUpdateSettingForClient | PUT | /v2/settings/{key}/clients/{clientId} | Creates or updates a particular setting for the specified client. | N/A | No | Microservice.Config | Service Swagger (Microservice.Config) |
@@ -1379,28 +1635,29 @@
 | signedurl | GetAvatarSignedurl | GET | /v2/avatars/signedurl | Get Avatar signed url for client for PUT | N/A | No | Microservice.Avatar | Service Swagger (Microservice.Avatar) |
 | signers | UpdateDocuSignEnvelopeSigners | PUT | /v2/clients/docusign_envelopes/{envelopeId}/signers | UpdateAsync Envelope Signers in the third party docuSign and in the DB | N/A | No | Microservice.DocuSign | Service Swagger (Microservice.DocuSign) |
 | signurl | SignDocuSignEnvelope | GET | /v2/clients/{clientId}/docusign_envelopes/{envelopeId}/sign_url | Get sign URL of eSignature Envelope | N/A | No | Microservice.DocuSign | Service Swagger (Microservice.DocuSign) |
+| snapshots | ListCashflowSnapshotDetails | GET | /v2/clients/{clientId}/servicecases/{servicecaseId}/snapshots | List Cashflow Snapshot | N/A | No | Microservice.Cashflow | Service Swagger (Microservice.Cashflow) |
 | splits | ClientFeeSplitExists | HEAD | /v2/clients/{clientId}/fees/{feeId}/splits/{splitId} | Checks that the client fee split exists. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | CreateClientFeeSplit | POST | /v2/clients/{clientId}/fees/{feeId}/splits | Creates a client fee split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | CreatePlanSplit | POST | /v2/clients/{clientId}/plans/{planId}/splits | Creates a plan split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | CreateSplit | POST | /v2/splits | Creates a split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | DeleteClientFeeSplit | DELETE | /v2/clients/{clientId}/fees/{feeId}/splits/{splitId} | Deletes a client fee split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
-| splits | DeleteClientPlanSplit | DELETE | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Removes the association between a plan and service case. | firm_data, firm_data.splits, myprofile, openid | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| splits | DeleteClientPlanSplit | DELETE | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Removes the association between a plan and service case. | openid, myprofile, client_financial_data, openid, myprofile, client_financial_data, openid, myprofile, client_financial_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | splits | DeletePlanSplit | DELETE | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Deletes a plan split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | DeleteSplit | DELETE | /v2/splits/{splitId} | Deletes a split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | GetClientFeeSplit | GET | /v2/clients/{clientId}/fees/{feeId}/splits/{splitId} | Returns a client fee split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
-| splits | GetClientPlanSplit | GET | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Get plan split. | firm_data, firm_data.splits, myprofile, openid | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| splits | GetClientPlanSplit | GET | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Get plan split. | openid, myprofile, client_financial_data, openid, myprofile, client_financial_data, openid, myprofile, client_financial_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | splits | GetPlanSplit | GET | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Returns a plan split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | GetSplit | GET | /v2/splits/{splitId} | Returns a split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | ListClientFeeSplits | GET | /v2/clients/{clientId}/fees/{feeId}/splits | Returns a collection of client fee splits | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
-| splits | ListClientPlanSplits | GET | /v2/clients/{clientId}/plans/{planId}/splits | Get splits for a plan. | firm_data, firm_data.splits, myprofile, openid | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| splits | ListClientPlanSplits | GET | /v2/clients/{clientId}/plans/{planId}/splits | Get splits for a plan. | openid, myprofile, client_financial_data, openid, myprofile, client_financial_data, openid, myprofile, client_financial_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | splits | ListPlanSplits | GET | /v2/clients/{clientId}/plans/{planId}/splits | Returns a collection of plan splits | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | ListSplits | GET | /v2/splits | Returns a collection of splits | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | PlanSplitExists | HEAD | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Checks that the plan split exists. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | SplitExists | HEAD | /v2/splits/{splitId} | Checks that the split exists. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splits | UpdateClientFeeSplit | PUT | /v2/clients/{clientId}/fees/{feeId}/splits/{splitId} | Updates a client fee split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
-| splits | UpdateClientPlanSplit | PUT | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Update a plan split. | firm_data, firm_data.splits, myprofile, openid | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| splits | UpdateClientPlanSplit | PUT | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Update a plan split. | openid, myprofile, client_financial_data, openid, myprofile, client_financial_data, openid, myprofile, client_financial_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | splits | UpdatePlanSplit | PUT | /v2/clients/{clientId}/plans/{planId}/splits/{splitId} | Updates a plan split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
-| splits | UpdatePlanSplitsFromTemplate | PUT | /v2/clients/{clientId}/plans/{planId}/splits | Create or update plan splits using the split templates. | firm_data, firm_data.splits, myprofile, openid | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| splits | UpdatePlanSplitsFromTemplate | PUT | /v2/clients/{clientId}/plans/{planId}/splits | Create or update plan splits using the split templates. | openid, myprofile, client_financial_data, openid, myprofile, client_financial_data, openid, myprofile, client_financial_data | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | splits | UpdateSplit | PUT | /v2/splits/{splitId} | Updates a split document. | openid, myprofile, firm_data, firm_data.splits | Yes | N/A | Public Swagger v2 |
 | splittemplates | GetClientSplitTemplate | GET | /v2/clients/{clientId}/splittemplates/{templateId} | Returns a single split template for an client. | openid, myprofile, firm_data, firm_data.split.templates | Yes | N/A | Public Swagger v2 |
 | splittemplates | GetSplitTemplate | GET | /v2/advisers/{adviserId}/splittemplates/{templateId} | Returns a single split template for an adviser. | openid, myprofile, firm_data, firm_data.split.templates | Yes | N/A | Public Swagger v2 |
@@ -1427,11 +1684,12 @@
 | steps | ListInstancesSteps | GET | /v1/instances/{instanceId}/steps |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | steps | ListTemplateSteps | GET | /v1/templates/{templateId}/steps | List template steps | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | steps | PatchTemplateStep | PATCH | /v1/templates/{templateId}/steps/{stepId} |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
-| stocks | DeleteStock | DELETE | /v2/stocks/{securityId} | Delete a Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| stocks | GetStock | GET | /v2/stocks/{securityId} | Gets a Stock Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| stocks | ListStocks | GET | /v2/stocks | Delete a Security based on Security Id. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| stocks | PostStocks | POST | /v2/stocks | Create Stock Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| stocks | PutStocks | PUT | /v2/stocks | Update Stock Securities. | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| stocks | DeleteStock | DELETE | /v2/stocks/{securityId} | Delete a Security based on Security Id. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| stocks | GetStock | GET | /v2/stocks/{securityId} | Gets a Stock Security based on Security Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| stocks | ListStocks | GET | /v2/stocks | Delete a Security based on Security Id. | openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data, openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| stocks | PostStocks | POST | /v2/stocks | Create Stock Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| stocks | PutStocks | PUT | /v2/stocks | Update Stock Securities. | openid, myprofile, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| subplans | ListClientPlansSubplans | GET | /v1/clients/{clientId}/plans/{planId}/subplans | Get the subplans for a Plan | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | subscribe | CreateEventSubscribe | POST | /v1/events/subscribe | Add a new subscription for the party based on given request. | N/A | No | Microservice.ChangeNotification | Service Swagger (Microservice.ChangeNotification) |
 | subscribe | ListEventsSubscribe | GET | /v1/events/subscribe | Get a list of subscriptions for the party. | N/A | No | Microservice.ChangeNotification | Service Swagger (Microservice.ChangeNotification) |
 | subscribes | DeleteSubscribe | DELETE | /v1/events/subscribe/{noun} | Deletes the subscription settings for the party based on noun. | N/A | No | Microservice.ChangeNotification | Service Swagger (Microservice.ChangeNotification) |
@@ -1459,19 +1717,27 @@
 | tasknotes | ListTaskNotes | GET | /v2/activities/tasks/{taskId}/notes | Returns a list of task notes. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasknotes | UpdateTaskNote | PUT | /v2/activities/tasks/{taskId}/notes/{noteId} | Updates a given task note. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasks | CreateTask | POST | /v2/activities/tasks | Creates a task. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
+| tasks | CreateTaskSetting | POST | /v1/tasks/settings | Create task notification settings. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasks | DeleteTask | DELETE | /v2/activities/tasks/{taskId} | Deletes a given task. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
+| tasks | ExistsTask | HEAD | /v1/tasks/{taskId} | Retrieves the details of the specified Task. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasks | GetTask | GET | /v2/activities/tasks/{taskId} | Returns a given task. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
+| tasks | GetTaskSettings | GET | /v1/tasks/settings | Retrievs the task notification settings. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasks | LinkFeeToTask | POST | /v2/activities/tasks/{taskId}/fees/{feeId}/link | Links the fee to given task | N/A | No | Monolith.Charging | Service Swagger (Monolith.Charging) |
+| tasks | ListPartiesTasks | GET | /v1/parties/{partyId}/tasks | Retrieves a list of Tasks for the specified Party. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasks | ListTask | GET | /v2/activities/tasks | Returns a list of tasks. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
 | tasks | ListTaskFees | GET | /v2/activities/tasks/{taskId}/fees | Gets a collection of fees linked to the given task. | N/A | No | Monolith.Charging | Service Swagger (Monolith.Charging) |
+| tasks | ListTasks | GET | /v1/tasks | Retrieves a list of Tasks for the current user.              Example filters:     $filter=taskId in (1, 2, 3) | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasks | SearchTask | GET | /v2/activities/tasks/search | Search for the tasks. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasks | UnlinkFeeToTask | POST | /v2/activities/tasks/{taskId}/fees/{feeId}/unlink | Unlinks the fee to given task | N/A | No | Monolith.Charging | Service Swagger (Monolith.Charging) |
 | tasks | UpdateTask | PUT | /v2/activities/tasks/{taskId} | Updates a given task. | N/A | No | Monolith.Crm | Service Swagger + Documentation Ignore |
+| tasks | UpdateTaskSettings | PUT | /v1/tasks/settings | Update the existing task notification settings. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | templatecategories | CreateTemplatecategory | POST | /v1/templatecategories |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | templatecategories | DeleteTemplatecategory | DELETE | /v1/templatecategories/{templateCategoryId} |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | templatecategories | GetTemplatecategory | GET | /v1/templatecategories/{templateCategoryId} |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | templatecategories | ListTemplatecategories | GET | /v1/templatecategories | Get all campaign templates for the given tenant | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
 | templatecategories | PatchTemplatecategory | PATCH | /v1/templatecategories/{templateCategoryId} |  | N/A | No | Microservice.Workflow | Service Swagger (Microservice.Workflow) |
+| templategroups | GetTemplategroup | GET | /v1/splits/templategroups/{id} | Get split template group for tenant by Id. | N/A | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
+| templategroups | ListSplitsTemplategroups | GET | /v1/splits/templategroups | Get split template groups for tenant. | N/A | No | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | templatelayouts | ExistsTemplatelayout | HEAD | /v1/templatelayouts/{layoutId} |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | templatelayouts | GetTemplatelayout | GET | /v1/templatelayouts/{layoutId} |  | N/A | No | Monolith.Campaign | Service Swagger (Monolith.Campaign) |
 | templates | CreateClientPlanFeeByTemplate | POST | /v2/clients/{clientId}/plans/{planId}/fees/templates/{templateId} | Create a client plan fee from a fee model template. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
@@ -1489,19 +1755,25 @@
 | tenant | UpdateTenantDetail | PUT | /v2/tenants/{tenantId} | Updates Tenant Detail. | N/A | No | Monolith.Organization | Service Swagger (Monolith.Organization) |
 | tenant | UpdateTenantStatus | PUT | /v2/tenants/{tenantId}/status | Updates Tenant Status. | N/A | No | Monolith.Organization | Service Swagger (Monolith.Organization) |
 | tenant configuration | TenantFederationExists | HEAD | /v2/tenants/{tenantid}/federation |  | N/A | No | Microservice.Federation | Service Swagger (Microservice.Federation) |
-| tenantcategories | DeleteTenantCategory | DELETE | /v2/tenantcategories/{categoryId} |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| tenantcategories | GetTenantCategory | GET | /v2/tenantcategories/{tenantCategoryId} |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| tenantcategories | ListTenantCategories | GET | /v2/tenantcategories |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| tenantcategories | PatchTenantCategories | PATCH | /v2/tenantcategories |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
-| tenantcategories | PostTenantCategories | POST | /v2/tenantcategories |  | N/A | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| tenantcategories | DeleteTenantCategory | DELETE | /v2/tenantcategories/{categoryId} |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| tenantcategories | GetTenantCategory | GET | /v2/tenantcategories/{tenantCategoryId} |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| tenantcategories | ListTenantCategories | GET | /v2/tenantcategories |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| tenantcategories | PatchTenantCategories | PATCH | /v2/tenantcategories |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
+| tenantcategories | PostTenantCategories | POST | /v2/tenantcategories |  | openid, myprofile, security, fund_data, openid, myprofile, security, fund_data, openid, myprofile, security, fund_data | No | Microservice.Security | Service Swagger (Microservice.Security) |
 | tenants | CreateTenant | POST | /v2/tenants | Creates a new tenant. Only available under system reach | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger + Documentation Ignore |
 | tenants | ListTenantDocuments | GET | /v2/tenants | Get a paged list of all tenants. | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| tenants | ListTenants1 | GET | /v1/tenants | Get a paged list of all tenants. You need system reach to call this | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tenants | TenantExists | HEAD | /v2/tenants/{tenantId} | Checks whether or not a given Tenant exists. | firm_data, myprofile, openid | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tenants, beta | GetTenant | GET | /v2/tenants/{tenantId} | Retrieves the tenant resource specified | openid, myprofile, firm_data | Yes | N/A | Public Swagger v2 |
 | tenanttasksetting | GetTenantTaskSetting | GET | /v2/activities/tasks/tenants/{tenantId}/settings | Returns a given tenant task setting. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tenanttasksetting | UpdateTenantTaskSetting | PUT | /v2/activities/tasks/tenants/{tenantId}/settings | Updates a given tenant task setting. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | test only | ListTests | GET | /v2/test |  | N/A | No | Microservice.MoneyMovement | Service Swagger (Microservice.MoneyMovement) |
+| timeentries | CreateTimeEntry | POST | /v1/time_entries | Create a time entry | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
+| timeentries | DeleteTimeEntry | DELETE | /v1/time_entries/{entryId} | Delete a time entry | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
+| timeentries | GetTimeEntry | GET | /v1/time_entries/{entryId} | Get a time entry by Entry Id | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
+| timeentries | ListClientTimeEntries | GET | /v1/clients/{clientId}/time_entries | Get the client time entries by filter | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
 | timeentries | ListTimeEntries | GET | /v2/time_entries | Returns a list of time entries. | N/A | Yes | N/A | Public Swagger v2 |
+| timeentries | UpdateTimeEntry | PUT | /v1/time_entries/{entryId} | Edit a time entry | N/A | No | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
 | timeseries | GetAssetsTimeSeries | GET | /v2/clients/{clientId}/assets/valuations/timeseries | Returns an asset valuations history for a client as a time and value series. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | timeseries | GetPlansTimeSeries | GET | /v2/clients/{clientId}/plans/valuations/timeseries | Returns a plan valuations history for a client as a time and value series. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | timeseries | ListClientTransactionTimeSeries | GET | /v2/clients/{clientId}/transactions/timeseries | Returns a transaction history for a client as a time and value series. | N/A | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
@@ -1537,9 +1809,12 @@
 | userdiaryclassifications | GetUserDiaryClassification | GET | /v2/diary/users/{userId}/classifications/{userDiaryClassificationId} | Returns a given user diary classification. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | userdiaryclassifications | ListUserDiaryClassification | GET | /v2/diary/users/{userId}/classifications | Returns a list of user diary classifications. | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | users | CreateUser | POST | /v2/users | Deprecated:    Create a user | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| users | ExistsUser | HEAD | /v1/users/{userId} |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| users | GetTenantId | GET | /v1/users/tenantIds/{tenantId} | Get system user for TenantId | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | users | GetUser | GET | /v2/users/{userId} | Deprecated:   Returns user resource | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | users | UpdateUser | PUT | /v2/users/{userId} | Deprecated:    Update a user | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | users | UserExists | HEAD | /v2/users/{userId} | Check the user is available | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| users, search | CreateUsersSearch | POST | /v1/users/search |  | N/A | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | valuations | CreateAssetValuations | POST | /v2/clients/{clientId}/assets/{assetId}/valuations | Creates a valuation on a given client and asset. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | valuations | CreatePlanValuations | POST | /v2/clients/{clientId}/plans/{planId}/valuations | Creates a valuation for a given client and plan. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
 | valuations | DeleteClientAssetValuation | DELETE | /v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId} | Deletes an association on a valuation for a given client, asset and valuation. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
@@ -1550,7 +1825,11 @@
 | valuations | ListClientAssetValuations | GET | /v2/clients/{clientId}/assets/{assetId}/valuations | Returns a list of valuations on a given client and asset. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | valuations | ListClientPlanValuations | GET | /v2/clients/{clientId}/plans/{planId}/valuations | Returns a list of valuations for a given client and plan. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
 | valuations | ListClientValuations | GET | /v2/clients/{clientId}/plans/valuations | Returns a list of plan valuations for a given client. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| valuations | ListClientValuationsAssetliabilityTimeseries | GET | /v1/clients/{clientId}/valuations/assetliability_timeseries | Get a list of aggregated valuations for assets and for liabilites for all the plans and accounts for the logged in user. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| valuations | ListClientValuationsPortfolioValuations | GET | /v1/clients/{clientId}/valuations/portfolio_valuations | Get a list of valuations for all plans for the logged in user. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| valuations | ListClientValuationsTimeseries | GET | /v1/clients/{clientId}/valuations/timeseries | Get a list of aggregated valuations for all the plans and accounts for the logged in user. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | valuations | PostCePlanValuation | POST | /v2/clients/{clientId}/plans/{planId}/valuations/ce | Accepts a request to fetch valuation from provider | client_financial_data, myprofile, openid | No | Monolith.ContractEnquiry | Service Swagger (Monolith.ContractEnquiry) |
+| valuations | RefreshClientValuation | POST | /v1/clients/{clientId}/valuations/refresh | Request new electronic valuations for all plans in the clients portfolio where this is possible. | client_financial_data, myprofile, openid | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | valuations | UpdateClientAssetValuation | PUT | /v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId} | Updates or creates an association on a valuation for a given client, asset and valuation. | openid, myprofile, client_financial_data | Yes | N/A | Public Swagger v2 |
 | valuations | UpdateClientPlanValuation | PUT | /v2/clients/{clientId}/plans/{planId}/valuations/{valuationId} | Updates a valuation on a given client, plan and valuation. | openid, myprofile, client_financial_data | Yes | Monolith.Portfolio | Public Swagger v2 + GitHub Monolith.Portfolio |
 | variables | ListTemplateVersionsVariables | GET | /v1/templates/{templateId}/versions/{versionId}/variables |  | N/A | No | Microservice.Author | Service Swagger (Microservice.Author) |
@@ -1602,12 +1881,20 @@
 ### abort (1 operations)
 - CreateInstanceAbort
 
-### accountrecovery (5 operations)
+### accountrecovery (13 operations)
 - CreateConfirmation
 - CreateForgotpassword
+- CreateV1AccountsRecoveryForgotpasswordEmailrecovery
+- CreateV1AccountsRecoveryForgotusername
+- CreateV1AccountsRecoveryVerifyIdentityQuestion
 - GetConfirmation
 - GetForgotpassword
+- GetRecovery
 - GetResetpassword
+- GetV1AccountRecoveryForgotpassword
+- GetV1AccountRecoveryForgotpasswordConfirmation
+- GetV1AccountRecoveryForgotusername
+- GetV1AccountRecoveryForgotusernameConfirmation
 
 ### accounts (13 operations)
 - AccountDocumentExists
@@ -1624,8 +1911,17 @@
 - UpdateAccountDocument
 - UpdateAccountDocumentObject
 
-### accountsecurity (1 operations)
+### accountsecurity (7 operations)
+- CreateUserAuthenticate
+- CreateV1AccountsSecurityChangepassword
+- GetPassword
+- GetV1Account
+- GetV1AccountsSecurityChangepassword
 - GetVerify
+- UpdateclaimsUser
+
+### actioned (1 operations)
+- CreateInsightActioned
 
 ### actions (1 operations)
 - CreateMessageAction
@@ -1787,12 +2083,23 @@
 - GetAssetClass
 - ListAssetClasses
 
-### assets (5 operations)
+### assets (20 operations)
+- CreateAssetValuationV1
 - CreateClientAssets
+- CreateClientAssetV1
 - DeleteClientAsset
+- DeleteClientAssetV1
+- DeleteClientAssetValuationV1
+- GetAssetTypeV1
+- GetAssetTypeV12
 - GetClientAsset
+- GetClientAssetV1
+- GetClientAssetV11
+- GetClientAssetValuationsV1
+- GetClientAssetValuationV1
+- ListAssetTypesV1
 - ListClientAssets
-- UpdateClientAsset
+- ... and 5 more
 
 ### attachments (5 operations)
 - CreateMessagesAttachments
@@ -1837,6 +2144,9 @@
 - ListBankAccounts
 - UpdateBankAccount
 
+### batch (1 operations)
+- GetAppsInstalled
+
 ### beneficiaries (10 operations)
 - DeleteClientBeneficiaries
 - DeleteClientPlanBeneficiaries
@@ -1878,10 +2188,11 @@
 - ListUserMesBrands
 - PatchGroupBrand
 
-### bulk (12 operations)
+### bulk (13 operations)
 - CreateBulkMessage
 - CreateBulkMessageAttachment
 - CreateBulkMessageRecipients
+- CreateResourcesBulk
 - DeleteBulkMessageAttachment
 - DeleteBulkMessageRecipients
 - GetBulkMessage
@@ -1891,6 +2202,9 @@
 - RevokeBulkMessage
 - SendBulk
 - UpdateBulkMessage
+
+### bulk-delete (1 operations)
+- CreateEtlcontrollerBulk-delete
 
 ### bulkvaluations (5 operations)
 - DeleteValuationBatch
@@ -1903,6 +2217,12 @@
 - CreateBulkVideoShared
 - GetBulkVideoShared
 - ListBulkVideoShared
+
+### calculatetotals (1 operations)
+- CreateClientTimeEntriesCalculateTotal
+
+### campaigndata (1 operations)
+- ListCampaigndata
 
 ### campaignids (1 operations)
 - UpdateCampaignCampaignId
@@ -1922,6 +2242,9 @@
 - ListCampaigntemplates
 - PatchCampaigntemplate
 
+### cashflows (1 operations)
+- CreateCashflow
+
 ### cashreceipts (5 operations)
 - CreateCashReceipts
 - GetCashReceipt
@@ -1929,12 +2252,15 @@
 - PatchCashReceipt
 - UpdateCashReceipt
 
-### categories (5 operations)
+### categories (8 operations)
 - CreateCategory
+- CreateTimeEntryCategory
 - DeleteCategory
 - GetCategory
 - ListCategories
+- ListTimeEntriesCategories
 - PatchCategory
+- UpdateCategory
 
 ### cff (7 operations)
 - GetCffSegment
@@ -1976,6 +2302,11 @@
 - ListCheckListItems
 - UpdateCheckListItem
 
+### claims (3 operations)
+- ListParties
+- ListSubjects
+- ListTenants
+
 ### classificationcategories (2 operations)
 - GetClassificationCategory
 - ListClassificationCategories
@@ -1987,6 +2318,9 @@
 ### clientenrollmentsummary (1 operations)
 - GetClientEnrollmentSummary
 
+### clientexists (1 operations)
+- CreateEtlcontrollerClientExist
+
 ### clientinvestmentpreference (6 operations)
 - CreateClientInvestmentPreferences
 - GetClientInvestmentPreferences
@@ -1995,17 +2329,23 @@
 - UpdateClientInvestmentPreferences
 - UpdateClientInvestmentPreferenceWithObjective
 
-### clients (10 operations)
+### clients (72 operations)
 - ClientExists
 - CreateClient
+- CreateClientBudget
+- CreateClientContact
+- CreateClientEmploymenthistory
+- CreateClientEmploymentsMovetohistory
+- CreateClientExpenditureExpense
+- CreateClientGoal
+- CreateClientGoalLinktoplan
+- CreateClientGoalUnlink
+- CreateClientLiability
+- CreateClientsContactsSearch
+- CreateClientsSearch
 - DeleteClient
-- GetClient
-- ListAllClientsRelatedUser
-- ListClientInfo
-- ListClients
-- ListClientSegments
-- ListClientServiceStatuses
-- UpdateClient
+- DeleteClientBudget
+- ... and 57 more
 
 ### clientvideo (15 operations)
 - BulkShareVideosToClients
@@ -2029,6 +2369,9 @@
 
 ### closest (1 operations)
 - GetGroupBrandClosest
+
+### code-authentication (1 operations)
+- CreateIntelligent-officeCode-authentication
 
 ### commands (3 operations)
 - PublishExpectationCommand
@@ -2058,22 +2401,23 @@
 - CompleteClientAgreement
 - CreateReviewComplete
 
-### configuration (15 operations)
+### configuration (17 operations)
 - CreateQuicksightFolderConfiguration
 - CreateQuicksightGroupConfiguration
 - DeleteQuicksightConfiguration
 - DeleteQuicksightFolderConfiguration
 - DeleteQuicksightGroupConfiguration
+- GetClientConfiguration
 - GetEmailConfiguration
 - GetQuicksightConfiguration
 - GetQuicksightFolderConfiguration
 - GetQuicksightGroupConfiguration
 - ListQuicksightFolderConfiguration
 - ListQuicksightGroupConfiguration
+- UpdateClientConfiguration
 - UpdateEmailConfiguration
 - UpdateQuicksightConfiguration
-- UpdateQuicksightFolderConfiguration
-- UpdateQuicksightGroupConfiguration
+- ... and 2 more
 
 ### contactdetails (20 operations)
 - CreateAdviserContactdetail
@@ -2116,6 +2460,22 @@
 - ListClientsContributions
 - UpdateClientPlanContribution
 
+### corporates (11 operations)
+- CreateCorporate
+- CreateCorporateContact
+- DeleteCorporateContact
+- ExistsCorporate
+- ExistsCorporateContact
+- GetCorporate
+- GetCorporateContact
+- ListCorporateContacts
+- MarkasdefaultCorporateContact
+- UpdateCorporate
+- UpdateCorporateContact
+
+### counties (1 operations)
+- ListCountriesCounties
+
 ### countries (2 operations)
 - GetCountry
 - ListCountries
@@ -2125,6 +2485,13 @@
 
 ### createinvestor (1 operations)
 - CreateInvestor
+
+### creditcards (5 operations)
+- CreateClientPlansCreditcard
+- DeleteClientCreditcard
+- GetClientCreditcard
+- ListClientPlansCreditcards
+- UpdateClientCreditcard
 
 ### creditnotes (4 operations)
 - CreateCreditNote
@@ -2138,6 +2505,13 @@
 - ListCurrencies
 - PostCurrencies
 - PutCurrencies
+
+### currentaccounts (5 operations)
+- CreateClientPlansCurrentaccount
+- DeleteClientCurrentaccount
+- GetClientCurrentaccount
+- ListClientPlansCurrentaccounts
+- UpdateClientCurrentaccount
 
 ### currentprices (1 operations)
 - ListCurrentPrices
@@ -2182,6 +2556,9 @@
 
 ### defaultsender (1 operations)
 - DefaultsenderEmail
+
+### delete (1 operations)
+- CreateCategoryDelete
 
 ### delivery methods (1 operations)
 - GetDeliveryMethods
@@ -2243,7 +2620,7 @@
 - GetDocumentFolder
 - ListDocumentFolders
 
-### documents (41 operations)
+### documents (52 operations)
 - AdviserDocumentExists
 - AdviserDocumentHideInPortal
 - AdviserDocumentObjectExists
@@ -2259,7 +2636,7 @@
 - CreateDocument
 - CreateDocumentConfiguration
 - DeleteAdviserDocument
-- ... and 26 more
+- ... and 37 more
 
 ### docusignenvelopes (4 operations)
 - DeleteEnvelope
@@ -2394,6 +2771,21 @@
 - UpdateClientExpenditure
 - UpdateExpenditureCategoryGroup
 
+### externalaccounts (3 operations)
+- CreateV1ExternalAccount
+- ListV1ExternalAccounts
+- UpdateExternalAccount
+
+### factfind (8 operations)
+- CreateClientFactfind
+- ExistsClientFactfind
+- GetClientAdviceareas
+- GetClientFactfind
+- GetClientFactfindDeclaration
+- ListClientFactfinds
+- ListClientFactfindsDisclosures
+- UpdateClientAdviceareas
+
 ### federation_settings (2 operations)
 - CreateFederationSettings
 - DeleteFederationSettings
@@ -2405,9 +2797,10 @@
 ### feemodeltemplates (1 operations)
 - GetFeeModelTemplate
 
-### fees (14 operations)
+### fees (16 operations)
 - CreateClientFees
 - CreateClientPlanFee
+- CreateClientPlanFeeV1
 - DeleteClientFee
 - DeleteClientPlanFee
 - GetClientFee
@@ -2416,15 +2809,20 @@
 - GetPlanFees
 - ListClientFees
 - ListClientPlanFees
+- ListClientsFeesV1
 - ListFee
 - UpdateClientFee
 - UpdateClientFeeDates
-- UpdatePlanFees
+- ... and 1 more
 
 ### financialprofile (3 operations)
 - GetClientFinancialProfile
 - PatchClientFinancialProfile
 - UpdateClientFinancialProfile
+
+### financialsummary (2 operations)
+- GetClientFinancialsummary
+- GetClientFinancialsummarybycategory
 
 ### financialsummarybycategory (1 operations)
 - GetClientFinancialSummaryByCategory
@@ -2504,18 +2902,29 @@
 - CreateTemplateGenerate
 - CreateTemplateVersionGenerate
 
+### get-clients (1 operations)
+- GetEtlcontrollerGet-client
+
 ### getadditionalquestions (1 operations)
 - GetAdditionalQuestions
+
+### gld-delete (1 operations)
+- CreateEtlcontrollerGld-delete
 
 ### goalprojections (1 operations)
 - CreateGoalprojection
 
-### groups (7 operations)
+### groups (12 operations)
 - CreateGroup
+- CreateGroupHost
 - GetGroup
+- GetGroupHost
 - GetGroupLineage
 - GroupExists
+- ListGroupHosts
+- ListGroupHostsSuggest
 - ListGroups
+- ListGroupsLineage
 - UpdateGroup
 - UpdateGroupParent
 
@@ -2528,6 +2937,9 @@
 - ListClientPlanHoldings
 - ListClientsHoldings
 - UpdateClientPlanHolding
+
+### holidays (1 operations)
+- ListHolidays
 
 ### households (11 operations)
 - CreateHousehold
@@ -2554,6 +2966,15 @@
 ### image (1 operations)
 - CreateAuthorImage
 
+### import-client (1 operations)
+- CreateIntelligent-officeImport-client
+
+### importable-plans (1 operations)
+- CreateIntelligent-officeImportable-plan
+
+### imports (1 operations)
+- GetImport
+
 ### incomes (6 operations)
 - CreateClientIncome
 - CreateClientPlanWithdrawalIncome
@@ -2576,9 +2997,23 @@
 ### initialise (1 operations)
 - GetTemplateInitialise
 
-### insights (2 operations)
+### initiate (1 operations)
+- CreateIntelligent-officeInitiate
+
+### insights (7 operations)
 - CreateClientInsight
+- CreateInsight
+- ExistsInsight
 - GetClientInsights
+- GetInsight
+- ListClientsInsights
+- ListInsights
+
+### insighttypes (4 operations)
+- ExistsInsighttype
+- GetInsighttype
+- ListInsighttypes
+- UpdateInsighttype
 
 ### instances (4 operations)
 - CreateInstance
@@ -2609,6 +3044,16 @@
 - ListInvestmentPreferenceQuestions
 - UpdateInvestmentPreferenceQuestion
 
+### investments (5 operations)
+- CreateClientPlansInvestment
+- DeleteClientInvestment
+- GetClientInvestment
+- ListClientPlansInvestments
+- UpdateClientInvestment
+
+### ismodifiedbymigrationuser (1 operations)
+- CreateEtlcontrollersIsModifiedByMigrationUser
+
 ### issuers (7 operations)
 - DeleteIssuer
 - GetIssuer
@@ -2626,23 +3071,23 @@
 - GetJumplink
 - ListJumplinks
 
-### leads (16 operations)
+### leads (25 operations)
 - AssignLeadDocument
 - CreateLead
+- CreateLeadContact
+- CreateLeadsSearch
 - DeleteLead
+- DeleteLeadContact
 - DeleteLeadDocument
+- ExistsLead
+- ExistsLeadContact
 - GetLead
+- GetLeadContact
 - GetLeadDocument
 - GetLeadDocumentObject
 - LeadDocumentExists
 - LeadDocumentObjectExists
-- LeadExists
-- ListLeadDocuments
-- ListLeads
-- ListLeadStatuses
-- UpdateLead
-- UpdateLeadDocument
-- ... and 1 more
+- ... and 10 more
 
 ### legacyapps (1 operations)
 - ListLegacyApps
@@ -2661,6 +3106,16 @@
 ### livesassured (2 operations)
 - ListClientPlansLivesAssured
 - UpdateClientPlansLivesAssured
+
+### loans (5 operations)
+- CreateClientPlansLoan
+- DeleteClientLoan
+- GetClientLoan
+- ListClientPlansLoans
+- UpdateClientLoan
+
+### login (1 operations)
+- GetSalesforce-ssoLogin
 
 ### logins (1 operations)
 - GetLoginDetails
@@ -2701,6 +3156,11 @@
 - ListMessages
 - UpdateMessage
 
+### misportfolioallocations (3 operations)
+- DeleteMISPortfolioAllocations
+- GetMISPortfolioAllocations
+- PutMISPortfolioAllocations
+
 ### modelprovider (3 operations)
 - CreateProviderModel
 - GetProviderModel
@@ -2732,6 +3192,13 @@
 - ListPlanTransferInstructionFees
 - UpdatePlanSecurityTransferInstructionFees
 - UpdatePlanTransferInstructionFees
+
+### mortgages (5 operations)
+- CreateClientPlansMortgage
+- DeleteClientMortgage
+- GetClientMortgage
+- ListClientPlansMortgages
+- UpdateClientMortgage
 
 ### movedown (1 operations)
 - CreateTemplateStepMoveDown
@@ -2821,12 +3288,48 @@
 - GetOutput
 - ListOutputs
 
+### parties (8 operations)
+- CreateXContact
+- DeleteV1XContact
+- ExistsParty
+- ExistsV1XContact
+- GetV1XContact
+- ListV1XContacts
+- MarkasdefaultV1XContact
+- UpdateV1XContact
+
 ### passkeys (1 operations)
 - CreateAccountPasskeysAuthenticate
 
 ### passwordpolicy (2 operations)
 - GetPasswordPolicy
 - UpdatePasswordPolicy
+
+### pensions (5 operations)
+- CreateClientPlansPension
+- DeleteClientPension
+- GetClientPension
+- ListClientPlansPensions
+- UpdateClientPension
+
+### people (11 operations)
+- CreatePerson
+- CreateXContact
+- DeleteV1XContact
+- ExistsPerson
+- ExistsV1XContact
+- GetPerson
+- GetV1XContact
+- ListV1XContacts
+- MarkasdefaultV1XContact
+- UpdatePerson
+- UpdateV1XContact
+
+### periods (4 operations)
+- CreateTimeEntryPeriod
+- DeletePeriod
+- GetPeriod
+- UpdatePeriod
 
 ### personalcontacts (6 operations)
 - CreatePersonalContact
@@ -2835,6 +3338,14 @@
 - ListPersonalContacts
 - PatchPersonalContact
 - UpdatePersonalContact
+
+### pfp (6 operations)
+- CreatePfpVerifyEmail
+- CreateV1RegistrationsPfp
+- CreateV1RegistrationsPfpVerifyIdentityQuestion
+- GetPfp
+- GetV1RegistrationsPfpRegistrationExpired
+- GetV1RegistrationsPfpVerifyIdentityQuestions
 
 ### phones (6 operations)
 - CreateAccountPhone
@@ -2913,23 +3424,23 @@
 ### planpurposes (1 operations)
 - ListPlanPurposes
 
-### plans (20 operations)
+### plans (41 operations)
 - CreateClientOpportunityPlan
+- CreateClientPlanActivity
+- CreateClientPlanContributionV1
 - CreateClientPlans
+- CreateClientPlanValuationV1
 - CreateClientServicecasePlan
 - CreateTopupPlan
 - DeleteClientOpportunityPlan
 - DeleteClientPlan
+- DeleteClientPlanValuationV1
 - DeleteClientServicecasePlan
 - ExistsClientPlan
+- ExistsPortfolioCategoryV1
 - GetClientPlan
-- GetPlan
-- GetUserPlansExist
-- ListClientPlans
-- ListModelplans
-- ListPlans
-- ListPlanUsers
-- ... and 5 more
+- GetClientPlanV1
+- ... and 26 more
 
 ### plantype (1 operations)
 - UpdatePlanType
@@ -2966,7 +3477,7 @@
 - PostPrices
 - PutPrices
 
-### productproviders (12 operations)
+### productproviders (13 operations)
 - CreateProductProvider
 - CreateProductproviderLink
 - DeleteProductproviderLink
@@ -2975,6 +3486,7 @@
 - ListMultiTiedConfigProductProvider
 - ListProductProviderPrograms
 - ListProductproviders
+- ListProductproviderSearches
 - ListProductProviderWrapperConfigs
 - ProductProviderExists
 - UpdateProductProvider
@@ -3016,6 +3528,13 @@
 - GetProspectus
 - ListProspectuses
 
+### protections (5 operations)
+- CreateClientPlansProtection
+- DeleteClientProtection
+- GetClientProtection
+- ListClientPlansProtections
+- UpdateClientProtection
+
 ### provider configuration (7 operations)
 - DeleteProviderEndpoints
 - GetAllProviderEndpoints
@@ -3030,33 +3549,6 @@
 - GetProviderTenant
 - UpdateProviderTenant
 
-### providercodes (13 operations)
-- CreateProviderCode
-- CreateProviderCodeConfig
-- DeleteProviderCode
-- DeleteProviderCodeConfig
-- GetProviderCode
-- GetProviderCodeConfig
-- ListAdviserProviderCodes
-- ListProviderCodeCombos
-- ListProviderCodeConfigs
-- ListProviderCodes
-- ListProviderCodesSystem
-- UpdateProviderCode
-- UpdateProviderCodeConfig
-
-### providercodesconfigattributes (4 operations)
-- CreateProviderCodeConfigAttribute
-- DeleteProviderCodeConfigAttribute
-- GetProviderCodeConfigsAttributes
-- PatchProviderCodeConfigAttribute
-
-### providerdocuments (4 operations)
-- GetProductProviderDocumentCategory
-- GetProductProviderDocumentObject
-- ListProductProviderDocumentCategories
-- ListProductProviderDocuments
-
 ### providertemplates (1 operations)
 - ListProviderTemplates
 
@@ -3067,12 +3559,13 @@
 - ListClientPlansPurposes
 - UpdateClientPlansPurposes
 
-### quotes (26 operations)
+### quotes (28 operations)
 - AddClientQuoteApplicant
 - AddLeadQuoteApplicant
 - ClientQuoteExists
 - ClientQuoteResultsExists
 - CreateClientQuote
+- CreateClientQuoteActivity
 - CreateClientQuoteResult
 - CreateLeadQuote
 - CreateLeadQuoteResult
@@ -3082,8 +3575,7 @@
 - GetLeadQuote
 - GetLeadQuoteResult
 - GetQuoteResult
-- LeadQuoteExists
-- ... and 11 more
+- ... and 13 more
 
 ### rebalance (6 operations)
 - CreateRebalance
@@ -3128,14 +3620,20 @@
 - ListPlanRecommendationProposals
 - ... and 10 more
 
+### redirect-urls (1 operations)
+- GetIntelligent-officeRedirect-url
+
 ### refdata (1 operations)
 - ListRefdata
+
+### refresh-token (1 operations)
+- Refresh-tokenIntelligent-office
 
 ### regions (2 operations)
 - GetRegion
 - ListRegions
 
-### relationships (21 operations)
+### relationships (22 operations)
 - CreateAccountRelationship
 - CreateClientRelationship
 - CreateClientRelationshipAccess
@@ -3147,11 +3645,11 @@
 - DeleteClientRelationshipAccess
 - DeleteLeadRelationship
 - DeletePersonalContactRelationship
+- ExistsClientRelationship
 - GetClientRelationship
 - GetLeadRelationship
 - GetPersonalContactRelationship
-- ListClientRelationships
-- ... and 6 more
+- ... and 7 more
 
 ### relationshiptypes (1 operations)
 - ListRelationshiptypes
@@ -3198,6 +3696,10 @@
 - GetClientRequirement
 - ListClientRequirements
 
+### resources (2 operations)
+- CreateResource
+- ListResources
+
 ### restart (1 operations)
 - CreateInstanceRestart
 
@@ -3224,21 +3726,37 @@
 - PatchRiskProfile
 - UnarchiveRiskProfile
 
-### roles (2 operations)
+### roles (3 operations)
+- ExistsRole
 - ListTemplatesRoles
 - UpdateTemplatesRoles
 
 ### saves (1 operations)
 - CreateSave
 
+### savingsaccounts (5 operations)
+- CreateClientPlansSavingsaccount
+- DeleteClientSavingsaccount
+- GetClientSavingsaccount
+- ListClientPlansSavingsaccounts
+- UpdateClientSavingsaccount
+
 ### schema (1 operations)
 - GetPluginSchema
 
-### search (1 operations)
-- ListPropertyAddressesSearch
+### search (6 operations)
+- CreateClientsContactsSearch
+- CreateClientsSearch
+- CreateLeadsContactsSearch
+- CreateLeadsSearch
+- CreatePlansSearch
+- CreateUsersSearch
 
 ### searches (1 operations)
 - ListClientsSearch
+
+### searchids (1 operations)
+- CreatePlansSearchid
 
 ### sectors (2 operations)
 - GetSector
@@ -3320,6 +3838,9 @@
 - GetClientServiceRecord
 - ListClientServiceHistory
 
+### servicestatuses (1 operations)
+- ListServicestatuses
+
 ### session (2 operations)
 - GetBeginsession
 - GetQuicksightSessionEmbedUrl
@@ -3353,6 +3874,9 @@
 
 ### signurl (1 operations)
 - SignDocuSignEnvelope
+
+### snapshots (1 operations)
+- ListCashflowSnapshotDetails
 
 ### splits (23 operations)
 - ClientFeeSplitExists
@@ -3410,6 +3934,9 @@
 - PostStocks
 - PutStocks
 
+### subplans (1 operations)
+- ListClientPlansSubplans
+
 ### subscribe (2 operations)
 - CreateEventSubscribe
 - ListEventsSubscribe
@@ -3450,16 +3977,22 @@
 - ListTaskNotes
 - UpdateTaskNote
 
-### tasks (9 operations)
+### tasks (15 operations)
 - CreateTask
+- CreateTaskSetting
 - DeleteTask
+- ExistsTask
 - GetTask
+- GetTaskSettings
 - LinkFeeToTask
+- ListPartiesTasks
 - ListTask
 - ListTaskFees
+- ListTasks
 - SearchTask
 - UnlinkFeeToTask
 - UpdateTask
+- UpdateTaskSettings
 
 ### templatecategories (5 operations)
 - CreateTemplatecategory
@@ -3467,6 +4000,10 @@
 - GetTemplatecategory
 - ListTemplatecategories
 - PatchTemplatecategory
+
+### templategroups (2 operations)
+- GetTemplategroup
+- ListSplitsTemplategroups
 
 ### templatelayouts (2 operations)
 - ExistsTemplatelayout
@@ -3500,10 +4037,11 @@
 - PatchTenantCategories
 - PostTenantCategories
 
-### tenants (4 operations)
+### tenants (5 operations)
 - CreateTenant
 - GetTenant
 - ListTenantDocuments
+- ListTenants1
 - TenantExists
 
 ### tenanttasksetting (2 operations)
@@ -3513,8 +4051,13 @@
 ### test only (1 operations)
 - ListTests
 
-### timeentries (1 operations)
+### timeentries (6 operations)
+- CreateTimeEntry
+- DeleteTimeEntry
+- GetTimeEntry
+- ListClientTimeEntries
 - ListTimeEntries
+- UpdateTimeEntry
 
 ### timeseries (3 operations)
 - GetAssetsTimeSeries
@@ -3570,13 +4113,16 @@
 - GetUserDiaryClassification
 - ListUserDiaryClassification
 
-### users (4 operations)
+### users (7 operations)
 - CreateUser
+- CreateUsersSearch
+- ExistsUser
+- GetTenantId
 - GetUser
 - UpdateUser
 - UserExists
 
-### valuations (13 operations)
+### valuations (17 operations)
 - CreateAssetValuations
 - CreatePlanValuations
 - DeleteClientAssetValuation
@@ -3587,9 +4133,12 @@
 - ListClientAssetValuations
 - ListClientPlanValuations
 - ListClientValuations
+- ListClientValuationsAssetliabilityTimeseries
+- ListClientValuationsPortfolioValuations
+- ListClientValuationsTimeseries
 - PostCePlanValuation
-- UpdateClientAssetValuation
-- UpdateClientPlanValuation
+- RefreshClientValuation
+- ... and 2 more
 
 ### variables (1 operations)
 - ListTemplateVersionsVariables
@@ -3680,7 +4229,7 @@ Total: 64 operations
 | activitytypes | GetActivityType | GET | /v2/activities/types/{typeId} | N/A | Monolith.Crm |
 | documents | GetAdviserDocument | GET | /v2/advisers/{adviserId}/documents/{documentId} | client_financial_data, documents, myprofile, openid | Monolith.Storage |
 | insights | GetClientInsights | GET | /v2/clients/{clientId}/insights | N/A | Microservice.Insight |
-| objectives | GetClientObjective | GET | /v2/clients/{clientId}/objectives/{objectiveId} | N/A | Microservice.Requirement |
+| objectives | GetClientObjective | GET | /v2/clients/{clientId}/objectives/{objectiveId} | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | Microservice.Requirement |
 | recommendations | GetClientRecommendation | GET | /v2/clients/{clientId}/recommendations2/{recommendationId} | N/A | Microservice.Recommend |
 | requirements | GetClientRequirement | GET | /v2/clients/{clientId}/requirements/{requirementId} | N/A | Monolith.Crm |
 | groups | GetGroup | GET | /v2/groups/{groupId} | N/A | Monolith.Crm |
@@ -3695,7 +4244,7 @@ Total: 64 operations
 | activitytypes | ListActivityTypes | GET | /v2/activities/types | N/A | Monolith.Crm |
 | documents | ListAdviserDocuments | GET | /v2/advisers/{adviserId}/documents | client_financial_data, documents, myprofile, openid | Monolith.Storage |
 | attitudetorisk | ListAtrSystemCategories | GET | /v2/atr/system_categories | apps, client_data, client_data.atr, firm_data, firm_data.atr, myprofile, openid | Monolith.Atr |
-| objectives | ListClientObjectives | GET | /v2/clients/{clientId}/objectives | N/A | Microservice.Requirement |
+| objectives | ListClientObjectives | GET | /v2/clients/{clientId}/objectives | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements | Microservice.Requirement |
 | recommendations | ListClientRecommendations | GET | /v2/clients/{clientId}/recommendations2 | N/A | Microservice.Recommend |
 | requirements | ListClientRequirements | GET | /v2/clients/{clientId}/requirements | N/A | Monolith.Crm |
 | holdings | ListClientsHoldings | GET | /v2/clients/{clientId}/holdings | client_financial_data, myprofile, openid | Monolith.Portfolio |
@@ -3717,34 +4266,32 @@ Total: 64 operations
 
 ## Services Analyzed
 
-Total services with API data: 48
+Total services with API data: 47
 
 | Service | API Count |
 |---------|----------|
-| Microservice.AppD | 47 |
+| Microservice.AppD | 48 |
 | Microservice.Author | 51 |
 | Microservice.Avatar | 3 |
 | Microservice.Brand | 8 |
 | Microservice.CFF | 7 |
+| Microservice.Cashflow | 14 |
 | Microservice.CashflowEngine | 3 |
 | Microservice.ChangeNotification | 9 |
-| Microservice.ClientStorage | 4 |
+| Microservice.ClientStorage | 17 |
 | Microservice.Config | 14 |
-| Microservice.Content | 23 |
+| Microservice.Content | 26 |
 | Microservice.DPA | 3 |
 | Microservice.DocuSign | 9 |
 | Microservice.Email | 5 |
 | Microservice.Expectation | 22 |
 | Microservice.Federation | 1 |
 | Microservice.Identity | 16 |
-| Microservice.Insight | 2 |
-| Microservice.Membership | 28 |
+| Microservice.Insight | 12 |
+| Microservice.Membership | 51 |
 | Microservice.MoneyMovement | 1 |
 | Microservice.Notifications | 10 |
 | Microservice.PlanApplication | 40 |
-| Microservice.PropertyProvider | 1 |
-| Microservice.ProviderCodes | 17 |
-| Microservice.ProviderDocuments | 4 |
 | Microservice.ProviderIntegration | 31 |
 | Microservice.Quicksight | 40 |
 | Microservice.Quotation | 12 |
@@ -3752,6 +4299,7 @@ Total services with API data: 48
 | Microservice.Requirement | 24 |
 | Microservice.SecureMessaging | 42 |
 | Microservice.Security | 88 |
+| Microservice.TimeRecording | 14 |
 | Microservice.Workflow | 36 |
 | Microservice.iMps | 4 |
 | Monolith.Atr | 34 |
@@ -3759,13 +4307,13 @@ Total services with API data: 48
 | Monolith.Bcc | 2 |
 | Monolith.Campaign | 53 |
 | Monolith.Charging | 8 |
-| Monolith.Commission | 12 |
+| Monolith.Commission | 14 |
 | Monolith.ContractEnquiry | 4 |
-| Monolith.Crm | 201 |
+| Monolith.Crm | 274 |
 | Monolith.Entitlement | 40 |
-| Monolith.FactFind | 29 |
+| Monolith.FactFind | 84 |
 | Monolith.Organization | 6 |
-| Monolith.Portfolio | 87 |
+| Monolith.Portfolio | 180 |
 | Monolith.Report | 16 |
 | Monolith.Storage | 53 |
 | Monolith.WebHooks | 2 |

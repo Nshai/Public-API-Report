@@ -1,24 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node:*)",
-      "WebFetch(domain:github.com)",
-      "Bash(certutil -decode -f nul 2)",
-      "Bash(nul)",
-      "Bash(certutil:*)",
-      "Bash(encoded.txt)",
-      "Bash(intelliflo-repos.json)",
-      "Bash(service-repos.json)",
-      "Bash(service-urls.json:*)",
-      "Bash(xargs:*)",
-      "Bash(python:*)",
-      "Bash(cat:*)",
-      "Bash(api-table-preview.txt)",
-      "Bash(del:*)",
-      "Bash(timeout 30 bash -c 'while pgrep -f \"\"fetch-swagger-with-fallback.js\"\" > /dev/null; do sleep 2; done')",
-      "Bash(api_white_list_raw.json)",
-      "Bash(timeout:*)",
-      "Bash(tree:*)"
+      "Bash(if:*)",
+      "Bash(then cat package.json)",
+      "Bash(else:*)",
+      "Bash(fi:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

@@ -49,28 +49,55 @@ Public-APIs/
 
 ## Complete Workflow
 
-### Full Regeneration (Monthly)
+### Full Regeneration (Monthly) - Dual-Version Approach
 
 ```bash
 cd C:/work/Public-APIs/tools
 
-# Step 1: Extract OAuth scopes from Public Swagger v2
+# Step 1: Generate service URLs with v1 and v2 endpoints (one-time or when services change)
+node generate-service-urls.js
+
+# Step 2: Extract OAuth scopes from Public Swagger v2
 node extract-public-swagger-scopes.js
 
-# Step 2: Fetch swagger docs from all services
-node fetch-swagger-with-fallback.js 10 0
+# Step 3: Fetch swagger docs from ALL services (BOTH v1 and v2)
+# Note: 122 endpoints total (61 services × 2 versions)
+# Batch size 20 recommended (processes ~10 services with both versions)
+node fetch-swagger-dual-version.js 20 0
+node fetch-swagger-dual-version.js 20 20
+node fetch-swagger-dual-version.js 20 40
+node fetch-swagger-dual-version.js 20 60
+node fetch-swagger-dual-version.js 20 80
+node fetch-swagger-dual-version.js 20 100
+node fetch-swagger-dual-version.js 22 120  # Last batch
 
-# Step 3 (Optional): Fetch controller scopes from GitHub
+# Step 4 (Optional): Fetch controller scopes from GitHub
 node extract-all-controller-scopes-and-operations.js
 
-# Step 4: Consolidate all data sources (includes tag-based scope propagation)
+# Step 5: Consolidate all data sources (includes tag-based scope propagation)
+# Now loads both dual-version and fallback batch files
 node consolidate-fallback-results.js
 
-# Step 5: Generate reports and swagger files
+# Step 6: Generate reports and swagger files
 node generate-final-report-with-tags-first.js
 node generate-consolidated-public-swagger.js
 node generate-consolidated-swagger-by-version.js
 node find-unmatched-whitelist.js
+```
+
+### Alternative: Old Fallback Approach (Still Supported)
+
+```bash
+cd C:/work/Public-APIs/tools
+
+# Steps 1-2: Same as above
+
+# Step 3: Fetch swagger docs with v2/v1 fallback (old method)
+node fetch-swagger-with-fallback.js 10 0
+node fetch-swagger-with-fallback.js 10 10
+# ... continue for all services
+
+# Steps 4-6: Same as above
 ```
 
 ### Quick Update (Weekly)
@@ -84,6 +111,28 @@ node generate-final-report-with-tags-first.js
 node generate-consolidated-public-swagger.js
 node generate-consolidated-swagger-by-version.js
 ```
+
+## Benefits of Dual-Version Approach
+
+### Complete API Coverage
+- Fetches BOTH v1 AND v2 endpoints for every service
+- No operations missed due to fallback logic stopping after first success
+- Captures version-specific operations (v1-only, v2-only, or both)
+
+### Version Tracking and Analysis
+- Each operation tagged with its swagger version (v1/v2)
+- Report shows version distribution across services
+- Identify which operations exist in both versions vs version-specific
+
+### Migration Planning
+- Clear visibility into v1-only operations requiring migration
+- Track v2 adoption progress per service
+- Plan v1 deprecation strategy based on comprehensive data
+
+### Better Statistics
+- Accurate counts: Total operations, v1 operations, v2 operations
+- Service-level version distribution
+- API evolution tracking over time
 
 ## Key Features
 

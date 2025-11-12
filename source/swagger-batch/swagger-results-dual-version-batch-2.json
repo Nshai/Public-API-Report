@@ -1,0 +1,3342 @@
+[
+  {
+    "service": "Microservice.ClientStorage",
+    "url": "https://microservice-clientstorage.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "AdviserDocumentShowInPortal",
+        "method": "POST",
+        "path": "/v2/advisers/{adviserId}/documents/{documentId}/showInPortal",
+        "description": "Shares the adviser document with all clients in the portal.",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "AdviserDocumentHideInPortal",
+        "method": "DELETE",
+        "path": "/v2/advisers/{adviserId}/documents/{documentId}/showInPortal",
+        "description": "Shares an adviser document that has been shared with all clients in the portal.",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ClientDocumentShowInPortal",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/documents/{documentId}/showInPortal",
+        "description": "Shares the document with specified document id in the client portal.",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": true
+      },
+      {
+        "operationId": "ClientDocumentHideInPortal",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/documents/{documentId}/showInPortal",
+        "description": "Unshares the document with specified document id in the client portal.",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": true
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.ClientStorage",
+    "url": "https://microservice-clientstorage.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "GetClientConfiguration",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/configuration",
+        "description": "Return user client storage configuration",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientConfiguration",
+        "method": "PUT",
+        "path": "/v1/clients/{clientId}/configuration",
+        "description": "Updates user client storage configuration",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientDocuments",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/documents",
+        "description": "Return user documents from private storage. This will include documents\r\nshared with this user",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientDocument",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/documents/{documentId}",
+        "description": "Returns document data from private storage",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsClientDocument",
+        "method": "HEAD",
+        "path": "/v1/clients/{clientId}/documents/{documentId}",
+        "description": "Returns document data from private storage",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientDocumentContent",
+        "method": "GET",
+        "path": "/v1/clients/{clientId}/documents/{documentId}/content",
+        "description": "Returns document content from private storage",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListDocuments",
+        "method": "GET",
+        "path": "/v1/documents",
+        "description": "Return user documents from private storage. This will include documents\r\nshared with this user",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateDocument",
+        "method": "POST",
+        "path": "/v1/documents",
+        "description": "",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDocument",
+        "method": "GET",
+        "path": "/v1/documents/{documentId}",
+        "description": "Returns document data from private storage",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ExistsDocument",
+        "method": "HEAD",
+        "path": "/v1/documents/{documentId}",
+        "description": "Returns document data from private storage",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteDocument",
+        "method": "DELETE",
+        "path": "/v1/documents/{documentId}",
+        "description": "Deletes document",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateDocument",
+        "method": "PUT",
+        "path": "/v1/documents/{documentId}",
+        "description": "Updates document metadata",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDocumentContent",
+        "method": "GET",
+        "path": "/v1/documents/{documentId}/content",
+        "description": "Returns document content from private storage",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateDocumentContent",
+        "method": "PUT",
+        "path": "/v1/documents/{documentId}/content",
+        "description": "Updates document contents",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ShareDocument",
+        "method": "POST",
+        "path": "/v1/documents/{documentId}/share",
+        "description": "Shares a document to public. Any user who has a access to client record will be able to view this document",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UnshareDocument",
+        "method": "POST",
+        "path": "/v1/documents/{documentId}/unshare",
+        "description": "Unshares document. Document will be available only to owner",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListDocumentAdvisersIds",
+        "method": "GET",
+        "path": "/v1/documents/adviser/ids",
+        "description": "Returns document guids for all documents shared by the adviser from office.\r\nIt filters based on the current AdviserGuid and UserGuid in the user context (token).\r\nThis only works where reach=user.",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListDocumentFilters",
+        "method": "GET",
+        "path": "/v1/documents/filter",
+        "description": "Return user documents from private storage filtered by documents owner - client or adviser documents",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDocumentStatistics",
+        "method": "GET",
+        "path": "/v1/documents/statistics",
+        "description": "Provides total amount of storage currently used and the total amount available",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDocumentStatisticsNewDocuments",
+        "method": "GET",
+        "path": "/v1/documents/statistics/new_documents",
+        "description": "Provides amount of documents shared with user since his last visit",
+        "tags": [
+          "documents"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Microservice.CashflowEngine",
+    "url": "https://microservice-cashflowengine.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "CreateForecast",
+        "method": "POST",
+        "path": "/v2/forecasts",
+        "description": "",
+        "tags": [
+          "forecasts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateGoalprojection",
+        "method": "POST",
+        "path": "/v2/goalprojections",
+        "description": "",
+        "tags": [
+          "goalprojections"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateLifeexpectancy",
+        "method": "POST",
+        "path": "/v2/lifeexpectancy",
+        "description": "",
+        "tags": [
+          "lifeexpectancies"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.CashflowEngine",
+    "url": "https://microservice-cashflowengine.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.Commission",
+    "url": "https://monolith-commission.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListAdviserBandingtemplates",
+        "method": "GET",
+        "path": "/v2/advisers/{adviserId}/bandingtemplates",
+        "description": "Get all banding templates for adviser",
+        "tags": [
+          "bandingtemplates"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAdviserBandingtemplate",
+        "method": "GET",
+        "path": "/v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId}",
+        "description": "Get banding template for adviser by Id.",
+        "tags": [
+          "bandingtemplates"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateCashReceipts",
+        "method": "POST",
+        "path": "/v2/cashreceipts",
+        "description": "Create an array of cash receipts.",
+        "tags": [
+          "cashreceipts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCashReceipts",
+        "method": "GET",
+        "path": "/v2/cashreceipts",
+        "description": "Gets a Collection of Cash Receipts.",
+        "tags": [
+          "cashreceipts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateCashReceipt",
+        "method": "PUT",
+        "path": "/v2/cashreceipts/{cashReceiptId}",
+        "description": "Update a cash receipt.",
+        "tags": [
+          "cashreceipts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCashReceipt",
+        "method": "GET",
+        "path": "/v2/cashreceipts/{cashReceiptId}",
+        "description": "Get a cash receipt.",
+        "tags": [
+          "cashreceipts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data",
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchCashReceipt",
+        "method": "PATCH",
+        "path": "/v2/cashreceipts/{cashReceiptId}",
+        "description": "Updates a cash receipt for given cashReceipt id.",
+        "tags": [
+          "cashreceipts"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanSplits",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits",
+        "description": "Get splits for a plan.",
+        "tags": [
+          "splits"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanSplit",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits",
+        "description": "Create a plan split.",
+        "tags": [
+          "splits"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanSplitsFromTemplate",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits",
+        "description": "Create or update plan splits using the split templates.",
+        "tags": [
+          "splits"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanSplit",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+        "description": "Get plan split.",
+        "tags": [
+          "splits"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanSplit",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+        "description": "Removes the association between a plan and service case.",
+        "tags": [
+          "splits"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanSplit",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+        "description": "Update a plan split.",
+        "tags": [
+          "splits"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data",
+          "openid",
+          "myprofile",
+          "client_financial_data"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateIncomeStatement",
+        "method": "POST",
+        "path": "/v2/incomestatements",
+        "description": "Creates a new income statement.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIncomeStatements",
+        "method": "GET",
+        "path": "/v2/incomestatements",
+        "description": "Returns a list of income statements.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetIncomeStatement",
+        "method": "GET",
+        "path": "/v2/incomestatements/{incomeStatementId}",
+        "description": "Returns an income statement.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteIncomeStatement",
+        "method": "DELETE",
+        "path": "/v2/incomestatements/{incomeStatementId}",
+        "description": "Deletes an existing income statement.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateIncomeStatement",
+        "method": "PUT",
+        "path": "/v2/incomestatements/{incomeStatementId}",
+        "description": "Updates an income statement.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateIncomeStatementItems",
+        "method": "POST",
+        "path": "/v2/incomestatements/{incomeStatementId}/items",
+        "description": "Creates income statement items for an income statement.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIncomeStatementItems",
+        "method": "GET",
+        "path": "/v2/incomestatements/{incomeStatementId}/items",
+        "description": "Returns a list of items for a given income statement.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetIncomeStatementItem",
+        "method": "GET",
+        "path": "/v2/incomestatements/{incomeStatementId}/items/{incomeStatementItemId}",
+        "description": "Returns a given item for a given income statement.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateIncomeStatementItem",
+        "method": "PUT",
+        "path": "/v2/incomestatements/{incomeStatementId}/items/{incomeStatementItemId}",
+        "description": "Updates an income statement item for a given income statement.",
+        "tags": [
+          "incomestatements"
+        ],
+        "scopes": [
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements",
+          "openid",
+          "myprofile",
+          "firm_data.incomestatements"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Commission",
+    "url": "https://monolith-commission.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "ListAdviserBandingtemplates",
+        "method": "GET",
+        "path": "/v1/advisers/{adviserPartyId}/bandingtemplates",
+        "description": "Get all banding templates for adviser.",
+        "tags": [
+          "bandingtemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAdviserBandingtemplate",
+        "method": "GET",
+        "path": "/v1/advisers/{adviserPartyId}/bandingtemplates/{bandingTemplateId}",
+        "description": "Get specific banding template for adviser.",
+        "tags": [
+          "bandingtemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSplitsTemplategroups",
+        "method": "GET",
+        "path": "/v1/splits/templategroups",
+        "description": "Get split template groups for tenant.",
+        "tags": [
+          "templategroups"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplategroup",
+        "method": "GET",
+        "path": "/v1/splits/templategroups/{id}",
+        "description": "Get split template group for tenant by Id.",
+        "tags": [
+          "templategroups"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Microservice.Workflow",
+    "url": "https://microservice-workflow.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Workflow",
+    "url": "https://microservice-workflow.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "GetTemplatecategory",
+        "method": "GET",
+        "path": "/v1/templatecategories/{templateCategoryId}",
+        "description": "",
+        "tags": [
+          "templatecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTemplatecategory",
+        "method": "DELETE",
+        "path": "/v1/templatecategories/{templateCategoryId}",
+        "description": "",
+        "tags": [
+          "templatecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchTemplatecategory",
+        "method": "PATCH",
+        "path": "/v1/templatecategories/{templateCategoryId}",
+        "description": "",
+        "tags": [
+          "templatecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplate",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}",
+        "description": "Get template",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTemplate",
+        "method": "DELETE",
+        "path": "/v1/templates/{templateId}",
+        "description": "Delete an workflow template",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchTemplate",
+        "method": "PATCH",
+        "path": "/v1/templates/{templateId}",
+        "description": "Perform partial update of workflow template",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplateStep",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/steps/{stepId}",
+        "description": "List template steps",
+        "tags": [
+          "steps"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteTemplateStep",
+        "method": "DELETE",
+        "path": "/v1/templates/{templateId}/steps/{stepId}",
+        "description": "Delete a template step",
+        "tags": [
+          "steps"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchTemplateStep",
+        "method": "PATCH",
+        "path": "/v1/templates/{templateId}/steps/{stepId}",
+        "description": "",
+        "tags": [
+          "steps"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateCommon",
+        "method": "POST",
+        "path": "/v1/templates/common/{templateIdentifier}",
+        "description": "Create instance for specific template",
+        "tags": [
+          "commons"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteCommon",
+        "method": "DELETE",
+        "path": "/v1/templates/common/{templateIdentifier}",
+        "description": "Create instance for specific template",
+        "tags": [
+          "commons"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListInstances",
+        "method": "GET",
+        "path": "/v1/instances",
+        "description": "",
+        "tags": [
+          "instances"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetInstance",
+        "method": "GET",
+        "path": "/v1/instances/{instanceId}",
+        "description": "",
+        "tags": [
+          "instances"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListInstancesHistory",
+        "method": "GET",
+        "path": "/v1/instances/{instanceId}/history",
+        "description": "",
+        "tags": [
+          "history"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListInstancesSteps",
+        "method": "GET",
+        "path": "/v1/instances/{instanceId}/steps",
+        "description": "",
+        "tags": [
+          "steps"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListMigratesInstances",
+        "method": "GET",
+        "path": "/v1/migrate/instances",
+        "description": "",
+        "tags": [
+          "instances"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListMigratesInstancesteps",
+        "method": "GET",
+        "path": "/v1/migrate/instancesteps",
+        "description": "",
+        "tags": [
+          "instancesteps"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListMigratesTemplates",
+        "method": "GET",
+        "path": "/v1/migrate/templates",
+        "description": "",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplatecategories",
+        "method": "GET",
+        "path": "/v1/templatecategories",
+        "description": "Get all campaign templates for the given tenant",
+        "tags": [
+          "templatecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplatecategory",
+        "method": "POST",
+        "path": "/v1/templatecategories",
+        "description": "",
+        "tags": [
+          "templatecategories"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplates",
+        "method": "GET",
+        "path": "/v1/templates",
+        "description": "Get all campaign templates for the given tenant",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplate",
+        "method": "POST",
+        "path": "/v1/templates",
+        "description": "Create new workflow template",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplateDetailed",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/detailed",
+        "description": "Get template with additional detail on steps - saving need for multiple calls",
+        "tags": [
+          "detailed"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetTemplateInitialise",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/initialise",
+        "description": "Initialise workflow service for specified template",
+        "tags": [
+          "initialise"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplatesRoles",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/roles",
+        "description": "List template roles",
+        "tags": [
+          "roles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateTemplatesRoles",
+        "method": "PUT",
+        "path": "/v1/templates/{templateId}/roles",
+        "description": "",
+        "tags": [
+          "roles"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplateSteps",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/steps",
+        "description": "List template steps",
+        "tags": [
+          "steps"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateSteps",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/steps",
+        "description": "Create template step",
+        "tags": [
+          "steps"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplatesTriggers",
+        "method": "GET",
+        "path": "/v1/templates/{templateId}/triggers",
+        "description": "List template roles",
+        "tags": [
+          "triggers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplatesTriggers",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/triggers",
+        "description": "",
+        "tags": [
+          "triggers"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListTemplateDetaileds",
+        "method": "GET",
+        "path": "/v1/templates/detailed",
+        "description": "Get all campaign templates for the given tenant with additional details of steps",
+        "tags": [
+          "detaileds"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateInstanceAbort",
+        "method": "POST",
+        "path": "/v1/instances/{instanceId}/abort",
+        "description": "",
+        "tags": [
+          "abort"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateInstanceRestart",
+        "method": "POST",
+        "path": "/v1/instances/{instanceId}/restart",
+        "description": "",
+        "tags": [
+          "restart"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateInstanceResume",
+        "method": "POST",
+        "path": "/v1/instances/{instanceId}/resume",
+        "description": "",
+        "tags": [
+          "resume"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateInstanceUnsuspend",
+        "method": "POST",
+        "path": "/v1/instances/{instanceId}/unsuspend",
+        "description": "",
+        "tags": [
+          "unsuspend"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateInstance",
+        "method": "POST",
+        "path": "/v1/migrate/instances/{instanceId}",
+        "description": "",
+        "tags": [
+          "instances"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplate1",
+        "method": "POST",
+        "path": "/v1/migrate/templates/{templateId}",
+        "description": "",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateClone",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/clone",
+        "description": "Clone an existing workflow template",
+        "tags": [
+          "clone"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateCreateinstanceOndemand",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/createinstance/ondemand",
+        "description": "Create instance for specific template",
+        "tags": [
+          "ondemand"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateStepMoveDown",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/steps/{stepId}/moveDown",
+        "description": "",
+        "tags": [
+          "movedown"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateTemplateStepMoveUp",
+        "method": "POST",
+        "path": "/v1/templates/{templateId}/steps/{stepId}/moveUp",
+        "description": "",
+        "tags": [
+          "moveup"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateinstanceCommon",
+        "method": "POST",
+        "path": "/v1/templates/common/{templateIdentifier}/createinstance",
+        "description": "Create instance for specific template",
+        "tags": [
+          "createinstance"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Monolith.Report",
+    "url": "https://monolith-report.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "CreatePortfolioReportRequest",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/reports/portfolio",
+        "description": "",
+        "tags": [
+          "portfolioreport"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPortfolioReportRequest",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/reports/portfolio/{id}",
+        "description": "Retrieves item by id",
+        "tags": [
+          "portfolioreport"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPortfolioReportObject",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/reports/portfolio/{id}/object",
+        "description": "Gets a object as stream",
+        "tags": [
+          "portfolioreport"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientReportBranding",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/reports/portfolio/branding",
+        "description": "Returns a BrandingDocumentCollection.",
+        "tags": [
+          "portfolioreport"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateReportArtifact",
+        "method": "POST",
+        "path": "/v2/report/artifacts",
+        "description": "",
+        "tags": [
+          "reportartifact"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListReportArtifact",
+        "method": "GET",
+        "path": "/v2/report/artifacts",
+        "description": "List artifacts.",
+        "tags": [
+          "reportartifact"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetReportArtifact",
+        "method": "GET",
+        "path": "/v2/report/artifacts/{id}",
+        "description": "Get Artifact",
+        "tags": [
+          "reportartifact"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteArtifact",
+        "method": "DELETE",
+        "path": "/v2/report/artifacts/{id}",
+        "description": "Deletes a artifact by ID.",
+        "tags": [
+          "reportartifact"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UploadArtifactObject",
+        "method": "PUT",
+        "path": "/v2/report/artifacts/{id}/object",
+        "description": "Upload artifact",
+        "tags": [
+          "reportartifact"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateReportBranding",
+        "method": "POST",
+        "path": "/v2/report/branding",
+        "description": "",
+        "tags": [
+          "reportbranding"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListReportBranding",
+        "method": "GET",
+        "path": "/v2/report/branding",
+        "description": "Returns a ReportBrandingDocumentCollection.",
+        "tags": [
+          "reportbranding"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateReportBranding",
+        "method": "PUT",
+        "path": "/v2/report/branding/{id}",
+        "description": "",
+        "tags": [
+          "reportbranding"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetReportBranding",
+        "method": "GET",
+        "path": "/v2/report/branding/{id}",
+        "description": "Gets a report branding configuration",
+        "tags": [
+          "reportbranding"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteReportBranding",
+        "method": "DELETE",
+        "path": "/v2/report/branding/{id}",
+        "description": "Deletes a a theme by ID.",
+        "tags": [
+          "reportbranding"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateDefaultBranding",
+        "method": "PUT",
+        "path": "/v2/report/branding/default/{id}",
+        "description": "",
+        "tags": [
+          "defaultbranding"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDefaultBranding",
+        "method": "GET",
+        "path": "/v2/report/branding/default/{id}",
+        "description": "Gets a default  branding configuration",
+        "tags": [
+          "defaultbranding"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Report",
+    "url": "https://monolith-report.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.Charging",
+    "url": "https://monolith-charging.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListTaskFees",
+        "method": "GET",
+        "path": "/v2/activities/tasks/{taskId}/fees",
+        "description": "Gets a collection of fees linked to the given task.",
+        "tags": [
+          "tasks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "LinkFeeToTask",
+        "method": "POST",
+        "path": "/v2/activities/tasks/{taskId}/fees/{feeId}/link",
+        "description": "Links the fee to given task",
+        "tags": [
+          "tasks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UnlinkFeeToTask",
+        "method": "POST",
+        "path": "/v2/activities/tasks/{taskId}/fees/{feeId}/unlink",
+        "description": "Unlinks the fee to given task",
+        "tags": [
+          "tasks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListBandingTemplates",
+        "method": "GET",
+        "path": "/v2/advisers/{adviserId}/bandingtemplates",
+        "description": "Returns a list of banding templates for an adviser.",
+        "tags": [
+          "bandingtemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetBandingTemplate",
+        "method": "GET",
+        "path": "/v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId}",
+        "description": "Returns a single banding template for an adviser.",
+        "tags": [
+          "bandingtemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "BandingTemplateExists",
+        "method": "HEAD",
+        "path": "/v2/advisers/{adviserId}/bandingtemplates/{bandingtemplateId}",
+        "description": "Check for the existence of a specific banding template.",
+        "tags": [
+          "bandingtemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ForwardIncomeToOperation",
+        "method": "POST",
+        "path": "/v2/advisers/{adviserId}/forwardincometo",
+        "description": "Creates a new event to indicate that income should be forwarded to a different adviser.",
+        "tags": [
+          "forwardincometo"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSplitTemplates",
+        "method": "GET",
+        "path": "/v2/advisers/{adviserId}/splittemplates",
+        "description": "Returns a list of split templates for the given adviser",
+        "tags": [
+          "splittemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSplitTemplate",
+        "method": "GET",
+        "path": "/v2/advisers/{adviserId}/splittemplates/{templateId}",
+        "description": "Returns a single split template for an adviser.",
+        "tags": [
+          "splittemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientFees",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/fees",
+        "description": "Returns a list of fees for a client.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientFees",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/fees",
+        "description": "Create client fee.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientFee",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/fees/{feeId}",
+        "description": "Get client fee by id.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientFee",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/fees/{feeId}",
+        "description": "Update client fee.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientFeeDates",
+        "method": "PATCH",
+        "path": "/v2/clients/{clientId}/fees/{feeId}",
+        "description": "Update client fee dates.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientFee",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/fees/{feeId}",
+        "description": "Deletes the fee.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientFeeSplits",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/splits",
+        "description": "Returns a collection of client fee splits",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientFeeSplit",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/splits",
+        "description": "Creates a client fee split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClientFeeSplitExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/splits/{splitId}",
+        "description": "Checks that the client fee split exists.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientFeeSplit",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/splits/{splitId}",
+        "description": "Returns a client fee split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientFeeSplit",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/splits/{splitId}",
+        "description": "Updates a client fee split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientFeeSplit",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/splits/{splitId}",
+        "description": "Deletes a client fee split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientFeeStatuses",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/statuses",
+        "description": "Returns fee status history collection.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientFeeStatus",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/statuses",
+        "description": "Change client fee status",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientFeeStatus",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/statuses/{feeStatusId}",
+        "description": "Get fee status",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClientFeeStatusExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/fees/{feeId}/statuses/{feeStatusId}",
+        "description": "Check fee status exists.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanCharges",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/charges",
+        "description": "Returns a list of charge for a client's plan.",
+        "tags": [
+          "charges"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanCharge",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/charges",
+        "description": "Creates a new charge for a client's plan.",
+        "tags": [
+          "charges"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanCharge",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/charges/{chargeId}",
+        "description": "Returns a single charge for a client's plan.",
+        "tags": [
+          "charges"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateClientPlanCharge",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/charges/{chargeId}",
+        "description": "Updates an existing charge for a client's plan.",
+        "tags": [
+          "charges"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanCharge",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/charges/{chargeId}",
+        "description": "Deletes an existing charge for a client's plan.",
+        "tags": [
+          "charges"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanCommissions",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/commissions",
+        "description": "Return a list of commissions for a given plan.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanCommissions",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/commissions",
+        "description": "Create a commission for a given plan.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ClientCommissionExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/plans/{planId}/commissions/{planCommissionId}",
+        "description": "Check to see if commission exists for a given plan.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanCommission",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/commissions/{planCommissionId}",
+        "description": "Get a commission by identifier for a given plan.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanCommissions",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/commissions/{planCommissionId}",
+        "description": "Update a commission for a given plan.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanCommissions",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/commissions/{planCommissionId}",
+        "description": "Delete a commission for a given plan.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanFees",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees",
+        "description": "Gets a collection of fee linked to the given plan.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanFees",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees",
+        "description": "Replaces all plan fees",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientPlanFee",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}",
+        "description": "Gets a Fee for the given plan.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanFee",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}",
+        "description": "Links an existing Fee to the given Plan.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteClientPlanFee",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}",
+        "description": "Removes the link between the Fee and the plan, does not delete the actual Fee.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanFeeStatuses",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}/statuses",
+        "description": "Returns fee status history collection.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanFeeStatus",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}/statuses",
+        "description": "Change plan fee status",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanFeeStatus",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}/statuses/{feeStatusId}",
+        "description": "Get fee status.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PlanFeeStatusExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees/{feeId}/statuses/{feeStatusId}",
+        "description": "Check a fee status exists",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientPlanFeeByTemplate",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/fees/templates/{templateId}",
+        "description": "Create a client plan fee from a fee model template.",
+        "tags": [
+          "templates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanSplits",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits",
+        "description": "Returns a collection of plan splits",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePlanSplit",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits",
+        "description": "Creates a plan split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PlanSplitExists",
+        "method": "HEAD",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+        "description": "Checks that the plan split exists.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanSplit",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+        "description": "Returns a plan split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanSplit",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+        "description": "Updates a plan split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeletePlanSplit",
+        "method": "DELETE",
+        "path": "/v2/clients/{clientId}/plans/{planId}/splits/{splitId}",
+        "description": "Deletes a plan split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientSplitTemplates",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/splittemplates",
+        "description": "Returns a list of split templates for the given client",
+        "tags": [
+          "splittemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientSplitTemplate",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/splittemplates/{templateId}",
+        "description": "Returns a single split template for an client.",
+        "tags": [
+          "splittemplates"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCommissions",
+        "method": "GET",
+        "path": "/v2/commissions",
+        "description": "Returns a list of commissions.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CommissionExists",
+        "method": "HEAD",
+        "path": "/v2/commissions/{commissionId}",
+        "description": "Check to see if a commission exists.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCommission",
+        "method": "GET",
+        "path": "/v2/commissions/{commissionId}",
+        "description": "Get a commission by id.",
+        "tags": [
+          "commissions"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFeeModels",
+        "method": "GET",
+        "path": "/v2/feemodels",
+        "description": "Returns a list of fee models.",
+        "tags": [
+          "feemodels"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFeeModel",
+        "method": "GET",
+        "path": "/v2/feemodels/{feeModelId}",
+        "description": "Get fee model by id.",
+        "tags": [
+          "feemodels"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteFeeModelProgram",
+        "method": "DELETE",
+        "path": "/v2/feemodels/{feeModelId}/programs/{programId}",
+        "description": "Delete fee model for a given program",
+        "tags": [
+          "programs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateFeeModelProgram",
+        "method": "POST",
+        "path": "/v2/feemodels/programs",
+        "description": "Create a fee program model",
+        "tags": [
+          "programs"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFee",
+        "method": "GET",
+        "path": "/v2/fees",
+        "description": "Returns a list of fees.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFee",
+        "method": "GET",
+        "path": "/v2/fees/{feeId}",
+        "description": "Get fee by id.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCreditNotes",
+        "method": "GET",
+        "path": "/v2/fees/{feeId}/creditnotes",
+        "description": "Return a list of credit notes for a given fee.",
+        "tags": [
+          "creditnotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateCreditNote",
+        "method": "POST",
+        "path": "/v2/fees/{feeId}/creditnotes",
+        "description": "Create a credit note for a given fee.",
+        "tags": [
+          "creditnotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCreditNote",
+        "method": "GET",
+        "path": "/v2/fees/{feeId}/creditnotes/{creditNoteId}",
+        "description": "Get a credit note by identifier for a given fee.",
+        "tags": [
+          "creditnotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteCreditNote",
+        "method": "DELETE",
+        "path": "/v2/fees/{feeId}/creditnotes/{creditNoteId}",
+        "description": "Delete a credit note for a given fee.",
+        "tags": [
+          "creditnotes"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListFeeStatuses",
+        "method": "GET",
+        "path": "/v2/fees/{feeId}/statuses",
+        "description": "Returns fee status history collection.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateFeeStatus",
+        "method": "POST",
+        "path": "/v2/fees/{feeId}/statuses",
+        "description": "Change fee status.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFeeStatus",
+        "method": "GET",
+        "path": "/v2/fees/{feeId}/statuses/{feeStatusId}",
+        "description": "Get a fee status",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "FeeStatusExists",
+        "method": "HEAD",
+        "path": "/v2/fees/{feeId}/statuses/{feeStatusId}",
+        "description": "Checks fee status exists.",
+        "tags": [
+          "statuses"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListIntroducerPaymentRules",
+        "method": "GET",
+        "path": "/v2/introducerpaymentrules",
+        "description": "Returns a collection of introducer payment rules.",
+        "tags": [
+          "introducerpaymentrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "IntroducerPaymentRuleExists",
+        "method": "HEAD",
+        "path": "/v2/introducerpaymentrules/{introducerPaymentRuleId}",
+        "description": "Checks that the introducer payment rules exists.",
+        "tags": [
+          "introducerpaymentrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetIntroducerPaymentRule",
+        "method": "GET",
+        "path": "/v2/introducerpaymentrules/{introducerPaymentRuleId}",
+        "description": "Returns an Introducer Payment Rule.",
+        "tags": [
+          "introducerpaymentrules"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanFees",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/fees",
+        "description": "Gets a collection of fee linked to the given plan.",
+        "tags": [
+          "fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanSecurityTransferInstructionFees",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/securityTransferInstructionFees",
+        "description": "Gets a collection of security transfer instruction fees linked to the given plan.",
+        "tags": [
+          "money movement fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanSecurityTransferInstructionFees",
+        "method": "PUT",
+        "path": "/v2/plans/{planId}/securityTransferInstructionFees",
+        "description": "Replaces all of the security transfer instruction and fee relationships for the plan with everything in the request body,\r\nany security transfer instruction and fee relationships not passed in will be",
+        "tags": [
+          "money movement fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListPlanTransferInstructionFees",
+        "method": "GET",
+        "path": "/v2/plans/{planId}/transferInstructionFees",
+        "description": "Gets a collection of transfer instruction fees linked to the given plan.",
+        "tags": [
+          "money movement fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdatePlanTransferInstructionFees",
+        "method": "PUT",
+        "path": "/v2/plans/{planId}/transferInstructionFees",
+        "description": "Replaces all of the transfer instruction and fee relationships for the plan with everything in the request body,\r\nany transfer instruction and fee relationships not passed in will be removed.",
+        "tags": [
+          "money movement fees"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListSplits",
+        "method": "GET",
+        "path": "/v2/splits",
+        "description": "Returns a collection of splits",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateSplit",
+        "method": "POST",
+        "path": "/v2/splits",
+        "description": "Creates a split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SplitExists",
+        "method": "HEAD",
+        "path": "/v2/splits/{splitId}",
+        "description": "Checks that the split exists.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetSplit",
+        "method": "GET",
+        "path": "/v2/splits/{splitId}",
+        "description": "Returns a split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateSplit",
+        "method": "PUT",
+        "path": "/v2/splits/{splitId}",
+        "description": "Updates a split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteSplit",
+        "method": "DELETE",
+        "path": "/v2/splits/{splitId}",
+        "description": "Deletes a split document.",
+        "tags": [
+          "splits"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetFeeModelTemplate",
+        "method": "GET",
+        "path": "/v2/templates/{templateId}",
+        "description": "Allows an api consumer to retrieve a single fee model template by id.",
+        "tags": [
+          "feemodeltemplates"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.Charging",
+    "url": "https://monolith-charging.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Membership",
+    "url": "https://microservice-membership.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "GetVerify",
+        "method": "GET",
+        "path": "/membership/v2/emails/verify/{token}",
+        "description": "",
+        "tags": [
+          "accountsecurity"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccount",
+        "method": "POST",
+        "path": "/v2/accounts",
+        "description": "Creates account",
+        "tags": [
+          "accounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateAccount",
+        "method": "PUT",
+        "path": "/v2/accounts",
+        "description": "Updates username",
+        "tags": [
+          "accounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAccount",
+        "method": "GET",
+        "path": "/v2/accounts/{subject}",
+        "description": "Gets user account",
+        "tags": [
+          "accounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAccount2fa",
+        "method": "DELETE",
+        "path": "/v2/accounts/{subject}/2fa",
+        "description": "Sets up Is2faEnabled to false, delete shared secret and recovery codes.",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccount2faAuthenticate",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/2fa/authenticate",
+        "description": "Verifies that 2fa code is valid and logins",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccount2faExtmfaAuthenticate",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/2fa/extmfa/authenticate",
+        "description": "Verifies that 2fa code is valid and logins",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccount2faPostpone",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/2fa/postpone",
+        "description": "Postpone 2fa setup for a user account.",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccounts2faRecoverycode",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/2fa/recoverycodes",
+        "description": "Creates new 2fa recovery codes for an user account.",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAccount2fasRecoverycodes",
+        "method": "GET",
+        "path": "/v2/accounts/{subject}/2fa/recoverycodes",
+        "description": "Returns 2fa recovery codes for an user account.",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccount2faRecoverycodesAuthenticate",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/2fa/recoverycodes/authenticate",
+        "description": "Authenticates an user using a recovery code.\r\nUsed recovery code will be deleted after an authentication.",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccounts2faRegister",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/2fa/register",
+        "description": "If a verification code is valid, sets up Is2faEnabled to true and\r\ncreates and returns new recovery codes.",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccounts2faSecret",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/2fa/secret",
+        "description": "Creates new 2fa shared secret for an user account.",
+        "tags": [
+          "2fa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccountPasskeysAuthenticate",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/passkeys/authenticate",
+        "description": "Verifies the user authenticated by FIDO is valid and processes user login",
+        "tags": [
+          "passkeys"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListAccountPhones",
+        "method": "GET",
+        "path": "/v2/accounts/{subject}/phones",
+        "description": "Returns a list of phones for given account.",
+        "tags": [
+          "phones"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccountPhone",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/phones",
+        "description": "Creates a phone for given account.",
+        "tags": [
+          "phones"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAccountPhone",
+        "method": "GET",
+        "path": "/v2/accounts/{subject}/phones/{phoneId}",
+        "description": "Returns a phone for given account.",
+        "tags": [
+          "phones"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAccountPhone",
+        "method": "DELETE",
+        "path": "/v2/accounts/{subject}/phones/{phoneId}",
+        "description": "Deletes a phone for a given account.",
+        "tags": [
+          "phones"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccountPhoneMakeprimary",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/phones/{phoneId}/makeprimary",
+        "description": "Makes the given phone primary for a given account.",
+        "tags": [
+          "phones"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateAccountPhoneMakeverified",
+        "method": "POST",
+        "path": "/v2/accounts/{subject}/phones/{phoneId}/makeverified",
+        "description": "Verifies a phone for a given account.",
+        "tags": [
+          "phones"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListJumplinks",
+        "method": "GET",
+        "path": "/v2/jumplinks",
+        "description": "",
+        "tags": [
+          "jumplinks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetJumplink",
+        "method": "GET",
+        "path": "/v2/jumplinks/{jumpLinkId}",
+        "description": "",
+        "tags": [
+          "jumplinks"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListUserEmails",
+        "method": "GET",
+        "path": "/v2/users/{userId}/emails",
+        "description": "Returns a list of emails for given user.",
+        "tags": [
+          "emails"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUserEmail",
+        "method": "POST",
+        "path": "/v2/users/{userId}/emails",
+        "description": "Creates an email for given user\r\nYou can add a x-email-template-hint header to specify which email template branding to be used.\r\nie. io or pfp. io is default if not specified.",
+        "tags": [
+          "emails"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetUserEmail",
+        "method": "GET",
+        "path": "/v2/users/{userId}/emails/{emailId}",
+        "description": "Returns an email for given user.",
+        "tags": [
+          "emails"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteUserEmail",
+        "method": "DELETE",
+        "path": "/v2/users/{userId}/emails/{emailId}",
+        "description": "Deletes an email for a given user.",
+        "tags": [
+          "emails"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUserEmailMakeprimary",
+        "method": "POST",
+        "path": "/v2/users/{userId}/emails/{emailId}/makeprimary",
+        "description": "Sends a message to make the given email as primary for a given user.",
+        "tags": [
+          "emails"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUserEmailVerify",
+        "method": "POST",
+        "path": "/v2/users/{userId}/emails/{emailId}/verify",
+        "description": "Sends email verification for a given user (currently does not invalidates previous requests).\r\nYou can add a x-email-template-hint header to specify which email template branding to be used.\r\nie. io o",
+        "tags": [
+          "emails"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Membership",
+    "url": "https://microservice-membership.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [
+      {
+        "operationId": "GetV1Account",
+        "method": "GET",
+        "path": "/membership/v1/accounts",
+        "description": "",
+        "tags": [
+          "accountsecurity"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetRecovery",
+        "method": "GET",
+        "path": "/membership/v1/accounts/recovery/{recoveryCode}",
+        "description": "",
+        "tags": [
+          "accountrecovery"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetV1AccountRecoveryForgotpassword",
+        "method": "GET",
+        "path": "/membership/v1/accounts/recovery/forgotpassword",
+        "description": "",
+        "tags": [
+          "accountrecovery"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetV1AccountRecoveryForgotpasswordConfirmation",
+        "method": "GET",
+        "path": "/membership/v1/accounts/recovery/forgotpassword/confirmation",
+        "description": "",
+        "tags": [
+          "accountrecovery"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateV1AccountsRecoveryForgotpasswordEmailrecovery",
+        "method": "POST",
+        "path": "/membership/v1/accounts/recovery/forgotpassword/emailrecovery",
+        "description": "",
+        "tags": [
+          "accountrecovery"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetV1AccountRecoveryForgotusername",
+        "method": "GET",
+        "path": "/membership/v1/accounts/recovery/forgotusername",
+        "description": "",
+        "tags": [
+          "accountrecovery"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateV1AccountsRecoveryForgotusername",
+        "method": "POST",
+        "path": "/membership/v1/accounts/recovery/forgotusername",
+        "description": "",
+        "tags": [
+          "accountrecovery"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetV1AccountRecoveryForgotusernameConfirmation",
+        "method": "GET",
+        "path": "/membership/v1/accounts/recovery/forgotusername/confirmation",
+        "description": "",
+        "tags": [
+          "accountrecovery"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateV1AccountsRecoveryVerifyIdentityQuestion",
+        "method": "POST",
+        "path": "/membership/v1/accounts/recovery/verify_identity_questions",
+        "description": "",
+        "tags": [
+          "accountrecovery"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetV1AccountsSecurityChangepassword",
+        "method": "GET",
+        "path": "/membership/v1/accounts/security/changepassword",
+        "description": "Redirects back to change password after token expired on Post UpdatePassword",
+        "tags": [
+          "accountsecurity"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateV1AccountsSecurityChangepassword",
+        "method": "POST",
+        "path": "/membership/v1/accounts/security/changepassword",
+        "description": "",
+        "tags": [
+          "accountsecurity"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListV1ExternalAccounts",
+        "method": "GET",
+        "path": "/membership/v1/external_accounts",
+        "description": "",
+        "tags": [
+          "externalaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateV1ExternalAccount",
+        "method": "POST",
+        "path": "/membership/v1/external_accounts",
+        "description": "",
+        "tags": [
+          "externalaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateExternalAccount",
+        "method": "PUT",
+        "path": "/membership/v1/external_accounts/{externalAccountId}",
+        "description": "",
+        "tags": [
+          "externalaccounts"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateV1RegistrationsPfp",
+        "method": "POST",
+        "path": "/membership/v1/registrations/pfp",
+        "description": "",
+        "tags": [
+          "pfp"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPfp",
+        "method": "GET",
+        "path": "/membership/v1/registrations/pfp/{token}",
+        "description": "",
+        "tags": [
+          "pfp"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreatePfpVerifyEmail",
+        "method": "POST",
+        "path": "/membership/v1/registrations/pfp/{token}/verify_email",
+        "description": "",
+        "tags": [
+          "pfp"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetV1RegistrationsPfpRegistrationExpired",
+        "method": "GET",
+        "path": "/membership/v1/registrations/pfp/registration_expired",
+        "description": "",
+        "tags": [
+          "pfp"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetV1RegistrationsPfpVerifyIdentityQuestions",
+        "method": "GET",
+        "path": "/membership/v1/registrations/pfp/verify_identity_questions",
+        "description": "",
+        "tags": [
+          "pfp"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateV1RegistrationsPfpVerifyIdentityQuestion",
+        "method": "POST",
+        "path": "/membership/v1/registrations/pfp/verify_identity_questions",
+        "description": "",
+        "tags": [
+          "pfp"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetUser",
+        "method": "GET",
+        "path": "/v1/users/{subject}",
+        "description": "",
+        "tags": [
+          "accountsecurity"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateclaimsUser",
+        "method": "POST",
+        "path": "/v1/users/{subject}/updateclaims",
+        "description": "",
+        "tags": [
+          "accountsecurity"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateUserAuthenticate",
+        "method": "POST",
+        "path": "/v1/users/authenticate",
+        "description": "",
+        "tags": [
+          "accountsecurity"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPassword",
+        "method": "GET",
+        "path": "/v1/users/password/{username}",
+        "description": "",
+        "tags": [
+          "accountsecurity"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v1"
+  },
+  {
+    "service": "Monolith.EventHandling",
+    "url": "https://monolith-eventhandling.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.EventHandling",
+    "url": "https://monolith-eventhandling.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [],
+    "swaggerVersion": "1.0"
+  },
+  {
+    "service": "Microservice.Quicksight",
+    "url": "https://microservice-quicksight.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "GetQuicksightConfiguration",
+        "method": "GET",
+        "path": "/v2/quicksight/configurations",
+        "description": "Get quicksight configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateQuicksightConfiguration",
+        "method": "PUT",
+        "path": "/v2/quicksight/configurations",
+        "description": "Create quicksight configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightConfiguration",
+        "method": "DELETE",
+        "path": "/v2/quicksight/configurations",
+        "description": "Delete quicksight configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateQuicksightFolderConfiguration",
+        "method": "POST",
+        "path": "/v2/quicksight/configurations/folders",
+        "description": "Creates a quicksight folder configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightFolderConfiguration",
+        "method": "GET",
+        "path": "/v2/quicksight/configurations/folders",
+        "description": "Gets a collection of quicksight folder configurations.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetQuicksightFolderConfiguration",
+        "method": "GET",
+        "path": "/v2/quicksight/configurations/folders/{id}",
+        "description": "Gets quicksight folder configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateQuicksightFolderConfiguration",
+        "method": "PUT",
+        "path": "/v2/quicksight/configurations/folders/{id}",
+        "description": "Updates a quicksight folder configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightFolderConfiguration",
+        "method": "DELETE",
+        "path": "/v2/quicksight/configurations/folders/{id}",
+        "description": "Deletes a quicksight folder configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateQuicksightGroupConfiguration",
+        "method": "POST",
+        "path": "/v2/quicksight/configurations/groups",
+        "description": "Creates a quicksight group configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightGroupConfiguration",
+        "method": "GET",
+        "path": "/v2/quicksight/configurations/groups",
+        "description": "Gets list of quicksight group configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetQuicksightGroupConfiguration",
+        "method": "GET",
+        "path": "/v2/quicksight/configurations/groups/{id}",
+        "description": "Gets quicksight group configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateQuicksightGroupConfiguration",
+        "method": "PUT",
+        "path": "/v2/quicksight/configurations/groups/{id}",
+        "description": "Updates a quicksight group configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightGroupConfiguration",
+        "method": "DELETE",
+        "path": "/v2/quicksight/configurations/groups/{id}",
+        "description": "Deletes a quicksight group configuration.",
+        "tags": [
+          "configuration"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightDashboards",
+        "method": "GET",
+        "path": "/v2/quicksight/dashboards",
+        "description": "Gets a collection of dashboards.",
+        "tags": [
+          "dashboard"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetQuicksightDashboardEmbedUrl",
+        "method": "GET",
+        "path": "/v2/quicksight/dashboards/{dashboardId}/embed-url",
+        "description": "Generates a session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard in your web server code.",
+        "tags": [
+          "dashboard"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightDashboardPermissions",
+        "method": "GET",
+        "path": "/v2/quicksight/dashboards/{dashboardId}/permissions",
+        "description": "Lists permissions for quicksight dashboard.",
+        "tags": [
+          "dashboardpermission"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AssignQuicksightDashboardPermissions",
+        "method": "PUT",
+        "path": "/v2/quicksight/dashboards/{dashboardId}/permissions",
+        "description": "Adds permission for specified user or group to quicksight dashboard.",
+        "tags": [
+          "dashboardpermission"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightDashboardPermission",
+        "method": "DELETE",
+        "path": "/v2/quicksight/dashboards/{dashboardId}/permissions",
+        "description": "Deletes permission for specified user or group from quicksight dashboard",
+        "tags": [
+          "dashboardpermission"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightSharedFolder",
+        "method": "GET",
+        "path": "/v2/quicksight/folders",
+        "description": "Gets a collection of folders.",
+        "tags": [
+          "folder"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetQuicksightSharedFolder",
+        "method": "GET",
+        "path": "/v2/quicksight/folders/{folderId}",
+        "description": "Gets a quicksight folder.",
+        "tags": [
+          "folder"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateQuicksightSharedFolderPermission",
+        "method": "PUT",
+        "path": "/v2/quicksight/folders/{folderId}/permissions",
+        "description": "Adds permission for quicksight shared folder to specified user or group",
+        "tags": [
+          "folderpermission"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightSharedFolderPermission",
+        "method": "GET",
+        "path": "/v2/quicksight/folders/{folderId}/permissions",
+        "description": "Lists permissions for quicksight shared folder",
+        "tags": [
+          "folderpermission"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightSharedFolderPermission",
+        "method": "DELETE",
+        "path": "/v2/quicksight/folders/{folderId}/permissions",
+        "description": "Deletes permission for quicksight shared folder to specified user or group",
+        "tags": [
+          "folderpermission"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightGroups",
+        "method": "GET",
+        "path": "/v2/quicksight/reportgroups",
+        "description": "Gets a collection of quicksight groups.",
+        "tags": [
+          "reportgroup"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateQuicksightGroup",
+        "method": "POST",
+        "path": "/v2/quicksight/reportgroups",
+        "description": "Creates a quicksight group.",
+        "tags": [
+          "reportgroup"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightGroupUsers",
+        "method": "GET",
+        "path": "/v2/quicksight/reportgroups/{groupId}/users",
+        "description": "Gets a collection of users in a report group.",
+        "tags": [
+          "reportgroupsuser"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AssignQuicksightGroupUser",
+        "method": "POST",
+        "path": "/v2/quicksight/reportgroups/{groupId}/users/{userId}",
+        "description": "Adds a quickSight user to a quickSight report group.",
+        "tags": [
+          "reportgroupsuser"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightGroupUser",
+        "method": "DELETE",
+        "path": "/v2/quicksight/reportgroups/{groupId}/users/{userId}",
+        "description": "Removes a user from a group so that the user is no longer a member of the group.",
+        "tags": [
+          "reportgroupsuser"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "QuicksightGroupExists",
+        "method": "HEAD",
+        "path": "/v2/quicksight/reportgroups/{id}",
+        "description": "Checks that a quicksight group exists.",
+        "tags": [
+          "reportgroup"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetQuicksightGroup",
+        "method": "GET",
+        "path": "/v2/quicksight/reportgroups/{id}",
+        "description": "Gets a quicksight group.",
+        "tags": [
+          "reportgroup"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightGroup",
+        "method": "DELETE",
+        "path": "/v2/quicksight/reportgroups/{id}",
+        "description": "Deletes a quicksight group.",
+        "tags": [
+          "reportgroup"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateQuicksightGroup",
+        "method": "PUT",
+        "path": "/v2/quicksight/reportgroups/{id}",
+        "description": "Updates a quicksight group.",
+        "tags": [
+          "reportgroup"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetQuicksightSessionEmbedUrl",
+        "method": "GET",
+        "path": "/v2/quicksight/session/embed-url",
+        "description": "Generates a session URL and authorization code that you can use to embed the Amazon QuickSight console in your web server code.",
+        "tags": [
+          "session"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightGroupToIoRole",
+        "method": "GET",
+        "path": "/v2/roles/{roleId}/reportgroups",
+        "description": "Gets a collection of report groups related to a role.",
+        "tags": [
+          "reportgrouptorole"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AssignQuicksightGroupToIoRole",
+        "method": "POST",
+        "path": "/v2/roles/{roleId}/reportgroups/{reportGroupId}",
+        "description": "Assign quicksight report group to a role.",
+        "tags": [
+          "reportgrouptorole"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightGroupToIoRole",
+        "method": "DELETE",
+        "path": "/v2/roles/{roleId}/reportgroups/{reportGroupId}",
+        "description": "Deletes a quicksight report group assignment from a role.",
+        "tags": [
+          "reportgrouptorole"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightDashboardsUsageHistory",
+        "method": "GET",
+        "path": "/v2/users/{userId}/dashboards/usage_history",
+        "description": "Gets a collection of dashboard usage history.",
+        "tags": [
+          "dashboardusagehistory"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListQuicksightDashboardsFavourite",
+        "method": "GET",
+        "path": "/v2/users/{userId}/favourites/dashboards",
+        "description": "Gets a collection of dashboard favourites.",
+        "tags": [
+          "dashboardfavourite"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateQuicksightDashboardFavourite",
+        "method": "POST",
+        "path": "/v2/users/{userId}/favourites/dashboards/{dashboardId}",
+        "description": "Adds a dashboard to the user favourites dashboards.",
+        "tags": [
+          "dashboardfavourite"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteQuicksightDashboardFavourite",
+        "method": "DELETE",
+        "path": "/v2/users/{userId}/favourites/dashboards/{dashboardId}",
+        "description": "Removes a dashboard from the user favourites dashboards.",
+        "tags": [
+          "dashboardfavourite"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Quicksight",
+    "url": "https://microservice-quicksight.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.ContractEnquiry",
+    "url": "https://monolith-contractenquiry.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "PostCePlanValuation",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations/ce",
+        "description": "Accepts a request to fetch valuation from provider",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetPlanValuationRawResponse",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/{planId}/valuations/requests/{requestId}/response",
+        "description": "Returns the raw valuation response from provider",
+        "tags": [
+          "valuations"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListNotifications",
+        "method": "GET",
+        "path": "/v2/user/notifications",
+        "description": "Get the user's unread notifications",
+        "tags": [
+          "notifications"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "AcknowledgeNotifications",
+        "method": "POST",
+        "path": "/v2/user/notifications",
+        "description": "Mark one or more notifications as read",
+        "tags": [
+          "notifications"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Monolith.ContractEnquiry",
+    "url": "https://monolith-contractenquiry.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  }
+]

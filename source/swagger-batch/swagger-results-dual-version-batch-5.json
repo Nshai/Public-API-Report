@@ -1,0 +1,375 @@
+[
+  {
+    "service": "Microservice.DPA",
+    "url": "https://microservice-dpa.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListClientDpaPolicyAgreements",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/dpa_agreements",
+        "description": "Returns a list of client's DPA policy agreements.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateClientDpaPolicyAgreement",
+        "method": "POST",
+        "path": "/v2/clients/{clientId}/dpa_agreements",
+        "description": "Creates a new DPA policy agreement for a client.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetClientDpaPolicyAgreement",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/dpa_agreements/{agreementId}",
+        "description": "Returns a single DPA policy agreement for a client.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListDpaPolicies",
+        "method": "GET",
+        "path": "/v2/dpa_policies",
+        "description": "Returns a list of DPA policies.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "CreateDPAPolicy",
+        "method": "POST",
+        "path": "/v2/dpa_policies",
+        "description": "Creates a new DPA policy which will become the current DPA policy when created (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetDpaPolicy",
+        "method": "GET",
+        "path": "/v2/dpa_policies/{policyId}",
+        "description": "Returns a single DPA policy.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateDPAPolicy",
+        "method": "PUT",
+        "path": "/v2/dpa_policies/{policyId}",
+        "description": "Updates an existing DPA policy.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteDPAPolicy",
+        "method": "DELETE",
+        "path": "/v2/dpa_policies/{policyId}",
+        "description": "Deletes an existing DPA policy. Only policies that are not associated with client agreements can be deleted.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchDPAPolicy",
+        "method": "PATCH",
+        "path": "/v2/dpa_policies/{policyId}",
+        "description": "Updates an existing DPA policy.",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCurrentDPAPolicy",
+        "method": "GET",
+        "path": "/v2/dpa_policies/current",
+        "description": "Returns the current default DPA policy (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateCurrentDPAPolicy",
+        "method": "PUT",
+        "path": "/v2/dpa_policies/current",
+        "description": "Updates the current DPA policy (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteCurrentDPAPolicy",
+        "method": "DELETE",
+        "path": "/v2/dpa_policies/current",
+        "description": "Deletes the current default DPA policy (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "PatchCurrentDPAPolicy",
+        "method": "PATCH",
+        "path": "/v2/dpa_policies/current",
+        "description": "Updates the current default DPA policy (see notes on party type above).",
+        "tags": [
+          "dpa"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.DPA",
+    "url": "https://microservice-dpa.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.CFF",
+    "url": "https://microservice-cff.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "ListCffSegments",
+        "method": "GET",
+        "path": "/v2/cff_segments",
+        "description": "Returns CFF profile segments.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCffSegment",
+        "method": "GET",
+        "path": "/v2/cff_segments/{segmentId}",
+        "description": "Returns a particular CFF segment.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCffSegmentCompletion",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/cff_segments/{segmentId}/completion",
+        "description": "Returns completion for a particular segment.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateCffSegmentCompletion",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/cff_segments/{segmentId}/completion",
+        "description": "Updates completion for a particular CFF segment.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetCffSegmentState",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/cff_segments/{segmentId}/state",
+        "description": "Returns state for a particular segment.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "UpdateCffSegmentState",
+        "method": "PUT",
+        "path": "/v2/clients/{clientId}/cff_segments/{segmentId}/state",
+        "description": "Updates a state for a particular Cff segment. Please be advised that though there is no size restriction for the particular state key the entire state data could not occupy more than 1 MB.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListCffSegmentsCompletions",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/cff_segments/completions",
+        "description": "Returns a collection of completions for the specified segments.",
+        "tags": [
+          "cff"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.CFF",
+    "url": "https://microservice-cff.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Avatar",
+    "url": "https://microservice-avatar.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "operations": [
+      {
+        "operationId": "GetAvatar",
+        "method": "GET",
+        "path": "/v2/avatars",
+        "description": "Get Avatar url for client",
+        "tags": [
+          "avatars"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "DeleteAvatar",
+        "method": "DELETE",
+        "path": "/v2/avatars",
+        "description": "Deletes Avatar object for client",
+        "tags": [
+          "avatars"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "GetAvatarSignedurl",
+        "method": "GET",
+        "path": "/v2/avatars/signedurl",
+        "description": "Get Avatar signed url for client for PUT",
+        "tags": [
+          "signedurl"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
+  },
+  {
+    "service": "Microservice.Avatar",
+    "url": "https://microservice-avatar.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.DataSharing",
+    "url": "https://microservice-datasharing.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.DataSharing",
+    "url": "https://microservice-datasharing.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.PropertyProvider",
+    "url": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "Timeout",
+    "operations": []
+  },
+  {
+    "service": "Microservice.PropertyProvider",
+    "url": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.ProviderDocuments",
+    "url": "https://microservice-providerdocuments.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "Timeout",
+    "operations": []
+  },
+  {
+    "service": "Microservice.ProviderDocuments",
+    "url": "https://microservice-providerdocuments.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Scheduler",
+    "url": "https://microservice-scheduler.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Microservice.Scheduler",
+    "url": "https://microservice-scheduler.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "operations": [],
+    "swaggerVersion": "1.0"
+  },
+  {
+    "service": "Monolith.IdVerification",
+    "url": "https://monolith-idverification.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.IdVerification",
+    "url": "https://monolith-idverification.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.Entitlement.SDK",
+    "url": "https://monolith-entitlement.sdk.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "Hostname/IP does not match certificate's altnames: Host: monolith-entitlement.sdk.sys-ie-04.intelliflo.systems. is not in the cert's altnames: DNS:*.sys-ie-04.intelliflo.systems, DNS:*.intelliflo.systems, DNS:*.robo.sys-ie-04.intelliflo.systems, DNS:*.office.sys-ie-04.intelliflo.systems, DNS:*.pfp.sys-ie-04.intelliflo.systems",
+    "operations": []
+  },
+  {
+    "service": "Monolith.Entitlement.SDK",
+    "url": "https://monolith-entitlement.sdk.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "Hostname/IP does not match certificate's altnames: Host: monolith-entitlement.sdk.sys-ie-04.intelliflo.systems. is not in the cert's altnames: DNS:*.sys-ie-04.intelliflo.systems, DNS:*.intelliflo.systems, DNS:*.robo.sys-ie-04.intelliflo.systems, DNS:*.office.sys-ie-04.intelliflo.systems, DNS:*.pfp.sys-ie-04.intelliflo.systems",
+    "operations": []
+  },
+  {
+    "service": "Monolith.NeedsAndPriorities",
+    "url": "https://monolith-needsandpriorities.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "version": "v2",
+    "error": "HTTP 404",
+    "operations": []
+  },
+  {
+    "service": "Monolith.NeedsAndPriorities",
+    "url": "https://monolith-needsandpriorities.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "version": "v1",
+    "error": "HTTP 404",
+    "operations": []
+  }
+]

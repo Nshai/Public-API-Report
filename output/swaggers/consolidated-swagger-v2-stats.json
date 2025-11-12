@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2025-11-12T21:28:56.810Z",
+  "generatedAt": "2025-11-12T22:54:31.519Z",
   "version": "v2",
-  "totalOperations": 1359,
+  "totalOperations": 1341,
   "operationsBySource": {
     "templateSwagger": 391,
-    "serviceSwagger": 968,
-    "generatedMinimal": 0
+    "serviceSwagger": 946,
+    "generatedMinimal": 4
   },
   "coverage": {
-    "withScopes": 657,
+    "withScopes": 800,
     "onDeveloperPortal": 391,
-    "withTags": 1359
+    "withTags": 1341
   },
   "uniqueCounts": {
-    "paths": 780,
-    "tags": 243,
-    "scopes": 22
+    "paths": 768,
+    "tags": 241,
+    "scopes": 26
   }
 }

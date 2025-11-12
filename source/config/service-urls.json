@@ -3,702 +3,976 @@
     "repo": "Microservice.Recommend",
     "type": "microservice",
     "serviceName": "recommend",
-    "url": "https://microservice-recommend.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-recommend.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-recommend.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Recommend",
+    "type": "microservice",
+    "serviceName": "recommend",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-recommend.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-recommend.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Content",
     "type": "microservice",
     "serviceName": "content",
-    "url": "https://microservice-content.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-content.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-content.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Content",
+    "type": "microservice",
+    "serviceName": "content",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-content.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-content.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Portfolio",
     "type": "monolith",
     "serviceName": "portfolio",
-    "url": "https://monolith-portfolio.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-portfolio.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-portfolio.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Portfolio",
+    "type": "monolith",
+    "serviceName": "portfolio",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-portfolio.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-portfolio.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Entitlement",
     "type": "monolith",
     "serviceName": "entitlement",
-    "url": "https://monolith-entitlement.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-entitlement.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-entitlement.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Entitlement",
+    "type": "monolith",
+    "serviceName": "entitlement",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-entitlement.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-entitlement.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Cashflow",
     "type": "microservice",
     "serviceName": "cashflow",
-    "url": "https://microservice-cashflow.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-cashflow.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-cashflow.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Cashflow",
+    "type": "microservice",
+    "serviceName": "cashflow",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-cashflow.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-cashflow.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.MoneyMovement",
     "type": "microservice",
     "serviceName": "moneymovement",
-    "url": "https://microservice-moneymovement.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-moneymovement.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-moneymovement.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.MoneyMovement",
+    "type": "microservice",
+    "serviceName": "moneymovement",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-moneymovement.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-moneymovement.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.AuthorDataProvider",
     "type": "monolith",
     "serviceName": "authordataprovider",
-    "url": "https://monolith-authordataprovider.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-authordataprovider.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-authordataprovider.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.AuthorDataProvider",
+    "type": "monolith",
+    "serviceName": "authordataprovider",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-authordataprovider.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-authordataprovider.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.PlanApplication",
     "type": "microservice",
     "serviceName": "planapplication",
-    "url": "https://microservice-planapplication.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-planapplication.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-planapplication.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Monolith.Intelligator",
-    "type": "monolith",
-    "serviceName": "intelligator",
-    "url": "https://monolith-intelligator.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "repo": "Microservice.PlanApplication",
+    "type": "microservice",
+    "serviceName": "planapplication",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-planapplication.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-planapplication.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Notifications",
     "type": "microservice",
     "serviceName": "notifications",
-    "url": "https://microservice-notifications.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-notifications.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-notifications.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Notifications",
+    "type": "microservice",
+    "serviceName": "notifications",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-notifications.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-notifications.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Author",
     "type": "microservice",
     "serviceName": "author",
-    "url": "https://microservice-author.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-author.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-author.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Author",
+    "type": "microservice",
+    "serviceName": "author",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-author.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-author.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Identity",
     "type": "microservice",
     "serviceName": "identity",
-    "url": "https://microservice-identity.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-identity.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-identity.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Identity",
+    "type": "microservice",
+    "serviceName": "identity",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-identity.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-identity.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.ProviderIntegration",
     "type": "microservice",
     "serviceName": "providerintegration",
-    "url": "https://microservice-providerintegration.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-providerintegration.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-providerintegration.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.ProviderIntegration",
+    "type": "microservice",
+    "serviceName": "providerintegration",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-providerintegration.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-providerintegration.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Crm",
     "type": "monolith",
     "serviceName": "crm",
-    "url": "https://monolith-crm.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-crm.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-crm.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.AccountingAndPerformance",
-    "type": "microservice",
-    "serviceName": "accountingandperformance",
-    "url": "https://microservice-accountingandperformance.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "repo": "Monolith.Crm",
+    "type": "monolith",
+    "serviceName": "crm",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-crm.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-crm.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Email",
     "type": "microservice",
     "serviceName": "email",
-    "url": "https://microservice-email.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-email.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-email.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.Pershing",
+    "repo": "Microservice.Email",
     "type": "microservice",
-    "serviceName": "pershing",
-    "url": "https://microservice-pershing.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "email",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-email.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-email.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.SecureMessaging",
     "type": "microservice",
     "serviceName": "securemessaging",
-    "url": "https://microservice-securemessaging.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-securemessaging.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-securemessaging.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.CashflowModeling",
+    "repo": "Microservice.SecureMessaging",
     "type": "microservice",
-    "serviceName": "cashflowmodeling",
-    "url": "https://microservice-cashflowmodeling.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "securemessaging",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-securemessaging.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-securemessaging.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Campaign",
     "type": "monolith",
     "serviceName": "campaign",
-    "url": "https://monolith-campaign.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-campaign.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-campaign.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Campaign",
+    "type": "monolith",
+    "serviceName": "campaign",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-campaign.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-campaign.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Config",
     "type": "microservice",
     "serviceName": "config",
-    "url": "https://microservice-config.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-config.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-config.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Config",
+    "type": "microservice",
+    "serviceName": "config",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-config.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-config.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.AppD",
     "type": "microservice",
     "serviceName": "appd",
-    "url": "https://microservice-appd.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-appd.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-appd.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.MortgageBrainAnywhere",
+    "repo": "Microservice.AppD",
     "type": "microservice",
-    "serviceName": "mortgagebrainanywhere",
-    "url": "https://microservice-mortgagebrainanywhere.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.HighchartsExportServer",
-    "type": "microservice",
-    "serviceName": "highchartsexportserver",
-    "url": "https://microservice-highchartsexportserver.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "appd",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-appd.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-appd.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Storage",
     "type": "monolith",
     "serviceName": "storage",
-    "url": "https://monolith-storage.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-storage.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-storage.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Storage",
+    "type": "monolith",
+    "serviceName": "storage",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-storage.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-storage.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Insight",
     "type": "microservice",
     "serviceName": "insight",
-    "url": "https://microservice-insight.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-insight.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-insight.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Insight",
+    "type": "microservice",
+    "serviceName": "insight",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-insight.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-insight.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.ClientStorage",
     "type": "microservice",
     "serviceName": "clientstorage",
-    "url": "https://microservice-clientstorage.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-clientstorage.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-clientstorage.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.ClientStorage",
+    "type": "microservice",
+    "serviceName": "clientstorage",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-clientstorage.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-clientstorage.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.CashflowEngine",
     "type": "microservice",
     "serviceName": "cashflowengine",
-    "url": "https://microservice-cashflowengine.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-cashflowengine.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-cashflowengine.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.CashflowEngine",
+    "type": "microservice",
+    "serviceName": "cashflowengine",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-cashflowengine.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-cashflowengine.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Commission",
     "type": "monolith",
     "serviceName": "commission",
-    "url": "https://monolith-commission.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-commission.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-commission.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Commission",
+    "type": "monolith",
+    "serviceName": "commission",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-commission.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-commission.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Workflow",
     "type": "microservice",
     "serviceName": "workflow",
-    "url": "https://microservice-workflow.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-workflow.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-workflow.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.BValController",
+    "repo": "Microservice.Workflow",
     "type": "microservice",
-    "serviceName": "bvalcontroller",
-    "url": "https://microservice-bvalcontroller.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "workflow",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-workflow.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-workflow.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Report",
     "type": "monolith",
     "serviceName": "report",
-    "url": "https://monolith-report.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-report.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-report.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Report",
+    "type": "monolith",
+    "serviceName": "report",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-report.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-report.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Charging",
     "type": "monolith",
     "serviceName": "charging",
-    "url": "https://monolith-charging.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-charging.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-charging.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Charging",
+    "type": "monolith",
+    "serviceName": "charging",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-charging.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-charging.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Membership",
     "type": "microservice",
     "serviceName": "membership",
-    "url": "https://microservice-membership.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-membership.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-membership.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Monolith.TransformEngine",
-    "type": "monolith",
-    "serviceName": "transformengine",
-    "url": "https://monolith-transformengine.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.ReplicationFullload",
-    "type": "monolith",
-    "serviceName": "replicationfullload",
-    "url": "https://monolith-replicationfullload.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.Warehouse",
-    "type": "monolith",
-    "serviceName": "warehouse",
-    "url": "https://monolith-warehouse.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.BValAMPNorth",
+    "repo": "Microservice.Membership",
     "type": "microservice",
-    "serviceName": "bvalampnorth",
-    "url": "https://microservice-bvalampnorth.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "membership",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-membership.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-membership.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.EventHandling",
     "type": "monolith",
     "serviceName": "eventhandling",
-    "url": "https://monolith-eventhandling.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-eventhandling.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-eventhandling.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.EventHandling",
+    "type": "monolith",
+    "serviceName": "eventhandling",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-eventhandling.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-eventhandling.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Quicksight",
     "type": "microservice",
     "serviceName": "quicksight",
-    "url": "https://microservice-quicksight.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-quicksight.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-quicksight.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.PcaPredict",
+    "repo": "Microservice.Quicksight",
     "type": "microservice",
-    "serviceName": "pcapredict",
-    "url": "https://microservice-pcapredict.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "quicksight",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-quicksight.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-quicksight.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.ContractEnquiry",
     "type": "monolith",
     "serviceName": "contractenquiry",
-    "url": "https://monolith-contractenquiry.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-contractenquiry.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-contractenquiry.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.ContractEnquiry",
+    "type": "monolith",
+    "serviceName": "contractenquiry",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-contractenquiry.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-contractenquiry.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Quotation",
     "type": "microservice",
     "serviceName": "quotation",
-    "url": "https://microservice-quotation.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-quotation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-quotation.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Quotation",
+    "type": "microservice",
+    "serviceName": "quotation",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-quotation.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-quotation.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.TimeRecording",
     "type": "microservice",
     "serviceName": "timerecording",
-    "url": "https://microservice-timerecording.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-timerecording.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-timerecording.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.Test",
+    "repo": "Microservice.TimeRecording",
     "type": "microservice",
-    "serviceName": "test",
-    "url": "https://microservice-test.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "timerecording",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-timerecording.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-timerecording.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.WebHooks",
     "type": "monolith",
     "serviceName": "webhooks",
-    "url": "https://monolith-webhooks.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-webhooks.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-webhooks.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.WebHooks",
+    "type": "monolith",
+    "serviceName": "webhooks",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-webhooks.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-webhooks.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Brand",
     "type": "microservice",
     "serviceName": "brand",
-    "url": "https://microservice-brand.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-brand.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-brand.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.Test2",
+    "repo": "Microservice.Brand",
     "type": "microservice",
-    "serviceName": "test2",
-    "url": "https://microservice-test2.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.ScriptLauncher",
-    "type": "monolith",
-    "serviceName": "scriptlauncher",
-    "url": "https://monolith-scriptlauncher.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.BValIOOF",
-    "type": "microservice",
-    "serviceName": "bvalioof",
-    "url": "https://microservice-bvalioof.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.Sql",
-    "type": "monolith",
-    "serviceName": "sql",
-    "url": "https://monolith-sql.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "brand",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-brand.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-brand.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Bcc",
     "type": "monolith",
     "serviceName": "bcc",
-    "url": "https://monolith-bcc.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-bcc.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-bcc.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.BValMacquarie",
-    "type": "microservice",
-    "serviceName": "bvalmacquarie",
-    "url": "https://microservice-bvalmacquarie.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "repo": "Monolith.Bcc",
+    "type": "monolith",
+    "serviceName": "bcc",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-bcc.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-bcc.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.FactFind",
     "type": "monolith",
     "serviceName": "factfind",
-    "url": "https://monolith-factfind.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-factfind.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-factfind.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.FactFind",
+    "type": "monolith",
+    "serviceName": "factfind",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-factfind.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-factfind.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Security",
     "type": "microservice",
     "serviceName": "security",
-    "url": "https://microservice-security.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-security.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-security.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.BValBTFinancial",
+    "repo": "Microservice.Security",
     "type": "microservice",
-    "serviceName": "bvalbtfinancial",
-    "url": "https://microservice-bvalbtfinancial.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.AppD.Sdk",
-    "type": "microservice",
-    "serviceName": "appd.sdk",
-    "url": "https://microservice-appd.sdk.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.BValHub24",
-    "type": "microservice",
-    "serviceName": "bvalhub24",
-    "url": "https://microservice-bvalhub24.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.FantasyFootball",
-    "type": "microservice",
-    "serviceName": "fantasyfootball",
-    "url": "https://microservice-fantasyfootball.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.BValMasonStevens",
-    "type": "microservice",
-    "serviceName": "bvalmasonstevens",
-    "url": "https://microservice-bvalmasonstevens.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.BValCFSFirstChoice",
-    "type": "microservice",
-    "serviceName": "bvalcfsfirstchoice",
-    "url": "https://microservice-bvalcfsfirstchoice.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.BValNetwealth",
-    "type": "microservice",
-    "serviceName": "bvalnetwealth",
-    "url": "https://microservice-bvalnetwealth.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.BValParmenion",
-    "type": "microservice",
-    "serviceName": "bvalparmenion",
-    "url": "https://microservice-bvalparmenion.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.BValPraemium",
-    "type": "microservice",
-    "serviceName": "bvalpraemium",
-    "url": "https://microservice-bvalpraemium.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "security",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-security.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-security.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Expectation",
     "type": "microservice",
     "serviceName": "expectation",
-    "url": "https://microservice-expectation.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-expectation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-expectation.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.Rightbridge",
+    "repo": "Microservice.Expectation",
     "type": "microservice",
-    "serviceName": "rightbridge",
-    "url": "https://microservice-rightbridge.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "expectation",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-expectation.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-expectation.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.PortfolioReporting",
     "type": "microservice",
     "serviceName": "portfolioreporting",
-    "url": "https://microservice-portfolioreporting.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-portfolioreporting.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-portfolioreporting.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.PortfolioReporting",
+    "type": "microservice",
+    "serviceName": "portfolioreporting",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-portfolioreporting.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-portfolioreporting.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Valuation",
     "type": "monolith",
     "serviceName": "valuation",
-    "url": "https://monolith-valuation.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-valuation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-valuation.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.TestIDP2",
-    "type": "microservice",
-    "serviceName": "testidp2",
-    "url": "https://microservice-testidp2.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.HighchartsImageExportServer",
-    "type": "microservice",
-    "serviceName": "highchartsimageexportserver",
-    "url": "https://microservice-highchartsimageexportserver.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "repo": "Monolith.Valuation",
+    "type": "monolith",
+    "serviceName": "valuation",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-valuation.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-valuation.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Trading",
     "type": "monolith",
     "serviceName": "trading",
-    "url": "https://monolith-trading.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-trading.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-trading.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Trading",
+    "type": "monolith",
+    "serviceName": "trading",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-trading.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-trading.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Requirement",
     "type": "microservice",
     "serviceName": "requirement",
-    "url": "https://microservice-requirement.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-requirement.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-requirement.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Requirement",
+    "type": "microservice",
+    "serviceName": "requirement",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-requirement.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-requirement.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.FinexFundImporter",
     "type": "monolith",
     "serviceName": "finexfundimporter",
-    "url": "https://monolith-finexfundimporter.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-finexfundimporter.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-finexfundimporter.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.FinexFundImporter",
+    "type": "monolith",
+    "serviceName": "finexfundimporter",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-finexfundimporter.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-finexfundimporter.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.DocuSign",
     "type": "microservice",
     "serviceName": "docusign",
-    "url": "https://microservice-docusign.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-docusign.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-docusign.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.DocuSign",
+    "type": "microservice",
+    "serviceName": "docusign",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-docusign.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-docusign.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.ChangeNotification",
     "type": "microservice",
     "serviceName": "changenotification",
-    "url": "https://microservice-changenotification.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-changenotification.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-changenotification.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.ChangeNotification",
+    "type": "microservice",
+    "serviceName": "changenotification",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-changenotification.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-changenotification.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.iMps",
     "type": "microservice",
     "serviceName": "imps",
-    "url": "https://microservice-imps.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-imps.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-imps.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.LgAqs",
+    "repo": "Microservice.iMps",
     "type": "microservice",
-    "serviceName": "lgaqs",
-    "url": "https://microservice-lgaqs.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "imps",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-imps.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-imps.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Atr",
     "type": "monolith",
     "serviceName": "atr",
-    "url": "https://monolith-atr.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-atr.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-atr.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Atr",
+    "type": "monolith",
+    "serviceName": "atr",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-atr.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-atr.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Organization",
     "type": "monolith",
     "serviceName": "organization",
-    "url": "https://monolith-organization.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-organization.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-organization.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Organization",
+    "type": "monolith",
+    "serviceName": "organization",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-organization.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-organization.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Federation",
     "type": "microservice",
     "serviceName": "federation",
-    "url": "https://microservice-federation.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-federation.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-federation.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.Federation",
+    "type": "microservice",
+    "serviceName": "federation",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-federation.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-federation.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.ProviderCodes",
     "type": "microservice",
     "serviceName": "providercodes",
-    "url": "https://microservice-providercodes.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-providercodes.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-providercodes.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.WizardManager",
+    "repo": "Microservice.ProviderCodes",
     "type": "microservice",
-    "serviceName": "wizardmanager",
-    "url": "https://microservice-wizardmanager.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.Quote",
-    "type": "monolith",
-    "serviceName": "quote",
-    "url": "https://monolith-quote.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.SaleMove",
-    "type": "microservice",
-    "serviceName": "salemove",
-    "url": "https://microservice-salemove.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "providercodes",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-providercodes.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-providercodes.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.DPA",
     "type": "microservice",
     "serviceName": "dpa",
-    "url": "https://microservice-dpa.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-dpa.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-dpa.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.DPA",
+    "type": "microservice",
+    "serviceName": "dpa",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-dpa.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-dpa.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.CFF",
     "type": "microservice",
     "serviceName": "cff",
-    "url": "https://microservice-cff.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-cff.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-cff.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.CFF",
+    "type": "microservice",
+    "serviceName": "cff",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-cff.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-cff.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Avatar",
     "type": "microservice",
     "serviceName": "avatar",
-    "url": "https://microservice-avatar.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-avatar.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-avatar.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.ApplicationStore",
+    "repo": "Microservice.Avatar",
     "type": "microservice",
-    "serviceName": "applicationstore",
-    "url": "https://microservice-applicationstore.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.AegonIncomeStatement",
-    "type": "microservice",
-    "serviceName": "aegonincomestatement",
-    "url": "https://microservice-aegonincomestatement.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.MorningStarFundImporter",
-    "type": "monolith",
-    "serviceName": "morningstarfundimporter",
-    "url": "https://monolith-morningstarfundimporter.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.AegonNBSWL",
-    "type": "microservice",
-    "serviceName": "aegonnbswl",
-    "url": "https://microservice-aegonnbswl.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.Replication",
-    "type": "monolith",
-    "serviceName": "replication",
-    "url": "https://monolith-replication.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.LegacyApps",
-    "type": "monolith",
-    "serviceName": "legacyapps",
-    "url": "https://monolith-legacyapps.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.StandardLife",
-    "type": "microservice",
-    "serviceName": "standardlife",
-    "url": "https://microservice-standardlife.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.Twenty7Tec",
-    "type": "microservice",
-    "serviceName": "twenty7tec",
-    "url": "https://microservice-twenty7tec.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.RingCentral",
-    "type": "microservice",
-    "serviceName": "ringcentral",
-    "url": "https://microservice-ringcentral.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.SolutionBuilder",
-    "type": "microservice",
-    "serviceName": "solutionbuilder",
-    "url": "https://microservice-solutionbuilder.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.ReplicationScheduler",
-    "type": "monolith",
-    "serviceName": "replicationscheduler",
-    "url": "https://monolith-replicationscheduler.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.AJBellIncomeStatement",
-    "type": "microservice",
-    "serviceName": "ajbellincomestatement",
-    "url": "https://microservice-ajbellincomestatement.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.AegonPlatformTransaction",
-    "type": "microservice",
-    "serviceName": "aegonplatformtransaction",
-    "url": "https://microservice-aegonplatformtransaction.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.AJBellTransaction",
-    "type": "microservice",
-    "serviceName": "ajbelltransaction",
-    "url": "https://microservice-ajbelltransaction.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "avatar",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-avatar.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-avatar.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.DataSharing",
     "type": "microservice",
     "serviceName": "datasharing",
-    "url": "https://microservice-datasharing.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-datasharing.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-datasharing.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.FEAnalytics",
+    "repo": "Microservice.DataSharing",
     "type": "microservice",
-    "serviceName": "feanalytics",
-    "url": "https://microservice-feanalytics.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.LgOlpc",
-    "type": "microservice",
-    "serviceName": "lgolpc",
-    "url": "https://microservice-lgolpc.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "datasharing",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-datasharing.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-datasharing.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.PropertyProvider",
     "type": "microservice",
     "serviceName": "propertyprovider",
-    "url": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.PropertyProvider",
+    "type": "microservice",
+    "serviceName": "propertyprovider",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.ProviderDocuments",
     "type": "microservice",
     "serviceName": "providerdocuments",
-    "url": "https://microservice-providerdocuments.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-providerdocuments.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-providerdocuments.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Microservice.ProviderDocuments",
+    "type": "microservice",
+    "serviceName": "providerdocuments",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-providerdocuments.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-providerdocuments.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Microservice.Scheduler",
     "type": "microservice",
     "serviceName": "scheduler",
-    "url": "https://microservice-scheduler.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://microservice-scheduler.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://microservice-scheduler.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.SimpleAdviceAegon",
+    "repo": "Microservice.Scheduler",
     "type": "microservice",
-    "serviceName": "simpleadviceaegon",
-    "url": "https://microservice-simpleadviceaegon.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.PortfolioImport",
-    "type": "microservice",
-    "serviceName": "portfolioimport",
-    "url": "https://microservice-portfolioimport.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Monolith.Organizer",
-    "type": "monolith",
-    "serviceName": "organizer",
-    "url": "https://monolith-organizer.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "serviceName": "scheduler",
+    "version": "v1",
+    "swaggerUrl": "https://microservice-scheduler.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://microservice-scheduler.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.IdVerification",
     "type": "monolith",
     "serviceName": "idverification",
-    "url": "https://monolith-idverification.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-idverification.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-idverification.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.IdVerification",
+    "type": "monolith",
+    "serviceName": "idverification",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-idverification.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-idverification.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Entitlement.SDK",
     "type": "monolith",
     "serviceName": "entitlement.sdk",
-    "url": "https://monolith-entitlement.sdk.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-entitlement.sdk.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-entitlement.sdk.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
-    "repo": "Microservice.DocDataExtract",
-    "type": "microservice",
-    "serviceName": "docdataextract",
-    "url": "https://microservice-docdataextract.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.CashflowPlannerCalculator",
-    "type": "microservice",
-    "serviceName": "cashflowplannercalculator",
-    "url": "https://microservice-cashflowplannercalculator.sys-ie-04.intelliflo.systems/docs/index/index.html"
-  },
-  {
-    "repo": "Microservice.PlanningCalculationTester",
-    "type": "microservice",
-    "serviceName": "planningcalculationtester",
-    "url": "https://microservice-planningcalculationtester.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "repo": "Monolith.Entitlement.SDK",
+    "type": "monolith",
+    "serviceName": "entitlement.sdk",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-entitlement.sdk.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-entitlement.sdk.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.NeedsAndPriorities",
     "type": "monolith",
     "serviceName": "needsandpriorities",
-    "url": "https://monolith-needsandpriorities.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-needsandpriorities.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-needsandpriorities.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.NeedsAndPriorities",
+    "type": "monolith",
+    "serviceName": "needsandpriorities",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-needsandpriorities.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-needsandpriorities.sys-ie-04.intelliflo.systems/docs/index/index.html"
   },
   {
     "repo": "Monolith.Bulk",
     "type": "monolith",
     "serviceName": "bulk",
-    "url": "https://monolith-bulk.sys-ie-04.intelliflo.systems/docs/index/index.html"
+    "version": "v2",
+    "swaggerUrl": "https://monolith-bulk.sys-ie-04.intelliflo.systems/docs/v2/swagger",
+    "docsUrl": "https://monolith-bulk.sys-ie-04.intelliflo.systems/docs/index/index.html"
+  },
+  {
+    "repo": "Monolith.Bulk",
+    "type": "monolith",
+    "serviceName": "bulk",
+    "version": "v1",
+    "swaggerUrl": "https://monolith-bulk.sys-ie-04.intelliflo.systems/docs/v1/swagger",
+    "docsUrl": "https://monolith-bulk.sys-ie-04.intelliflo.systems/docs/index/index.html"
   }
 ]

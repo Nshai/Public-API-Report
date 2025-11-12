@@ -1,16 +1,27 @@
 const fs = require('fs');
 
-// Load all fallback batch files
+// Load all batch files (both dual-version and fallback)
 const batchFiles = [];
-for (let i = 0; i <= 25; i++) {
-  const filename = `../source/swagger-batch/swagger-results-fallback-batch-${i}.json`;
-  if (fs.existsSync(filename)) {
-    const data = JSON.parse(fs.readFileSync(filename, 'utf8'));
-    batchFiles.push({ batch: i, data });
+for (let i = 0; i <= 50; i++) {
+  // Try dual-version first
+  const dualFilename = `../source/swagger-batch/swagger-results-dual-version-batch-${i}.json`;
+  if (fs.existsSync(dualFilename)) {
+    const data = JSON.parse(fs.readFileSync(dualFilename, 'utf8'));
+    batchFiles.push({ batch: i, type: 'dual-version', data });
+    continue;
+  }
+
+  // Fallback to old format
+  const fallbackFilename = `../source/swagger-batch/swagger-results-fallback-batch-${i}.json`;
+  if (fs.existsSync(fallbackFilename)) {
+    const data = JSON.parse(fs.readFileSync(fallbackFilename, 'utf8'));
+    batchFiles.push({ batch: i, type: 'fallback', data });
   }
 }
 
-console.log(`Loaded ${batchFiles.length} fallback batch files\n`);
+const dualCount = batchFiles.filter(f => f.type === 'dual-version').length;
+const fallbackCount = batchFiles.filter(f => f.type === 'fallback').length;
+console.log(`Loaded ${batchFiles.length} batch files (${dualCount} dual-version, ${fallbackCount} fallback)\n`);
 
 // Load existing data
 const publicV2Data = JSON.parse(fs.readFileSync('../source/templates/Public Swagger/public-v2.json', 'utf8'));

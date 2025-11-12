@@ -5797,11 +5797,32 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/alerttypes/{alertTypeId}:
     get:
@@ -5823,11 +5844,32 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/alternativeassets:
     get:
@@ -5849,11 +5891,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     post:
       operationId: PostAlternativeAssets
@@ -5874,11 +5943,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutAlternativeAssets
@@ -5899,11 +5977,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/alternativeassets/{securityId}:
     delete:
@@ -5925,11 +6012,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     get:
       operationId: GetAlternativeAsset
@@ -5950,11 +6046,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/applications:
     get:
@@ -8183,11 +8306,38 @@ Usage example: `orderby=name asc`"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/assetclasses/{assetClassId}:
     get:
@@ -8209,11 +8359,38 @@ Usage example: `orderby=name asc`"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/atr/system_categories:
     get:
@@ -9484,11 +9661,32 @@ The following example illustrates an ATR patch document:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Monolith.Commission
         onDeveloperPortal: false
         source: Service Swagger (Monolith.Commission)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     get:
       operationId: ListCashReceipts
@@ -9509,11 +9707,32 @@ The following example illustrates an ATR patch document:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Monolith.Commission
         onDeveloperPortal: false
         source: Service Swagger (Monolith.Commission)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/cashreceipts/{cashReceiptId}:
     get:
@@ -9535,11 +9754,32 @@ The following example illustrates an ATR patch document:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Monolith.Commission
         onDeveloperPortal: false
         source: Service Swagger (Monolith.Commission)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     patch:
       operationId: PatchCashReceipt
@@ -9560,11 +9800,20 @@ The following example illustrates an ATR patch document:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Monolith.Commission
         onDeveloperPortal: false
         source: Service Swagger (Monolith.Commission)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     put:
       operationId: UpdateCashReceipt
@@ -9585,11 +9834,32 @@ The following example illustrates an ATR patch document:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Monolith.Commission
         onDeveloperPortal: false
         source: Service Swagger (Monolith.Commission)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/cff_segments:
     get:
@@ -9816,11 +10086,38 @@ The following example illustrates an ATR patch document:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/classificationcategories/{classificationCategoryId}:
     get:
@@ -9842,11 +10139,38 @@ The following example illustrates an ATR patch document:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/clientcategories:
     get:
@@ -13281,11 +13605,38 @@ Discriminator TrustBeneficiary."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/clients/{clientId}/communication-agreements:
     post:
@@ -16157,11 +16508,38 @@ Examples: top=5&skip=22&filter= id in '(987,654,126)"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/clients/{clientId}/expectations/{expectationId}/breakdowns:
     get:
@@ -16183,11 +16561,38 @@ Examples: top=5&skip=22&filter= id in '(987,654,126)"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/clients/{clientId}/expectations/{expectationId}/breakdowns/{expectationBreakdownId}:
     head:
@@ -16209,11 +16614,38 @@ Examples: top=5&skip=22&filter= id in '(987,654,126)"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
     get:
       operationId: GetExpectationBreakdownByClient
@@ -16234,11 +16666,38 @@ Examples: top=5&skip=22&filter= id in '(987,654,126)"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/clients/{clientId}/expenditures:
     post:
@@ -19379,11 +19838,38 @@ If a client has not yet provided their preferences and/or consent, new preferenc
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     get:
       operationId: ListClientObjectives
@@ -19404,11 +19890,38 @@ If a client has not yet provided their preferences and/or consent, new preferenc
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger + Documentation Ignore
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/clients/{clientId}/objectives/{objectiveId}:
     head:
@@ -19430,11 +19943,38 @@ If a client has not yet provided their preferences and/or consent, new preferenc
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     delete:
       operationId: DeleteClientObjective
@@ -19455,11 +19995,38 @@ If a client has not yet provided their preferences and/or consent, new preferenc
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     get:
       operationId: GetClientObjective
@@ -19480,11 +20047,38 @@ If a client has not yet provided their preferences and/or consent, new preferenc
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger + Documentation Ignore
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     put:
       operationId: UpdateClientObjective
@@ -19505,11 +20099,38 @@ If a client has not yet provided their preferences and/or consent, new preferenc
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/clients/{clientId}/objectives/{objectiveId}/opportunity/{opportunityId}:
     post:
@@ -19531,11 +20152,38 @@ If a client has not yet provided their preferences and/or consent, new preferenc
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     delete:
       operationId: UnlinkClientObjectiveOpportunity
@@ -19556,11 +20204,38 @@ If a client has not yet provided their preferences and/or consent, new preferenc
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/clients/{clientId}/objectives/{objectivesId}/InvestmentPreferences:
     get:
@@ -25756,6 +26431,52 @@ Each life assured can either be a reference to an existing iO client, or details
             - openid
             - myprofile
             - client_data
+  /v2/clients/{clientId}/plans/{planId}/misportfolioallocations:
+    delete:
+      operationId: DeleteMISPortfolioAllocations
+      summary: Delete MIS Portfolio Allocations
+      description: Delete MIS Portfolio Allocations
+      tags:
+        - misportfolioallocations
+      responses:
+        200:
+          description: Successful response
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v2
+    get:
+      operationId: GetMISPortfolioAllocations
+      summary: Get MIS Portfolio Allocations
+      description: Get MIS Portfolio Allocations
+      tags:
+        - misportfolioallocations
+      responses:
+        200:
+          description: Successful response
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v2
+    put:
+      operationId: PutMISPortfolioAllocations
+      summary: Create or Update MIS Portfolio Allocations
+      description: Create or Update MIS Portfolio Allocations
+      tags:
+        - misportfolioallocations
+      responses:
+        200:
+          description: Successful response
+      x-intelliflo-api:
+        service: Monolith.Portfolio
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Portfolio)
+        scopes: []
+        swaggerVersion: v2
   /v2/clients/{clientId}/plans/{planId}/plantype:
     put:
       operationId: UpdatePlanType
@@ -25780,58 +26501,6 @@ Each life assured can either be a reference to an existing iO client, or details
         service: Monolith.Portfolio
         onDeveloperPortal: false
         source: Service Swagger (Monolith.Portfolio)
-        scopes: []
-        swaggerVersion: v2
-  /v2/clients/{clientId}/plans/{planId}/providerdocuments:
-    get:
-      operationId: ListProductProviderDocuments
-      summary: List product provider documents.
-      description: List product provider documents.
-      tags:
-        - providerdocuments
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderDocuments
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderDocuments)
-        scopes: []
-        swaggerVersion: v2
-  /v2/clients/{clientId}/plans/{planId}/providerdocuments/{documentId}/object:
-    get:
-      operationId: GetProductProviderDocumentObject
-      summary: Get a product provider document object.
-      description: Get a product provider document object.
-      tags:
-        - providerdocuments
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderDocuments
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderDocuments)
         scopes: []
         swaggerVersion: v2
   /v2/clients/{clientId}/plans/{planId}/purposes:
@@ -26220,19 +26889,29 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
       security:
         -
           oauth2:
-            - firm_data
-            - firm_data.splits
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - openid
+            - myprofile
+            - client_financial_data
+            - openid
+            - myprofile
+            - client_financial_data
       x-intelliflo-api:
         service: Monolith.Commission
         onDeveloperPortal: false
         source: Service Swagger (Monolith.Commission)
         scopes:
-          - firm_data
-          - firm_data.splits
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - openid
+          - myprofile
+          - client_financial_data
+          - openid
+          - myprofile
+          - client_financial_data
         swaggerVersion: v2
   /v2/clients/{clientId}/plans/{planId}/splits/{splitId}:
     delete:
@@ -28803,19 +29482,35 @@ Default: `id` `desc`."
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
   /v2/clients/{clientId}/quotes/{quoteId}:
     post:
@@ -29598,19 +30293,35 @@ Default: `id` `desc`."
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
   /v2/clients/{clientId}/quotes/{quoteId}/status/{status}:
     post:
@@ -31850,6 +32561,22 @@ Default `reference` `desc`."
             - openid
             - myprofile
             - client_financial_data
+  /v2/clients/{clientId}/servicecases/{servicecaseId}/snapshots:
+    get:
+      operationId: ListCashflowSnapshotDetails
+      summary: List Cashflow Snapshot
+      description: List Cashflow Snapshot
+      tags:
+        - snapshots
+      responses:
+        200:
+          description: Successful response
+      x-intelliflo-api:
+        service: Microservice.Cashflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Cashflow)
+        scopes: []
+        swaggerVersion: v2
   /v2/clients/{clientId}/servicehistory:
     get:
       operationId: ListClientServiceHistory
@@ -33392,11 +34119,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     post:
       operationId: PostCurrencies
@@ -33417,11 +34171,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutCurrencies
@@ -33442,11 +34205,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/currencies/{securityId}:
     delete:
@@ -33468,11 +34240,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     get:
       operationId: GetCurrency
@@ -33493,11 +34274,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/currentprices:
     get:
@@ -33519,11 +34327,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/currentquotes:
     get:
@@ -33545,11 +34380,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/delegate:
     get:
@@ -33828,11 +34690,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
     patch:
       operationId: PatchDividends
@@ -33853,11 +34742,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
     post:
       operationId: PostDividends
@@ -33878,11 +34794,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
   /v2/documents:
     post:
@@ -35252,11 +36195,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     post:
       operationId: PostEtfs
@@ -35277,11 +36247,20 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutEtfs
@@ -35302,11 +36281,20 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/etfs/{securityId}:
     delete:
@@ -35328,11 +36316,20 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     get:
       operationId: GetEtf
@@ -35353,11 +36350,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/exchanges:
     get:
@@ -35379,11 +36403,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/exchanges/{exchangeCode}:
     get:
@@ -35405,11 +36456,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/expectations:
     get:
@@ -35431,11 +36509,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/expectations/adjustmentsrules:
     post:
@@ -35457,11 +36562,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
         swaggerVersion: v2
     get:
       operationId: ListExpectationAdjustmentRules
@@ -35482,11 +36614,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
         swaggerVersion: v2
   /v2/expectations/adjustmentsrules/{adjustmentRuleId}:
     delete:
@@ -35508,11 +36667,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
         swaggerVersion: v2
     head:
       operationId: ExpectationAdjustmentRuleExists
@@ -35533,11 +36719,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
         swaggerVersion: v2
     get:
       operationId: GetExpectationAdjustmentRule
@@ -35558,11 +36771,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
         swaggerVersion: v2
     put:
       operationId: UpdateExpectationAdjustmentRule
@@ -35583,11 +36823,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.config.adjustment
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.config.adjustment
         swaggerVersion: v2
   /v2/expectations/configuration:
     get:
@@ -35609,11 +36876,22 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
     put:
       operationId: SetConfiguration
@@ -35634,11 +36912,22 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/expectations/{expectationId}:
     head:
@@ -35660,11 +36949,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
     get:
       operationId: GetExpectation
@@ -35685,11 +37001,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/expectations/{expectationId}/adjust:
     post:
@@ -35711,11 +37054,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/expectations/{expectationId}/breakdowns:
     get:
@@ -35737,11 +37107,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/expectations/{expectationId}/breakdowns/{expectationBreakdownId}:
     head:
@@ -35763,11 +37160,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
     get:
       operationId: GetExpectationBreakdown
@@ -35788,11 +37212,38 @@ would result in the clientCanAccept value for the targeted resource being set to
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
+            - openid
+            - myprofile
+            - firm_data
+            - firm_data.expectation
       x-intelliflo-api:
         service: Microservice.Expectation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Expectation)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
+          - openid
+          - myprofile
+          - firm_data
+          - firm_data.expectation
         swaggerVersion: v2
   /v2/expenditures/refdata/categories:
     get:
@@ -37179,11 +38630,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     post:
       operationId: PostFixedIncomes
@@ -37204,11 +38682,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutFixedIncomes
@@ -37229,11 +38716,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/fixedincomes/{securityId}:
     delete:
@@ -37255,11 +38751,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     get:
       operationId: GetFixedIncome
@@ -37280,11 +38785,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/forecasts:
     post:
@@ -37306,11 +38838,32 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_financial_data
+            - openid
+            - myprofile
+            - client_financial_data
+            - openid
+            - myprofile
+            - client_financial_data
       x-intelliflo-api:
         service: Microservice.CashflowEngine
         onDeveloperPortal: false
         source: Service Swagger (Microservice.CashflowEngine)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_financial_data
+          - openid
+          - myprofile
+          - client_financial_data
+          - openid
+          - myprofile
+          - client_financial_data
         swaggerVersion: v2
   /v2/fundbenchmarks:
     get:
@@ -37576,17 +39129,17 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
       security:
         -
           oauth2:
-            - fund_data
-            - myprofile
             - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
         scopes:
-          - fund_data
-          - myprofile
           - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     get:
       tags:
@@ -37699,17 +39252,17 @@ The data from this API may **not** be extracted in bulk or redistributed for any
       security:
         -
           oauth2:
-            - fund_data
-            - myprofile
             - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
         scopes:
-          - fund_data
-          - myprofile
           - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/funds/prices:
     get:
@@ -38019,17 +39572,17 @@ The data from this API may **not** be extracted in bulk or redistributed for any
       security:
         -
           oauth2:
-            - fund_data
-            - myprofile
             - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
         scopes:
-          - fund_data
-          - myprofile
           - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/fundsectors:
     get:
@@ -41476,11 +43029,38 @@ Default: `id` `asc`."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     post:
       operationId: PostIssuers
@@ -41501,11 +43081,20 @@ Default: `id` `asc`."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutIssuers
@@ -41526,11 +43115,20 @@ Default: `id` `asc`."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/issuers/byids:
     get:
@@ -41552,11 +43150,38 @@ Default: `id` `asc`."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/issuers/bysourcereferences:
     get:
@@ -41578,11 +43203,20 @@ Default: `id` `asc`."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/issuers/{issuerId}:
     delete:
@@ -41604,11 +43238,20 @@ Default: `id` `asc`."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     get:
       operationId: GetIssuer
@@ -41629,11 +43272,38 @@ Default: `id` `asc`."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/jumplinks:
     get:
@@ -43440,11 +45110,38 @@ If a lead has not yet provided their preferences and/or consent, new preferences
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     get:
       operationId: ListLeadObjectives
@@ -43465,11 +45162,38 @@ If a lead has not yet provided their preferences and/or consent, new preferences
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/leads/{leadId}/objectives/{objectiveId}:
     delete:
@@ -43491,11 +45215,38 @@ If a lead has not yet provided their preferences and/or consent, new preferences
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     get:
       operationId: GetLeadObjective
@@ -43516,11 +45267,38 @@ If a lead has not yet provided their preferences and/or consent, new preferences
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     head:
       operationId: LeadObjectiveExists
@@ -43541,11 +45319,38 @@ If a lead has not yet provided their preferences and/or consent, new preferences
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     put:
       operationId: UpdateLeadObjective
@@ -43566,11 +45371,38 @@ If a lead has not yet provided their preferences and/or consent, new preferences
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/leads/{leadId}/objectives/{objectiveId}/opportunity/{opportunityId}:
     post:
@@ -43592,11 +45424,38 @@ If a lead has not yet provided their preferences and/or consent, new preferences
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     delete:
       operationId: UnlinkLeadObjectiveOpportunity
@@ -43617,11 +45476,38 @@ If a lead has not yet provided their preferences and/or consent, new preferences
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/leads/{leadId}/opportunities:
     post:
@@ -43981,19 +45867,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
     get:
       operationId: ListLeadQuotes
@@ -44017,19 +45919,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
   /v2/leads/{leadId}/quotes/{quoteId}:
     post:
@@ -44054,19 +45972,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
     get:
       operationId: GetLeadQuote
@@ -44090,19 +46024,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
     head:
       operationId: LeadQuoteExists
@@ -44126,19 +46076,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
   /v2/leads/{leadId}/quotes/{quoteId}/results:
     post:
@@ -44163,19 +46129,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
     get:
       operationId: ListLeadQuoteResults
@@ -44199,19 +46181,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
   /v2/leads/{leadId}/quotes/{quoteId}/results/{quoteResultId}:
     get:
@@ -44236,19 +46234,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
     head:
       operationId: LeadQuoteResultsExists
@@ -44272,19 +46286,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
   /v2/leads/{leadId}/quotes/{quoteId}/status/{status}:
     post:
@@ -44309,19 +46339,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
+            - openid
+            - myprofile
             - client_financial_data
             - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
+            - openid
+            - myprofile
+            - client_financial_data
+            - client_financial_data.quotes
       x-intelliflo-api:
         service: Microservice.Quotation
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Quotation)
         scopes:
+          - openid
+          - myprofile
           - client_financial_data
           - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
+          - openid
+          - myprofile
+          - client_financial_data
+          - client_financial_data.quotes
         swaggerVersion: v2
   /v2/leads/{leadId}/relationships:
     post:
@@ -45381,11 +47427,32 @@ The `filter` parameter allows the results to be filtered.  Please see the parame
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_financial_data
+            - openid
+            - myprofile
+            - client_financial_data
+            - openid
+            - myprofile
+            - client_financial_data
       x-intelliflo-api:
         service: Microservice.CashflowEngine
         onDeveloperPortal: false
         source: Service Swagger (Microservice.CashflowEngine)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_financial_data
+          - openid
+          - myprofile
+          - client_financial_data
+          - openid
+          - myprofile
+          - client_financial_data
         swaggerVersion: v2
   /v2/marketclosings:
     get:
@@ -45407,11 +47474,38 @@ The `filter` parameter allows the results to be filtered.  Please see the parame
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutMarketClosings
@@ -45432,11 +47526,38 @@ The `filter` parameter allows the results to be filtered.  Please see the parame
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
   /v2/marketclosings/{closingOn}:
     delete:
@@ -45458,11 +47579,38 @@ The `filter` parameter allows the results to be filtered.  Please see the parame
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
   /v2/media/videos:
     get:
@@ -46658,11 +48806,38 @@ For a simple example a request contains the following JSON:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     get:
       operationId: ListObjectiveCategory
@@ -46683,11 +48858,38 @@ For a simple example a request contains the following JSON:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/objective/categories/{categoryId}:
     delete:
@@ -46709,11 +48911,38 @@ For a simple example a request contains the following JSON:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     put:
       operationId: UpdateObjectiveCategory
@@ -46734,11 +48963,38 @@ For a simple example a request contains the following JSON:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/objectives/{objectiveId}/allocations:
     post:
@@ -46760,11 +49016,38 @@ For a simple example a request contains the following JSON:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
     get:
       operationId: ListGoalAllocation
@@ -46785,11 +49068,38 @@ For a simple example a request contains the following JSON:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/objectives/{objectiveId}/allocations/{allocationId}:
     get:
@@ -46811,11 +49121,38 @@ For a simple example a request contains the following JSON:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
+            - openid
+            - myprofile
+            - client_data
+            - client_data.requirements
       x-intelliflo-api:
         service: Microservice.Requirement
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Requirement)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
+          - openid
+          - myprofile
+          - client_data
+          - client_data.requirements
         swaggerVersion: v2
   /v2/opportunities/campaignchannels:
     post:
@@ -48576,11 +50913,20 @@ By default the list of Opportunity types are ordered by Id in ascending order."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutOptions
@@ -48601,11 +50947,20 @@ By default the list of Opportunity types are ordered by Id in ascending order."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/planpurposes:
     get:
@@ -50581,11 +52936,38 @@ Example: `/plantypes?planPurpose=Buy%20To%20Let`"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutPoolFactors
@@ -50606,11 +52988,20 @@ Example: `/plantypes?planPurpose=Buy%20To%20Let`"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/prices:
     post:
@@ -50632,11 +53023,38 @@ Example: `/plantypes?planPurpose=Buy%20To%20Let`"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutPrices
@@ -50657,11 +53075,38 @@ Example: `/plantypes?planPurpose=Buy%20To%20Let`"
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/productproviders:
     post:
@@ -50815,108 +53260,6 @@ The following fields are supports for `startswith`:
           - firm_data
           - myprofile
           - openid
-        swaggerVersion: v2
-  /v2/productproviders/codes/config/attributes:
-    post:
-      operationId: CreateProviderCodeConfigAttribute
-      summary: Creates a Provider Code config attribute for a tenant.
-      description: Creates a Provider Code config attribute for a tenant.
-      tags:
-        - providercodesconfigattributes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-    get:
-      operationId: GetProviderCodeConfigsAttributes
-      summary: Returns a list of Provider Code config attributes for a tenant.
-      description: Returns a list of Provider Code config attributes for a tenant.
-      tags:
-        - providercodesconfigattributes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-  /v2/productproviders/codes/config/attributes/{configAttributeId}:
-    delete:
-      operationId: DeleteProviderCodeConfigAttribute
-      summary: Deletes a Provider Code config attribute for a tenant.
-      description: Deletes a Provider Code config attribute for a tenant.
-      tags:
-        - providercodesconfigattributes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-    patch:
-      operationId: PatchProviderCodeConfigAttribute
-      summary: Patches a Provider Code config attribute for a tenant.
-      description: Patches a Provider Code config attribute for a tenant.
-      tags:
-        - providercodesconfigattributes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
         swaggerVersion: v2
   /v2/productproviders/programs:
     get:
@@ -51440,340 +53783,6 @@ The following fields are supports for `startswith`:
           - myprofile
           - openid
         swaggerVersion: v2
-  /v2/productproviders/{providerId}/advisers/{adviserId}/codes:
-    get:
-      operationId: ListAdviserProviderCodes
-      summary: Returns a list of Providers Codes allocated to an Adviser that were issued by a Provider.
-      description: Returns a list of Providers Codes allocated to an Adviser that were issued by a Provider.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-  /v2/productproviders/{providerId}/codes:
-    post:
-      operationId: CreateProviderCode
-      summary: Creates an allocated Provider Code issued by a Provider.
-      description: Creates an allocated Provider Code issued by a Provider.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-    get:
-      operationId: ListProviderCodes
-      summary: Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      description: Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-  /v2/productproviders/{providerId}/codes/combos:
-    get:
-      operationId: ListProviderCodeCombos
-      summary: "Computes and returns the list of Provider Code that are available for a specific group or adviser.
-Returns each code config along with the codes associated to the group/adviser and their provider cod"
-      description: "Computes and returns the list of Provider Code that are available for a specific group or adviser.
-Returns each code config along with the codes associated to the group/adviser and their provider cod"
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-  /v2/productproviders/{providerId}/codes/config:
-    post:
-      operationId: CreateProviderCodeConfig
-      summary: Creates a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      description: Creates a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-    get:
-      operationId: ListProviderCodeConfigs
-      summary: Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      description: Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-  /v2/productproviders/{providerId}/codes/config/{configId}:
-    delete:
-      operationId: DeleteProviderCodeConfig
-      summary: Deletes a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      description: Deletes a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-    get:
-      operationId: GetProviderCodeConfig
-      summary: Returns a specific Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      description: Returns a specific Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-    put:
-      operationId: UpdateProviderCodeConfig
-      summary: Updates a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      description: Updates a Provider Code issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-  /v2/productproviders/{providerId}/codes/system:
-    get:
-      operationId: ListProviderCodesSystem
-      summary: For system reach only. Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      description: For system reach only. Returns a list of Providers Codes issued by a Provider as a means of authorising Advisers to conduct business on their platform.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-  /v2/productproviders/{providerId}/codes/{providerCodeId}:
-    delete:
-      operationId: DeleteProviderCode
-      summary: Deletes an allocated Provider Code issued by a Provider.
-      description: Deletes an allocated Provider Code issued by a Provider.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-    get:
-      operationId: GetProviderCode
-      summary: Returns a specific allocated Provider Code issued by a Provider.
-      description: Returns a specific allocated Provider Code issued by a Provider.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
-    put:
-      operationId: UpdateProviderCode
-      summary: Updates an allocated Provider Code issued by a Provider.
-      description: Updates an allocated Provider Code issued by a Provider.
-      tags:
-        - providercodes
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderCodes
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderCodes)
-        scopes: []
-        swaggerVersion: v2
   /v2/programs:
     get:
       operationId: ListPrograms
@@ -51913,32 +53922,6 @@ Returns each code config along with the codes associated to the group/adviser an
           - myprofile
           - openid
         swaggerVersion: v2
-  /v2/properties/addresses/search:
-    get:
-      operationId: ListPropertyAddressesSearch
-      summary: Searches addresses by the specified query.
-      description: Searches addresses by the specified query.
-      tags:
-        - search
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.PropertyProvider
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.PropertyProvider)
-        scopes: []
-        swaggerVersion: v2
   /v2/prospectuses:
     get:
       operationId: ListProspectuses
@@ -51959,11 +53942,38 @@ Returns each code config along with the codes associated to the group/adviser an
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/prospectuses/{prospectusId}:
     get:
@@ -51985,11 +53995,38 @@ Returns each code config along with the codes associated to the group/adviser an
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/provider/{providerId}/disclaimer:
     get:
@@ -52066,58 +54103,6 @@ Returns each code config along with the codes associated to the group/adviser an
         service: Microservice.ProviderIntegration
         onDeveloperPortal: false
         source: Service Swagger (Microservice.ProviderIntegration)
-        scopes: []
-        swaggerVersion: v2
-  /v2/providerdocuments/categories:
-    get:
-      operationId: ListProductProviderDocumentCategories
-      summary: List product provider document categories.
-      description: List product provider document categories.
-      tags:
-        - providerdocuments
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderDocuments
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderDocuments)
-        scopes: []
-        swaggerVersion: v2
-  /v2/providerdocuments/categories/{categoryId}:
-    get:
-      operationId: GetProductProviderDocumentCategory
-      summary: Get a product provider document category.
-      description: Get a product provider document category.
-      tags:
-        - providerdocuments
-      responses:
-        200:
-          description: Successful response
-        400:
-          description: Bad request
-        401:
-          description: Unauthorized
-        403:
-          description: Forbidden
-        404:
-          description: Not found
-        500:
-          description: Internal server error
-      x-intelliflo-api:
-        service: Microservice.ProviderDocuments
-        onDeveloperPortal: false
-        source: Service Swagger (Microservice.ProviderDocuments)
         scopes: []
         swaggerVersion: v2
   /v2/providerintegrations:
@@ -54123,19 +56108,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
-            - client_financial_data
-            - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
         scopes:
-          - client_financial_data
-          - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/quotes/illustrations/generate:
     post:
@@ -54186,19 +56187,35 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
       security:
         -
           oauth2:
-            - client_financial_data
-            - client_financial_data.quotes
-            - myprofile
             - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
         scopes:
-          - client_financial_data
-          - client_financial_data.quotes
-          - myprofile
           - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/rebalances:
     post:
@@ -54628,11 +56645,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/regions/{regionId}:
     get:
@@ -54654,11 +56698,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/relationshiptypes:
     get:
@@ -55467,11 +57538,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/sectors/{sectorId}:
     get:
@@ -55493,11 +57591,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities:
     get:
@@ -55519,11 +57644,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities/byidentifiersymbols:
     get:
@@ -55545,11 +57697,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities/byids:
     get:
@@ -55571,11 +57750,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities/bysourcereferences:
     get:
@@ -55597,11 +57803,20 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities/exist:
     post:
@@ -55623,11 +57838,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities/{securityId}:
     get:
@@ -55649,11 +57891,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities/{securityId}/dividends:
     delete:
@@ -55675,11 +57944,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
     get:
       operationId: ListSecurityDividends
@@ -55700,11 +57996,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
   /v2/securities/{securityId}/poolfactors/{poolFactorOn}:
     delete:
@@ -55726,11 +58049,20 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities/{securityId}/prices:
     get:
@@ -55752,11 +58084,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securities/{securityId}/prices/{pricedOn}:
     delete:
@@ -55778,11 +58137,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securitiesV2:
     get:
@@ -55804,11 +58190,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/securitygroups:
     get:
@@ -55830,11 +58243,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     post:
       operationId: PostSecurityGroups
@@ -55855,11 +58295,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/securitygroups/securities:
     get:
@@ -55881,11 +58348,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/securitygroups/{securityGroupId}:
     delete:
@@ -55907,11 +58401,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     get:
       operationId: GetSecurityGroup
@@ -55932,11 +58453,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     put:
       operationId: PutSecurityGroups
@@ -55957,11 +58505,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/securitygroups/{securityGroupId}/groupsecurities:
     get:
@@ -55983,11 +58558,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/securitytypes:
     get:
@@ -56009,11 +58611,38 @@ For further details of how to use the filter parameter see [QueryLang](docs/ApiQ
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/servicecases/categories:
     get:
@@ -56927,11 +59556,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     post:
       operationId: PostStocks
@@ -56952,11 +59608,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     put:
       operationId: PutStocks
@@ -56977,11 +59642,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/stocks/{securityId}:
     delete:
@@ -57003,11 +59677,20 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
     get:
       operationId: GetStock
@@ -57028,11 +59711,38 @@ See[QueryLang] (docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
+            - openid
+            - myprofile
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
+          - openid
+          - myprofile
+          - fund_data
         swaggerVersion: v2
   /v2/support/IPAddress:
     get:
@@ -57245,11 +59955,38 @@ The following fields are supported using operators `startswith`:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
     patch:
       operationId: PatchTenantCategories
@@ -57270,11 +60007,38 @@ The following fields are supported using operators `startswith`:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
     post:
       operationId: PostTenantCategories
@@ -57295,11 +60059,38 @@ The following fields are supported using operators `startswith`:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
   /v2/tenantcategories/{categoryId}:
     delete:
@@ -57321,11 +60112,38 @@ The following fields are supported using operators `startswith`:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
   /v2/tenantcategories/{tenantCategoryId}:
     get:
@@ -57347,11 +60165,38 @@ The following fields are supported using operators `startswith`:
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
+            - openid
+            - myprofile
+            - security
+            - fund_data
       x-intelliflo-api:
         service: Microservice.Security
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Security)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
+          - openid
+          - myprofile
+          - security
+          - fund_data
         swaggerVersion: v2
   /v2/tenants:
     post:
@@ -58661,11 +61506,32 @@ See [QueryLang](docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     get:
       operationId: ListUserAlertSubscriptions
@@ -58686,11 +61552,32 @@ See [QueryLang](docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/users/{userId}/alertsubscriptions/{alertSubscriptionId}:
     put:
@@ -58712,11 +61599,32 @@ See [QueryLang](docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     delete:
       operationId: DeleteUserAlertSubscription
@@ -58737,11 +61645,32 @@ See [QueryLang](docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     get:
       operationId: GetUserAlertSubscription
@@ -58762,11 +61691,32 @@ See [QueryLang](docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/users/{userId}/changepassword:
     post:
@@ -58814,11 +61764,32 @@ See [QueryLang](docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
     get:
       operationId: ListChannelSubscriptions
@@ -58839,11 +61810,38 @@ See [QueryLang](docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/users/{userId}/channels/subscriptions/{subscriptionId}:
     delete:
@@ -58865,11 +61863,32 @@ See [QueryLang](docs/ApiQueryLang) for further usage details."
           description: Not found
         500:
           description: Internal server error
+      security:
+        -
+          oauth2:
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
+            - openid
+            - myprofile
+            - firm_data
       x-intelliflo-api:
         service: Microservice.Notifications
         onDeveloperPortal: false
         source: Service Swagger (Microservice.Notifications)
-        scopes: []
+        scopes:
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
+          - openid
+          - myprofile
+          - firm_data
         swaggerVersion: v2
   /v2/users/{userId}/dashboards/usage_history:
     get:
@@ -60184,6 +63203,7 @@ components:
             apps: Access to apps resources
             client_data: Access to client_data resources
             client_data.atr: Access to client_data.atr resources
+            client_data.requirements: Access to client_data.requirements resources
             client_financial_data: Access to client_financial_data resources
             client_financial_data.quotes: Access to client_financial_data.quotes resources
             client_identification_data: Access to client_identification_data resources
@@ -60191,7 +63211,9 @@ components:
             firm_data: Access to firm_data resources
             firm_data.atr: Access to firm_data.atr resources
             firm_data.commission: Access to firm_data.commission resources
+            firm_data.config.adjustment: Access to firm_data.config.adjustment resources
             firm_data.creditnote: Access to firm_data.creditnote resources
+            firm_data.expectation: Access to firm_data.expectation resources
             firm_data.fee: Access to firm_data.fee resources
             firm_data.incomestatements: Access to firm_data.incomestatements resources
             firm_data.introducerpaymentrules: Access to firm_data.introducerpaymentrules resources
@@ -60201,6 +63223,7 @@ components:
             hub: Access to hub resources
             myprofile: Access to myprofile resources
             openid: Access to openid resources
+            security: Access to security resources
             valuation_batch: Access to valuation_batch resources
             valuation_batch.app: Access to valuation_batch.app resources
   schemas: {}
@@ -60608,6 +63631,9 @@ tags:
     name: marketingpreferences
     description: Operations related to marketingpreferences
   -
+    name: misportfolioallocations
+    description: Operations related to misportfolioallocations
+  -
     name: modelprovider
     description: Operations related to modelprovider
   -
@@ -60740,15 +63766,6 @@ tags:
     name: provider tenant configuration
     description: Operations related to provider tenant configuration
   -
-    name: providercodes
-    description: Operations related to providercodes
-  -
-    name: providercodesconfigattributes
-    description: Operations related to providercodesconfigattributes
-  -
-    name: providerdocuments
-    description: Operations related to providerdocuments
-  -
     name: purposes
     description: Operations related to purposes
   -
@@ -60797,9 +63814,6 @@ tags:
     name: riskprofiles
     description: Operations related to riskprofiles
   -
-    name: search
-    description: Operations related to search
-  -
     name: searches
     description: Operations related to searches
   -
@@ -60847,6 +63861,9 @@ tags:
   -
     name: signurl
     description: Operations related to signurl
+  -
+    name: snapshots
+    description: Operations related to snapshots
   -
     name: splits
     description: Operations related to splits

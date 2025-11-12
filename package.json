@@ -1,0 +1,16 @@
+{
+  "name": "public-apis",
+  "version": "1.0.0",
+  "description": "Comprehensive tool for generating reports of all Intelliflo Public APIs by consolidating data from multiple sources.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "js-yaml": "^4.1.1"
+  }
+}
