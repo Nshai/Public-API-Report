@@ -1,8 +1,8 @@
 const https = require('https');
 const fs = require('fs');
 
-const services = require('./service-repos.json');
-const ignoreOps = fs.readFileSync('./documentation_ignore.txt', 'utf8')
+const services = require('../source/config/service-repos.json');
+const ignoreOps = fs.readFileSync('../source/config/documentation_ignore.txt', 'utf8')
   .split('\n')
   .map(line => line.trim())
   .filter(op => op && op.length > 0);
@@ -72,12 +72,25 @@ function fetchSwagger(service, version) {
             Object.keys(paths[path]).forEach(method => {
               const operation = paths[path][method];
               if (operation.operationId) {
+                // Extract scopes from security requirements
+                let scopes = [];
+                if (operation.security && Array.isArray(operation.security)) {
+                  operation.security.forEach(secReq => {
+                    Object.keys(secReq).forEach(key => {
+                      if (Array.isArray(secReq[key])) {
+                        scopes = scopes.concat(secReq[key]);
+                      }
+                    });
+                  });
+                }
+
                 ops.push({
                   operationId: operation.operationId,
                   method: method.toUpperCase(),
                   path: path,
                   description: (operation.summary || operation.description || '').substring(0, 200),
                   tags: operation.tags || [],
+                  scopes: scopes.length > 0 ? scopes : undefined,
                   isInIgnoreList: ignoreOps.includes(operation.operationId)
                 });
               }
@@ -148,7 +161,12 @@ async function processBatch() {
     }
   }
 
-  const outputFile = `swagger-results-fallback-batch-${Math.floor(startIndex / batchSize)}.json`;
+  // Ensure swagger-batch directory exists
+  if (!fs.existsSync('../source/swagger-batch')) {
+    fs.mkdirSync('../source/swagger-batch', { recursive: true });
+  }
+
+  const outputFile = `../source/swagger-batch/swagger-results-fallback-batch-${Math.floor(startIndex / batchSize)}.json`;
   fs.writeFileSync(outputFile, JSON.stringify(results, null, 2));
   console.log(`\n✅ Results saved to ${outputFile}`);
 

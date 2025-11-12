@@ -1,0 +1,5666 @@
+openapi: 3.0.1
+info:
+  title: Intelliflo Consolidated Public APIs (V1)
+  description: Consolidated OpenAPI specification for all Intelliflo Public APIs using V1 swagger endpoints, generated from multiple service swagger definitions.
+  version: 2025-11-12
+  contact:
+    name: Intelliflo API Support
+    url: "https://developer.intelliflo.com"
+servers:
+  -
+    url: "https://api.intelliflo.com"
+    description: Production API Server
+paths:
+  /v1/brands:
+    get:
+      operationId: ListBrands
+      summary: Get brand for either current user or non-authenticated one.
+      description: Get brand for either current user or non-authenticated one.
+      tags:
+        - brand
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaignemails/sendbulk:
+    post:
+      operationId: SendbulkCampaignemails
+      summary: Send bulk templated email
+      description: Send bulk templated email
+      tags:
+        - sendbulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns:
+    post:
+      operationId: CreateCampaign
+      summary: Creates campaign details
+      description: Creates campaign details
+      tags:
+        - campaigns
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListCampaigns
+      summary: Get all campaign templates for the given tenant
+      description: Get all campaign templates for the given tenant
+      tags:
+        - campaigns
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}:
+    delete:
+      operationId: DeleteCampaign
+      summary: Deletes the specified campaign
+      description: Deletes the specified campaign
+      tags:
+        - campaigns
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetCampaign
+      summary: Get campaign details
+      description: Get campaign details
+      tags:
+        - campaigns
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchCampaign
+      summary: Updates campaign details
+      description: Updates campaign details
+      tags:
+        - campaigns
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/content:
+    get:
+      operationId: GetCampaignContent
+      summary: Get campaign details
+      description: Get campaign details
+      tags:
+        - content
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchCampaignContent
+      summary: Updates campaign details
+      description: Updates campaign details
+      tags:
+        - content
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/execute:
+    post:
+      operationId: CreateCampaignExecute
+      summary: Initiate a specified campaign
+      description: Initiate a specified campaign
+      tags:
+        - execute
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/recipients:
+    post:
+      operationId: CreateCampaignsRecipient
+      summary: CreateCampaignsRecipient operation
+      description: 
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListCampaignRecipients
+      summary: ListCampaignRecipients operation
+      description: 
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: ListCampaignsRecipients
+      summary: ListCampaignsRecipients operation
+      description: 
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/recipients/{recipientId}:
+    delete:
+      operationId: DeleteCampaignRecipient
+      summary: Deletes the specified campaign recipient
+      description: Deletes the specified campaign recipient
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetCampaignRecipient
+      summary: Retrieve details for a specified campaign recipient
+      description: Retrieve details for a specified campaign recipient
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/report:
+    get:
+      operationId: GetCampaignReport
+      summary: Get campaign report
+      description: Get campaign report
+      tags:
+        - report
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/segments:
+    get:
+      operationId: GetCampaignSegment
+      summary: GetCampaignSegment operation
+      description: 
+      tags:
+        - segments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateCampaignSegments
+      summary: UpdateCampaignSegments operation
+      description: 
+      tags:
+        - segments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/segments/apply:
+    post:
+      operationId: CreateCampaignSegmentsApply
+      summary: CreateCampaignSegmentsApply operation
+      description: 
+      tags:
+        - apply
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/sendtestemail:
+    post:
+      operationId: SendtestemailCampaigns
+      summary: Send a test email for the specified template
+      description: Send a test email for the specified template
+      tags:
+        - sendtestemail
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigns/{campaignId}/{status}:
+    put:
+      operationId: UpdateCampaignCampaignId
+      summary: Update campaign status
+      description: Update campaign status
+      tags:
+        - campaignids
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigntemplates:
+    post:
+      operationId: CreateCampaigntemplate
+      summary: Create a campaign template
+      description: Create a campaign template
+      tags:
+        - campaigntemplates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListCampaigntemplates
+      summary: ListCampaigntemplates operation
+      description: 
+      tags:
+        - campaigntemplates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigntemplates/{templateId}:
+    delete:
+      operationId: DeleteCampaigntemplate
+      summary: Deletes a campaign template
+      description: Deletes a campaign template
+      tags:
+        - campaigntemplates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsCampaigntemplate
+      summary: ExistsCampaigntemplate operation
+      description: 
+      tags:
+        - campaigntemplates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetCampaigntemplate
+      summary: GetCampaigntemplate operation
+      description: 
+      tags:
+        - campaigntemplates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchCampaigntemplate
+      summary: Updates a campaign template
+      description: Updates a campaign template
+      tags:
+        - campaigntemplates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigntemplates/{templateId}/archive:
+    post:
+      operationId: CreateCampaigntemplateArchive
+      summary: CreateCampaigntemplateArchive operation
+      description: 
+      tags:
+        - archive
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigntemplates/{templateId}/content:
+    get:
+      operationId: GetCampaigntemplateContent
+      summary: GetCampaigntemplateContent operation
+      description: 
+      tags:
+        - content
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchCampaigntemplateContent
+      summary: Updates a campaign template
+      description: Updates a campaign template
+      tags:
+        - content
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/campaigntemplates/{templateId}/sendtestemail:
+    post:
+      operationId: SendtestemailCampaigntemplates
+      summary: Send a test email for the specified template
+      description: Send a test email for the specified template
+      tags:
+        - sendtestemail
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/categories:
+    post:
+      operationId: CreateCategory
+      summary: Create a template category
+      description: Create a template category
+      tags:
+        - categories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListCategories
+      summary: List template categories
+      description: List template categories
+      tags:
+        - categories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/categories/{categoryId}:
+    delete:
+      operationId: DeleteCategory
+      summary: Delete a template category
+      description: Delete a template category
+      tags:
+        - categories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetCategory
+      summary: Get a specified category
+      description: Get a specified category
+      tags:
+        - categories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchCategory
+      summary: Update a template category
+      description: Update a template category
+      tags:
+        - categories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/client/{partyId}/changes:
+    post:
+      operationId: CreateClientChange
+      summary: Creates a change log entry for the client.
+      description: Creates a change log entry for the client.
+      tags:
+        - changes
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListClientChanges
+      summary: Return a paged collection of changes.
+      description: Return a paged collection of changes.
+      tags:
+        - changes
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+  /v1/client/{partyId}/changes/{eventId}:
+    head:
+      operationId: ExistsClientChange
+      summary: Get the specified event.
+      description: Get the specified event.
+      tags:
+        - changes
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetClientChange
+      summary: Get the specified event.
+      description: Get the specified event.
+      tags:
+        - changes
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/emails:
+    post:
+      operationId: CreateClientEmail
+      summary: CreateClientEmail operation
+      description: 
+      tags:
+        - emails
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/emails/{emailId}:
+    get:
+      operationId: GetClientEmail
+      summary: GetClientEmail operation
+      description: 
+      tags:
+        - emails
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientEmail
+      summary: UpdateClientEmail operation
+      description: 
+      tags:
+        - emails
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/emails/{emailId}/attachments:
+    get:
+      operationId: ListClientEmailsAttachments
+      summary: ListClientEmailsAttachments operation
+      description: 
+      tags:
+        - attachments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientEmailsAttachments
+      summary: UpdateClientEmailsAttachments operation
+      description: 
+      tags:
+        - attachments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/emails/{emailId}/content:
+    get:
+      operationId: GetClientEmailContent
+      summary: GetClientEmailContent operation
+      description: 
+      tags:
+        - content
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientEmailContent
+      summary: UpdateClientEmailContent operation
+      description: 
+      tags:
+        - content
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/emails/{emailId}/recipients:
+    get:
+      operationId: ListClientEmailsRecipients
+      summary: ListClientEmailsRecipients operation
+      description: 
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateClientEmailsRecipients
+      summary: UpdateClientEmailsRecipients operation
+      description: 
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/emails/{emailId}/send:
+    post:
+      operationId: SendClientEmail
+      summary: SendClientEmail operation
+      description: 
+      tags:
+        - send
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/messages:
+    get:
+      operationId: ListClientMessages
+      summary: Get a list of secure messages for the client.
+      description: Get a list of secure messages for the client.
+      tags:
+        - messages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/clients/{clientId}/messages/output:
+    post:
+      operationId: GetSecureMessageTrail
+      summary: Get a secure message trail in pdf file.
+      description: Get a secure message trail in pdf file.
+      tags:
+        - output
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/domains:
+    get:
+      operationId: ListDomains
+      summary: ListDomains operation
+      description: 
+      tags:
+        - domains
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/domains/verify:
+    post:
+      operationId: CreateDomainVerify
+      summary: CreateDomainVerify operation
+      description: 
+      tags:
+        - verify
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/emails/configuration:
+    get:
+      operationId: GetEmailConfiguration
+      summary: GetEmailConfiguration operation
+      description: 
+      tags:
+        - configuration
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateEmailConfiguration
+      summary: UpdateEmailConfiguration operation
+      description: 
+      tags:
+        - configuration
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/emails/defaultsender:
+    get:
+      operationId: DefaultsenderEmail
+      summary: DefaultsenderEmail operation
+      description: 
+      tags:
+        - defaultsender
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/emailtemplatefields:
+    get:
+      operationId: GetEmailtemplatefield
+      summary: GetEmailtemplatefield operation
+      description: 
+      tags:
+        - emailtemplatefields
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/esign/preprocess:
+    post:
+      operationId: CreateEsignPreprocess
+      summary: CreateEsignPreprocess operation
+      description: 
+      tags:
+        - preprocess
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/events/subscribe:
+    post:
+      operationId: CreateEventSubscribe
+      summary: Add a new subscription for the party based on given request.
+      description: Add a new subscription for the party based on given request.
+      tags:
+        - subscribe
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListEventsSubscribe
+      summary: Get a list of subscriptions for the party.
+      description: Get a list of subscriptions for the party.
+      tags:
+        - subscribe
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+  /v1/events/subscribe/{noun}:
+    delete:
+      operationId: DeleteSubscribe
+      summary: Deletes the subscription settings for the party based on noun.
+      description: Deletes the subscription settings for the party based on noun.
+      tags:
+        - subscribes
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetSubscribe
+      summary: Get subscription details for the party for the specified noun.
+      description: Get subscription details for the party for the specified noun.
+      tags:
+        - subscribes
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateSubscribe
+      summary: Update the subscription settings for the party based on the noun.
+      description: Update the subscription settings for the party based on the noun.
+      tags:
+        - subscribes
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.ChangeNotification
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.ChangeNotification)
+        scopes: []
+        swaggerVersion: v1
+  /v1/groups/{groupId}/brands:
+    post:
+      operationId: CreateGroupBrand
+      summary: Create brand
+      description: Create brand
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListGroupBrands
+      summary: Lists all brands for the specified group.
+      description: Lists all brands for the specified group.
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/groups/{groupId}/brands/closest:
+    get:
+      operationId: GetGroupBrandClosest
+      summary: Get closest brand for specified group
+      description: Get closest brand for specified group
+      tags:
+        - closest
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/groups/{groupId}/brands/{brandId}:
+    delete:
+      operationId: DeleteGroupBrand
+      summary: Delete brand
+      description: Delete brand
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetGroupBrand
+      summary: Get a brand by id and groupId.
+      description: Get a brand by id and groupId.
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchGroupBrand
+      summary: Update brand
+      description: Update brand
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/identities:
+    get:
+      operationId: ListIdentities
+      summary: ListIdentities operation
+      description: 
+      tags:
+        - identities
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Email
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Email)
+        scopes: []
+        swaggerVersion: v1
+  /v1/identities/verify:
+    post:
+      operationId: CreateIdentityVerify
+      summary: CreateIdentityVerify operation
+      description: 
+      tags:
+        - verify
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Email
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Email)
+        scopes: []
+        swaggerVersion: v1
+  /v1/instances:
+    get:
+      operationId: ListInstances
+      summary: ListInstances operation
+      description: 
+      tags:
+        - instances
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/instances/{instanceId}:
+    get:
+      operationId: GetInstance
+      summary: GetInstance operation
+      description: 
+      tags:
+        - instances
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/instances/{instanceId}/abort:
+    post:
+      operationId: CreateInstanceAbort
+      summary: CreateInstanceAbort operation
+      description: 
+      tags:
+        - abort
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/instances/{instanceId}/history:
+    get:
+      operationId: ListInstancesHistory
+      summary: ListInstancesHistory operation
+      description: 
+      tags:
+        - history
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/instances/{instanceId}/restart:
+    post:
+      operationId: CreateInstanceRestart
+      summary: CreateInstanceRestart operation
+      description: 
+      tags:
+        - restart
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/instances/{instanceId}/resume:
+    post:
+      operationId: CreateInstanceResume
+      summary: CreateInstanceResume operation
+      description: 
+      tags:
+        - resume
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/instances/{instanceId}/steps:
+    get:
+      operationId: ListInstancesSteps
+      summary: ListInstancesSteps operation
+      description: 
+      tags:
+        - steps
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/instances/{instanceId}/unsuspend:
+    post:
+      operationId: CreateInstanceUnsuspend
+      summary: CreateInstanceUnsuspend operation
+      description: 
+      tags:
+        - unsuspend
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/mail:
+    post:
+      operationId: CreateMail
+      summary: "Send a templated email
+Attachments are sent as multi part content"
+      description: "Send a templated email
+Attachments are sent as multi part content"
+      tags:
+        - mails
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Email
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Email)
+        scopes: []
+        swaggerVersion: v1
+  /v1/mail/send_raw:
+    post:
+      operationId: SendRawMail
+      summary: SendRawMail operation
+      description: 
+      tags:
+        - sendraw
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Email
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Email)
+        scopes: []
+        swaggerVersion: v1
+  /v1/mail/send_template:
+    post:
+      operationId: SendTemplateMail
+      summary: "Send a templated email
+Attachments are sent as multi part content"
+      description: "Send a templated email
+Attachments are sent as multi part content"
+      tags:
+        - sendtemplate
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Email
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Email)
+        scopes: []
+        swaggerVersion: v1
+  /v1/mailevents/mandrill:
+    post:
+      operationId: CreateMaileventMandrill
+      summary: Accept callbacks from Mandrill webhook
+      description: Accept callbacks from Mandrill webhook
+      tags:
+        - mandrill
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsMaileventMandrill
+      summary: Allows Mandrill to confirm that the endpoint exists
+      description: Allows Mandrill to confirm that the endpoint exists
+      tags:
+        - mandrill
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages:
+    post:
+      operationId: CreateMessage
+      summary: Create secure message.
+      description: Create secure message.
+      tags:
+        - messages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListMessages
+      summary: Get secure messages for the specified filter.
+      description: Get secure messages for the specified filter.
+      tags:
+        - messages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/bulk:
+    post:
+      operationId: CreateBulkMessage
+      summary: Creates a bulk message.
+      description: Creates a bulk message.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListBulkMessages
+      summary: Returns a list of bulk messages.
+      description: Returns a list of bulk messages.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/bulk/{bulkId}:
+    get:
+      operationId: GetBulkMessage
+      summary: Gets a bulk message by id.
+      description: Gets a bulk message by id.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateBulkMessage
+      summary: Updates an existing bulk message.
+      description: Updates an existing bulk message.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/bulk/{bulkId}/attachments:
+    post:
+      operationId: CreateBulkMessageAttachment
+      summary: Creates a bulk message attachments.
+      description: Creates a bulk message attachments.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListBulkMessageAttachments
+      summary: Returns a list of attachments.
+      description: Returns a list of attachments.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/bulk/{bulkId}/attachments/{attachmentId}:
+    delete:
+      operationId: DeleteBulkMessageAttachment
+      summary: Deletes the bulk message attachment.
+      description: Deletes the bulk message attachment.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/bulk/{bulkId}/recipients:
+    post:
+      operationId: CreateBulkMessageRecipients
+      summary: Creates a list of bulk message recipients.
+      description: Creates a list of bulk message recipients.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    delete:
+      operationId: DeleteBulkMessageRecipients
+      summary: Deletes a list of bulk message recipients.
+      description: Deletes a list of bulk message recipients.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListBulkMessageRecipients
+      summary: Returns a list of bulk message recipients.
+      description: Returns a list of bulk message recipients.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/bulk/{bulkId}/revoke:
+    post:
+      operationId: RevokeBulkMessage
+      summary: Revokes a bulk message.
+      description: Revokes a bulk message.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/bulk/{bulkId}/send:
+    post:
+      operationId: SendBulk
+      summary: Starts the processing the bulk message.
+      description: Starts the processing the bulk message.
+      tags:
+        - bulk
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/unreadcount:
+    head:
+      operationId: ExistsMessageUnreadcount
+      summary: Get the count of unread messages.
+      description: Get the count of unread messages.
+      tags:
+        - unreadcount
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetMessageUnreadcount
+      summary: Get the count of unread messages.
+      description: Get the count of unread messages.
+      tags:
+        - unreadcount
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{messageId}/actions:
+    post:
+      operationId: CreateMessageAction
+      summary: Link action to secure message.
+      description: Link action to secure message.
+      tags:
+        - actions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}:
+    delete:
+      operationId: DeleteMessage
+      summary: Deletes an existing draft secure message.
+      description: Deletes an existing draft secure message.
+      tags:
+        - messages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsMessage
+      summary: Get a specific secure message by id.
+      description: Get a specific secure message by id.
+      tags:
+        - messages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetMessage
+      summary: Get a specific secure message by id.
+      description: Get a specific secure message by id.
+      tags:
+        - messages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateMessage
+      summary: Updates an existing secure message.
+      description: Updates an existing secure message.
+      tags:
+        - messages
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/attachments:
+    post:
+      operationId: CreateMessagesAttachments
+      summary: Upload attachments to a specific secure message.
+      description: Upload attachments to a specific secure message.
+      tags:
+        - attachments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListMessageAttachments
+      summary: List attachments for a specific secure messages.
+      description: List attachments for a specific secure messages.
+      tags:
+        - attachments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/attachments/{attachmentId}:
+    delete:
+      operationId: DeleteMessageAttachment
+      summary: Delete an attachment for a specific secure messages.
+      description: Delete an attachment for a specific secure messages.
+      tags:
+        - attachments
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/attachments/{attachmentId}/content:
+    get:
+      operationId: GetMessageAttachmentContent
+      summary: Get the attachment's content of a specific secure message.
+      description: Get the attachment's content of a specific secure message.
+      tags:
+        - content
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/draft:
+    get:
+      operationId: GetMessageDraft
+      summary: Get a draft message for specific secure message by id.
+      description: Get a draft message for specific secure message by id.
+      tags:
+        - draft
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/markasread:
+    post:
+      operationId: MarkasreadMessage
+      summary: Mark a specific message as read.
+      description: Mark a specific message as read.
+      tags:
+        - markasread
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/markasunread:
+    post:
+      operationId: MarkasunreadMessage
+      summary: Mark a specific message as unread.
+      description: Mark a specific message as unread.
+      tags:
+        - markasunread
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/recipients:
+    post:
+      operationId: CreateMessageRecipient
+      summary: Creates a recipient for a secure message.
+      description: Creates a recipient for a secure message.
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListMessageRecipients
+      summary: Gets all recipients for the specified oData query on either/or PartyId/Name.
+      description: Gets all recipients for the specified oData query on either/or PartyId/Name.
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/recipients/{recipientId}:
+    delete:
+      operationId: DeleteMessageRecipient
+      summary: Deletes a recipient for message.
+      description: Deletes a recipient for message.
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    head:
+      operationId: ExistsMessageRecipient
+      summary: Gets recipient if any, for the specified secure message.
+      description: Gets recipient if any, for the specified secure message.
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetMessageRecipient
+      summary: Gets recipient if any, for the specified secure message.
+      description: Gets recipient if any, for the specified secure message.
+      tags:
+        - recipients
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/reply:
+    post:
+      operationId: CreateMessageReply
+      summary: Reply on secure message.
+      description: Reply on secure message.
+      tags:
+        - reply
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/revoke:
+    post:
+      operationId: CreateMessageRevoke
+      summary: Revoke a specific message.
+      description: Revoke a specific message.
+      tags:
+        - revoke
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/send:
+    post:
+      operationId: SendMessage
+      summary: Send secure message to a single recipient.
+      description: Send secure message to a single recipient.
+      tags:
+        - send
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/messages/{secureMessageId}/sendtoadviser:
+    post:
+      operationId: SendtoadviserMessage
+      summary: Send secure message from a customer to an adviser.
+      description: Send secure message from a customer to an adviser.
+      tags:
+        - sendtoadviser
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/migrate/instances:
+    get:
+      operationId: ListMigratesInstances
+      summary: ListMigratesInstances operation
+      description: 
+      tags:
+        - instances
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/migrate/instances/{instanceId}:
+    post:
+      operationId: CreateInstance
+      summary: CreateInstance operation
+      description: 
+      tags:
+        - instances
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/migrate/instancesteps:
+    get:
+      operationId: ListMigratesInstancesteps
+      summary: ListMigratesInstancesteps operation
+      description: 
+      tags:
+        - instancesteps
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/migrate/templates:
+    get:
+      operationId: ListMigratesTemplates
+      summary: ListMigratesTemplates operation
+      description: 
+      tags:
+        - templates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      security:
+        -
+          oauth2:
+            - client_financial_data
+            - myprofile
+            - openid
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes:
+          - client_financial_data
+          - myprofile
+          - openid
+        swaggerVersion: v1
+  /v1/migrate/templates/{templateId}:
+    post:
+      operationId: CreateTemplate1
+      summary: CreateTemplate1 operation
+      description: 
+      tags:
+        - templates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      security:
+        -
+          oauth2:
+            - client_financial_data
+            - myprofile
+            - openid
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes:
+          - client_financial_data
+          - myprofile
+          - openid
+        swaggerVersion: v1
+  /v1/options/security:
+    get:
+      operationId: GetOptionSecurity
+      summary: Get template security options
+      description: Get template security options
+      tags:
+        - security
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateOptionSecurity
+      summary: Update template security options
+      description: Update template security options
+      tags:
+        - security
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/options/versioning:
+    get:
+      operationId: GetOptionVersioning
+      summary: Get template versioning options
+      description: Get template versioning options
+      tags:
+        - versioning
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateOptionVersioning
+      summary: Update template versioning options
+      description: Update template versioning options
+      tags:
+        - versioning
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/output:
+    get:
+      operationId: ListOutputs
+      summary: List generated documents
+      description: List generated documents
+      tags:
+        - outputs
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/output/{outputId}:
+    delete:
+      operationId: DeleteOutput
+      summary: DeleteOutput operation
+      description: 
+      tags:
+        - outputs
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetOutput
+      summary: Get details for a specified output document
+      description: Get details for a specified output document
+      tags:
+        - outputs
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/output/{outputId}/download:
+    get:
+      operationId: GetOutputDownload
+      summary: Download generated document
+      description: Download generated document
+      tags:
+        - download
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/plugin:
+    get:
+      operationId: GetPlugin
+      summary: Get latest plugin details
+      description: Get latest plugin details
+      tags:
+        - plugins
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/plugin/download:
+    get:
+      operationId: GetPluginDownload
+      summary: Download plugin installer
+      description: Download plugin installer
+      tags:
+        - download
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/plugin/formats:
+    get:
+      operationId: ListPluginsFormats
+      summary: Get formatting configuration
+      description: Get formatting configuration
+      tags:
+        - formats
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/plugin/save/{templateVersionId}:
+    post:
+      operationId: CreateSave
+      summary: CreateSave operation
+      description: 
+      tags:
+        - saves
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/plugin/schema:
+    get:
+      operationId: GetPluginSchema
+      summary: Download data source schema
+      description: Download data source schema
+      tags:
+        - schema
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/provider_templates:
+    get:
+      operationId: ListProviderTemplates
+      summary: List provider templates
+      description: List provider templates
+      tags:
+        - providertemplates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/reviews:
+    post:
+      operationId: CreateReview
+      summary: CreateReview operation
+      description: 
+      tags:
+        - reviews
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListReviews
+      summary: List reviews
+      description: List reviews
+      tags:
+        - reviews
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/reviews/{reviewId}:
+    delete:
+      operationId: DeleteReview
+      summary: DeleteReview operation
+      description: 
+      tags:
+        - reviews
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetReview
+      summary: Get a specified review
+      description: Get a specified review
+      tags:
+        - reviews
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/reviews/{reviewId}/complete:
+    post:
+      operationId: CreateReviewComplete
+      summary: Complete the specified review
+      description: Complete the specified review
+      tags:
+        - complete
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/reviews/{reviewId}/download:
+    get:
+      operationId: GetReviewDownload
+      summary: Download review document
+      description: Download review document
+      tags:
+        - download
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/reviews/{reviewId}/upload:
+    post:
+      operationId: CreateReviewUpload
+      summary: Upload a modified review document
+      description: Upload a modified review document
+      tags:
+        - upload
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/settings:
+    delete:
+      operationId: DeleteSetting
+      summary: Delete secure message notification settings
+      description: Delete secure message notification settings
+      tags:
+        - settings
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetSetting
+      summary: Get secure message notification settings
+      description: Get secure message notification settings
+      tags:
+        - settings
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateSetting
+      summary: Creates or update secure message notification settings
+      description: Creates or update secure message notification settings
+      tags:
+        - settings
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.SecureMessaging
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.SecureMessaging)
+        scopes: []
+        swaggerVersion: v1
+  /v1/subscriptions:
+    post:
+      operationId: CreateSubscription
+      summary: CreateSubscription operation
+      description: 
+      tags:
+        - subscriptions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.WebHooks
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.WebHooks)
+        scopes: []
+        swaggerVersion: v1
+  /v1/subscriptions/{subscriptionId}:
+    delete:
+      operationId: DeleteSubscription
+      summary: DeleteSubscription operation
+      description: 
+      tags:
+        - subscriptions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.WebHooks
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.WebHooks)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templatecategories:
+    post:
+      operationId: CreateTemplatecategory
+      summary: CreateTemplatecategory operation
+      description: 
+      tags:
+        - templatecategories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListTemplatecategories
+      summary: Get all campaign templates for the given tenant
+      description: Get all campaign templates for the given tenant
+      tags:
+        - templatecategories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templatecategories/{templateCategoryId}:
+    delete:
+      operationId: DeleteTemplatecategory
+      summary: DeleteTemplatecategory operation
+      description: 
+      tags:
+        - templatecategories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetTemplatecategory
+      summary: GetTemplatecategory operation
+      description: 
+      tags:
+        - templatecategories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchTemplatecategory
+      summary: PatchTemplatecategory operation
+      description: 
+      tags:
+        - templatecategories
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templatelayouts/email:
+    get:
+      operationId: ListTemplatelayoutsEmail
+      summary: ListTemplatelayoutsEmail operation
+      description: 
+      tags:
+        - email
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templatelayouts/{layoutId}:
+    head:
+      operationId: ExistsTemplatelayout
+      summary: ExistsTemplatelayout operation
+      description: 
+      tags:
+        - templatelayouts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetTemplatelayout
+      summary: GetTemplatelayout operation
+      description: 
+      tags:
+        - templatelayouts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates:
+    post:
+      operationId: CreateTemplate
+      summary: Create new workflow template
+      description: Create template
+      tags:
+        - templates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      security:
+        -
+          oauth2:
+            - client_financial_data
+            - myprofile
+            - openid
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes:
+          - client_financial_data
+          - myprofile
+          - openid
+        swaggerVersion: v1
+    get:
+      operationId: ListTemplates
+      summary: Get all campaign templates for the given tenant
+      description: List templates
+      tags:
+        - templates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      security:
+        -
+          oauth2:
+            - client_financial_data
+            - myprofile
+            - openid
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes:
+          - client_financial_data
+          - myprofile
+          - openid
+        swaggerVersion: v1
+  /v1/templates/common/{templateIdentifier}:
+    post:
+      operationId: CreateCommon
+      summary: Create instance for specific template
+      description: Create instance for specific template
+      tags:
+        - commons
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    delete:
+      operationId: DeleteCommon
+      summary: Create instance for specific template
+      description: Create instance for specific template
+      tags:
+        - commons
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/common/{templateIdentifier}/createinstance:
+    post:
+      operationId: CreateinstanceCommon
+      summary: Create instance for specific template
+      description: Create instance for specific template
+      tags:
+        - createinstance
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/detailed:
+    get:
+      operationId: ListTemplateDetaileds
+      summary: Get all campaign templates for the given tenant with additional details of steps
+      description: Get all campaign templates for the given tenant with additional details of steps
+      tags:
+        - detaileds
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/upload:
+    post:
+      operationId: CreateTemplateUpload
+      summary: Upload a template exported from another environment
+      description: Upload a template exported from another environment
+      tags:
+        - upload
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}:
+    delete:
+      operationId: DeleteTemplate
+      summary: Delete an workflow template
+      description: Delete template
+      tags:
+        - templates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      security:
+        -
+          oauth2:
+            - client_financial_data
+            - myprofile
+            - openid
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes:
+          - client_financial_data
+          - myprofile
+          - openid
+        swaggerVersion: v1
+    get:
+      operationId: GetTemplate
+      summary: Get template
+      description: Get specified template
+      tags:
+        - templates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      security:
+        -
+          oauth2:
+            - client_financial_data
+            - myprofile
+            - openid
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes:
+          - client_financial_data
+          - myprofile
+          - openid
+        swaggerVersion: v1
+    patch:
+      operationId: PatchTemplate
+      summary: Perform partial update of workflow template
+      description: Update template
+      tags:
+        - templates
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      security:
+        -
+          oauth2:
+            - client_financial_data
+            - myprofile
+            - openid
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes:
+          - client_financial_data
+          - myprofile
+          - openid
+        swaggerVersion: v1
+  /v1/templates/{templateId}/clone:
+    post:
+      operationId: CreateTemplateClone
+      summary: Clone an existing workflow template
+      description: Clone a specified template
+      tags:
+        - clone
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/createinstance/ondemand:
+    post:
+      operationId: CreateTemplateCreateinstanceOndemand
+      summary: Create instance for specific template
+      description: Create instance for specific template
+      tags:
+        - ondemand
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/detailed:
+    get:
+      operationId: GetTemplateDetailed
+      summary: Get template with additional detail on steps - saving need for multiple calls
+      description: Get template with additional detail on steps - saving need for multiple calls
+      tags:
+        - detailed
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/download:
+    get:
+      operationId: GetTemplateDownload
+      summary: Download the latest version of specified template
+      description: Download the latest version of specified template
+      tags:
+        - download
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/generate:
+    post:
+      operationId: CreateTemplateGenerate
+      summary: Generate a document for a specified template using supplied criteria
+      description: Generate a document for a specified template using supplied criteria
+      tags:
+        - generate
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/initialise:
+    get:
+      operationId: GetTemplateInitialise
+      summary: Initialise workflow service for specified template
+      description: Initialise workflow service for specified template
+      tags:
+        - initialise
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/publish:
+    post:
+      operationId: CreateTemplatePublish
+      summary: Publish template
+      description: Publish template
+      tags:
+        - publish
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/restore:
+    post:
+      operationId: CreateTemplateRestore
+      summary: CreateTemplateRestore operation
+      description: 
+      tags:
+        - restore
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/roles:
+    get:
+      operationId: ListTemplatesRoles
+      summary: List template roles
+      description: List template roles
+      tags:
+        - roles
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    put:
+      operationId: UpdateTemplatesRoles
+      summary: UpdateTemplatesRoles operation
+      description: 
+      tags:
+        - roles
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/steps:
+    post:
+      operationId: CreateTemplateSteps
+      summary: Create template step
+      description: Create template step
+      tags:
+        - steps
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListTemplateSteps
+      summary: List template steps
+      description: List template steps
+      tags:
+        - steps
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/steps/{stepId}:
+    delete:
+      operationId: DeleteTemplateStep
+      summary: Delete a template step
+      description: Delete a template step
+      tags:
+        - steps
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetTemplateStep
+      summary: List template steps
+      description: List template steps
+      tags:
+        - steps
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    patch:
+      operationId: PatchTemplateStep
+      summary: PatchTemplateStep operation
+      description: 
+      tags:
+        - steps
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/steps/{stepId}/moveDown:
+    post:
+      operationId: CreateTemplateStepMoveDown
+      summary: CreateTemplateStepMoveDown operation
+      description: 
+      tags:
+        - movedown
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/steps/{stepId}/moveUp:
+    post:
+      operationId: CreateTemplateStepMoveUp
+      summary: CreateTemplateStepMoveUp operation
+      description: 
+      tags:
+        - moveup
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/triggers:
+    post:
+      operationId: CreateTemplatesTriggers
+      summary: CreateTemplatesTriggers operation
+      description: 
+      tags:
+        - triggers
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: ListTemplatesTriggers
+      summary: List template roles
+      description: List template roles
+      tags:
+        - triggers
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Workflow
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Workflow)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions:
+    get:
+      operationId: ListTemplateVersions
+      summary: List template versions for a specified template
+      description: List template versions for a specified template
+      tags:
+        - versions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions/{versionId}:
+    post:
+      operationId: CreateTemplateVersion
+      summary: Upload a modified template version
+      description: Upload a modified template version
+      tags:
+        - versions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    delete:
+      operationId: DeleteTemplateVersion
+      summary: Delete a specified template version
+      description: Delete a specified template version
+      tags:
+        - versions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+    get:
+      operationId: GetTemplateVersion
+      summary: Get details for specified template version
+      description: Get details for specified template version
+      tags:
+        - versions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions/{versionId}/data:
+    post:
+      operationId: CreateTemplateVersionDatum
+      summary: CreateTemplateVersionDatum operation
+      description: 
+      tags:
+        - data
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions/{versionId}/demote:
+    post:
+      operationId: CreateTemplateVersionDemote
+      summary: Demote template version
+      description: Demote template version
+      tags:
+        - demote
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions/{versionId}/download:
+    get:
+      operationId: GetTemplateVersionDownload
+      summary: Download specified template version
+      description: Download specified template version
+      tags:
+        - download
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions/{versionId}/generate:
+    post:
+      operationId: CreateTemplateVersionGenerate
+      summary: Generate a document for a specified template version using supplied criteria
+      description: Generate a document for a specified template version using supplied criteria
+      tags:
+        - generate
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions/{versionId}/promote:
+    post:
+      operationId: CreateTemplateVersionPromote
+      summary: Promote template version
+      description: Promote template version
+      tags:
+        - promote
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions/{versionId}/prompts:
+    get:
+      operationId: ListTemplateVersionsPrompts
+      summary: ListTemplateVersionsPrompts operation
+      description: 
+      tags:
+        - prompts
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/versions/{versionId}/variables:
+    get:
+      operationId: ListTemplateVersionsVariables
+      summary: ListTemplateVersionsVariables operation
+      description: 
+      tags:
+        - variables
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/templates/{templateId}/withdraw:
+    post:
+      operationId: CreateTemplateWithdraw
+      summary: Withdraw a published template
+      description: Withdraw a published template
+      tags:
+        - withdraw
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/users/me/brands:
+    get:
+      operationId: ListUserMesBrands
+      summary: [DEPRECATED] Find brands for the current user using any filters if provided. Use 'v1/brands' instead.
+      description: [DEPRECATED] Find brands for the current user using any filters if provided. Use 'v1/brands' instead.
+      tags:
+        - brands
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Brand
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Brand)
+        scopes: []
+        swaggerVersion: v1
+  /v1/versions:
+    get:
+      operationId: ListVersions
+      summary: List all template versions
+      description: List all template versions
+      tags:
+        - versions
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Microservice.Author
+        onDeveloperPortal: false
+        source: Service Swagger (Microservice.Author)
+        scopes: []
+        swaggerVersion: v1
+  /v1/widgets/marketing:
+    get:
+      operationId: MarketingWidget
+      summary: MarketingWidget operation
+      description: 
+      tags:
+        - marketing
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+  /v1/widgets/marketing/details:
+    get:
+      operationId: GetWidgetMarketingDetails
+      summary: Gets the marketing campaign widget Html template body and widget position
+      description: Gets the marketing campaign widget Html template body and widget position
+      tags:
+        - details
+      responses:
+        200:
+          description: Successful response
+        400:
+          description: Bad request
+        401:
+          description: Unauthorized
+        403:
+          description: Forbidden
+        404:
+          description: Not found
+        500:
+          description: Internal server error
+      x-intelliflo-api:
+        service: Monolith.Campaign
+        onDeveloperPortal: false
+        source: Service Swagger (Monolith.Campaign)
+        scopes: []
+        swaggerVersion: v1
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: "https://login.intelliflo.com/oauth2/authorize"
+          tokenUrl: "https://login.intelliflo.com/oauth2/token"
+          scopes:
+            client_financial_data: Access to client_financial_data resources
+            myprofile: Access to myprofile resources
+            openid: Access to openid resources
+  schemas: {}
+security:
+  -
+    oauth2: []
+tags:
+  -
+    name: abort
+    description: Operations related to abort
+  -
+    name: actions
+    description: Operations related to actions
+  -
+    name: apply
+    description: Operations related to apply
+  -
+    name: archive
+    description: Operations related to archive
+  -
+    name: attachments
+    description: Operations related to attachments
+  -
+    name: brand
+    description: Operations related to brand
+  -
+    name: brands
+    description: Operations related to brands
+  -
+    name: bulk
+    description: Operations related to bulk
+  -
+    name: campaignids
+    description: Operations related to campaignids
+  -
+    name: campaigns
+    description: Operations related to campaigns
+  -
+    name: campaigntemplates
+    description: Operations related to campaigntemplates
+  -
+    name: categories
+    description: Operations related to categories
+  -
+    name: changes
+    description: Operations related to changes
+  -
+    name: clone
+    description: Operations related to clone
+  -
+    name: closest
+    description: Operations related to closest
+  -
+    name: commons
+    description: Operations related to commons
+  -
+    name: complete
+    description: Operations related to complete
+  -
+    name: configuration
+    description: Operations related to configuration
+  -
+    name: content
+    description: Operations related to content
+  -
+    name: createinstance
+    description: Operations related to createinstance
+  -
+    name: data
+    description: Operations related to data
+  -
+    name: defaultsender
+    description: Operations related to defaultsender
+  -
+    name: demote
+    description: Operations related to demote
+  -
+    name: detailed
+    description: Operations related to detailed
+  -
+    name: detaileds
+    description: Operations related to detaileds
+  -
+    name: details
+    description: Operations related to details
+  -
+    name: domains
+    description: Operations related to domains
+  -
+    name: download
+    description: Operations related to download
+  -
+    name: draft
+    description: Operations related to draft
+  -
+    name: email
+    description: Operations related to email
+  -
+    name: emails
+    description: Operations related to emails
+  -
+    name: emailtemplatefields
+    description: Operations related to emailtemplatefields
+  -
+    name: execute
+    description: Operations related to execute
+  -
+    name: formats
+    description: Operations related to formats
+  -
+    name: generate
+    description: Operations related to generate
+  -
+    name: history
+    description: Operations related to history
+  -
+    name: identities
+    description: Operations related to identities
+  -
+    name: initialise
+    description: Operations related to initialise
+  -
+    name: instances
+    description: Operations related to instances
+  -
+    name: instancesteps
+    description: Operations related to instancesteps
+  -
+    name: mails
+    description: Operations related to mails
+  -
+    name: mandrill
+    description: Operations related to mandrill
+  -
+    name: markasread
+    description: Operations related to markasread
+  -
+    name: markasunread
+    description: Operations related to markasunread
+  -
+    name: marketing
+    description: Operations related to marketing
+  -
+    name: messages
+    description: Operations related to messages
+  -
+    name: movedown
+    description: Operations related to movedown
+  -
+    name: moveup
+    description: Operations related to moveup
+  -
+    name: ondemand
+    description: Operations related to ondemand
+  -
+    name: output
+    description: Operations related to output
+  -
+    name: outputs
+    description: Operations related to outputs
+  -
+    name: plugins
+    description: Operations related to plugins
+  -
+    name: preprocess
+    description: Operations related to preprocess
+  -
+    name: promote
+    description: Operations related to promote
+  -
+    name: prompts
+    description: Operations related to prompts
+  -
+    name: providertemplates
+    description: Operations related to providertemplates
+  -
+    name: publish
+    description: Operations related to publish
+  -
+    name: recipients
+    description: Operations related to recipients
+  -
+    name: reply
+    description: Operations related to reply
+  -
+    name: report
+    description: Operations related to report
+  -
+    name: restart
+    description: Operations related to restart
+  -
+    name: restore
+    description: Operations related to restore
+  -
+    name: resume
+    description: Operations related to resume
+  -
+    name: reviews
+    description: Operations related to reviews
+  -
+    name: revoke
+    description: Operations related to revoke
+  -
+    name: roles
+    description: Operations related to roles
+  -
+    name: saves
+    description: Operations related to saves
+  -
+    name: schema
+    description: Operations related to schema
+  -
+    name: security
+    description: Operations related to security
+  -
+    name: segments
+    description: Operations related to segments
+  -
+    name: send
+    description: Operations related to send
+  -
+    name: sendbulk
+    description: Operations related to sendbulk
+  -
+    name: sendraw
+    description: Operations related to sendraw
+  -
+    name: sendtemplate
+    description: Operations related to sendtemplate
+  -
+    name: sendtestemail
+    description: Operations related to sendtestemail
+  -
+    name: sendtoadviser
+    description: Operations related to sendtoadviser
+  -
+    name: settings
+    description: Operations related to settings
+  -
+    name: steps
+    description: Operations related to steps
+  -
+    name: subscribe
+    description: Operations related to subscribe
+  -
+    name: subscribes
+    description: Operations related to subscribes
+  -
+    name: subscriptions
+    description: Operations related to subscriptions
+  -
+    name: templatecategories
+    description: Operations related to templatecategories
+  -
+    name: templatelayouts
+    description: Operations related to templatelayouts
+  -
+    name: templates
+    description: Operations related to templates
+  -
+    name: triggers
+    description: Operations related to triggers
+  -
+    name: unreadcount
+    description: Operations related to unreadcount
+  -
+    name: unsuspend
+    description: Operations related to unsuspend
+  -
+    name: upload
+    description: Operations related to upload
+  -
+    name: variables
+    description: Operations related to variables
+  -
+    name: verify
+    description: Operations related to verify
+  -
+    name: versioning
+    description: Operations related to versioning
+  -
+    name: versions
+    description: Operations related to versions
+  -
+    name: withdraw
+    description: Operations related to withdraw

@@ -1,0 +1,189 @@
+[
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanController",
+    "filePath": "src/Monolith.Portfolio/Plans/v2/Rest/PlanController.cs",
+    "scope": null,
+    "operations": [
+      "ExistsClientPlan",
+      "GetClientPlan",
+      "ListClientPlans",
+      "CreateClientPlans",
+      "UpdateClientPlan",
+      "CreateTopupPlan",
+      "PlanExists",
+      "GetPlan",
+      "DeleteClientPlan",
+      "PatchClientPlan"
+    ]
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanStatusController",
+    "filePath": "src/Monolith.Portfolio/Plans/v2/Rest/PlanStatusController.cs",
+    "scope": null,
+    "operations": [
+      "CreatePlanStatuses",
+      "ListClientPlanStatuses",
+      "GetPlanStatus"
+    ]
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanValuationController",
+    "filePath": "src/Monolith.Portfolio/Plans/v2/Rest/PlanValuationController.cs",
+    "scope": null,
+    "operations": [
+      "ListClientPlanValuations",
+      "GetClientPlanValuation",
+      "CreatePlanValuations",
+      "UpdateClientPlanValuation"
+    ]
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "TransactionController",
+    "filePath": "src/Monolith.Portfolio/PlanTransactions/v2/Controllers/TransactionController.cs",
+    "scope": "client_financial_data",
+    "operations": [
+      "GetClientPlanTransaction",
+      "ClientPlanTransactionExists",
+      "ListClientPlanTransactions",
+      "ListClientTransactions",
+      "BatchCreateTransactions",
+      "BatchCreateClientTransactions",
+      "BatchCreateClientPlanTransactions",
+      "UpdateClientPlanTransaction"
+    ]
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "PlanBeneficiaryController",
+    "filePath": "src/Monolith.Portfolio/v2/Controllers/PlanBeneficiaryController.cs",
+    "scope": "client_data",
+    "operations": [
+      "ListClientPlansBeneficiaries",
+      "UpdateClientPlansBeneficiaries",
+      "DeleteClientPlanBeneficiaries"
+    ]
+  },
+  {
+    "repository": "Monolith.Portfolio",
+    "controller": "FundController",
+    "filePath": "src/Monolith.Portfolio/Funds/v2/Controllers/FundController.cs",
+    "scope": "fund_data",
+    "operations": [
+      "ListFundPrices",
+      "ListFunds",
+      "GetFund",
+      "CreateFund",
+      "UpdateFund"
+    ]
+  },
+  {
+    "repository": "Monolith.Crm",
+    "controller": "ClientController",
+    "filePath": "src/Monolith.Crm/v2/Controllers/ClientController.cs",
+    "scope": null,
+    "operations": [
+      "CreateClient",
+      "UpdateClient",
+      "ClientExists"
+    ]
+  },
+  {
+    "repository": "Monolith.Crm",
+    "controller": "CampaignTypeController",
+    "filePath": "src/Monolith.Crm/v2/Controllers/CampaignTypeController.cs",
+    "scope": null,
+    "operations": [
+      "ListCampaignTypes"
+    ]
+  },
+  {
+    "repository": "Monolith.Crm",
+    "controller": "OpportunityTypeController",
+    "filePath": "src/Monolith.Crm/v2/Controllers/OpportunityTypeController.cs",
+    "scope": null,
+    "operations": [
+      "GetOpportunityType"
+    ]
+  },
+  {
+    "repository": "Monolith.Crm",
+    "controller": "CampaignChannelController",
+    "filePath": "src/Monolith.Crm/v2/Controllers/CampaignChannelController.cs",
+    "scope": null,
+    "operations": [
+      "ListCampaignChannels"
+    ]
+  },
+  {
+    "repository": "Microservice.ProviderIntegration",
+    "controller": "AccountController",
+    "filePath": "src/Microservice.ProviderIntegration/v2/Controllers/AccountController.cs",
+    "scope": "client_financial_data",
+    "operations": [
+      "PutAccountModel",
+      "PutMoneyMovementInstuction"
+    ]
+  },
+  {
+    "repository": "Monolith.Atr",
+    "controller": "AtrTemplateController",
+    "filePath": "src/Monolith.Atr/v2/New/Controllers/AtrTemplateController.cs",
+    "scope": null,
+    "operations": [
+      "CreateAtrTemplate",
+      "UpdateAtrTemplate",
+      "GetAtrTemplateV2"
+    ]
+  },
+  {
+    "repository": "Monolith.Atr",
+    "controller": "AtrInstalledAppTemplateController",
+    "filePath": "src/Monolith.Atr/v2/New/Controllers/AtrInstalledAppTemplateController.cs",
+    "scope": null,
+    "operations": [
+      "GetTenantProviderAtrTemplate"
+    ]
+  },
+  {
+    "repository": "Monolith.Atr",
+    "controller": "AtrProviderTemplateController",
+    "filePath": "src/Monolith.Atr/v2/New/Controllers/AtrProviderTemplateController.cs",
+    "scope": null,
+    "operations": [
+      "CreateProviderAtrTemplate",
+      "GetProviderAtrTemplate",
+      "ListProviderAtrTemplates",
+      "ActivateProviderAtrTemplate"
+    ]
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "IncomeController",
+    "filePath": "src/Monolith.FactFind/v2/Controllers/IncomeController.cs",
+    "scope": "client_financial_data",
+    "operations": [
+      "ListClientIncomes",
+      "GetClientIncome",
+      "CreateClientIncome",
+      "UpdateClientIncome",
+      "DeleteClientIncome"
+    ]
+  },
+  {
+    "repository": "Monolith.FactFind",
+    "controller": "ExpenditureController",
+    "filePath": "src/Monolith.FactFind/v2/Controllers/ExpenditureController.cs",
+    "scope": "client_financial_data",
+    "operations": [
+      "CreateClientExpenditure",
+      "UpdateClientExpenditure",
+      "GetClientExpenditure",
+      "ListClientExpenditures",
+      "DeleteClientExpenditure"
+    ]
+  }
+]

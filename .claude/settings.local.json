@@ -16,7 +16,9 @@
       "Bash(api-table-preview.txt)",
       "Bash(del:*)",
       "Bash(timeout 30 bash -c 'while pgrep -f \"\"fetch-swagger-with-fallback.js\"\" > /dev/null; do sleep 2; done')",
-      "Bash(api_white_list_raw.json)"
+      "Bash(api_white_list_raw.json)",
+      "Bash(timeout:*)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": []

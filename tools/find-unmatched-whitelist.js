@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const allApis = require('../source/all-public-apis-with-fallback.json');
+const allApis = require('../source/consolidated/all-public-apis-with-fallback.json');
 const whitelist = fs.readFileSync('../source/api_white_list.txt', 'utf8')
   .split('\n')
   .map(l => l.trim())

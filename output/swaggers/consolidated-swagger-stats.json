@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2025-11-12T21:48:46.113Z",
+  "totalOperations": 1565,
+  "operationsBySource": {
+    "templateSwagger": 391,
+    "serviceSwagger": 1174,
+    "generatedMinimal": 0
+  },
+  "coverage": {
+    "withScopes": 664,
+    "onDeveloperPortal": 391,
+    "withTags": 1565
+  },
+  "uniqueCounts": {
+    "paths": 920,
+    "tags": 330,
+    "scopes": 22
+  }
+}

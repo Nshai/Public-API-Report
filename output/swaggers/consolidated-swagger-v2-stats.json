@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2025-11-12T21:28:56.810Z",
+  "version": "v2",
+  "totalOperations": 1359,
+  "operationsBySource": {
+    "templateSwagger": 391,
+    "serviceSwagger": 968,
+    "generatedMinimal": 0
+  },
+  "coverage": {
+    "withScopes": 657,
+    "onDeveloperPortal": 391,
+    "withTags": 1359
+  },
+  "uniqueCounts": {
+    "paths": 780,
+    "tags": 243,
+    "scopes": 22
+  }
+}

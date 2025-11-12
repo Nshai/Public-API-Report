@@ -1,368 +1,326 @@
 # Intelliflo Public API Report Generator
 
 ## Description
-Generates a comprehensive report of all Intelliflo Public APIs by consolidating data from multiple sources including swagger documentation, GitHub repositories, API Gateway whitelist, and documentation ignore lists.
+Generates comprehensive reports and OpenAPI 3.0 swagger documentation for all Intelliflo Public APIs by consolidating data from multiple sources including service swagger documentation, GitHub repositories, OAuth scopes, API Gateway whitelist, and documentation ignore lists.
 
 ## When to Use
 Use this skill when you need to:
-- Generate a complete inventory of all Intelliflo Public APIs
-- Analyze API coverage across services
-- Compare APIs documented in swagger vs. those on the developer portal
-- Identify hidden public APIs from documentation ignore lists
-- Validate API Gateway whitelist against actual implementations
-- Create comprehensive API documentation for stakeholders
-
-## Prerequisites
-- Access to Intelliflo GitHub repositories (requires `gh` CLI authentication)
-- Node.js installed
-- Network access to Intelliflo service swagger endpoints
-
-## Process Overview
-
-The skill follows this multi-step process:
-
-### 1. Data Collection Phase
-
-**A. Fetch Service Repository List**
-- Uses GitHub API to get all Intelliflo service repositories
-- Filters for services that likely have swagger documentation
-- Creates `service-repos.json` with repository names
-
-**B. Generate Service URLs**
-- Converts repository names to internal service URLs
-- Creates both v1 and v2 swagger endpoint URLs
-- Saves to `service-urls.json`
-
-**C. Fetch Swagger Documentation**
-- Attempts to fetch swagger docs from each service (v2 first, then v1 fallback)
-- Processes in parallel batches for efficiency
-- Extracts operation IDs, methods, paths, descriptions, and tags
-- Saves results in batch files: `swagger-results-fallback-batch-*.json`
-
-**D. Download Additional Data Sources**
-- **Public Swagger v2**: Operations currently on developer portal (`public-v2.json`)
-- **Documentation Ignore List**: Hidden public APIs (`documentation_ignore.txt`)
-- **API Gateway Whitelist**: Operations allowed through gateway (`api_white_list.txt`)
-- **GitHub [PublicApi] Search**: Source code search for `[PublicApi]` attributes
-
-### 2. Data Consolidation Phase
-
-**Consolidation Script** (`consolidate-fallback-results.js`):
-
-Creates a comprehensive unified dataset by merging:
-1. Public Swagger v2 operations (on developer portal)
-2. Service swagger operations (from all fetched services)
-3. Documentation ignore operations (hidden but public)
-4. API Gateway whitelist operations
-5. GitHub source code operations
-
-**Key Features:**
-- **Case-insensitive matching** for whitelist operations
-- **Deduplication** using Map-based tracking
-- **Multi-source attribution** showing where each API was found
-- **Tag preservation** from swagger documentation
-- **Service mapping** to identify which service owns each API
-
-**Output:** `all-public-apis-with-fallback.json` - Contains all 1,565+ unique APIs with fields:
-- `operationId`: Unique identifier
-- `method`: HTTP method (GET, POST, etc.)
-- `path`: API endpoint path
-- `description`: Human-readable description
-- `tags`: Swagger tags for categorization
-- `onDeveloperPortal`: Boolean - is it publicly documented?
-- `isInWhitelist`: Boolean - is it in API Gateway whitelist?
-- `isHidden`: Boolean - is it in documentation ignore list?
-- `service`: Which service implements it
-- `swaggerVersion`: v1 or v2
-- `source`: Where the data came from
-
-### 3. Report Generation Phase
-
-**Report Generator** (`generate-final-report-with-tags-first.js`):
-
-Creates `FINAL-API-REPORT.md` with:
-
-**Executive Summary:**
-- Total unique public APIs
-- APIs on Developer Portal
-- Hidden Public APIs
-- APIs in API Gateway Whitelist (with match rate)
-- APIs with Tags
-- APIs with Service Information
-- Documentation ignore operations match rate
-
-**Complete API List Table:**
-Sortable table with columns: Tags, Operation ID, Method, Endpoint, Description, On Portal, Service, Source
-
-**APIs by Tag:**
-Groups operations by swagger tags showing distribution
-
-**Hidden Public APIs Section:**
-Details all operations in documentation ignore list
-
-**Services Analyzed:**
-Shows which services were processed and operation counts
-
-### 4. Analysis Phase
-
-**Unmatched Operations Analysis** (`find-unmatched-whitelist.js`):
-
-Identifies API Gateway whitelist operations that don't have swagger documentation:
-- Uses case-insensitive matching
-- Reports unmatched operations (typically 4-6)
-- Common reasons: not yet implemented, deprecated, or in services not fetched
-
-**Creates:** `WHITELIST-ANALYSIS.md` with detailed breakdown
-
-## Key Technical Implementations
-
-### Case-Insensitive Whitelist Matching
-
-Handles naming inconsistencies between whitelist and swagger:
-
-```javascript
-// Create case-insensitive lookup
-const whitelistLowerCase = whitelistOps.map(op => op.toLowerCase());
-const isInWhitelist = (operationId) => {
-  return whitelistLowerCase.includes(operationId.toLowerCase());
-};
-```
-
-This resolves issues like:
-- `ListPlanpurposes` (whitelist) vs `ListPlanPurposes` (swagger)
-- `ListPlantypeLifecycles` (whitelist) vs `ListPlanTypeLifecycles` (swagger)
-
-### V1/V2 Swagger Fallback
-
-Tries v2 first (preferred), falls back to v1:
-
-```javascript
-async function fetchSwaggerWithFallback(service, serviceName) {
-  // Try v2 first
-  const v2Url = `https://${serviceName}.intelliflo.com/swagger/v2/swagger.json`;
-  const v2Result = await tryFetch(v2Url);
-  if (v2Result.success) return { ...v2Result, version: 'v2' };
-
-  // Fallback to v1
-  const v1Url = `https://${serviceName}.intelliflo.com/swagger/v1/swagger.json`;
-  const v1Result = await tryFetch(v1Url);
-  return { ...v1Result, version: 'v1' };
-}
-```
-
-### Parallel Batch Processing
-
-Processes services in parallel for performance:
-
-```bash
-# Run 10 services starting at offset 0
-node fetch-swagger-with-fallback.js 10 0
-
-# Run 10 services starting at offset 10
-node fetch-swagger-with-fallback.js 10 10
-```
-
-## Expected Results
-
-**Typical Statistics:**
-- Total Unique Public APIs: ~1,565
-- APIs on Developer Portal: ~391
-- Hidden Public APIs: ~1,174
-- APIs in API Gateway Whitelist: ~395-401
-- Whitelist Match Rate: 98-99%
-- Services Processed: ~63
-- Successful Service Fetches: ~50
-- APIs with Tags: ~100%
-- APIs with Service Info: ~80%
-
-**Output Files:**
-
-**Source Data** (in `source/` folder):
-1. `service-repos.json` - List of repositories
-2. `service-urls.json` - Generated service URLs
-3. `swagger-results-fallback-batch-*.json` - Swagger fetch results (by batch)
-4. `public-v2-operations.json` - Developer portal operations
-5. `github-publicapi-search.json` - GitHub source code findings
-6. `documentation_ignore.txt` - Hidden public APIs list
-7. `api_white_list.txt` - API Gateway whitelist
-8. `all-public-apis-with-fallback.json` - **Main consolidated dataset**
-
-**Generated Reports** (in `output/` folder):
-1. `FINAL-API-REPORT.md` - **Main report document**
-2. `WHITELIST-ANALYSIS.md` - Whitelist validation report
-
-**Tools** (in `tools/` folder):
-- All `.js` scripts for processing and analysis
+- Generate a complete inventory of all Intelliflo Public APIs (1,565 operations)
+- Create consolidated OpenAPI 3.0 swagger files (combined, v1, v2)
+- Extract and propagate OAuth scopes across APIs
+- Analyze API coverage across 50+ microservices
+- Compare APIs documented in swagger vs. developer portal
+- Identify hidden public APIs (1,174 operations)
+- Validate API Gateway whitelist (401 operations)
+- Generate comprehensive markdown reports sorted by tags
 
 ## Project Structure
 
 ```
 Public-APIs/
-├── tools/              # JavaScript tools and scripts
-├── source/             # Source data files (JSON, TXT)
-├── output/             # Generated reports (MD files)
-└── Public Swagger/     # Public swagger documentation
+├── tools/              # JavaScript processing scripts
+├── source/             # Source data (organized by category)
+│   ├── templates/      # Template swagger files
+│   │   ├── Public Swagger/public-v2.json (391 operations)
+│   │   └── public-v2-operations.json
+│   ├── scopes/         # OAuth scope extractions
+│   │   ├── public-v2-scopes.json (390 operations)
+│   │   └── tag-to-scope-mapping.json
+│   ├── swagger-batch/  # Fetched service swagger files
+│   │   └── swagger-results-fallback-batch-*.json (1,226 operations)
+│   ├── github/         # GitHub source code extractions
+│   │   ├── github-publicapi-search.json (46 operations)
+│   │   ├── github-controller-scopes.json
+│   │   └── operation-to-controller-map-complete.json
+│   ├── config/         # Configuration files
+│   │   ├── service-repos.json
+│   │   ├── api_white_list.txt (401 operations)
+│   │   └── documentation_ignore.txt (83 operations)
+│   └── consolidated/   # Final consolidated data
+│       └── all-public-apis-with-fallback.json (1,565 APIs)
+└── output/
+    ├── reports/        # Generated markdown reports
+    │   └── FINAL-API-REPORT.md
+    └── swaggers/       # Generated OpenAPI swagger files
+        ├── consolidated-public-swagger.json (all 1,565 operations)
+        ├── consolidated-public-swagger-v1.json (206 operations)
+        └── consolidated-public-swagger-v2.json (1,359 operations)
 ```
 
-## Usage Instructions
+## Complete Workflow
 
-### Full Report Generation
+### Full Regeneration (Monthly)
 
 ```bash
-# Navigate to tools directory
-cd C:\work\Public-APIs\tools
+cd C:/work/Public-APIs/tools
 
-# Step 1: Fetch swagger docs (writes to ../source/)
+# Step 1: Extract OAuth scopes from Public Swagger v2
+node extract-public-swagger-scopes.js
+
+# Step 2: Fetch swagger docs from all services
 node fetch-swagger-with-fallback.js 10 0
 
-# Step 2: Consolidate all data (reads from ../source/, writes to ../source/)
+# Step 3 (Optional): Fetch controller scopes from GitHub
+node extract-all-controller-scopes-and-operations.js
+
+# Step 4: Consolidate all data sources (includes tag-based scope propagation)
 node consolidate-fallback-results.js
 
-# Step 3: Generate reports (reads from ../source/, writes to ../output/)
+# Step 5: Generate reports and swagger files
 node generate-final-report-with-tags-first.js
+node generate-consolidated-public-swagger.js
+node generate-consolidated-swagger-by-version.js
 node find-unmatched-whitelist.js
 ```
 
-### Quick Update (Without Re-fetching)
-
-If you only need to update the report with existing data:
+### Quick Update (Weekly)
 
 ```bash
-cd C:\work\Public-APIs\tools
+cd C:/work/Public-APIs/tools
 
-# Re-consolidate and regenerate reports
+# Re-consolidate and regenerate using existing data
 node consolidate-fallback-results.js
 node generate-final-report-with-tags-first.js
+node generate-consolidated-public-swagger.js
+node generate-consolidated-swagger-by-version.js
 ```
 
-## Common Issues and Solutions
+## Key Features
+
+### 1. OAuth Scope Management
+- **Extraction**: Automatically extracts scopes from Public Swagger v2 (390 operations)
+- **Controller-level**: Fetches `[Scope]` attributes from GitHub controllers
+- **PascalCase Conversion**: Converts `ClientFinancialData` → `client_financial_data`
+- **Tag-based Propagation**: Infers scopes for 271 additional operations (42.4% total coverage)
+- **Unique Scopes**: Tracks 22 unique OAuth scopes
+
+### 2. Multi-Source Consolidation
+Merges data from 6 sources:
+1. Public Swagger v2 (391 operations on developer portal)
+2. Service Swagger Docs (1,226 operations from 50 services)
+3. Documentation Ignore List (83 hidden public operations)
+4. API Gateway Whitelist (401 operations)
+5. GitHub [PublicApi] Search (46 operations)
+6. GitHub Controller Scopes (28 operation mappings)
+
+### 3. OpenAPI 3.0 Swagger Generation
+Generates three consolidated swagger files:
+- **Combined**: All 1,565 public endpoints
+- **V1**: 206 legacy endpoints (8 services)
+- **V2**: 1,359 current endpoints (42+ services)
+
+Each includes:
+- Complete OAuth 2.0 security scheme with all 22 scopes
+- 330 tags for organization
+- x-intelliflo-api extensions with metadata
+- YAML and JSON formats
+- Statistics files
+
+### 4. Comprehensive Reporting
+**FINAL-API-REPORT.md** includes:
+- Executive summary with statistics
+- Complete API list table (sorted by tags, includes scopes)
+- APIs organized by tag
+- Hidden APIs section
+- Services analyzed
+
+## Data Sources
+
+### Templates
+- `source/templates/Public Swagger/public-v2.json` - Developer portal swagger (391 operations)
+- `source/templates/public-v2-operations.json` - Extracted operations
+
+### Scopes
+- `source/scopes/public-v2-scopes.json` - OAuth scopes from swagger (390 operations)
+- `source/scopes/tag-to-scope-mapping.json` - Tag-based inference map (67 tags)
+
+### Swagger Batch
+- `source/swagger-batch/swagger-results-fallback-batch-*.json` - Fetched service swaggers (1,226 operations)
+
+### GitHub
+- `source/github/github-publicapi-search.json` - [PublicApi] attribute search (46 operations)
+- `source/github/github-controller-scopes.json` - Controller-level scopes
+- `source/github/operation-to-controller-map-complete.json` - Operation mappings (28)
+
+### Config
+- `source/config/service-repos.json` - Service repository list
+- `source/config/api_white_list.txt` - API Gateway whitelist (401 operations)
+- `source/config/documentation_ignore.txt` - Hidden public APIs (83)
+
+### Consolidated
+- `source/consolidated/all-public-apis-with-fallback.json` - Final dataset (1,565 APIs)
+
+## OAuth Scopes
+
+### All 22 Unique Scopes
+1. openid - OpenID Connect authentication
+2. myprofile - User profile access
+3. client_data - Client information
+4. client_financial_data - Client financial information
+5. firm_data - Firm/organization data
+6. documents - Document management
+7. fund_data - Investment fund data
+8. model_data - Portfolio model data
+9. plan_data - Financial plan data
+10. valuation_data - Asset valuation data
+11. analytics - Analytics and reporting
+12. business_events - Business event notifications
+13. communications - Communication management
+14. contacts - Contact management
+15. factfind - Fact-finding data
+16. goals - Client goals
+17. illustrations - Product illustrations
+18. lifecycle - Client lifecycle management
+19. opportunities - Sales opportunities
+20. pipeline - Sales pipeline
+21. recommendations - Product recommendations
+22. workflows - Workflow automation
+
+### Scope Coverage
+- **Total APIs**: 1,565
+- **With Scopes**: 664 (42.4%)
+  - From Public Swagger v2: 390 (24.9%)
+  - From Controller attributes: 3 (0.2%)
+  - From Tag propagation: 271 (17.3%)
+- **Without Scopes**: 901 (57.6%)
+
+### Scope Naming Conversion
+- PascalCase → snake_case: `ClientFinancialData` → `client_financial_data`
+- Nested scopes: `ClientFinancialData.Plans` → `client_financial_data.plans`
+- Namespace stripping: `Scopes.ClientData` → `client_data`
+
+## Generated Outputs
+
+### Reports (output/reports/)
+- **FINAL-API-REPORT.md** - Complete analysis sorted by tags
+  - Executive summary
+  - Complete API table (1,565 operations)
+  - APIs by tag (330 tags)
+  - Hidden APIs section
+  - Services analyzed
+
+### Swagger Files (output/swaggers/)
+- **consolidated-public-swagger.json** - All endpoints (1,565 operations)
+- **consolidated-public-swagger.yaml** - YAML version
+- **consolidated-swagger-stats.json** - Statistics
+
+- **consolidated-public-swagger-v1.json** - V1 endpoints (206 operations)
+- **consolidated-public-swagger-v1.yaml** - V1 YAML
+- **consolidated-swagger-v1-stats.json** - V1 statistics
+
+- **consolidated-public-swagger-v2.json** - V2 endpoints (1,359 operations)
+- **consolidated-public-swagger-v2.yaml** - V2 YAML
+- **consolidated-swagger-v2-stats.json** - V2 statistics
+
+## Key Scripts
+
+### Data Collection
+- `fetch-swagger-with-fallback.js` - Fetches service swagger (v2 with v1 fallback)
+- `extract-public-swagger-scopes.js` - Extracts OAuth scopes from public swagger
+- `extract-github-controller-scopes.js` - Fetches controller-level scopes
+- `extract-all-controller-scopes-and-operations.js` - Maps operations to controller scopes
+
+### Processing
+- `consolidate-fallback-results.js` - Main consolidation script with tag-based scope propagation
+- `propagate-scopes-by-tag.js` - Standalone tag-based scope propagation tool
+
+### Generation
+- `generate-final-report-with-tags-first.js` - Generates markdown report sorted by tags
+- `generate-consolidated-public-swagger.js` - Generates combined OpenAPI 3.0 swagger
+- `generate-consolidated-swagger-by-version.js` - Generates v1 and v2 swaggers separately
+- `find-unmatched-whitelist.js` - Validates whitelist operations
+
+## Statistics Dashboard
+
+### Overall Coverage
+- Total Public APIs: **1,565**
+- On Developer Portal: **391** (25.0%)
+- Hidden Public APIs: **1,174** (75.0%)
+- With OAuth Scopes: **664** (42.4%)
+- In Gateway Whitelist: **395** (25.2%)
+
+### Version Distribution
+- V1 Endpoints: **206** (13.2%)
+- V2 Endpoints: **1,359** (86.8%)
+
+### Data Quality
+- Unique Paths: **920**
+- Unique Tags: **330**
+- Unique Scopes: **22**
+- Services Analyzed: **50+**
+- Whitelist Match Rate: **98.5%**
+
+## Prerequisites
+
+- Node.js installed
+- GitHub CLI (`gh`) authenticated
+- Network access to Intelliflo service swagger endpoints
+- Access to Intelliflo GitHub repositories
+
+## Use Cases
+
+### 1. API Consumer Integration
+- Generate client SDKs using consolidated swagger
+- Import into API testing tools (Postman, Insomnia)
+- Generate API documentation portals
+- Understand OAuth scope requirements
+
+### 2. API Governance
+- Track API surface area (1,565 endpoints)
+- Monitor OAuth scope coverage (42.4%)
+- Identify undocumented public APIs (1,174)
+- Validate API Gateway whitelist (98.5% match)
+
+### 3. Security Auditing
+- Review OAuth scope assignments
+- Identify operations without scope protection
+- Track scope proliferation (22 scopes)
+- Validate scope naming conventions
+
+### 4. Developer Portal Management
+- Find APIs that should be documented
+- Update developer portal content
+- Generate API catalogs
+
+### 5. API Versioning Strategy
+- Compare v1 vs v2 coverage (206 vs 1,359)
+- Plan v1 deprecation
+- Track migration progress
+
+## Troubleshooting
 
 ### Issue: GitHub API Rate Limiting
-**Solution:** Use `gh` CLI which uses authenticated requests with higher rate limits
+**Solution:** Use `gh` CLI (5,000 requests/hour vs 60 for unauthenticated)
 
-### Issue: Service Swagger Endpoint 404
-**Solution:** The fallback mechanism automatically tries v1 if v2 fails. Some services only have v1.
+### Issue: Service Swagger 404
+**Solution:** Automatic v1 fallback implemented in fetch script
 
-### Issue: Case Sensitivity in Whitelist Matching
-**Solution:** Use the case-insensitive matching function `isInWhitelist()` throughout
+### Issue: Low Scope Coverage
+**Solution:** Tag-based propagation increases coverage from 25% to 42%+
 
-### Issue: Unmatched Whitelist Operations
-**Solution:** These are expected (4-6 operations). Document in WHITELIST-ANALYSIS.md. Common reasons:
-- Not yet implemented
-- Deprecated but still in whitelist
-- In a service that wasn't successfully fetched
+### Issue: Unmatched Whitelist
+**Solution:** Expected (4-6 operations) - typically deprecated/renamed APIs
 
-### Issue: Duplicate Operation IDs
-**Solution:** The consolidation script uses Map-based deduplication. First source wins, but additional sources are appended to the `source` field.
+## Maintenance Schedule
 
-## Interpreting the Results
+**Weekly (Quick Update):**
+- Re-consolidate existing data
+- Regenerate reports and swaggers
+- Takes ~2-3 minutes
 
-### API Categories
+**Monthly (Full Regeneration):**
+- Re-fetch all service swagger docs
+- Re-extract controller scopes from GitHub
+- Full consolidation and regeneration
+- Takes ~15-20 minutes
 
-1. **On Developer Portal (`onDeveloperPortal: true`)**
-   - Publicly documented
-   - Should be in public-v2.json
-   - Customer-facing
+**On-Demand:**
+- After major service deployments
+- After API changes or new public endpoints
+- When OAuth scopes are modified
 
-2. **Hidden Public APIs (`onDeveloperPortal: false`)**
-   - Public but not documented
-   - May be in documentation_ignore.txt
-   - Often internal or legacy
+## Related Files
 
-3. **Whitelisted (`isInWhitelist: true`)**
-   - Allowed through API Gateway
-   - Should be in api_white_list.txt
-   - Security-approved
-
-### Data Quality Indicators
-
-**Good Coverage:**
-- High whitelist match rate (>95%)
-- All documentation_ignore operations matched
-- Service information for most APIs
-- Tags present for categorization
-
-**Gaps to Investigate:**
-- Unmatched whitelist operations
-- Operations without service attribution
-- Operations missing tags
-- Large discrepancy between portal and total count
-
-## Maintenance
-
-### When to Regenerate
-
-- **Weekly**: Quick update to catch new services
-- **Monthly**: Full regeneration including re-fetching all swagger docs
-- **On-demand**: After major service deployments or API changes
-
-### Keeping Scripts Updated
-
-Monitor for:
-- Changes to service URL patterns
-- New GitHub repositories
-- Updates to whitelist location
-- Changes to swagger schema formats
-
-## Customization
-
-### Adding New Data Sources
-
-Edit `consolidate-fallback-results.js`:
-
-```javascript
-// Add new source
-const newSourceOps = require('../source/new-source.json');
-
-// Process and add to apiMap
-newSourceOps.forEach(op => {
-  if (!apiMap.has(op.operationId)) {
-    apiMap.set(op.operationId, {
-      // ... map fields
-      source: 'New Source Name'
-    });
-  }
-});
-```
-
-### Customizing Report Format
-
-Edit `generate-final-report-with-tags-first.js`:
-- Modify markdown templates
-- Add/remove table columns
-- Change sorting/grouping
-- Add new analysis sections
-
-## Integration Points
-
-This skill integrates with:
-- **GitHub API** (via `gh` CLI)
-- **Intelliflo Service Swagger Endpoints**
-- **Developer Portal** (public-v2.json)
-- **API Gateway Configuration** (api_white_list.txt)
-- **Documentation Systems** (documentation_ignore.txt)
-
-## Security Considerations
-
-- Uses authenticated GitHub access (requires proper permissions)
-- Accesses internal service endpoints (requires VPN/network access)
-- Generated reports contain API inventory (handle as internal documentation)
-- Whitelist data is security-sensitive (don't expose publicly)
-
-## Performance
-
-- **Full run time**: 15-30 minutes (depending on network and parallelization)
-- **Quick update**: 1-2 minutes (consolidation only)
-- **Parallel batches**: Can process 50+ services in 5-10 minutes
-- **Report generation**: Under 10 seconds
-
-## Version History
-
-**Current Version Features:**
-- Case-insensitive whitelist matching
-- V1/V2 swagger fallback
-- Parallel batch processing
-- Multi-source consolidation
-- Comprehensive markdown reports
-- Unmatched operation analysis
-- Organized folder structure (tools/, source/, output/)
+- **Project README**: `C:/work/Public-APIs/README.md`
+- **Path Mappings**: `C:/work/Public-APIs/source/PATH_MAPPINGS.md`
+- **Swagger Skill**: `.claude/skills/api-swagger-generator/skill.md`
