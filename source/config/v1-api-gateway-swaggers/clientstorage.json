@@ -1,0 +1,1735 @@
+{
+	"swagger" : "2.0",
+	"info" : {
+		"version" : "v1",
+		"title" : "ClientStorage v1.0"
+	},
+	"host" : "localhost:10119",
+	"schemes" : ["https"],
+	"paths" : {
+		"/v1/documents/{documentId}" : {
+			"get" : {
+				"tags" : ["documents"],
+				"summary" : "Returns document data from private storage",
+				"operationId" : "GetDocument",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to view document."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/{documentId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["documents"],
+				"summary" : "Updates document metadata",
+				"operationId" : "UpdateDocument",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "metadata",
+						"in" : "body",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/DocumentRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to update document."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/{documentId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"delete" : {
+				"tags" : ["documents"],
+				"summary" : "Deletes document",
+				"operationId" : "DeleteDocument",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to delete document."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "delete"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "DELETE",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/{documentId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["documents"],
+				"summary" : "Returns document data from private storage",
+				"operationId" : "ExistsDocument",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to view document."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/{documentId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/documents/{documentId}/content" : {
+			"get" : {
+				"tags" : ["documents"],
+				"summary" : "Returns document content from private storage",
+				"operationId" : "GetDocumentContent",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to view document."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "contents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/{documentId}/content",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["documents"],
+				"summary" : "Updates document contents.",
+				"operationId" : "UpdateDocumentContent",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to update document contents."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "contents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/{documentId}/content",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/documents/statistics" : {
+			"get" : {
+				"tags" : ["documents"],
+				"summary" : "Provides total amount of storage currently used and the total amount available.",
+				"operationId" : "GetDocumentStatistics",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/DocumentStatistics"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "statistics",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/statistics",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/documents" : {
+			"get" : {
+				"tags" : ["documents"],
+				"summary" : "Return user documents from private storage. This will include documents \r\n            shared with this user.",
+				"operationId" : "ListDocuments",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (FileName) Allowed Operators: (eq) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$orderby",
+						"in" : "query",
+						"description" : "Allowed Fields: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$skip",
+						"in" : "query",
+						"description" : "Use when paging to skip a number of preceding records",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "$top",
+						"in" : "query",
+						"description" : "Use when paging to set the page size to return, max=500",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "shareStatus",
+						"in" : "query",
+						"required" : false,
+						"type" : "string",
+						"enum" : ["Private", "Public", "AdviserShared"]
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocumentsCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.querystring.shareStatus" : "method.request.querystring.shareStatus",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.querystring.$orderby" : "method.request.querystring.$orderby",
+						"integration.request.querystring.$skip" : "method.request.querystring.$skip",
+						"integration.request.querystring.$top" : "method.request.querystring.$top",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			},
+			"post" : {
+				"tags" : ["documents"],
+				"operationId" : "CreateDocument",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/documents/{documentId}/share" : {
+			"post" : {
+				"tags" : ["documents"],
+				"summary" : "Shares a document to public. Any user who has a access to client record will be able to view this document",
+				"operationId" : "ShareDocument",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/ShareDocumentRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to update document contents."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "shares",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/{documentId}/share",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/documents/{documentId}/unshare" : {
+			"post" : {
+				"tags" : ["documents"],
+				"summary" : "Unshares document. Document will be available only to owner",
+				"operationId" : "UnshareDocument",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/ShareDocumentRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to update document contents."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "unshares",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/documents/{documentId}/unshare",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/documents" : {
+			"get" : {
+				"tags" : ["documents"],
+				"summary" : "Return user documents from private storage. This will include documents \r\n            shared with this user.",
+				"operationId" : "ListClientDocuments",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (FileName) Allowed Operators: (eq) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$orderby",
+						"in" : "query",
+						"description" : "Allowed Fields: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$skip",
+						"in" : "query",
+						"description" : "Use when paging to skip a number of preceding records",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "$top",
+						"in" : "query",
+						"description" : "Use when paging to set the page size to return, max=500",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocumentsCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/clients/{clientId}/documents",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.querystring.$orderby" : "method.request.querystring.$orderby",
+						"integration.request.querystring.$skip" : "method.request.querystring.$skip",
+						"integration.request.querystring.$top" : "method.request.querystring.$top",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/documents/{documentId}" : {
+			"get" : {
+				"tags" : ["documents"],
+				"summary" : "Returns document data from private storage",
+				"operationId" : "GetClientDocument",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to view document."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/clients/{clientId}/documents/{documentId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["documents"],
+				"summary" : "Returns document data from private storage",
+				"operationId" : "ExistsClientDocument",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to view document."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "documents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/clients/{clientId}/documents/{documentId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/documents/{documentId}/content" : {
+			"get" : {
+				"tags" : ["documents"],
+				"summary" : "Returns document content from private storage",
+				"operationId" : "GetClientDocumentContent",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "documentId",
+						"in" : "path",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientDocument"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Authentication is required",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "User does not have rights to view document."
+					},
+					"404" : {
+						"description" : "Document is not found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "contents",
+					"scopes" : ["clientstorage"],
+					"service" : "ClientStorage",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-clientstorage.intelliflo.com/v1/clients/{clientId}/documents/{documentId}/content",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.documentId" : "method.request.path.documentId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions" : {
+		"ClientDocument" : {
+			"type" : "object",
+			"properties" : {
+				"documentId" : {
+					"type" : "string"
+				},
+				"title" : {
+					"type" : "string"
+				},
+				"fileName" : {
+					"type" : "string"
+				},
+				"contentType" : {
+					"type" : "string"
+				},
+				"contentLength" : {
+					"format" : "int64",
+					"type" : "integer"
+				},
+				"dateCreated" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"shareStatus" : {
+					"enum" : ["Private", "Public", "AdviserShared"],
+					"type" : "string"
+				}
+			}
+		},
+		"DocumentRequest" : {
+			"type" : "object",
+			"properties" : {
+				"title" : {
+					"type" : "string"
+				},
+				"fileName" : {
+					"type" : "string"
+				},
+				"documentType" : {
+					"type" : "string"
+				}
+			}
+		},
+		"ClientDocumentsCollection" : {
+			"type" : "object",
+			"properties" : {
+				"count" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"items" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/ClientDocument"
+					},
+					"readOnly" : true
+				}
+			}
+		},
+		"DocumentStatistics" : {
+			"type" : "object",
+			"properties" : {
+				"allowance" : {
+					"format" : "int64",
+					"description" : "Max storage allowance in bytes",
+					"type" : "integer"
+				},
+				"used" : {
+					"format" : "int64",
+					"description" : "Current storage usage in bytes",
+					"type" : "integer"
+				}
+			}
+		},
+		"ShareDocumentRequest" : {
+			"type" : "object",
+			"properties" : {
+				"userIds" : {
+					"type" : "array",
+					"items" : {
+						"type" : "string"
+					}
+				}
+			}
+		}
+	},
+	"securityDefinitions" : {
+		"oauth2-authorization-code" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Authorization Code Grant",
+			"flow" : "accessCode",
+			"authorizationUrl" : "https://localhost:44333/core/connect/authorize",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"clientstorage" : "clientstorage"
+			}
+		},
+		"oauth2-implicit" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Implicit Grant",
+			"flow" : "implicit",
+			"authorizationUrl" : "https://localhost:44333/core/connect/authorize",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"clientstorage" : "clientstorage"
+			}
+		},
+		"oauth2-password" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Resource Owner Password Credentials Grant",
+			"flow" : "password",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"clientstorage" : "clientstorage"
+			}
+		},
+		"oauth2-client-credentials" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Client Credentials Grant",
+			"flow" : "application",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"clientstorage" : "clientstorage"
+			}
+		},
+		"apiKey" : {
+			"type" : "apiKey",
+			"description" : "Obtain API key via API management gateway",
+			"name" : "x-api-key",
+			"in" : "header"
+		}
+	},
+	"security" : [{
+			"oauth2-authorization-code" : ["openid", "myprofile", "clientstorage"],
+			"oauth2-client-credentials" : ["openid", "myprofile", "clientstorage"],
+			"oauth2-implicit" : ["openid", "myprofile", "clientstorage"],
+			"oauth2-password" : ["openid", "myprofile", "clientstorage"],
+			"apiKey" : []
+		}
+	]
+}

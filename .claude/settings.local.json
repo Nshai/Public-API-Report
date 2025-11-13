@@ -7,7 +7,20 @@
       "Bash(fi:*)",
       "Bash(npm init:*)",
       "Bash(npm install:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(while pgrep -f \"fetch-swagger-dual-version.js\")",
+      "Bash(do sleep 2)",
+      "Bash(done)",
+      "Skill(api-report-run)",
+      "Bash(node:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(for:*)",
+      "Bash(do echo \"Fetching $file...\")",
+      "Bash(certutil:*)",
+      "Bash(nul)",
+      "Bash(v1_$file)",
+      "Bash(del:*)",
+      "Bash(copy:*)"
     ],
     "deny": [],
     "ask": []

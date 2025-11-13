@@ -1,0 +1,141 @@
+const fs = require('fs');
+
+console.log('=== CONSOLIDATING AND FILTERING PUBLIC APIs ===\n');
+
+// Load template swagger for reference
+const templateSwagger = JSON.parse(fs.readFileSync('../source/templates/Public Swagger/public-v2.json', 'utf8'));
+console.log(`Loaded template swagger: ${Object.keys(templateSwagger.paths || {}).length} paths\n`);
+
+// Extract operation IDs from template swagger (for "On Portal" tracking)
+const portalOperationIds = new Set();
+const paths = templateSwagger.paths || {};
+Object.keys(paths).forEach(path => {
+  Object.keys(paths[path]).forEach(method => {
+    const operation = paths[path][method];
+    if (operation.operationId) {
+      portalOperationIds.add(operation.operationId);
+    }
+  });
+});
+console.log(`Portal operation IDs: ${portalOperationIds.size}\n`);
+
+// Load GitHub [PublicApi] operations
+let githubPublicApiOps = [];
+if (fs.existsSync('../source/github/github-publicapi-operations.json')) {
+  githubPublicApiOps = JSON.parse(fs.readFileSync('../source/github/github-publicapi-operations.json', 'utf8'));
+  console.log(`GitHub [PublicApi] operations: ${githubPublicApiOps.length}`);
+} else {
+  console.log(`GitHub [PublicApi] operations: 0 (file not found)`);
+}
+
+// Load API Gateway whitelist
+const whitelistOps = fs.readFileSync('../source/config/api_white_list.txt', 'utf8')
+  .split('\n')
+  .map(line => line.trim())
+  .filter(op => op && op.length > 0);
+console.log(`API Gateway whitelist operations: ${whitelistOps.length}\n`);
+
+// Create combined allowed operations set
+const allowedOperations = new Set([...githubPublicApiOps, ...whitelistOps]);
+console.log(`Total allowed operation IDs: ${allowedOperations.size}\n`);
+
+// Load all swagger batch files
+const batchFiles = [];
+for (let i = 0; i <= 100; i++) {
+  const dualFilename = `../source/swagger-batch/swagger-results-dual-version-batch-${i}.json`;
+  if (fs.existsSync(dualFilename)) {
+    const data = JSON.parse(fs.readFileSync(dualFilename, 'utf8'));
+    batchFiles.push({ batch: i, type: 'dual-version', data });
+    continue;
+  }
+
+  const fallbackFilename = `../source/swagger-batch/swagger-results-fallback-batch-${i}.json`;
+  if (fs.existsSync(fallbackFilename)) {
+    const data = JSON.parse(fs.readFileSync(fallbackFilename, 'utf8'));
+    batchFiles.push({ batch: i, type: 'fallback', data });
+  }
+}
+
+console.log(`Loaded ${batchFiles.length} batch files\n`);
+
+// Consolidate all swagger operations
+const allSwaggerOps = new Map();
+let totalServicesProcessed = 0;
+let totalSuccessful = 0;
+let totalOpsFound = 0;
+
+batchFiles.forEach(batchFile => {
+  batchFile.data.forEach(result => {
+    totalServicesProcessed++;
+    if (!result.error && result.operations && result.operations.length > 0) {
+      totalSuccessful++;
+      totalOpsFound += result.operations.length;
+
+      result.operations.forEach(op => {
+        if (!allSwaggerOps.has(op.operationId)) {
+          allSwaggerOps.set(op.operationId, {
+            operationId: op.operationId,
+            method: op.method,
+            path: op.path,
+            description: op.description,
+            tags: op.tags || [],
+            scopes: op.scopes,
+            service: result.service,
+            swaggerVersion: result.version || 'unknown',
+            source: `Service Swagger (${result.service})`
+          });
+        }
+      });
+    }
+  });
+});
+
+console.log(`Services processed: ${totalServicesProcessed}`);
+console.log(`Successful: ${totalSuccessful}`);
+console.log(`Total swagger operations found: ${totalOpsFound}`);
+console.log(`Unique operations: ${allSwaggerOps.size}\n`);
+
+// Filter operations: only include if in allowedOperations
+const filteredOps = [];
+const includedOps = new Set();
+const excludedOps = new Set();
+
+allSwaggerOps.forEach((op, opId) => {
+  if (allowedOperations.has(opId)) {
+    filteredOps.push({
+      ...op,
+      onPortal: portalOperationIds.has(opId)
+    });
+    includedOps.add(opId);
+  } else {
+    excludedOps.add(opId);
+  }
+});
+
+console.log('=== FILTERING RESULTS ===\n');
+console.log(`Operations before filtering: ${allSwaggerOps.size}`);
+console.log(`Operations after filtering: ${filteredOps.length}`);
+console.log(`Excluded operations: ${excludedOps.size}\n`);
+
+console.log(`Breakdown:`);
+console.log(`  - From [PublicApi] GitHub: ${githubPublicApiOps.filter(op => includedOps.has(op)).length}`);
+console.log(`  - From API Gateway whitelist: ${whitelistOps.filter(op => includedOps.has(op)).length}`);
+console.log(`  - On Developer Portal: ${filteredOps.filter(op => op.onPortal).length}\n`);
+
+// Sort by operation ID
+filteredOps.sort((a, b) => a.operationId.localeCompare(b.operationId));
+
+// Ensure consolidated directory exists
+if (!fs.existsSync('../source/consolidated')) {
+  fs.mkdirSync('../source/consolidated', { recursive: true });
+}
+
+// Save filtered operations
+fs.writeFileSync(
+  '../source/consolidated/filtered-public-apis.json',
+  JSON.stringify(filteredOps, null, 2)
+);
+
+console.log('=== CONSOLIDATION COMPLETE ===\n');
+console.log(`File saved: source/consolidated/filtered-public-apis.json`);
+console.log(`Total filtered public APIs: ${filteredOps.length}`);

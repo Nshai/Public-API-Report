@@ -1,0 +1,3617 @@
+{
+	"swagger" : "2.0",
+	"info" : {
+		"version" : "v1",
+		"title" : "Account v1.0"
+	},
+	"host" : "localhost:10102",
+	"schemes" : ["https"],
+	"paths" : {
+		"/v1/clients/{partyId}/accounts/{accountId}/transactions/summarybycategory" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Gets the aggregated total transactions amount per category for the specific account.",
+				"operationId" : "ListClientAccountTransactionsSummarybycategory",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (TransactionDate, Category, SubCategory, AccountType) Allowed Operators: (and, or, eq, ge, le) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/AccountTransactionCategorySummaryDocument"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "summarybycategories",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/transactions/summarybycategory",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/transactioncategories" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Get all transaction categories",
+				"operationId" : "ListTransactioncategories",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/Transactioncategory"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "transactioncategories",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/transactioncategories",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/transactioncategories/{categoryId}" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Get transaction category by Id",
+				"operationId" : "GetTransactioncategory",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "categoryId",
+						"in" : "path",
+						"description" : "Category Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/Transactioncategory"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "transactioncategories",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/transactioncategories/{categoryId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.categoryId" : "method.request.path.categoryId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["transactions"],
+				"summary" : "Get transaction category by Id",
+				"operationId" : "ExistsTransactioncategory",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "categoryId",
+						"in" : "path",
+						"description" : "Category Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/Transactioncategory"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "transactioncategories",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/transactioncategories/{categoryId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.categoryId" : "method.request.path.categoryId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/transactioncategories/{categoryId}/subCategories" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Get all sub categories for a category",
+				"operationId" : "ListTransactioncategorySubCategories",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "categoryId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/TransactioncategorySubCategory"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "subcategories",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/transactioncategories/{categoryId}/subCategories",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.categoryId" : "method.request.path.categoryId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/transactioncategories/{categoryId}/subCategories/{subCategoryId}" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Get transaction sub category by Id and category id",
+				"operationId" : "GetTransactioncategorySubCategory",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "categoryId",
+						"in" : "path",
+						"description" : "Category Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "subCategoryId",
+						"in" : "path",
+						"description" : "Sub Category Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/TransactioncategorySubCategory"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "subcategories",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/transactioncategories/{categoryId}/subCategories/{subCategoryId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.categoryId" : "method.request.path.categoryId",
+						"integration.request.path.subCategoryId" : "method.request.path.subCategoryId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["transactions"],
+				"summary" : "Get transaction sub category by Id and category id",
+				"operationId" : "ExistsTransactioncategorySubCategory",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "categoryId",
+						"in" : "path",
+						"description" : "Category Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "subCategoryId",
+						"in" : "path",
+						"description" : "Sub Category Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/TransactioncategorySubCategory"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "subcategories",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/transactioncategories/{categoryId}/subCategories/{subCategoryId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.categoryId" : "method.request.path.categoryId",
+						"integration.request.path.subCategoryId" : "method.request.path.subCategoryId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/{accountId}/transactions/{transactionId}" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Get a Transaction by Id.",
+				"operationId" : "GetClientAccountTransaction",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "transactionId",
+						"in" : "path",
+						"description" : "Transaction Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountTransaction"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "transactions",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/transactions/{transactionId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.path.transactionId" : "method.request.path.transactionId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["transactions"],
+				"summary" : "Update a Transaction Category or SubCategory",
+				"operationId" : "UpdateClientAccountTransaction",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "Account Transaction Request",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/AccountTransactionRequest"
+						}
+					}, {
+						"name" : "transactionId",
+						"in" : "path",
+						"description" : "Transaction Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountTransaction"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "transactions",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/transactions/{transactionId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.path.transactionId" : "method.request.path.transactionId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["transactions"],
+				"summary" : "Get a Transaction by Id.",
+				"operationId" : "ExistsClientAccountTransaction",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "transactionId",
+						"in" : "path",
+						"description" : "Transaction Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountTransaction"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "transactions",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/transactions/{transactionId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.path.transactionId" : "method.request.path.transactionId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/{accountId}/transactions" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Get Transactions for a specific client account specified by the AccountId parameter.",
+				"operationId" : "ListClientAccountTransactions",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (TransactionDate, Category, SubCategory, Account/AccountType, Account/PortfolioCategory) Allowed Operators: (and, or, eq, gt, ge, lt, le) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$orderby",
+						"in" : "query",
+						"description" : "Allowed Fields: (TransactionDate, Category, SubCategory)",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$skip",
+						"in" : "query",
+						"description" : "Use when paging to skip a number of preceding records",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "$top",
+						"in" : "query",
+						"description" : "Use when paging to set the page size to return, max=1100",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountTransactionsCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "transactions",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/transactions",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.querystring.$orderby" : "method.request.querystring.$orderby",
+						"integration.request.querystring.$skip" : "method.request.querystring.$skip",
+						"integration.request.querystring.$top" : "method.request.querystring.$top",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/{accountId}/balances/{balanceId}" : {
+			"get" : {
+				"tags" : ["balances"],
+				"summary" : "Get the specified Balance History",
+				"operationId" : "GetClientAccountBalance",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "balanceId",
+						"in" : "path",
+						"description" : "Balance Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The balance history was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountBalance"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Access Forbidden"
+					},
+					"404" : {
+						"description" : "The client, account, or balance history cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "balances",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/balances/{balanceId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.path.balanceId" : "method.request.path.balanceId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["balances"],
+				"summary" : "Get the specified Balance History",
+				"operationId" : "ExistsClientAccountBalance",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "balanceId",
+						"in" : "path",
+						"description" : "Balance Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The balance history was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountBalance"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Access Forbidden"
+					},
+					"404" : {
+						"description" : "The client, account, or balance history cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "balances",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/balances/{balanceId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.path.balanceId" : "method.request.path.balanceId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/{accountId}/balances" : {
+			"get" : {
+				"tags" : ["balances"],
+				"summary" : "Get Balance History for Account",
+				"operationId" : "ListClientAccountBalances",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (BalanceDate) Allowed Operators: (and, or, eq, ne, gt, ge, lt, le, not) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$skip",
+						"in" : "query",
+						"description" : "Use when paging to skip a number of preceding records",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "$top",
+						"in" : "query",
+						"description" : "Use when paging to set the page size to return, max=1100",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "One or more account balance history were found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountBalancesCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "The filter parameters are not supported"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "balances",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/balances",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.querystring.$skip" : "method.request.querystring.$skip",
+						"integration.request.querystring.$top" : "method.request.querystring.$top",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/{accountId}" : {
+			"get" : {
+				"tags" : ["accounts"],
+				"summary" : "Get specified account.",
+				"operationId" : "GetClientAccount",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The account was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccount"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Access Forbidden"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "accounts",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["accounts"],
+				"summary" : "Get specified account.",
+				"operationId" : "ExistsClientAccount",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The account was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccount"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Access Forbidden"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "accounts",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts" : {
+			"get" : {
+				"tags" : ["accounts"],
+				"summary" : "Get accounts for a specific client and/or category.",
+				"operationId" : "ListClientAccounts",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (PortfolioCategory) Allowed Operators: (or, eq, ne) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "One or more account balance history were found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountsCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "The filter parameters are not supported"
+					},
+					"404" : {
+						"description" : "The client cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "accounts",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/balances" : {
+			"get" : {
+				"tags" : ["balances"],
+				"summary" : "Get Balance History for Client",
+				"operationId" : "ListClientBalances",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (BalanceDate, Account/PortfolioCategory, Account/Id) Allowed Operators: (and, or, eq, ne, gt, ge, lt, le, not) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$orderby",
+						"in" : "query",
+						"description" : "Allowed Fields: (BalanceDate)",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$skip",
+						"in" : "query",
+						"description" : "Use when paging to skip a number of preceding records",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "$top",
+						"in" : "query",
+						"description" : "Use when paging to set the page size to return, max=1100",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "One or more account balance history were found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountBalancesCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "The filter parameters are not supported"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "balances",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/balances",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.querystring.$orderby" : "method.request.querystring.$orderby",
+						"integration.request.querystring.$skip" : "method.request.querystring.$skip",
+						"integration.request.querystring.$top" : "method.request.querystring.$top",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/balances/timeseries" : {
+			"get" : {
+				"tags" : ["balances"],
+				"summary" : "Get Balance History for Client as a time and value series",
+				"description" : "This API returns jsut times and values and so is suitable for using when fetching larger datasets or for rendering charts",
+				"operationId" : "ListClientBalancesTimeseries",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (BalanceDate, Account/PortfolioCategory, Account/Id) Allowed Operators: (and, or, eq, ne, gt, ge, lt, le, not) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$skip",
+						"in" : "query",
+						"description" : "Use when paging to skip a number of preceding records",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "$top",
+						"in" : "query",
+						"description" : "Use when paging to set the page size to return, max=1100",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "One or more account balance history were found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientBalancesTimeseriesCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "The filter parameters are not supported"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "timeseries",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/balances/timeseries",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.querystring.$skip" : "method.request.querystring.$skip",
+						"integration.request.querystring.$top" : "method.request.querystring.$top",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/transactions" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Get Transactions for all client accounts.",
+				"operationId" : "ListClientTransactions",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (TransactionDate, Category, SubCategory, Account/AccountType, Account/PortfolioCategory) Allowed Operators: (and, or, eq, gt, ge, lt, le) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$orderby",
+						"in" : "query",
+						"description" : "Allowed Fields: (TransactionDate, Category, SubCategory)",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$skip",
+						"in" : "query",
+						"description" : "Use when paging to skip a number of preceding records",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "$top",
+						"in" : "query",
+						"description" : "Use when paging to set the page size to return, max=1100",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccountTransactionsCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "transactions",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/transactions",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.querystring.$orderby" : "method.request.querystring.$orderby",
+						"integration.request.querystring.$skip" : "method.request.querystring.$skip",
+						"integration.request.querystring.$top" : "method.request.querystring.$top",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/transactions/summarybycategory" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Gets the aggregated total transactions amount per category for all clients accounts.",
+				"operationId" : "ListClientTransactionsSummarybycategory",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (TransactionDate, Category, SubCategory, AccountType) Allowed Operators: (and, or, eq, ge, le) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/AccountTransactionCategorySummaryDocument"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "summarybycategories",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/transactions/summarybycategory",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/transactions/timeseries" : {
+			"get" : {
+				"tags" : ["transactions"],
+				"summary" : "Get Transaction History for Client as a time and value series",
+				"description" : "This API returns dates and values and so is suitable for using when fetching larger datasets or for rendering charts. The date range should not exceed 90 days",
+				"operationId" : "ListClientTransactionsTimeseries",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "category",
+						"in" : "query",
+						"description" : "The transaction category (required)",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "fromDate",
+						"in" : "query",
+						"description" : "The start date of the range (required)",
+						"required" : true,
+						"type" : "string",
+						"format" : "date-time"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "toDate",
+						"in" : "query",
+						"description" : "The end date of the range (required)",
+						"required" : true,
+						"type" : "string",
+						"format" : "date-time"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "One or more account transaction history were found",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/CurrencyTimeSeriesDocument"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "timeseries",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/transactions/timeseries",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.querystring.category" : "method.request.querystring.category",
+						"integration.request.querystring.fromDate" : "method.request.querystring.fromDate",
+						"integration.request.querystring.toDate" : "method.request.querystring.toDate",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/{accountId}/hide" : {
+			"post" : {
+				"tags" : ["accounts"],
+				"summary" : "Get specified account.",
+				"operationId" : "CreateClientAccountHide",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The account was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccount"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Access Forbidden"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "hides",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/hide",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/{accountId}/show" : {
+			"post" : {
+				"tags" : ["accounts"],
+				"summary" : "Get specified account.",
+				"operationId" : "CreateClientAccountShow",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The account was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientAccount"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Access Forbidden"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "shows",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/show",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/{accountId}/transactions/{transactionId}/split" : {
+			"post" : {
+				"tags" : ["transactions"],
+				"summary" : "Splits a Transaction by Amount, Category or SubCategory",
+				"operationId" : "CreateClientAccountTransactionsSplit",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "path",
+						"description" : "Account Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "Account Transaction Split Request",
+						"required" : true,
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/AccountTransactionSplitRequest"
+							}
+						}
+					}, {
+						"name" : "transactionId",
+						"in" : "path",
+						"description" : "Transaction Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/ClientAccountTransaction"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "splits",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/{accountId}/transactions/{transactionId}/split",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.accountId" : "method.request.path.accountId",
+						"integration.request.path.transactionId" : "method.request.path.transactionId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/accounts/sync" : {
+			"post" : {
+				"tags" : ["accounts"],
+				"summary" : "Sync accounts with yodlee.",
+				"operationId" : "CreateClientAccountsSync",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"204" : {
+						"description" : "No Content"
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Access Forbidden"
+					},
+					"404" : {
+						"description" : "The client or account cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "syncs",
+					"scopes" : ["account"],
+					"service" : "Account",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-account.intelliflo.com/v1/clients/{clientId}/accounts/sync",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "204"
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions" : {
+		"ClientAccountsCollection" : {
+			"type" : "object",
+			"properties" : {
+				"count" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"items" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/ClientAccount"
+					},
+					"readOnly" : true
+				}
+			}
+		},
+		"ClientAccount" : {
+			"type" : "object",
+			"properties" : {
+				"accountId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"accountHolder" : {
+					"type" : "string"
+				},
+				"subject" : {
+					"type" : "string"
+				},
+				"portfolioCategory" : {
+					"type" : "string"
+				},
+				"accountType" : {
+					"type" : "string"
+				},
+				"accountNumber" : {
+					"type" : "string"
+				},
+				"accountName" : {
+					"type" : "string"
+				},
+				"accountClassification" : {
+					"type" : "string"
+				},
+				"siteId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"siteName" : {
+					"type" : "string"
+				},
+				"balance" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"isManuallyAdded" : {
+					"type" : "boolean"
+				},
+				"isVisible" : {
+					"type" : "boolean"
+				},
+				"linkedPlanId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"syncLinkedPlan" : {
+					"type" : "boolean"
+				},
+				"isSharedWithAdviser" : {
+					"type" : "boolean"
+				},
+				"accountNickname" : {
+					"type" : "string"
+				},
+				"accountOpenDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"amountDue" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"availableCash" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"availableCredit" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"brandName" : {
+					"type" : "string"
+				},
+				"cardType" : {
+					"type" : "string"
+				},
+				"description" : {
+					"type" : "string"
+				},
+				"dueDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"interestPaidThisPeriod" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"interestPaidYtd" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"createdByUserId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"lastPayment" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"lastPaymentDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"minPayment" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"paymentDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"runningBalance" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"secondaryAccountHolderName" : {
+					"type" : "string"
+				},
+				"totalCashLimit" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"totalCreditLine" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"asOfDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"availableBalance" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"interestEarnedYtd" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"interestRate" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"previousYearInterestEarned" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"totalInVestedAmount" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"planName" : {
+					"type" : "string"
+				},
+				"planNumber" : {
+					"type" : "string"
+				},
+				"accountStatus" : {
+					"type" : "string"
+				},
+				"totalUnVestedBalance" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"creditLimit" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"frequency" : {
+					"type" : "string"
+				},
+				"interestRateType" : {
+					"type" : "string"
+				},
+				"interestPaidLastYear" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"lender" : {
+					"type" : "string"
+				},
+				"loanNumber" : {
+					"type" : "string"
+				},
+				"maturityDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"originalLoanAmount" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"originationDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"payByDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"payOffAmount" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"paymentsRemaining" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"recurringPayment" : {
+					"format" : "double",
+					"type" : "number"
+				},
+				"typeLoan" : {
+					"type" : "string"
+				}
+			}
+		},
+		"CurrencyValue" : {
+			"type" : "object",
+			"properties" : {
+				"currencyCode" : {
+					"type" : "string"
+				},
+				"amount" : {
+					"format" : "double",
+					"type" : "number"
+				}
+			}
+		},
+		"ClientAccountBalancesCollection" : {
+			"type" : "object",
+			"properties" : {
+				"count" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"items" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/ClientAccountBalance"
+					},
+					"readOnly" : true
+				}
+			}
+		},
+		"ClientAccountBalance" : {
+			"type" : "object",
+			"properties" : {
+				"balanceHistoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"accountId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"amount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"balanceDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"clientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"createdByUserId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"createdOn" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"updatedByUserId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"updatedOn" : {
+					"format" : "date-time",
+					"type" : "string"
+				}
+			}
+		},
+		"ClientAccountTransactionsCollection" : {
+			"type" : "object",
+			"properties" : {
+				"count" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"items" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/ClientAccountTransaction"
+					},
+					"readOnly" : true
+				}
+			}
+		},
+		"ClientAccountTransaction" : {
+			"type" : "object",
+			"properties" : {
+				"accountTransactionId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"amount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"transactionDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"description" : {
+					"type" : "string"
+				},
+				"category" : {
+					"type" : "string"
+				},
+				"subCategory" : {
+					"type" : "string"
+				},
+				"splitDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"factFindCategory" : {
+					"type" : "string"
+				},
+				"transactionType" : {
+					"enum" : ["Income", "Expense", "Transfer"],
+					"type" : "string"
+				},
+				"isSplit" : {
+					"type" : "boolean"
+				},
+				"accountId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"clientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				}
+			}
+		},
+		"AccountTransactionRequest" : {
+			"required" : ["category", "subCategory"],
+			"type" : "object",
+			"properties" : {
+				"category" : {
+					"type" : "string"
+				},
+				"subCategory" : {
+					"type" : "string"
+				}
+			}
+		},
+		"AccountTransactionCategorySummaryDocument" : {
+			"type" : "object",
+			"properties" : {
+				"category" : {
+					"type" : "string"
+				},
+				"amount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"transactionCategoryType" : {
+					"type" : "string"
+				}
+			}
+		},
+		"ClientBalancesTimeseriesCollection" : {
+			"type" : "object",
+			"properties" : {
+				"count" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"items" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/CurrencyTimeSeriesDocument"
+					},
+					"readOnly" : true
+				}
+			}
+		},
+		"CurrencyTimeSeriesDocument" : {
+			"type" : "object",
+			"properties" : {
+				"date" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"value" : {
+					"format" : "double",
+					"type" : "number"
+				}
+			}
+		},
+		"Transactioncategory" : {
+			"type" : "object",
+			"properties" : {
+				"categoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"category" : {
+					"type" : "string"
+				},
+				"subCategories" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/SubCategory"
+					}
+				},
+				"transactionCategoryType" : {
+					"type" : "string"
+				}
+			}
+		},
+		"SubCategory" : {
+			"type" : "object",
+			"properties" : {
+				"subCategoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"subCategoryName" : {
+					"type" : "string"
+				}
+			}
+		},
+		"TransactioncategorySubCategory" : {
+			"type" : "object",
+			"properties" : {
+				"subCategoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"subCategory" : {
+					"type" : "string"
+				},
+				"primaryCategory" : {
+					"$ref" : "#/definitions/Category"
+				}
+			}
+		},
+		"Category" : {
+			"type" : "object",
+			"properties" : {
+				"categoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"categoryName" : {
+					"type" : "string"
+				}
+			}
+		},
+		"AccountTransactionSplitRequest" : {
+			"required" : ["amount", "category", "subCategory"],
+			"type" : "object",
+			"properties" : {
+				"amount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"category" : {
+					"type" : "string"
+				},
+				"subCategory" : {
+					"type" : "string"
+				}
+			}
+		}
+	},
+	"securityDefinitions" : {
+		"oauth2-authorization-code" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Authorization Code Grant",
+			"flow" : "accessCode",
+			"authorizationUrl" : "https://localhost:44333/core/connect/authorize",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"account" : "account"
+			}
+		},
+		"oauth2-implicit" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Implicit Grant",
+			"flow" : "implicit",
+			"authorizationUrl" : "https://localhost:44333/core/connect/authorize",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"account" : "account"
+			}
+		},
+		"oauth2-password" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Resource Owner Password Credentials Grant",
+			"flow" : "password",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"account" : "account"
+			}
+		},
+		"oauth2-client-credentials" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Client Credentials Grant",
+			"flow" : "application",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"account" : "account"
+			}
+		},
+		"apiKey" : {
+			"type" : "apiKey",
+			"description" : "Obtain API key via API management gateway",
+			"name" : "x-api-key",
+			"in" : "header"
+		}
+	},
+	"security" : [{
+			"oauth2-authorization-code" : ["openid", "myprofile", "account"],
+			"oauth2-client-credentials" : ["openid", "myprofile", "account"],
+			"oauth2-implicit" : ["openid", "myprofile", "account"],
+			"oauth2-password" : ["openid", "myprofile", "account"],
+			"apiKey" : []
+		}
+	]
+}

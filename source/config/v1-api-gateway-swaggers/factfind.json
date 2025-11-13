@@ -1,0 +1,5142 @@
+{
+	"swagger" : "2.0",
+	"info" : {
+		"version" : "v1",
+		"title" : "factfind v1.0"
+	},
+	"host" : "localhost:10086",
+	"schemes" : ["https"],
+	"paths" : {
+		"/v1/clients/{partyId}/goals/{goalId}/unlink" : {
+			"post" : {
+				"tags" : ["clients"],
+				"summary" : "Unlink a Goal from an Account or Plan",
+				"operationId" : "CreateClientGoalUnlink",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"204" : {
+						"description" : "The goal was unlinked",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "unlinks",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}/unlink",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "204"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/goals/{goalId}/markasincomplete" : {
+			"post" : {
+				"tags" : ["clients"],
+				"summary" : "Mark a Goal as Incomplete",
+				"operationId" : "MarkasincompleteClientGoal",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"204" : {
+						"description" : "The goal was marked as incomplete",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "markasincompletes",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}/markasincomplete",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "204"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/goals/{goalId}/markascompleted" : {
+			"post" : {
+				"tags" : ["clients"],
+				"summary" : "Mark a Goal as Completed",
+				"operationId" : "MarkascompletedClientGoal",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"204" : {
+						"description" : "The goal was marked as completed",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					},
+					"410" : {
+						"description" : "The goal was already marked as completed"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "markascompleteds",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}/markascompleted",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "204"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						},
+						"410" : {
+							"statusCode" : "410"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/goals/{goalId}/linktoplan" : {
+			"post" : {
+				"tags" : ["clients"],
+				"summary" : "Link a Goal to a Plan",
+				"operationId" : "CreateClientGoalLinktoplan",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "planId",
+						"in" : "body",
+						"description" : "Plan Id",
+						"required" : true,
+						"schema" : {
+							"format" : "int32",
+							"type" : "integer"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"204" : {
+						"description" : "The goal was linked to the plan",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "linktoplans",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}/linktoplan",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "204"
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/goals/{goalId}/linktoaccount" : {
+			"post" : {
+				"tags" : ["clients"],
+				"summary" : "Link a Goal to an Account",
+				"operationId" : "CreateClientGoalLinktoaccount",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "accountId",
+						"in" : "body",
+						"description" : "Account Id",
+						"required" : true,
+						"schema" : {
+							"format" : "int32",
+							"type" : "integer"
+						}
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"204" : {
+						"description" : "The goal was linked to the account",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "linktoaccounts",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}/linktoaccount",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "204"
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/liabilities" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets all Liabilities for the specified client id OR for the client of the current context.",
+				"operationId" : "ListClientLiabilities",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/ClientLiability"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "liabilities",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/liabilities",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			},
+			"post" : {
+				"tags" : ["clients"],
+				"summary" : "Creates a Liability for a specified client OR for the client of the current context.",
+				"operationId" : "CreateClientLiabilities",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "client id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "Liability request data",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/LiabilityRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientLiability"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "liabilities",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/liabilities",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/incomes" : {
+			"get" : {
+				"tags" : ["clients"],
+				"operationId" : "ListClientIncomes",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/ClientIncome"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "incomes",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/incomes",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["clients"],
+				"operationId" : "UpdateClientsIncomes",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"required" : true,
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/IncomeRequest"
+							}
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/ClientIncome"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "incomes",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/incomes",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			},
+			"post" : {
+				"tags" : ["clients"],
+				"operationId" : "CreateClientIncomes",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/IncomeRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientIncome"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "incomes",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/incomes",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/goals" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Get all Client Goals",
+				"operationId" : "ListClientGoals",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "$filter",
+						"in" : "query",
+						"description" : "Allowed Fields: (StartDate, TargetDate, MarkedAsCompletedDate, AccountId, PlanId, ProductArea, IsCreatedByClient) Allowed Operators: (and, or, eq, gt, ge, lt, le) Allowed Functions: ()",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$orderby",
+						"in" : "query",
+						"description" : "Allowed Fields: (StartDate, TargetDate, MarkedAsCompletedDate)",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "$skip",
+						"in" : "query",
+						"description" : "Use when paging to skip a number of preceding records",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "$top",
+						"in" : "query",
+						"description" : "Use when paging to set the page size to return, max=500",
+						"required" : false,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id - The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The goal was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoalsCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"304" : {
+						"description" : "The goal has not been modified"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "goals",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.querystring.$filter" : "method.request.querystring.$filter",
+						"integration.request.querystring.$orderby" : "method.request.querystring.$orderby",
+						"integration.request.querystring.$skip" : "method.request.querystring.$skip",
+						"integration.request.querystring.$top" : "method.request.querystring.$top",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"304" : {
+							"statusCode" : "304"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"post" : {
+				"tags" : ["clients"],
+				"summary" : "Create a Client Goal",
+				"operationId" : "CreateClientGoals",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id - The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/GoalRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"201" : {
+						"description" : "The goal was created successfully",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							},
+							"Location" : {
+								"description" : "Location of newly created resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The client cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "goals",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "201",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type",
+								"method.response.header.Location" : "integration.response.header.Location"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/expensecategories" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets all Expense Categories.",
+				"operationId" : "ListClientsExpensecategories",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/Expensecategory"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expensecategories",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/expensecategories",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/expensecategories/{expenseCategoryId}" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets an Expense Category if any, for the specified Expense Category Id.",
+				"operationId" : "GetExpensecategory",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "expenseCategoryId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/Expensecategory"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expensecategories",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/expensecategories/{expenseCategoryId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.expenseCategoryId" : "method.request.path.expenseCategoryId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["clients"],
+				"summary" : "Gets an Expense Category if any, for the specified Expense Category Id.",
+				"operationId" : "ExistsExpensecategory",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "expenseCategoryId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/Expensecategory"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expensecategories",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/expensecategories/{expenseCategoryId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.expenseCategoryId" : "method.request.path.expenseCategoryId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/expensegroups" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets all Expense Groups.",
+				"operationId" : "ListClientsExpensegroups",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/Expensegroup"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expensegroups",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/expensegroups",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/expensegroups/{ExpenseGroupId}" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets an Expense Group if any, for the specified Expense Group Id.",
+				"operationId" : "GetExpensegroup",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "ExpenseGroupId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/Expensegroup"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expensegroups",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/expensegroups/{ExpenseGroupId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.ExpenseGroupId" : "method.request.path.ExpenseGroupId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["clients"],
+				"summary" : "Gets an Expense Group if any, for the specified Expense Group Id.",
+				"operationId" : "ExistsExpensegroup",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "ExpenseGroupId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/Expensegroup"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expensegroups",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/expensegroups/{ExpenseGroupId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.ExpenseGroupId" : "method.request.path.ExpenseGroupId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/expenditure/expenses" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets all Expenses for the specified client id OR for the client of the current context's Expenditure.",
+				"operationId" : "ListClientExpendituresExpenses",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/ClientExpense"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenses",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure/expenses",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["clients"],
+				"summary" : "Updates a collection of Expenses for a client OR for the client of the current context's Expenditure.",
+				"operationId" : "UpdateClientsExpenditureExpenses",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "client id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "Expense data request collection",
+						"required" : true,
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/ExpenseRequest"
+							}
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/ClientExpense"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenses",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure/expenses",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			},
+			"post" : {
+				"tags" : ["clients"],
+				"summary" : "Creates an Expense for a specified client OR for the client of the current context AND Specified Expenditure ID.",
+				"operationId" : "CreateClientExpenditureExpenses",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "client id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "Expense request data",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/ExpenseRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientExpense"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenses",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure/expenses",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/liabilities/{liabilityId}" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets Liability if any, for the specified client id/for the client of the current context and liability Id.",
+				"operationId" : "GetClientLiability",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "liabilityId",
+						"in" : "path",
+						"description" : "Liability Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientLiability"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "liabilities",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/liabilities/{liabilityId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.liabilityId" : "method.request.path.liabilityId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["clients"],
+				"summary" : "Updates a Liability for a client OR for the client of the current context.",
+				"operationId" : "UpdateClientLiability",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "liabilityId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "client id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "Liability data request",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/LiabilityRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientLiability"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "liabilities",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/liabilities/{liabilityId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.liabilityId" : "method.request.path.liabilityId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"delete" : {
+				"tags" : ["clients"],
+				"summary" : "Deletes a Liability for a client OR for the client of the current context.",
+				"operationId" : "DeleteClientLiability",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "liabilityId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientLiability"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "liabilities",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "delete"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "DELETE",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/liabilities/{liabilityId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.liabilityId" : "method.request.path.liabilityId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["clients"],
+				"summary" : "Gets Liability if any, for the specified client id/for the client of the current context and liability Id.",
+				"operationId" : "ExistsClientLiability",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "liabilityId",
+						"in" : "path",
+						"description" : "Liability Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientLiability"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "liabilities",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/liabilities/{liabilityId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.liabilityId" : "method.request.path.liabilityId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/incomes/{incomeId}" : {
+			"get" : {
+				"tags" : ["clients"],
+				"operationId" : "GetClientIncome",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "incomeId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientIncome"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "incomes",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/incomes/{incomeId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.incomeId" : "method.request.path.incomeId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["clients"],
+				"operationId" : "UpdateClientIncome",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "incomeId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/IncomeRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientIncome"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "incomes",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/incomes/{incomeId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.incomeId" : "method.request.path.incomeId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"delete" : {
+				"tags" : ["clients"],
+				"operationId" : "DeleteClientIncome",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "incomeId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientIncome"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "incomes",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "delete"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "DELETE",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/incomes/{incomeId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.incomeId" : "method.request.path.incomeId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["clients"],
+				"operationId" : "ExistsClientIncome",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "incomeId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientIncome"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "incomes",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/incomes/{incomeId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.incomeId" : "method.request.path.incomeId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/goals/{goalId}" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Get the specified Client Goal",
+				"operationId" : "GetClientGoal",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id - The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The goal was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"304" : {
+						"description" : "The goal has not been modified"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "goals",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"304" : {
+							"statusCode" : "304"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["clients"],
+				"summary" : "Update a Goal",
+				"operationId" : "UpdateClientGoal",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/GoalRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The goal was updated successfully",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"400" : {
+						"description" : "The request is invalid"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					},
+					"412" : {
+						"description" : "The request did not have a matching ETag"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "goals",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"400" : {
+							"statusCode" : "400"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						},
+						"412" : {
+							"statusCode" : "412"
+						}
+					}
+				}
+			},
+			"delete" : {
+				"tags" : ["clients"],
+				"summary" : "Delete a Goal",
+				"operationId" : "DeleteClientGoal",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id. The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"204" : {
+						"description" : "The goal was deleted successfully",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					},
+					"412" : {
+						"description" : "The request did not have a matching ETag"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "goals",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "delete"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "DELETE",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "204"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						},
+						"412" : {
+							"statusCode" : "412"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["clients"],
+				"summary" : "Get the specified Client Goal",
+				"operationId" : "ExistsClientGoal",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "goalId",
+						"in" : "path",
+						"description" : "Goal Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id - The special value \"me\" can be used to indicate the authenticated user.",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The goal was found",
+						"schema" : {
+							"$ref" : "#/definitions/ClientGoal"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"304" : {
+						"description" : "The goal has not been modified"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The goal cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "goals",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/goals/{goalId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.goalId" : "method.request.path.goalId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"304" : {
+							"statusCode" : "304"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/expenditure/expenses/{expenseId}" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id.",
+				"operationId" : "GetClientExpense",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "expenseId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientExpense"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenses",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure/expenses/{expenseId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.expenseId" : "method.request.path.expenseId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["clients"],
+				"summary" : "Updates an Expense for a client OR for the client of the current context's Expenditure.",
+				"operationId" : "UpdateClientExpense",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "expenseId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "client id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "Expense data request",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/ExpenseRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientExpense"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenses",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure/expenses/{expenseId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.expenseId" : "method.request.path.expenseId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"delete" : {
+				"tags" : ["clients"],
+				"summary" : "Deletes an Expense for a client OR for the client of the current context's Expenditure.",
+				"operationId" : "DeleteClientExpense",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "expenseId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientExpense"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenses",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "delete"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "DELETE",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure/expenses/{expenseId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.expenseId" : "method.request.path.expenseId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["clients"],
+				"summary" : "Gets Expense if any, for the specified client id/for the client of the current context's Expenditure AND Expense Id.",
+				"operationId" : "ExistsClientExpense",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "expenseId",
+						"in" : "path",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientExpense"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenses",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure/expenses/{expenseId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.path.expenseId" : "method.request.path.expenseId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		},
+		"/v1/clients/{partyId}/expenditure" : {
+			"get" : {
+				"tags" : ["clients"],
+				"summary" : "Gets Expenditure if any, for the specified client id/for the client of the current context.",
+				"operationId" : "GetClientExpenditure",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientExpenditure"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenditures",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"put" : {
+				"tags" : ["clients"],
+				"summary" : "Updates an Expenditure for a client OR for the client of the current context, if none found then adds a new default expenditure for a client.",
+				"operationId" : "UpdateClientExpenditure",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "Expenditure data request",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/ExpenditureRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientExpenditure"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenditures",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "put"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PUT",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"delete" : {
+				"tags" : ["clients"],
+				"summary" : "Deletes an Expenditure for a client OR for the client of the current context..",
+				"operationId" : "DeleteClientExpenditure",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"204" : {
+						"description" : "No Content"
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenditures",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "delete"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "DELETE",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "204"
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"head" : {
+				"tags" : ["clients"],
+				"summary" : "Gets Expenditure if any, for the specified client id/for the client of the current context.",
+				"operationId" : "ExistsClientExpenditure",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "partyId",
+						"in" : "path",
+						"description" : "Client Id",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/ClientExpenditure"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "expenditures",
+					"scopes" : ["factfind"],
+					"service" : "factfind",
+					"verb" : "head"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "HEAD",
+					"type" : "http",
+					"uri" : "https://uat-factfind.intelliflo.com/v1/clients/{clientId}/expenditure",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.clientId" : "method.request.path.partyId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions" : {
+		"CurrencyValue" : {
+			"type" : "object",
+			"properties" : {
+				"currencyCode" : {
+					"type" : "string"
+				},
+				"amount" : {
+					"format" : "double",
+					"type" : "number"
+				}
+			}
+		},
+		"ClientExpenditure" : {
+			"type" : "object",
+			"properties" : {
+				"clientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"netMonthlyAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"expenses" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/ExpenditureDocumentExpense"
+					}
+				},
+				"isDetailed" : {
+					"type" : "boolean"
+				},
+				"includeLiabilities" : {
+					"type" : "boolean"
+				},
+				"isChangeExpected" : {
+					"type" : "boolean"
+				},
+				"isRiseExpected" : {
+					"type" : "boolean"
+				},
+				"changeAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"reasonForChange" : {
+					"type" : "string"
+				}
+			}
+		},
+		"ExpenditureDocumentExpense" : {
+			"type" : "object",
+			"properties" : {
+				"expenseId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"clientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"netMonthlyAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"netAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"category" : {
+					"$ref" : "#/definitions/ExpenditureDocumentCategory"
+				},
+				"frequency" : {
+					"enum" : ["Monthly", "Weekly", "Fortnightly", "FourWeekly", "Quarterly", "HalfYearly", "Annually"],
+					"type" : "string"
+				},
+				"expenditureId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"userDescription" : {
+					"type" : "string"
+				},
+				"isConsolidated" : {
+					"type" : "boolean"
+				}
+			}
+		},
+		"ExpenditureDocumentCategory" : {
+			"type" : "object",
+			"properties" : {
+				"categoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"ordinal" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"group" : {
+					"$ref" : "#/definitions/ExpenditureDocumentGroup"
+				}
+			}
+		},
+		"ExpenditureDocumentGroup" : {
+			"type" : "object",
+			"properties" : {
+				"groupId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"ordinal" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"isConsolidateEnabled" : {
+					"type" : "boolean"
+				}
+			}
+		},
+		"ExpenditureRequest" : {
+			"type" : "object",
+			"properties" : {
+				"netMonthlyAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"isDetailed" : {
+					"type" : "boolean"
+				},
+				"includeLiabilities" : {
+					"type" : "boolean"
+				},
+				"isChangeExpected" : {
+					"type" : "boolean"
+				},
+				"isRiseExpected" : {
+					"type" : "boolean"
+				},
+				"reasonForChange" : {
+					"type" : "string"
+				},
+				"changeAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				}
+			}
+		},
+		"ClientExpense" : {
+			"type" : "object",
+			"properties" : {
+				"expenseId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"clientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"netMonthlyAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"netAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"category" : {
+					"$ref" : "#/definitions/ExpenseCategory"
+				},
+				"frequency" : {
+					"enum" : ["Monthly", "Weekly", "Fortnightly", "FourWeekly", "Quarterly", "HalfYearly", "Annually"],
+					"type" : "string"
+				},
+				"userDescription" : {
+					"type" : "string"
+				},
+				"isConsolidated" : {
+					"type" : "boolean"
+				}
+			}
+		},
+		"ExpenseCategory" : {
+			"type" : "object",
+			"properties" : {
+				"categoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"ordinal" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"group" : {
+					"$ref" : "#/definitions/Group"
+				}
+			}
+		},
+		"Group" : {
+			"type" : "object",
+			"properties" : {
+				"groupId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"ordinal" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"isConsolidateEnabled" : {
+					"type" : "boolean"
+				}
+			}
+		},
+		"ExpenseRequest" : {
+			"type" : "object",
+			"properties" : {
+				"categoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"netAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"userDescription" : {
+					"type" : "string"
+				},
+				"frequency" : {
+					"enum" : ["Monthly", "Weekly", "Fortnightly", "FourWeekly", "Quarterly", "HalfYearly", "Annually"],
+					"type" : "string"
+				}
+			}
+		},
+		"ClientGoal" : {
+			"type" : "object",
+			"properties" : {
+				"goalId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"clientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"jointClientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"accountId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"planId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"category" : {
+					"enum" : ["TravelAndHolidays", "MortgageRepayment", "SelfIndulgence", "PropertyPurchase", "Education", "Income", "Other"],
+					"type" : "string"
+				},
+				"goalType" : {
+					"enum" : ["GrowthWithTarget", "Income", "GrowthWithoutTarget"],
+					"type" : "string"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"targetAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"productArea" : {
+					"type" : "string"
+				},
+				"isShownInFactFind" : {
+					"type" : "boolean"
+				},
+				"startDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"targetDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"markedAsCompletedDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"markedAsCompletedByUserId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"frequency" : {
+					"enum" : ["Monthly", "Weekly", "Fortnightly", "FourWeekly", "Quarterly", "HalfYearly", "Annually"],
+					"type" : "string"
+				},
+				"isCreatedByClient" : {
+					"type" : "boolean"
+				},
+				"details" : {
+					"type" : "string"
+				},
+				"increaseRate" : {
+					"enum" : ["None", "WithInflation", "WithWageInflation"],
+					"type" : "string"
+				},
+				"adjustedRiskProfile" : {
+					"type" : "string"
+				},
+				"reasonForRiskProfileAdjustment" : {
+					"type" : "string"
+				},
+				"riskDiscrepancy" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"riskProfileAdjustedDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"retirementAge" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"lumpSumAtRetirement" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"lumpSumAtRetirementType" : {
+					"enum" : ["MonetaryAmount", "Percentage"],
+					"type" : "string"
+				},
+				"isRegularImmediateIncome" : {
+					"type" : "boolean"
+				}
+			}
+		},
+		"GoalRequest" : {
+			"type" : "object",
+			"properties" : {
+				"goalId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"jointClientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"productArea" : {
+					"type" : "string"
+				},
+				"goalType" : {
+					"type" : "string"
+				},
+				"category" : {
+					"type" : "string"
+				},
+				"isCreatedByClient" : {
+					"type" : "boolean"
+				},
+				"frequency" : {
+					"type" : "string"
+				},
+				"details" : {
+					"type" : "string"
+				},
+				"retirementAge" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"lumpSumAtRetirement" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"lumpSumAtRetirementType" : {
+					"type" : "string"
+				},
+				"targetAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"increaseRate" : {
+					"type" : "string"
+				},
+				"startDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"targetDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"adjustedRiskProfile" : {
+					"type" : "string"
+				},
+				"reasonForRiskProfileAdjustment" : {
+					"type" : "string"
+				},
+				"riskDiscrepancy" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"isShownInFactFind" : {
+					"type" : "boolean"
+				},
+				"clientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				}
+			}
+		},
+		"ClientIncome" : {
+			"type" : "object",
+			"properties" : {
+				"incomeId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"category" : {
+					"enum" : ["OtherIncome", "Wages", "IncomeAsPartner", "AdditionalIncome", "StatePension", "CompanyPension", "PrivatePension", "TaxableStateBenefits", "NonTaxableStateBenefits", "TaxableInvestmentIncome", "NonTaxableInvestmentIncome", "Dividends", "RentalIncome", "TrustIncome", "Annuities", "OvertimeGuaranteed", "OvertimeRegular", "BonusGuaranteed", "BonusRegular", "CourtOrderMaintenance", "BedroomRental", "Allowance", "LondonAllowance", "MortgageSubsidy", "Benefits", "PaternalPay", "SickPay", "BasicAnnualIncome", "OtherIrregularIncome", "MaintenancePayments", "NonContributoryPension", "CarAllowance", "StateBenefitGuaranteed", "StateBenefitRenewable", "WorkingTaxCredit"],
+					"type" : "string"
+				},
+				"description" : {
+					"type" : "string"
+				},
+				"netAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"frequency" : {
+					"enum" : ["Monthly", "Weekly", "Fortnightly", "FourWeekly", "Quarterly", "HalfYearly", "Annually"],
+					"type" : "string"
+				},
+				"grossAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"clientId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"employmentId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"grossIncomeAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"netIncomeAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"includeInAffordability" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				}
+			}
+		},
+		"IncomeRequest" : {
+			"type" : "object",
+			"properties" : {
+				"category" : {
+					"type" : "string"
+				},
+				"description" : {
+					"type" : "string"
+				},
+				"netAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"grossAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"frequency" : {
+					"type" : "string"
+				},
+				"employmentId" : {
+					"format" : "int32",
+					"type" : "integer"
+				}
+			}
+		},
+		"ClientLiability" : {
+			"type" : "object",
+			"properties" : {
+				"liabilityId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"client1Id" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"client2Id" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"planId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"outstandingNetAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"liabilityAccountNumber" : {
+					"type" : "string"
+				},
+				"description" : {
+					"type" : "string"
+				},
+				"endDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"owner" : {
+					"type" : "string"
+				},
+				"protectionType" : {
+					"enum" : ["ASUOnly", "CICAndASU", "CICOnly", "Death", "DeathAndSickness", "DeathSicknessAndUnemployment", "LifeAndASU", "LifeAndCIC", "LifeOnly", "LifeCICAndASU", "No", "NotProtected", "Sickness", "SicknessAndUnemployment", "Unemployment", "NotSpecified"],
+					"type" : "string"
+				},
+				"category" : {
+					"enum" : ["CarLoan", "CreditStoreCards", "HirePurchase", "MainResidence", "MaintenanceAlimony", "MortgageRepaymentVehicle", "Other", "OtherMortgages", "OtherSecuredLoans", "PersonalLoans", "StudentLoans", "NotSpecified"],
+					"type" : "string"
+				},
+				"totalLoanAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"repaymentOption" : {
+					"enum" : ["InterestOnly", "Repayment", "NotSpecified"],
+					"type" : "string"
+				},
+				"creditLimit" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"interestRate" : {
+					"type" : "string"
+				},
+				"paymentAmountPerMonth" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"lenderName" : {
+					"type" : "string"
+				},
+				"loanTerm" : {
+					"type" : "string"
+				},
+				"earlyRedemptionCharge" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"isConsolidated" : {
+					"type" : "boolean"
+				},
+				"isToBeRepaid" : {
+					"type" : "boolean"
+				},
+				"repaymentNotes" : {
+					"type" : "string"
+				},
+				"isGuarantorMortgage" : {
+					"type" : "boolean"
+				}
+			}
+		},
+		"LiabilityRequest" : {
+			"type" : "object",
+			"properties" : {
+				"outstandingNetAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"liabilityAccountNumber" : {
+					"type" : "string"
+				},
+				"description" : {
+					"type" : "string"
+				},
+				"endDate" : {
+					"format" : "date-time",
+					"type" : "string"
+				},
+				"secondaryClient" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"owner" : {
+					"type" : "string"
+				},
+				"protectionType" : {
+					"type" : "string"
+				},
+				"category" : {
+					"type" : "string"
+				},
+				"totalLoanAmount" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"repaymentOption" : {
+					"type" : "string"
+				},
+				"creditLimit" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"interestRate" : {
+					"type" : "string"
+				},
+				"paymentAmountPerMonth" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"lenderName" : {
+					"type" : "string"
+				},
+				"loanTerm" : {
+					"type" : "string"
+				},
+				"earlyRedemptionCharge" : {
+					"$ref" : "#/definitions/CurrencyValue"
+				},
+				"isConsolidated" : {
+					"type" : "boolean"
+				},
+				"isToBeRepaid" : {
+					"type" : "boolean"
+				},
+				"repaymentNotes" : {
+					"type" : "string"
+				},
+				"isGuarantorMortgage" : {
+					"type" : "boolean"
+				}
+			}
+		},
+		"ClientGoalsCollection" : {
+			"type" : "object",
+			"properties" : {
+				"count" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"items" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/ClientGoal"
+					},
+					"readOnly" : true
+				}
+			}
+		},
+		"Expensecategory" : {
+			"type" : "object",
+			"properties" : {
+				"expenseCategoryId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"ordinal" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"group" : {
+					"$ref" : "#/definitions/ExpenseCategoryDocumentCategoryGroup"
+				}
+			}
+		},
+		"ExpenseCategoryDocumentCategoryGroup" : {
+			"type" : "object",
+			"properties" : {
+				"groupId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"ordinal" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"isConsolidateEnabled" : {
+					"type" : "boolean"
+				}
+			}
+		},
+		"Expensegroup" : {
+			"type" : "object",
+			"properties" : {
+				"expenseGroupId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"name" : {
+					"type" : "string"
+				},
+				"ordinal" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"isConsolidateEnabled" : {
+					"type" : "boolean"
+				}
+			}
+		}
+	},
+	"securityDefinitions" : {
+		"oauth2-authorization-code" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Authorization Code Grant",
+			"flow" : "accessCode",
+			"authorizationUrl" : "https://localhost:44333/core/connect/authorize",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"factfind" : "factfind"
+			}
+		},
+		"oauth2-implicit" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Implicit Grant",
+			"flow" : "implicit",
+			"authorizationUrl" : "https://localhost:44333/core/connect/authorize",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"factfind" : "factfind"
+			}
+		},
+		"oauth2-password" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Resource Owner Password Credentials Grant",
+			"flow" : "password",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"factfind" : "factfind"
+			}
+		},
+		"oauth2-client-credentials" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Client Credentials Grant",
+			"flow" : "application",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"factfind" : "factfind"
+			}
+		},
+		"apiKey" : {
+			"type" : "apiKey",
+			"description" : "Obtain API key via API management gateway",
+			"name" : "x-api-key",
+			"in" : "header"
+		}
+	},
+	"security" : [{
+			"oauth2-authorization-code" : ["openid", "myprofile", "factfind"],
+			"oauth2-client-credentials" : ["openid", "myprofile", "factfind"],
+			"oauth2-implicit" : ["openid", "myprofile", "factfind"],
+			"oauth2-password" : ["openid", "myprofile", "factfind"],
+			"apiKey" : []
+		}
+	]
+}

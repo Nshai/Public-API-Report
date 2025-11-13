@@ -3,15 +3,15 @@ const fs = require('fs');
 console.log('=== GENERATING CONSOLIDATED PUBLIC SWAGGER ===\n');
 
 // Load all public APIs with their metadata
-const allApis = JSON.parse(fs.readFileSync('../source/consolidated/all-public-apis-with-fallback.json', 'utf8'));
+const allApis = JSON.parse(fs.readFileSync('../source/consolidated/filtered-public-apis.json', 'utf8'));
 
 // Load the public v2 swagger as a template
 const templateSwagger = JSON.parse(fs.readFileSync('../source/templates/Public Swagger/public-v2.json', 'utf8'));
 
 // Load service swagger files to get detailed operation definitions
 const serviceSwaggerFiles = [];
-for (let i = 0; i <= 25; i++) {
-  const filename = `../source/swagger-batch/swagger-results-fallback-batch-${i}.json`;
+for (let i = 0; i <= 100; i++) {
+  const filename = `../source/swagger-batch/swagger-results-dual-version-batch-${i}.json`;
   if (fs.existsSync(filename)) {
     const data = JSON.parse(fs.readFileSync(filename, 'utf8'));
     serviceSwaggerFiles.push(...data);

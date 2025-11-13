@@ -788,239 +788,8 @@
     "service": "Microservice.Content",
     "url": "https://microservice-content.sys-ie-04.intelliflo.systems/docs/v2/swagger",
     "version": "v2",
-    "operations": [
-      {
-        "operationId": "ListClientVideos",
-        "method": "GET",
-        "path": "/v2/clients/{clientId}/media/videos",
-        "description": "Returns a list of client videos.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "CreateClientVideo",
-        "method": "POST",
-        "path": "/v2/clients/{clientId}/media/videos",
-        "description": "Creates a single client video.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "GetClientVideo",
-        "method": "GET",
-        "path": "/v2/clients/{clientId}/media/videos/{videoId}",
-        "description": "Returns a given client video",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "UpdateClientVideo",
-        "method": "PATCH",
-        "path": "/v2/clients/{clientId}/media/videos/{videoId}",
-        "description": "Updates a client video.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "MAPlayerWebhookURI",
-        "method": "POST",
-        "path": "/v2/clients/{clientId}/media/videos/{videoId}/analytics/webhook",
-        "description": "Posts video player analytics events for a single shared client video.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "MAPlayerClientVideoConfigURI",
-        "method": "GET",
-        "path": "/v2/clients/{clientId}/media/videos/{videoId}/player",
-        "description": "Returns player configuration",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "GenerateClientVideoReport",
-        "method": "POST",
-        "path": "/v2/clients/{clientId}/media/videos/{videoId}/report",
-        "description": "Generates a client video report",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "ListClientVideoInstances",
-        "method": "GET",
-        "path": "/v2/clients/{clientId}/media/videos/instances",
-        "description": "Returns a list of client videos.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "CreateClientVideoInstance",
-        "method": "POST",
-        "path": "/v2/clients/{clientId}/media/videos/instances",
-        "description": "Creates a single client video.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "UpdateClientVideoInstances",
-        "method": "PATCH",
-        "path": "/v2/clients/{clientId}/media/videos/instances/{id}",
-        "description": "Updates a client video.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "PlayerWebhookURI",
-        "method": "POST",
-        "path": "/v2/clients/{clientId}/media/videos/instances/{id}/webhook",
-        "description": "Posts video player analytics events for a single shared client video.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "GetClientVideoInstance",
-        "method": "GET",
-        "path": "/v2/clients/{clientId}/media/videos/instances/{instanceId}",
-        "description": "Returns a given client video",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "GenerateClientVideoReport1",
-        "method": "POST",
-        "path": "/v2/clients/{clientId}/media/videos/instances/{instanceId}/report",
-        "description": "Generates a client video report",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "BulkShareVideosToClients",
-        "method": "POST",
-        "path": "/v2/clients/media/videos/bulk/share",
-        "description": "Creates a client video.",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "CreateBulkVideoShared",
-        "method": "POST",
-        "path": "/v2/clients/media/videos/bulk/shared",
-        "description": "Creates a client video.",
-        "tags": [
-          "bulkvideoshared"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "ListBulkVideoShared",
-        "method": "GET",
-        "path": "/v2/clients/media/videos/bulk/shared",
-        "description": "Returns a list of bulk video shared.",
-        "tags": [
-          "bulkvideoshared"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "GetBulkVideoShared",
-        "method": "GET",
-        "path": "/v2/clients/media/videos/bulk/shared/{bulkVideoSharedId}",
-        "description": "Returns a given bulk video shared.",
-        "tags": [
-          "bulkvideoshared"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "VideoReportCallbackNotificationUrl",
-        "method": "POST",
-        "path": "/v2/clients/media/videos/report/callback",
-        "description": "Downloads client video report",
-        "tags": [
-          "clientvideo"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "ListVideos",
-        "method": "GET",
-        "path": "/v2/media/videos",
-        "description": "Returns a list of videos.",
-        "tags": [
-          "video"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "GetVideo",
-        "method": "GET",
-        "path": "/v2/media/videos/{videoId}",
-        "description": "Returns a given video.",
-        "tags": [
-          "video"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "MAPlayerPreviewVideoConfigURI",
-        "method": "GET",
-        "path": "/v2/media/videos/{videoId}/player",
-        "description": "Returns player configuration for previewing a given video.",
-        "tags": [
-          "video"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "ProcessVideoContentZip",
-        "method": "POST",
-        "path": "/v2/media/videos/import",
-        "description": "Importing content which creates a video record with other assets from a zip file or folder from S3 bucket.",
-        "tags": [
-          "video"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "GetUserProviderSubscriptions",
-        "method": "GET",
-        "path": "/v2/users/{userId}/media/video/subscriptions",
-        "description": "Returns a list of video provider subscriptions",
-        "tags": [
-          "video"
-        ],
-        "isInIgnoreList": false
-      }
-    ],
-    "swaggerVersion": "v2"
+    "error": "Timeout",
+    "operations": []
   },
   {
     "service": "Microservice.Content",
@@ -1608,36 +1377,6 @@
         "isInIgnoreList": false
       },
       {
-        "operationId": "GetMISPortfolioAllocations",
-        "method": "GET",
-        "path": "/v2/clients/{clientId}/plans/{planId}/misportfolioallocations",
-        "description": "Get MIS Portfolio Allocations",
-        "tags": [
-          "misportfolioallocations"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "PutMISPortfolioAllocations",
-        "method": "PUT",
-        "path": "/v2/clients/{clientId}/plans/{planId}/misportfolioallocations",
-        "description": "Create or Update MIS Portfolio Allocations",
-        "tags": [
-          "misportfolioallocations"
-        ],
-        "isInIgnoreList": false
-      },
-      {
-        "operationId": "DeleteMISPortfolioAllocations",
-        "method": "DELETE",
-        "path": "/v2/clients/{clientId}/plans/{planId}/misportfolioallocations",
-        "description": "Delete MIS Portfolio Allocations",
-        "tags": [
-          "misportfolioallocations"
-        ],
-        "isInIgnoreList": false
-      },
-      {
         "operationId": "UpdatePlanType",
         "method": "PUT",
         "path": "/v2/clients/{clientId}/plans/{planId}/plantype",
@@ -1860,6 +1599,16 @@
         "description": "Deletes a withdrawal for a given client, plan and withdrawal.",
         "tags": [
           "withdrawals"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "ListClientPlanSummaries",
+        "method": "GET",
+        "path": "/v2/clients/{clientId}/plans/summary",
+        "description": "Returns lightweight plan summaries for fast list views.",
+        "tags": [
+          "plans"
         ],
         "isInIgnoreList": false
       },
@@ -3906,6 +3655,17 @@
         "description": "Updates username.",
         "tags": [
           "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "SearchUsers",
+        "method": "GET",
+        "path": "/v2/users/search",
+        "description": "Returns a list of user search results.",
+        "tags": [
+          "entitlement",
+          "beta"
         ],
         "isInIgnoreList": false
       }

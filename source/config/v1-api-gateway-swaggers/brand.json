@@ -1,0 +1,894 @@
+{
+	"swagger" : "2.0",
+	"info" : {
+		"version" : "v1",
+		"title" : "Brand v1.0"
+	},
+	"host" : "localhost:10107",
+	"schemes" : ["https"],
+	"paths" : {
+		"/v1/brands" : {
+			"get" : {
+				"tags" : ["brands"],
+				"summary" : "Find brands based on filters, this API may be called using client credentials flow i.e. user may be unauthenticated",
+				"operationId" : "ListBrands",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "application",
+						"in" : "query",
+						"description" : "Application property of the brand",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "uri",
+						"in" : "query",
+						"description" : "Uri property of the brand",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/BrandsCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"404" : {
+						"description" : "uri filter not provided"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "brands",
+					"scopes" : ["brand"],
+					"service" : "Brand",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-brand.intelliflo.com/v1/brands",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.querystring.application" : "method.request.querystring.application",
+						"integration.request.querystring.uri" : "method.request.querystring.uri",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/groups/{groupId}/brands" : {
+			"get" : {
+				"tags" : ["brands"],
+				"summary" : "Get all brands for the specified group",
+				"description" : "COMPLETE",
+				"operationId" : "ListGroupBrands",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "groupId",
+						"in" : "path",
+						"description" : "Id of the owning group",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"type" : "array",
+							"items" : {
+								"$ref" : "#/definitions/GroupBrand"
+							}
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The group cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "brands",
+					"scopes" : ["brand"],
+					"service" : "Brand",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-brand.intelliflo.com/v1/groups/{groupId}/brands",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.groupId" : "method.request.path.groupId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"post" : {
+				"tags" : ["brands"],
+				"summary" : "Create brand",
+				"operationId" : "CreateGroupBrands",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "groupId",
+						"in" : "path",
+						"description" : "ID of group that owns the brand",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "The brand definition",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/BrandRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"201" : {
+						"description" : "The brand was created",
+						"schema" : {
+							"$ref" : "#/definitions/GroupBrand"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							},
+							"Location" : {
+								"description" : "Location of newly created resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The group cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "brands",
+					"scopes" : ["brand"],
+					"service" : "Brand",
+					"verb" : "post"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "POST",
+					"type" : "http",
+					"uri" : "https://uat-brand.intelliflo.com/v1/groups/{groupId}/brands",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.groupId" : "method.request.path.groupId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "201",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type",
+								"method.response.header.Location" : "integration.response.header.Location"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/groups/{groupId}/brands/{brandId}" : {
+			"get" : {
+				"tags" : ["brands"],
+				"summary" : "Get a brand by id",
+				"operationId" : "GetGroupBrand",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "brandId",
+						"in" : "path",
+						"description" : "Id of the brand",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "groupId",
+						"in" : "path",
+						"description" : "Id of the owning group",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/GroupBrand"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "The group cannot be found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "brands",
+					"scopes" : ["brand"],
+					"service" : "Brand",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-brand.intelliflo.com/v1/groups/{groupId}/brands/{brandId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.groupId" : "method.request.path.groupId",
+						"integration.request.path.brandId" : "method.request.path.brandId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			},
+			"patch" : {
+				"tags" : ["brands"],
+				"summary" : "Update brand",
+				"operationId" : "PatchGroupBrand",
+				"consumes" : ["application/json", "application/hal+json"],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "brandId",
+						"in" : "path",
+						"description" : "ID of the brand",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "groupId",
+						"in" : "path",
+						"description" : "ID of group that owns the brand",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "request",
+						"in" : "body",
+						"description" : "The brand definition",
+						"required" : true,
+						"schema" : {
+							"$ref" : "#/definitions/BrandRequest"
+						}
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "The brand was updated",
+						"schema" : {
+							"$ref" : "#/definitions/GroupBrand"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Duplicate Uri"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "brands",
+					"scopes" : ["brand"],
+					"service" : "Brand",
+					"verb" : "patch"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "PATCH",
+					"type" : "http",
+					"uri" : "https://uat-brand.intelliflo.com/v1/groups/{groupId}/brands/{brandId}",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.groupId" : "method.request.path.groupId",
+						"integration.request.path.brandId" : "method.request.path.brandId",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/groups/{groupId}/brands/closest" : {
+			"get" : {
+				"tags" : ["brands"],
+				"summary" : "Get closest brand for specified group",
+				"operationId" : "GetGroupBrandClosest",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "application",
+						"in" : "query",
+						"description" : "",
+						"required" : true,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "groupId",
+						"in" : "path",
+						"description" : "",
+						"required" : true,
+						"type" : "integer",
+						"format" : "int32"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/GroupBrand"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					},
+					"404" : {
+						"description" : "Not Found"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "closests",
+					"scopes" : ["brand"],
+					"service" : "Brand",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-brand.intelliflo.com/v1/groups/{groupId}/brands/closest",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.path.groupId" : "method.request.path.groupId",
+						"integration.request.querystring.application" : "method.request.querystring.application",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						},
+						"404" : {
+							"statusCode" : "404"
+						}
+					}
+				}
+			}
+		},
+		"/v1/users/me/brands" : {
+			"get" : {
+				"tags" : ["brands"],
+				"summary" : "Find brands for the current user using any filters if provided",
+				"operationId" : "ListUserMesBrands",
+				"consumes" : [],
+				"produces" : ["application/json", "application/hal+json"],
+				"parameters" : [{
+						"name" : "Accept",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "application",
+						"in" : "query",
+						"description" : "Application property of the brand",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "Authorization",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "uri",
+						"in" : "query",
+						"description" : "Uri property of the brand",
+						"required" : false,
+						"type" : "string"
+					}, {
+						"name" : "x-api-key",
+						"in" : "header",
+						"required" : false,
+						"type" : "string"
+					}
+				],
+				"responses" : {
+					"200" : {
+						"description" : "OK",
+						"schema" : {
+							"$ref" : "#/definitions/BrandsCollection"
+						},
+						"headers" : {
+							"Content-Type" : {
+								"description" : "Content type for the returned resource",
+								"type" : "string"
+							}
+						}
+					},
+					"401" : {
+						"description" : "Unauthorized",
+						"headers" : {
+							"WWW-Authenticate" : {
+								"description" : "Bearer",
+								"type" : "string"
+							}
+						}
+					},
+					"403" : {
+						"description" : "Forbidden"
+					}
+				},
+				"deprecated" : false,
+				"x-intelliflo-operation-metadata" : {
+					"resource" : "brands",
+					"scopes" : ["brand"],
+					"service" : "Brand",
+					"verb" : "get"
+				},
+				"x-amazon-apigateway-integration" : {
+					"httpMethod" : "GET",
+					"type" : "http",
+					"uri" : "https://uat-brand.intelliflo.com/v1/users/me/brands",
+					"credentials" : "",
+					"cacheNamespace" : "cache-namespace",
+					"cacheKeyParameters" : [],
+					"requestParameters" : {
+						"integration.request.querystring.application" : "method.request.querystring.application",
+						"integration.request.querystring.uri" : "method.request.querystring.uri",
+						"integration.request.header.Authorization" : "method.request.header.Authorization",
+						"integration.request.header.Accept" : "method.request.header.Accept",
+						"integration.request.header.x-api-key" : "method.request.header.x-api-key"
+					},
+					"responses" : {
+						"default" : {
+							"statusCode" : "200",
+							"responseParameters" : {
+								"method.response.header.Content-Type" : "integration.response.header.Content-Type"
+							}
+						},
+						"401" : {
+							"statusCode" : "401",
+							"responseParameters" : {
+								"method.response.header.WWW-Authenticate" : "integration.response.header.WWW-Authenticate"
+							}
+						},
+						"403" : {
+							"statusCode" : "403"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions" : {
+		"BrandsCollection" : {
+			"type" : "object",
+			"properties" : {
+				"count" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"items" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/GroupBrand"
+					},
+					"readOnly" : true
+				}
+			}
+		},
+		"GroupBrand" : {
+			"type" : "object",
+			"properties" : {
+				"tenantId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"brandId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"groupId" : {
+					"format" : "int32",
+					"type" : "integer"
+				},
+				"application" : {
+					"type" : "string"
+				},
+				"uri" : {
+					"type" : "string"
+				},
+				"customisations" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/CustomisationItem"
+					}
+				}
+			}
+		},
+		"CustomisationItem" : {
+			"type" : "object",
+			"properties" : {
+				"name" : {
+					"type" : "string"
+				},
+				"type" : {
+					"type" : "string"
+				},
+				"value" : {
+					"type" : "string"
+				}
+			}
+		},
+		"BrandRequest" : {
+			"type" : "object",
+			"properties" : {
+				"application" : {
+					"type" : "string"
+				},
+				"uri" : {
+					"type" : "string"
+				},
+				"customisations" : {
+					"type" : "array",
+					"items" : {
+						"$ref" : "#/definitions/CustomisationItem"
+					}
+				}
+			}
+		}
+	},
+	"securityDefinitions" : {
+		"oauth2-authorization-code" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Authorization Code Grant",
+			"flow" : "accessCode",
+			"authorizationUrl" : "https://localhost:44333/core/connect/authorize",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"brand" : "brand"
+			}
+		},
+		"oauth2-implicit" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Implicit Grant",
+			"flow" : "implicit",
+			"authorizationUrl" : "https://localhost:44333/core/connect/authorize",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"brand" : "brand"
+			}
+		},
+		"oauth2-password" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Resource Owner Password Credentials Grant",
+			"flow" : "password",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"brand" : "brand"
+			}
+		},
+		"oauth2-client-credentials" : {
+			"type" : "oauth2",
+			"description" : "OAuth2 Client Credentials Grant",
+			"flow" : "application",
+			"tokenUrl" : "https://localhost:44333/core/connect/token",
+			"scopes" : {
+				"openid" : "openid",
+				"myprofile" : "myprofile",
+				"brand" : "brand"
+			}
+		},
+		"apiKey" : {
+			"type" : "apiKey",
+			"description" : "Obtain API key via API management gateway",
+			"name" : "x-api-key",
+			"in" : "header"
+		}
+	},
+	"security" : [{
+			"oauth2-authorization-code" : ["openid", "myprofile", "brand"],
+			"oauth2-client-credentials" : ["openid", "myprofile", "brand"],
+			"oauth2-implicit" : ["openid", "myprofile", "brand"],
+			"oauth2-password" : ["openid", "myprofile", "brand"],
+			"apiKey" : []
+		}
+	]
+}
