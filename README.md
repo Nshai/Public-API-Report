@@ -2,6 +2,8 @@
 
 Comprehensive tool for generating reports of all Intelliflo Public APIs by consolidating data from multiple sources.
 
+> **Recent Update**: V1 API Gateway whitelist support added! The workflow now filters v1 operations using a dedicated whitelist (264 operation IDs) from API Gateway definitions. See [WORKFLOW-UPDATES.md](WORKFLOW-UPDATES.md) for details.
+
 ## Project Structure
 
 ```
@@ -40,17 +42,14 @@ Public-APIs/
 ### Folders
 
 **tools/** - All JavaScript processing scripts
-- `extract-public-swagger-scopes.js` - Extracts OAuth scopes from Public Swagger v2
-- `extract-github-controller-scopes.js` - Fetches controller-level [Scope] attributes from GitHub
-- `extract-all-controller-scopes-and-operations.js` - Maps operation IDs to controller scopes
-- `propagate-scopes-by-tag.js` - Standalone tag-based scope propagation tool
-- `scope-utils.js` - PascalCase to snake_case converter with nested scope support
-- `fetch-swagger-with-fallback.js` - Fetches swagger docs with v1/v2 fallback
-- `consolidate-fallback-results.js` - Main consolidation script (merges all data sources, includes tag-based scope propagation)
-- `generate-final-report-with-tags-first.js` - Report generator (sorted by tags, includes scopes)
+- `generate-service-urls.js` - Generates service URLs from service-repos.json
+- `fetch-swagger-dual-version.js` - Fetches swagger docs from both v1 and v2 endpoints
+- `fetch-v1-api-gateway-whitelist.js` - **[NEW]** Fetches v1 whitelist from API Gateway definitions on GitHub
+- `save-v1-api-gateway-swaggers.js` - **[NEW]** Saves v1 API Gateway swagger files
+- `consolidate-and-filter.js` - Main consolidation script with version-specific whitelist filtering
 - `generate-consolidated-public-swagger.js` - Generates OpenAPI 3.0 swagger for all public endpoints (combined)
 - `generate-consolidated-swagger-by-version.js` - Generates separate OpenAPI 3.0 swaggers for v1 and v2 endpoints
-- `find-unmatched-whitelist.js` - Whitelist validation tool
+- `generate-api-report.js` - Report generator with all API details
 - Other utility scripts for data processing
 
 **source/** - Source data organized by category
@@ -72,9 +71,11 @@ Public-APIs/
 - `operation-to-controller-map-complete.json` - Operation ID to controller scope mapping (28 operations)
 
 **source/config/** - Configuration and reference files
-- `service-repos.json` - List of service repositories to fetch
-- `service-urls.json` - Generated service URLs
-- `api_white_list.txt` - API Gateway whitelist (401 operations)
+- `service-repos.json` - List of service repositories to fetch (61 services)
+- `service-urls.json` - Generated service URLs (122 endpoints)
+- `api_white_list.txt` - API Gateway v2 whitelist (401 operations)
+- `api_white_list_v1.txt` - API Gateway v1 whitelist (264 operations) **[NEW]**
+- `v1-api-gateway-swaggers/` - Original v1 API Gateway swagger files (6 services) **[NEW]**
 - `documentation_ignore.txt` - Hidden public APIs list (83 operations)
 
 **source/consolidated/** - Final consolidated data
@@ -85,13 +86,13 @@ Public-APIs/
 - `WHITELIST-ANALYSIS.md` - Whitelist validation analysis (optional)
 
 **output/swaggers/** - Generated OpenAPI swagger files
-- `consolidated-public-swagger.json` - OpenAPI 3.0 swagger with all 1,565 public endpoints (combined)
+- `consolidated-public-swagger.json` - OpenAPI 3.0 swagger with all 540 public endpoints (combined)
 - `consolidated-public-swagger.yaml` - YAML version of consolidated swagger (combined)
 - `consolidated-swagger-stats.json` - Statistics about the consolidated swagger (combined)
-- `consolidated-public-swagger-v1.json` - OpenAPI 3.0 swagger for v1 endpoints only (206 operations)
+- `consolidated-public-swagger-v1.json` - OpenAPI 3.0 swagger for v1 endpoints only (153 operations)
 - `consolidated-public-swagger-v1.yaml` - YAML version of v1 swagger
 - `consolidated-swagger-v1-stats.json` - Statistics for v1 swagger
-- `consolidated-public-swagger-v2.json` - OpenAPI 3.0 swagger for v2 endpoints only (1,359 operations)
+- `consolidated-public-swagger-v2.json` - OpenAPI 3.0 swagger for v2 endpoints only (387 operations)
 - `consolidated-public-swagger-v2.yaml` - YAML version of v2 swagger
 - `consolidated-swagger-v2-stats.json` - Statistics for v2 swagger
 
@@ -252,43 +253,46 @@ The system generates three types of consolidated OpenAPI 3.0 swagger files:
 
 ### Combined Swagger (All Endpoints)
 - **File**: `output/swaggers/consolidated-public-swagger.json` (+ YAML version)
-- **Operations**: 1,565 total (all public APIs)
-- **Paths**: 920 unique paths
-- **Tags**: 330 tags
-- **OAuth Scopes**: 22 scopes
-- **Coverage**: 664 operations with OAuth scopes (42.4%)
+- **Operations**: 540 total (all public APIs filtered by v1/v2 whitelists)
+- **Paths**: 295 unique paths
+- **Tags**: 86 tags
+- **OAuth Scopes**: 7 scopes
+- **Coverage**: 23 operations with OAuth scopes
 
-### V1 Swagger (Legacy Endpoints)
+### V1 Swagger (API Gateway Whitelist)
 - **File**: `output/swaggers/consolidated-public-swagger-v1.json` (+ YAML version)
-- **Operations**: 206 (services using v1 swagger)
-- **Paths**: 140 unique paths
-- **Tags**: 93 tags
-- **OAuth Scopes**: 3 scopes
-- **Coverage**: 7 operations with OAuth scopes (3.4%)
-- **Services**: Author, Email, SecureMessaging, Campaign, Workflow, WebHooks, Brand, ChangeNotification
+- **Operations**: 153 (from v1 API Gateway whitelist)
+- **Paths**: 98 unique paths
+- **Tags**: 27 tags
+- **OAuth Scopes**: 0 scopes (v1 didn't use OAuth)
+- **Services**: Accounts, Brand, ClientStorage, CRM, FactFind, Portfolio
 
-### V2 Swagger (Current Endpoints)
+### V2 Swagger (API Gateway Whitelist)
 - **File**: `output/swaggers/consolidated-public-swagger-v2.json` (+ YAML version)
-- **Operations**: 1,359 (services using v2 swagger + developer portal)
-- **Paths**: 780 unique paths
-- **Tags**: 243 tags
-- **OAuth Scopes**: 22 scopes
-- **Coverage**: 657 operations with OAuth scopes (48.3%)
+- **Operations**: 387 (from v2 API Gateway whitelist)
+- **Paths**: 211 unique paths
+- **Tags**: 68 tags
+- **OAuth Scopes**: 7 scopes
+- **Coverage**: 23 operations with OAuth scopes
 
 ## Current Statistics
 
-- **Total Unique Public APIs**: 1,565
-- **APIs on Developer Portal**: 391
-- **Hidden Public APIs**: 1,174
-- **APIs in API Gateway Whitelist**: 395 (98.5% match rate)
-- **APIs with Tags**: 1,565
-- **APIs with Service Information**: 1,231
-- **APIs with OAuth Scopes**: 664 (42.4% coverage)
-  - From Public Swagger v2: 390 operations
-  - From Controller-level attributes: 3 operations
-  - From Tag-based propagation: 271 operations
-- **Unique OAuth Scopes**: 22
-- **V1 vs V2 Split**: 206 v1 operations, 1,359 v2 operations
+**Note**: This workflow uses version-specific API Gateway whitelists for accurate public API filtering.
+
+- **Total Unique Public APIs**: 540 (filtered by API Gateway whitelists)
+- **V1 Operations**: 153 (from v1 API Gateway whitelist - 264 operation IDs)
+- **V2 Operations**: 387 (from v2 API Gateway whitelist - 401 operation IDs)
+- **APIs on Developer Portal**: 333 (tracked via public-v2.json)
+- **APIs NOT on Portal**: 207 (candidates for documentation)
+- **APIs with OAuth Scopes**: 23 operations
+- **Unique OAuth Scopes**: 7
+- **Unique Services**: 20
+- **Unique Tags**: 86
+
+**API Gateway Whitelists**:
+- V1 Whitelist: 264 operation IDs from 6 services (accounts, brand, clientstorage, crm, factfind, portfolio)
+- V2 Whitelist: 401 operation IDs
+- Source: `https://github.com/Intelliflo/aws-apigateway-definitions`
 
 ## Prerequisites
 
