@@ -32,7 +32,7 @@ Public-APIs/
 │       └── all-public-apis-with-fallback.json
 └── output/
     ├── reports/        # Generated markdown reports
-    │   └── FINAL-API-REPORT.md
+    │   └── PUBLIC-API-REPORT.md
     └── swaggers/       # Generated OpenAPI swagger files
         ├── consolidated-public-swagger.json (all)
         ├── consolidated-public-swagger-v1.json
@@ -82,8 +82,8 @@ Public-APIs/
 - `all-public-apis-with-fallback.json` - Complete dataset (1,565 APIs with scopes and metadata)
 
 **output/reports/** - Generated markdown reports
-- `FINAL-API-REPORT.md` - Complete API analysis report (sorted by tags, includes scopes)
-- `WHITELIST-ANALYSIS.md` - Whitelist validation analysis (optional)
+- `PUBLIC-API-REPORT.md` - Complete API analysis report with all metadata
+- `WHITELIST-ANALYSIS.md` - Whitelist validation analysis (optional, legacy)
 
 **output/swaggers/** - Generated OpenAPI swagger files
 - `consolidated-public-swagger.json` - OpenAPI 3.0 swagger with all 540 public endpoints (combined)
@@ -214,21 +214,20 @@ Consolidates all data sources into a single unified dataset.
 - Tag preservation
 - Service mapping
 
-### generate-final-report-with-tags-first.js
+### generate-api-report.js
 Generates the comprehensive markdown report.
 
 **Reads from:**
-- `source/all-public-apis-with-fallback.json`
+- `source/consolidated/filtered-public-apis.json`
 
 **Writes to:**
-- `output/FINAL-API-REPORT.md`
+- `output/reports/PUBLIC-API-REPORT.md`
 
 **Includes:**
-- Executive summary
-- Complete API list table
-- APIs by tag
-- Hidden APIs section
-- Services analyzed
+- Executive summary with statistics
+- Complete API list table (Tags, Operation ID, Method, Endpoint, Description, Scopes, On Portal, Service, Source)
+- Organized by tags for easy navigation
+- Portal coverage tracking
 
 ### find-unmatched-whitelist.js
 Identifies whitelist operations not found in swagger documentation.
@@ -241,11 +240,17 @@ Identifies whitelist operations not found in swagger documentation.
 
 ## Data Sources
 
-1. **Public Swagger v2** - 391 operations on developer portal
-2. **Service Swagger Docs** - 1,226 unique operations from 50 services
-3. **Documentation Ignore List** - 83 hidden public operations
-4. **API Gateway Whitelist** - 401 operations (395 matched, 6 unmatched)
-5. **GitHub [PublicApi] Search** - 46 operations from source code
+1. **Public Swagger v2** (Template) - 391 operations on developer portal (`source/templates/Public Swagger/public-v2.json`)
+2. **Service Swagger Docs** - 1,878 total operations from 122 endpoints (61 services × 2 versions)
+   - Fetched from both v1 and v2 endpoints
+   - 1,814 unique operations after deduplication
+3. **API Gateway v2 Whitelist** - 401 operation IDs (`source/config/api_white_list.txt`)
+   - Source: `https://github.com/Intelliflo/aws-apigateway-definitions/tree/master/v2`
+4. **API Gateway v1 Whitelist** - 264 operation IDs (`source/config/api_white_list_v1.txt`) **[NEW]**
+   - Source: `https://github.com/Intelliflo/aws-apigateway-definitions/tree/master/v1/swagger`
+   - Services: accounts, brand, clientstorage, crm, factfind, portfolio
+5. **GitHub [PublicApi] Search** - Operations with [PublicApi] attribute from source code (optional)
+6. **Documentation Ignore List** - 83 operations hidden from public documentation (`source/config/documentation_ignore.txt`)
 
 ## Consolidated Swagger Files
 
@@ -328,9 +333,12 @@ The system generates three types of consolidated OpenAPI 3.0 swagger files:
 
 ## Related Files
 
-- **Skill File**: `~/.claude/skills/api-swagger-generator/skill.md`
-- **Main Report**: `output/reports/FINAL-API-REPORT.md`
+- **Skill File**: `.claude/skills/api-report-run/skill.md`
+- **Workflow Updates**: `WORKFLOW-UPDATES.md` - V1 whitelist changelog
+- **Main Report**: `output/reports/PUBLIC-API-REPORT.md`
 - **Consolidated Swagger**: `output/swaggers/consolidated-public-swagger.json`
+- **V1 Swagger**: `output/swaggers/consolidated-public-swagger-v1.json`
+- **V2 Swagger**: `output/swaggers/consolidated-public-swagger-v2.json`
 
 ## License
 
