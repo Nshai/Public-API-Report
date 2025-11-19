@@ -31,7 +31,10 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
+        
+      - name: Fix Vite permissions
+        run: chmod +x ./node_modules/.bin/vite
+  
       - name: Build with Vite
         run: cd website && npm run build
         # Confirm your package.json has: "build": "vite build"
