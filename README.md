@@ -8,6 +8,14 @@ Comprehensive tool for generating reports of all Intelliflo Public APIs by conso
 
 ```
 Public-APIs/
+├── website/            # Public API Report Website
+│   ├── public/
+│   │   ├── data/
+│   │   │   └── api-data.json    # ← REQUIRED for hosted report
+│   │   └── swaggers/
+│   │       └── *.json           # Swagger files for downloads
+│   ├── src/            # React components
+│   └── README.md       # Website documentation
 ├── tools/              # JavaScript processing scripts
 ├── source/             # Source data (organized by category)
 │   ├── templates/      # Template swagger files
@@ -32,7 +40,8 @@ Public-APIs/
 │       └── all-public-apis-with-fallback.json
 └── output/
     ├── reports/        # Generated markdown reports
-    │   └── PUBLIC-API-REPORT.md
+    │   ├── PUBLIC-API-REPORT.md
+    │   └── api-data.json         # ← Generated JSON for website
     └── swaggers/       # Generated OpenAPI swagger files
         ├── consolidated-public-swagger.json (all)
         ├── consolidated-public-swagger-v1.json
@@ -40,6 +49,16 @@ Public-APIs/
 ```
 
 ### Folders
+
+**website/** - Public API Report Website
+- Interactive React-based web application
+- Hosted at: **https://intelliflo.github.io/public-apis/**
+- Features: API table, filtering, column customization, swagger downloads
+- **REQUIRES for website to function**:
+  - `api-data.json` in `website/public/data/` (copied from `output/reports/api-data.json`)
+- **REQUIRES for swagger downloads**:
+  - Swagger files in `website/public/swaggers/` (copied from `output/swaggers/*.json`, excluding stats files)
+- See `website/README.md` for detailed documentation
 
 **tools/** - All JavaScript processing scripts
 - `generate-service-urls.js` - Generates service URLs from service-repos.json
@@ -49,7 +68,7 @@ Public-APIs/
 - `consolidate-and-filter.js` - Main consolidation script with version-specific whitelist filtering
 - `generate-consolidated-public-swagger.js` - Generates OpenAPI 3.0 swagger for all public endpoints (combined)
 - `generate-consolidated-swagger-by-version.js` - Generates separate OpenAPI 3.0 swaggers for v1 and v2 endpoints
-- `generate-api-report.js` - Report generator with all API details
+- `generate-api-report.js` - **Report generator with all API details + generates api-data.json for website**
 - Other utility scripts for data processing
 
 **source/** - Source data organized by category
@@ -83,18 +102,21 @@ Public-APIs/
 
 **output/reports/** - Generated markdown reports
 - `PUBLIC-API-REPORT.md` - Complete API analysis report with all metadata
+- `api-data.json` - **JSON data for website (REQUIRED for https://intelliflo.github.io/public-apis/)**
 - `WHITELIST-ANALYSIS.md` - Whitelist validation analysis (optional, legacy)
 
 **output/swaggers/** - Generated OpenAPI swagger files
-- `consolidated-public-swagger.json` - OpenAPI 3.0 swagger with all 540 public endpoints (combined)
+- `consolidated-public-swagger.json` - OpenAPI 3.0 swagger with all 540 public endpoints (combined) **→ Copy to website for downloads**
 - `consolidated-public-swagger.yaml` - YAML version of consolidated swagger (combined)
-- `consolidated-swagger-stats.json` - Statistics about the consolidated swagger (combined)
-- `consolidated-public-swagger-v1.json` - OpenAPI 3.0 swagger for v1 endpoints only (153 operations)
+- `consolidated-swagger-stats.json` - Statistics about the consolidated swagger (combined) *(do not copy)*
+- `consolidated-public-swagger-v1.json` - OpenAPI 3.0 swagger for v1 endpoints only (153 operations) **→ Copy to website for downloads**
 - `consolidated-public-swagger-v1.yaml` - YAML version of v1 swagger
-- `consolidated-swagger-v1-stats.json` - Statistics for v1 swagger
-- `consolidated-public-swagger-v2.json` - OpenAPI 3.0 swagger for v2 endpoints only (387 operations)
+- `consolidated-swagger-v1-stats.json` - Statistics for v1 swagger *(do not copy)*
+- `consolidated-public-swagger-v2.json` - OpenAPI 3.0 swagger for v2 endpoints only (387 operations) **→ Copy to website for downloads**
 - `consolidated-public-swagger-v2.yaml` - YAML version of v2 swagger
-- `consolidated-swagger-v2-stats.json` - Statistics for v2 swagger
+- `consolidated-swagger-v2-stats.json` - Statistics for v2 swagger *(do not copy)*
+
+**Note**: Stats files (*.stats.json) should NOT be copied to the website.
 
 ## Quick Start
 
@@ -121,7 +143,41 @@ node generate-final-report-with-tags-first.js
 node generate-consolidated-public-swagger.js
 node generate-consolidated-swagger-by-version.js
 node find-unmatched-whitelist.js
+
+# Step 6: Generate API data for website (REQUIRED for hosted report)
+node generate-api-report.js
 ```
+
+### Deploying to GitHub Pages
+
+After generating reports and swaggers, deploy the website:
+
+```bash
+cd website
+
+# Create directories if needed
+mkdir -p public/data public/swaggers
+
+# Copy required assets (REQUIRED for website to function)
+cp ../output/reports/api-data.json public/data/
+
+# Copy swagger files for download functionality (excluding stats files)
+cp ../output/swaggers/consolidated-public-swagger.json public/swaggers/
+cp ../output/swaggers/consolidated-public-swagger-v1.json public/swaggers/
+cp ../output/swaggers/consolidated-public-swagger-v2.json public/swaggers/
+
+# Verify stats files are NOT copied (should return "No such file")
+ls public/swaggers/*stats.json 2>/dev/null || echo "✓ Stats files correctly excluded"
+
+# Build and deploy
+npm run build
+# Deploy dist/ folder to GitHub Pages
+```
+
+**Important**:
+- `api-data.json` is **REQUIRED** for the website to function
+- Swagger JSON files enable the download functionality on the hosted report
+- Stats files (*.stats.json) should **NOT** be copied to the website
 
 ### Quick Update (Using Existing Data)
 
@@ -131,6 +187,9 @@ cd C:\work\Public-APIs\tools
 # Re-consolidate and regenerate
 node consolidate-fallback-results.js
 node generate-final-report-with-tags-first.js
+
+# Regenerate website data
+node generate-api-report.js
 ```
 
 ## OAuth Scope Extraction
@@ -215,19 +274,38 @@ Consolidates all data sources into a single unified dataset.
 - Service mapping
 
 ### generate-api-report.js
-Generates the comprehensive markdown report.
+Generates the comprehensive markdown report and JSON data for the website.
 
 **Reads from:**
 - `source/consolidated/filtered-public-apis.json`
 
 **Writes to:**
-- `output/reports/PUBLIC-API-REPORT.md`
+- `output/reports/PUBLIC-API-REPORT.md` - Markdown report
+- `output/reports/api-data.json` - **JSON data for website (REQUIRED)**
 
-**Includes:**
+**Output Format (api-data.json):**
+```json
+{
+  "generatedAt": "ISO timestamp",
+  "summary": {
+    "totalApis": number,
+    "onPortal": number,
+    "notOnPortal": number,
+    "withScopes": number
+  },
+  "apis": [/* array of API objects */]
+}
+```
+
+**Markdown Report Includes:**
 - Executive summary with statistics
 - Complete API list table (Tags, Operation ID, Method, Endpoint, Description, Scopes, On Portal, Service, Source)
 - Organized by tags for easy navigation
 - Portal coverage tracking
+
+**Website Data:**
+- Required for the hosted report at https://intelliflo.github.io/public-apis/
+- Must be copied to `website/public/data/api-data.json` before deployment
 
 ### find-unmatched-whitelist.js
 Identifies whitelist operations not found in swagger documentation.
@@ -263,6 +341,7 @@ The system generates three types of consolidated OpenAPI 3.0 swagger files:
 - **Tags**: 86 tags
 - **OAuth Scopes**: 7 scopes
 - **Coverage**: 23 operations with OAuth scopes
+- **Website**: Available for download at https://intelliflo.github.io/public-apis/
 
 ### V1 Swagger (API Gateway Whitelist)
 - **File**: `output/swaggers/consolidated-public-swagger-v1.json` (+ YAML version)
@@ -271,6 +350,7 @@ The system generates three types of consolidated OpenAPI 3.0 swagger files:
 - **Tags**: 27 tags
 - **OAuth Scopes**: 0 scopes (v1 didn't use OAuth)
 - **Services**: Accounts, Brand, ClientStorage, CRM, FactFind, Portfolio
+- **Website**: Available for download at https://intelliflo.github.io/public-apis/
 
 ### V2 Swagger (API Gateway Whitelist)
 - **File**: `output/swaggers/consolidated-public-swagger-v2.json` (+ YAML version)
@@ -279,6 +359,9 @@ The system generates three types of consolidated OpenAPI 3.0 swagger files:
 - **Tags**: 68 tags
 - **OAuth Scopes**: 7 scopes
 - **Coverage**: 23 operations with OAuth scopes
+- **Website**: Available for download at https://intelliflo.github.io/public-apis/
+
+**Note**: All three swagger files should be copied to `website/public/swaggers/` to enable download functionality on the hosted report.
 
 ## Current Statistics
 

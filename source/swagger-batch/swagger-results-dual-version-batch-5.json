@@ -292,8 +292,19 @@
     "service": "Microservice.PropertyProvider",
     "url": "https://microservice-propertyprovider.sys-ie-04.intelliflo.systems/docs/v2/swagger",
     "version": "v2",
-    "error": "Timeout",
-    "operations": []
+    "operations": [
+      {
+        "operationId": "ListPropertyAddressesSearch",
+        "method": "GET",
+        "path": "/v2/properties/addresses/search",
+        "description": "Searches addresses by the specified query.",
+        "tags": [
+          "search"
+        ],
+        "isInIgnoreList": false
+      }
+    ],
+    "swaggerVersion": "v2"
   },
   {
     "service": "Microservice.PropertyProvider",

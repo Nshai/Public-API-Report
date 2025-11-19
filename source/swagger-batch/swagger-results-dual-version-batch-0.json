@@ -1603,16 +1603,6 @@
         "isInIgnoreList": false
       },
       {
-        "operationId": "ListClientPlanSummaries",
-        "method": "GET",
-        "path": "/v2/clients/{clientId}/plans/summary",
-        "description": "Returns lightweight plan summaries for fast list views.",
-        "tags": [
-          "plans"
-        ],
-        "isInIgnoreList": false
-      },
-      {
         "operationId": "ListClientValuations",
         "method": "GET",
         "path": "/v2/clients/{clientId}/plans/valuations",
@@ -3535,6 +3525,46 @@
         "tags": [
           "entitlement",
           "beta"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "listUserDelegators",
+        "method": "GET",
+        "path": "/v2/users/{userId}/delegators",
+        "description": "Lists the delegators associated with a user.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "createUserDelegators",
+        "method": "POST",
+        "path": "/v2/users/{userId}/delegators",
+        "description": "Creates a new delegator for the given user.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "getUserDelegatorById",
+        "method": "GET",
+        "path": "/v2/users/{userId}/delegators/{delegatorId}",
+        "description": "Retrieves a specific delegator for the given user.",
+        "tags": [
+          "entitlement"
+        ],
+        "isInIgnoreList": false
+      },
+      {
+        "operationId": "deleteUserDelegators",
+        "method": "DELETE",
+        "path": "/v2/users/{userId}/delegators/{delegatorId}",
+        "description": "Deletes a specific delegator from a user.",
+        "tags": [
+          "entitlement"
         ],
         "isInIgnoreList": false
       },

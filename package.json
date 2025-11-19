@@ -4,7 +4,9 @@
   "description": "Comprehensive tool for generating reports of all Intelliflo Public APIs by consolidating data from multiple sources.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clone-services": "cd tools && node clone-all-services.js",
+    "pull-services": "cd tools && node pull-all-services.js"
   },
   "keywords": [],
   "author": "",

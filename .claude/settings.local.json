@@ -1,26 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(if:*)",
-      "Bash(then cat package.json)",
-      "Bash(else:*)",
-      "Bash(fi:*)",
-      "Bash(npm init:*)",
-      "Bash(npm install:*)",
-      "Bash(findstr:*)",
-      "Bash(while pgrep -f \"fetch-swagger-dual-version.js\")",
-      "Bash(do sleep 2)",
-      "Bash(done)",
-      "Skill(api-report-run)",
-      "Bash(node:*)",
-      "WebFetch(domain:github.com)",
-      "Bash(for:*)",
-      "Bash(do echo \"Fetching $file...\")",
-      "Bash(certutil:*)",
-      "Bash(nul)",
-      "Bash(v1_$file)",
-      "Bash(del:*)",
-      "Bash(copy:*)"
+      "Bash(robocopy:*)",
+      "Bash(xcopy:*)",
+      "Bash(powershell -Command \"Move-Item -Path ''public-apis\\website'' -Destination ''website'' -Force\")",
+      "Bash(powershell -Command \"Copy-Item -Path ''public-apis\\website'' -Destination ''website'' -Recurse -Force\")",
+      "Bash(git mv:*)",
+      "Bash(cat vite.config.dev.js)"
     ],
     "deny": [],
     "ask": []

@@ -1,12 +1,12 @@
 # Public API Report
 
-Generated: 2025-11-13T10:44:15.610Z
+Generated: 2025-11-18T12:36:42.931Z
 
 ## Summary
 
-- **Total Public APIs**: 540
-- **On Developer Portal**: 333
-- **Not on Portal**: 207
+- **Total Public APIs**: 571
+- **On Developer Portal**: 343
+- **Not on Portal**: 228
 - **With OAuth Scopes**: 23
 
 ## API Inventory
@@ -37,6 +37,12 @@ Generated: 2025-11-13T10:44:15.610Z
 | advisers | GetAdviser | GET | /v2/advisers/{adviserId} | Returns an adviser for a given adviser. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | advisers | GetAdviser | GET | /v1/advisers/{partyId} | Get the specified Adviser |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | advisers | ListAdvisers | GET | /v2/advisers | Returns a list of advisers. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| advisers | ListGatedPlanTypesByAdviserId | GET | /v2/advisers/{adviserId}/planTypes | Returns a list of gated plan types based on adviser multi-tie configuration. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| appointments | CreateAppointment | POST | /v2/activities/appointments | Creates an appointment. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| appointments | DeleteAppointment | DELETE | /v2/activities/appointments/{appointmentId} | Deletes a given appointment. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| appointments | GetAppointment | GET | /v2/activities/appointments/{appointmentId} | Returns a given appointment. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| appointments | ListAppointment | GET | /v2/activities/appointments | Returns a list of appointments. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| appointments | UpdateAppointment | PUT | /v2/activities/appointments/{appointmentId} | Updates a given appointment. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | apps, beta | ExistInstalledApp | HEAD | /v2/installed_apps/{appId} | Checks if an installed app exists |  | Yes | Microservice.AppD | Service Swagger (Microservice.AppD) |
 | apps, beta | GetInstalledApp | GET | /v2/installed_apps/{appId} | Returns an installed app |  | Yes | Microservice.AppD | Service Swagger (Microservice.AppD) |
 | apps, beta | GetInstalledAppGroupSettings | GET | /v2/installed_apps/{appId}/group_settings/{groupId} | Returns group settings for a given installed app and group |  | Yes | Microservice.AppD | Service Swagger (Microservice.AppD) |
@@ -95,6 +101,7 @@ Generated: 2025-11-13T10:44:15.610Z
 | clients | CreateClient | POST | /v1/clients | Create a Client |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clients | CreateClientGoalLinktoplan | POST | /v1/clients/{clientId}/goals/{goalId}/linktoplan | Link a Goal to a Plan |  | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | CreateClientGoalUnlink | POST | /v1/clients/{clientId}/goals/{goalId}/unlink | Unlink a Goal from an Account or Plan |  | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | CreateClientIncome | POST | /v1/clients/{clientId}/incomes |  |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | DeleteClient | DELETE | /v2/clients/{clientId} | Deletes a given client. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clients | DeleteClientContact | DELETE | /v1/clients/{partyId}/contacts/{contactId} | Delete the specified Contact Details |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clients | DeleteClientExpenditure | DELETE | /v1/clients/{clientId}/expenditure | Deletes an Expenditure for a client OR for the client of the current context. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
@@ -119,6 +126,7 @@ Generated: 2025-11-13T10:44:15.610Z
 | clients | GetClientGoal | GET | /v1/clients/{clientId}/goals/{goalId} | Get the specified Client Goal |  | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | GetClientIncome | GET | /v1/clients/{clientId}/incomes/{incomeId} |  |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | GetClientLiability | GET | /v1/clients/{clientId}/liabilities/{liabilityId} | Gets Liability if any, for the specified client id/for the client of the current context and liabili |  | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| clients | GetClientServicecase | GET | /v1/clients/{clientId}/servicecases/{serviceCaseId} |  |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clients | GetExpensecategory | GET | /v1/clients/expensecategories/{expenseCategoryId} | Gets an Expense Category if any, for the specified Expense Category Id. |  | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | GetExpensegroup | GET | /v1/clients/expensegroups/{expenseGroupId} | Gets an Expense Group if any, for the specified Expense Group Id. |  | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | ListClientContacts | GET | /v1/clients/{partyId}/contacts | Get Contact Details |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -129,6 +137,7 @@ Generated: 2025-11-13T10:44:15.610Z
 | clients | ListClients | GET | /v2/clients | Returns a list of clients. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clients | ListClientsAdvisers | GET | /v1/clients/{partyId}/advisers | Get advisers for clients. The first one is the servicing adviser. Others will be added in future rel |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clients | ListClientSegments | GET | /v2/clients/client_segments | Retrieves a list of the available clients' segments. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| clients | ListClientServicecases | GET | /v1/clients/{clientId}/servicecases |  |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | clients | ListClientsExpensecategories | GET | /v1/clients/expensecategories | Gets all Expense Categories. |  | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | ListClientsExpensegroups | GET | /v1/clients/expensegroups | Gets all Expense Groups. |  | No | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | clients | ListClientsProfessionalcontacts | GET | /v1/clients/{clientId}/professionalcontacts | Gets a list of professional contacts |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -186,11 +195,13 @@ Generated: 2025-11-13T10:44:15.610Z
 | customquestions | GetQuestion | GET | /v2/questions/{questionId} | Retrieves the details of a question. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | customquestions | ListQuestions | GET | /v2/questions | Retrieves a list of questions associated with the current tenant. The returned list may be filtered. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | customquestions | ListQuestionsAnswers | GET | /v2/clients/{clientId}/questions | Returns a list of the answers a client has given to a given set of questions. The answers are return |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| customquestions | UpdateQuestionAnswers | PUT | /v2/clients/{clientId}/questions | Updates a client's answers to one or more questions. See above for the rules governing this. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | dependants, beta | CreateClientDependant | POST | /v2/clients/{clientId}/dependants | Creates a dependant for a given client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | dependants, beta | DeleteClientDependant | DELETE | /v2/clients/{clientId}/dependants/{dependantId} | Deletes a dependant for a given client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | dependants, beta | GetClientDependant | GET | /v2/clients/{clientId}/dependants/{dependantId} | Returns a dependant for a given client and dependant. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | dependants, beta | ListClientDependants | GET | /v2/clients/{clientId}/dependants | Returns a list of dependants for a given client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | dependants, beta | UpdateClientDependant | PUT | /v2/clients/{clientId}/dependants/{dependantId} | Updates a dependant for a given client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| document | GetDocument | GET | /v2/clients/{clientId}/plans/{planId}/documents/{documentId} | Returns an actual document (byte array) from the provider |  | Yes | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | documentfolders | CreateDocumentFolder | POST | /v2/clients/{clientId}/documentfolders | Creates a new document folder. |  | Yes | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documentfolders | GetDocumentFolder | GET | /v2/clients/{clientId}/documentfolders/{documentFolderId} | Gets a single document folder. |  | Yes | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documentfolders | ListDocumentFolders | GET | /v2/clients/{clientId}/documentfolders | Returns a list of document folders. |  | Yes | Monolith.Storage | Service Swagger (Monolith.Storage) |
@@ -202,6 +213,7 @@ Generated: 2025-11-13T10:44:15.610Z
 | documents | ClientDocumentShowInPortal | POST | /v2/clients/{clientId}/documents/{documentId}/showInPortal | Shares the document with specified document id in the client portal. |  | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | CreateAdviserDocument | POST | /v2/advisers/{adviserId}/documents | Creates a new document associated with this specified adviser |  | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | CreateClientDocument | POST | /v2/clients/{clientId}/documents | Creates a document for a given client. |  | Yes | Monolith.Storage | Service Swagger (Monolith.Storage) |
+| documents | CreateDocument | POST | /v2/documents | Creates a new document |  | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | CreateDocument | POST | /v1/documents |  |  | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
 | documents | DeleteAdviserDocument | DELETE | /v2/advisers/{adviserId}/documents/{documentId} | Deletes a file object associated with the specified adviser document |  | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | documents | DeleteDocument | DELETE | /v1/documents/{documentId} | Deletes document |  | No | Microservice.ClientStorage | Service Swagger (Microservice.ClientStorage) |
@@ -234,13 +246,20 @@ Generated: 2025-11-13T10:44:15.610Z
 | dpa | ListDpaPolicies | GET | /v2/dpa_policies | Returns a list of DPA policies. |  | Yes | Microservice.DPA | Service Swagger (Microservice.DPA) |
 | dpa | PatchDPAPolicy | PATCH | /v2/dpa_policies/{policyId} | Updates an existing DPA policy. |  | Yes | Microservice.DPA | Service Swagger (Microservice.DPA) |
 | dpa | UpdateDPAPolicy | PUT | /v2/dpa_policies/{policyId} | Updates an existing DPA policy. |  | Yes | Microservice.DPA | Service Swagger (Microservice.DPA) |
+| emails | CreateEmail | POST | /v2/activities/emails | Creates an email. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| emails | GetEmail | GET | /v2/activities/emails/{emailId} | Returns a given email. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| emails | ListEmails | GET | /v2/activities/emails | Returns a list of emails. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | employments | CreateClientEmployment | POST | /v2/clients/{clientId}/employments | Create an employment for a given client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | employments | DeleteClientEmployment | DELETE | /v2/clients/{clientId}/employments/{employmentId} | Deletes a given employment. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | employments | GetClientEmployment | GET | /v2/clients/{clientId}/employments/{employmentId} | Get an employment for a given client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | employments | ListClientEmployments | GET | /v2/clients/{clientId}/employments | Get a list of employments for a given client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
 | employments | UpdateClientEmployment | PUT | /v2/clients/{clientId}/employments/{employmentId} | Updates an employment for a given client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
+| entitlement | CreateIPAddress | POST | /v2/tenants/{tenantId}/IPAddress |  |  | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
 | entitlement | CreateUserDetail | POST | /v2/users | Creates a user. |  | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
 | entitlement | GetUserDetail | GET | /v2/users/{userId} | Returns a user. |  | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
+| entitlement, beta | ListIPAddresses | GET | /v2/tenants/{tenantId}/IPAddress |  |  | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
+| entitlement, beta | ListSupportIPAddresses | GET | /v2/support/IPAddress | Returns a list of support IP addresses. |  | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
+| entitlement, beta | ListUserActivity | GET | /v2/users/{userId}/activity | Returns a list of user activities. |  | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
 | entitlement, beta | ListUsersDetails | GET | /v2/users | Returns a list of users. |  | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
 | entitlement | UpdateUserDetail | PUT | /v2/users/{userId} | Updates a user. |  | No | Monolith.Entitlement | Service Swagger (Monolith.Entitlement) |
 | expenditures, beta | CreateClientExpenditure | POST | /v2/clients/{clientId}/expenditures | Creates an expenditure record for a client. |  | Yes | Monolith.FactFind | Service Swagger (Monolith.FactFind) |
@@ -297,11 +316,13 @@ Generated: 2025-11-13T10:44:15.610Z
 | incomestatements | UpdateIncomeStatement | PUT | /v2/incomestatements/{incomeStatementId} | Updates an income statement. | openid, myprofile, firm_data.incomestatements, openid, myprofile, firm_data.incomestatements, openid, myprofile, firm_data.incomestatements | Yes | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | incomestatements | UpdateIncomeStatementItem | PUT | /v2/incomestatements/{incomeStatementId}/items/{incomeStatementItemId} | Updates an income statement item for a given income statement. | openid, myprofile, firm_data.incomestatements, openid, myprofile, firm_data.incomestatements, openid, myprofile, firm_data.incomestatements | Yes | Monolith.Commission | Service Swagger (Monolith.Commission) |
 | insights | CreateClientInsight | POST | /v2/clients/{clientId}/insights | Create a Client Insight. |  | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
+| insights | CreateClientInsight | POST | /v1/clients/{clientId}/insights | Post insight for a given client with clientId. |  | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
 | insights | GetClientInsights | GET | /v2/clients/{clientId}/insights | Returns a list of the insights associated with the client. |  | No | Microservice.Insight | Service Swagger (Microservice.Insight) |
 | investments | DeleteClientInvestment | DELETE | /v1/clients/{clientId}/plans/investments/{planId} | Delete investment plan |  | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | investments | GetClientInvestment | GET | /v1/clients/{clientId}/plans/investments/{planId} | Get the specified Plan |  | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | investments | ListClientPlansInvestments | GET | /v1/clients/{clientId}/plans/investments | Returns a collection of investment plans for the specified client. |  | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | investments | UpdateClientInvestment | PUT | /v1/clients/{clientId}/plans/investments/{planId} | Update investment plan |  | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| leads | AssignLeadDocument | POST | /v2/leads/{leadId}/documents/{documentId} | Adds the specified owner to the specified document |  | No | Monolith.Storage | Service Swagger (Monolith.Storage) |
 | leads | CreateLead | POST | /v2/leads | Create a lead. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | CreateLead | POST | /v1/leads | Create a Lead |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | leads | DeleteLead | DELETE | /v2/leads/{leadId} | Deletes a given lead. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -418,6 +439,7 @@ Generated: 2025-11-13T10:44:15.610Z
 | plans | PatchClientPlan | PATCH | /v2/clients/{clientId}/plans/{planId} | Patch update a client plan for given client id and plan id. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans | PlanExists | HEAD | /v2/plans/{planId} | Check that plan available for the user |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plans, beta | UpdateClientPlan | PUT | /v2/clients/{clientId}/plans/{planId} | Updates a plan for a given client. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
+| plantypes | ListGatedPlanTypes | GET | /v2/plantypes/adviser/{adviserId} | Returns a list of gated plan types based on adviser multi-tie configuration. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | plantypes | ListPlantypes | GET | /v2/plantypes | Returns a list of plan types. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | productproviders | CreateProductProvider | POST | /v2/productproviders | Creates a new product provider. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | productproviders | GetProductprovider | GET | /v2/productproviders/{productProviderId} | Returns a product provider. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -474,8 +496,10 @@ Generated: 2025-11-13T10:44:15.610Z
 | relationships | DeleteClientRelationshipAccess | DELETE | /v2/clients/{clientId}/relationships/{relationshipId}/access | Revokes access from the Relationship relation to the Relationship subject. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | DeleteLeadRelationship | DELETE | /v2/leads/{leadId}/relationships/{relationshipId} | Deletes a relationship for a given lead and relationship. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | GetClientRelationship | GET | /v2/clients/{clientId}/relationships/{relationshipId} | Returns a relationship for a given client and relationship. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| relationships | GetClientRelationship | GET | /v1/clients/{clientId}/relationships/{relationshipId} | Get the specified Relationship |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | GetLeadRelationship | GET | /v2/leads/{leadId}/relationships/{relationshipId} | Returns a relationship for a given lead and relationship. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | ListClientRelationships | GET | /v2/clients/{clientId}/relationships | Returns a list of relationships for a given client. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| relationships | ListClientRelationships | GET | /v1/clients/{clientId}/relationships | Get the Relationships |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | ListLeadRelationships | GET | /v2/leads/{leadId}/relationships | Returns a list of relationships for a given lead. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | UpdateClientRelationship | PUT | /v2/clients/{clientId}/relationships/{relationshipId} | Updates a relationship for a given client and relationship. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | relationships | UpdateLeadRelationship | PUT | /v2/leads/{leadId}/relationships/{relationshipId} | Updates a relationship for the given lead and relationship. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -488,6 +512,7 @@ Generated: 2025-11-13T10:44:15.610Z
 | savingsaccounts | UpdateClientSavingsaccount | PUT | /v1/clients/{clientId}/plans/savingsaccounts/{planId} | Update investment plan (savings account) |  | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | search, clients | CreateClientsSearch | POST | /v1/clients/search | Searchs clients using  filters and ordering specified in request |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | search, leads | CreateLeadsSearch | POST | /v1/leads/search | Searchs leads using filters and ordering specified in request |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| searches | ListClientsSearch | GET | /v2/clients/search | Returns a list of quick search clients for the user. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | servicecases | CreateClientServicecases | POST | /v2/clients/{clientId}/servicecases | Creates a service case for a given client. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | servicecases | GetClientServicecase | GET | /v2/clients/{clientId}/servicecases/{serviceCaseId} | Returns a service case for a given client and service case. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | servicecases | ListClientServicecases | GET | /v2/clients/{clientId}/servicecases | Returns a list of service cases for a given client. |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
@@ -518,7 +543,9 @@ Generated: 2025-11-13T10:44:15.610Z
 | tasks | UpdateTask | PUT | /v1/tasks/{taskId} | Updates the specified Task. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tasks | UpdateTaskSettings | PUT | /v1/tasks/settings | Update the existing task notification settings. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | tenants, beta | GetTenant | GET | /v2/tenants/{tenantId} | Retrieves the tenant resource specified |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| tenants | GetTenant | GET | /v1/tenants/{tenantId} | Get details about a specific tenant |  | Yes | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | timeentries | ListTimeEntries | GET | /v2/time_entries | Returns a list of time entries. |  | Yes | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
+| timeentries | ListTimeEntries | GET | /v1/time_entries | Get the time entries by filter |  | Yes | Microservice.TimeRecording | Service Swagger (Microservice.TimeRecording) |
 | transactions, beta | BatchCreateClientPlanTransactions | POST | /v2/clients/{clientId}/plans/{planId}/transactions | Creates a batch of transactions for a particular client and plan. |  | No | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | transactions, beta | BatchCreateClientTransactions | POST | /v2/clients/{clientId}/transactions | Creates a batch of transactions for different plans for a particular client. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | transactions, beta | BatchCreateTransactions | POST | /v2/transactions | Creates a batch of transactions for different plans. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
@@ -532,6 +559,10 @@ Generated: 2025-11-13T10:44:15.610Z
 | update status | PatchMoneyMovementStatus | PATCH | /v2/accounts/{accountNumber}/moneymovements/{movementId}/status |  |  | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | update status | PatchSecurityTransferInstructionStatus | PATCH | /v2/accounts/{accountNumber}/transfers/{movementId}/status |  |  | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
 | update status | PatchStandingInstructionStatus | PATCH | /v2/accounts/{accountNumber}/banklink/{bankLinkRef}/status |  |  | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
+| update status | PutAccountModel | PUT | /v2/accounts/{accountNumber}/model |  |  | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
+| update status | PutMoneyMovementInstuction | PUT | /v2/accounts/{accountNumber}/moneymovements |  |  | No | Microservice.ProviderIntegration | Service Swagger (Microservice.ProviderIntegration) |
+| userdiaryclassifications | GetUserDiaryClassification | GET | /v2/diary/users/{userId}/classifications/{userDiaryClassificationId} | Returns a given user diary classification. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
+| userdiaryclassifications | ListUserDiaryClassification | GET | /v2/diary/users/{userId}/classifications | Returns a list of user diary classifications. |  | No | Monolith.Crm | Service Swagger (Monolith.Crm) |
 | valuations | CreateAssetValuations | POST | /v2/clients/{clientId}/assets/{assetId}/valuations | Creates a valuation on a given client and asset. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | valuations | CreatePlanValuations | POST | /v2/clients/{clientId}/plans/{planId}/valuations | Creates a valuation for a given client and plan. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
 | valuations | DeleteClientAssetValuation | DELETE | /v2/clients/{clientId}/assets/{assetId}/valuations/{valuationId} | Deletes an association on a valuation for a given client, asset and valuation. |  | Yes | Monolith.Portfolio | Service Swagger (Monolith.Portfolio) |
@@ -556,7 +587,7 @@ Generated: 2025-11-13T10:44:15.610Z
 
 ## APIs by Portal Status
 
-### On Developer Portal (333)
+### On Developer Portal (343)
 
 These APIs are documented on the developer portal.
 
@@ -578,6 +609,7 @@ These APIs are documented on the developer portal.
 | GetAdviser | GET | /v2/advisers/{adviserId} | Monolith.Crm |
 | GetAdviser | GET | /v1/advisers/{partyId} | Monolith.Crm |
 | ListAdvisers | GET | /v2/advisers | Monolith.Crm |
+| ListGatedPlanTypesByAdviserId | GET | /v2/advisers/{adviserId}/planTypes | Monolith.Portfolio |
 | ExistInstalledApp | HEAD | /v2/installed_apps/{appId} | Microservice.AppD |
 | GetInstalledApp | GET | /v2/installed_apps/{appId} | Microservice.AppD |
 | GetInstalledAppGroupSettings | GET | /v2/installed_apps/{appId}/group_settings/{groupId} | Microservice.AppD |
@@ -627,6 +659,7 @@ These APIs are documented on the developer portal.
 | ClientExists | HEAD | /v2/clients/{clientId} | Monolith.Crm |
 | CreateClient | POST | /v2/clients | Monolith.Crm |
 | CreateClient | POST | /v1/clients | Monolith.Crm |
+| CreateClientIncome | POST | /v1/clients/{clientId}/incomes | Monolith.FactFind |
 | DeleteClient | DELETE | /v2/clients/{clientId} | Monolith.Crm |
 | DeleteClientExpenditure | DELETE | /v1/clients/{clientId}/expenditure | Monolith.FactFind |
 | DeleteClientIncome | DELETE | /v1/clients/{clientId}/incomes/{incomeId} | Monolith.FactFind |
@@ -634,9 +667,11 @@ These APIs are documented on the developer portal.
 | GetClient | GET | /v1/clients/{partyId} | Monolith.Crm |
 | GetClientExpenditure | GET | /v1/clients/{clientId}/expenditure | Monolith.FactFind |
 | GetClientIncome | GET | /v1/clients/{clientId}/incomes/{incomeId} | Monolith.FactFind |
+| GetClientServicecase | GET | /v1/clients/{clientId}/servicecases/{serviceCaseId} | Monolith.Crm |
 | ListClientIncomes | GET | /v1/clients/{clientId}/incomes | Monolith.FactFind |
 | ListClients | GET | /v2/clients | Monolith.Crm |
 | ListClientSegments | GET | /v2/clients/client_segments | Monolith.Crm |
+| ListClientServicecases | GET | /v1/clients/{clientId}/servicecases | Monolith.Crm |
 | UpdateClient | PUT | /v2/clients/{clientId} | Monolith.Crm |
 | UpdateClient | PUT | /v1/clients/{partyId} | Monolith.Crm |
 | UpdateClientExpenditure | PUT | /v1/clients/{clientId}/expenditure | Monolith.FactFind |
@@ -666,6 +701,7 @@ These APIs are documented on the developer portal.
 | GetClientDependant | GET | /v2/clients/{clientId}/dependants/{dependantId} | Monolith.FactFind |
 | ListClientDependants | GET | /v2/clients/{clientId}/dependants | Monolith.FactFind |
 | UpdateClientDependant | PUT | /v2/clients/{clientId}/dependants/{dependantId} | Monolith.FactFind |
+| GetDocument | GET | /v2/clients/{clientId}/plans/{planId}/documents/{documentId} | Microservice.ProviderIntegration |
 | CreateDocumentFolder | POST | /v2/clients/{clientId}/documentfolders | Monolith.Storage |
 | GetDocumentFolder | GET | /v2/clients/{clientId}/documentfolders/{documentFolderId} | Monolith.Storage |
 | ListDocumentFolders | GET | /v2/clients/{clientId}/documentfolders | Monolith.Storage |
@@ -819,6 +855,7 @@ These APIs are documented on the developer portal.
 | PatchClientPlan | PATCH | /v2/clients/{clientId}/plans/{planId} | Monolith.Portfolio |
 | PlanExists | HEAD | /v2/plans/{planId} | Monolith.Portfolio |
 | UpdateClientPlan | PUT | /v2/clients/{clientId}/plans/{planId} | Monolith.Portfolio |
+| ListGatedPlanTypes | GET | /v2/plantypes/adviser/{adviserId} | Monolith.Portfolio |
 | ListPlantypes | GET | /v2/plantypes | Monolith.Portfolio |
 | GetProductprovider | GET | /v2/productproviders/{productProviderId} | Monolith.Crm |
 | ListProductproviders | GET | /v2/productproviders | Monolith.Crm |
@@ -845,8 +882,10 @@ These APIs are documented on the developer portal.
 | DeleteClientRelationshipAccess | DELETE | /v2/clients/{clientId}/relationships/{relationshipId}/access | Monolith.Crm |
 | DeleteLeadRelationship | DELETE | /v2/leads/{leadId}/relationships/{relationshipId} | Monolith.Crm |
 | GetClientRelationship | GET | /v2/clients/{clientId}/relationships/{relationshipId} | Monolith.Crm |
+| GetClientRelationship | GET | /v1/clients/{clientId}/relationships/{relationshipId} | Monolith.Crm |
 | GetLeadRelationship | GET | /v2/leads/{leadId}/relationships/{relationshipId} | Monolith.Crm |
 | ListClientRelationships | GET | /v2/clients/{clientId}/relationships | Monolith.Crm |
+| ListClientRelationships | GET | /v1/clients/{clientId}/relationships | Monolith.Crm |
 | ListLeadRelationships | GET | /v2/leads/{leadId}/relationships | Monolith.Crm |
 | UpdateClientRelationship | PUT | /v2/clients/{clientId}/relationships/{relationshipId} | Monolith.Crm |
 | UpdateLeadRelationship | PUT | /v2/leads/{leadId}/relationships/{relationshipId} | Monolith.Crm |
@@ -868,7 +907,9 @@ These APIs are documented on the developer portal.
 | UpdateClientTags | PUT | /v2/clients/{clientId}/tags | Monolith.Crm |
 | UpdateLeadTags | PUT | /v2/leads/{leadId}/tags | Monolith.Crm |
 | GetTenant | GET | /v2/tenants/{tenantId} | Monolith.Crm |
+| GetTenant | GET | /v1/tenants/{tenantId} | Monolith.Crm |
 | ListTimeEntries | GET | /v2/time_entries | Microservice.TimeRecording |
+| ListTimeEntries | GET | /v1/time_entries | Microservice.TimeRecording |
 | BatchCreateClientTransactions | POST | /v2/clients/{clientId}/transactions | Monolith.Portfolio |
 | BatchCreateTransactions | POST | /v2/transactions | Monolith.Portfolio |
 | ClientPlanTransactionExists | HEAD | /v2/clients/{clientId}/plans/{planId}/transactions/{transactionId} | Monolith.Portfolio |
@@ -896,7 +937,7 @@ These APIs are documented on the developer portal.
 | ListClientPlanWithdrawals | GET | /v2/clients/{clientId}/plans/{planId}/withdrawals | Monolith.Portfolio |
 | UpdateClientPlanWithdrawal | PUT | /v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId} | Monolith.Portfolio |
 
-### Not on Developer Portal (207)
+### Not on Developer Portal (228)
 
 These APIs are available but not yet documented on the developer portal. Consider adding them.
 
@@ -910,6 +951,11 @@ These APIs are available but not yet documented on the developer portal. Conside
 | ListActivityPriorities | GET | /v2/activities/priorities | Monolith.Crm |
 | GetActivityType | GET | /v2/activities/types/{typeId} | Monolith.Crm |
 | ListActivityTypes | GET | /v2/activities/types | Monolith.Crm |
+| CreateAppointment | POST | /v2/activities/appointments | Monolith.Crm |
+| DeleteAppointment | DELETE | /v2/activities/appointments/{appointmentId} | Monolith.Crm |
+| GetAppointment | GET | /v2/activities/appointments/{appointmentId} | Monolith.Crm |
+| ListAppointment | GET | /v2/activities/appointments | Monolith.Crm |
+| UpdateAppointment | PUT | /v2/activities/appointments/{appointmentId} | Monolith.Crm |
 | DeleteAtrTemplateV2 | DELETE | /v2/attitudeToRisk/atr_templates/{templateId} | Monolith.Atr |
 | ListAtrSystemCategories | GET | /v2/atr/system_categories | Monolith.Atr |
 | ListBrands | GET | /v1/brands | Microservice.Brand |
@@ -976,6 +1022,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | GetClientCurrentaccount | GET | /v1/clients/{clientId}/plans/currentaccounts/{planId} | Monolith.Portfolio |
 | ListClientPlansCurrentaccounts | GET | /v1/clients/{clientId}/plans/currentaccounts | Monolith.Portfolio |
 | UpdateClientCurrentaccount | PUT | /v1/clients/{clientId}/plans/currentaccounts/{planId} | Monolith.Portfolio |
+| UpdateQuestionAnswers | PUT | /v2/clients/{clientId}/questions | Monolith.Crm |
 | AdviserDocumentExists | HEAD | /v2/advisers/{adviserId}/documents/{documentId} | Monolith.Storage |
 | AdviserDocumentHideInPortal | DELETE | /v2/advisers/{adviserId}/documents/{documentId}/showInPortal | Microservice.ClientStorage |
 | AdviserDocumentShowInPortal | POST | /v2/advisers/{adviserId}/documents/{documentId}/showInPortal | Microservice.ClientStorage |
@@ -983,6 +1030,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | ClientDocumentHideInPortal | DELETE | /v2/clients/{clientId}/documents/{documentId}/showInPortal | Microservice.ClientStorage |
 | ClientDocumentShowInPortal | POST | /v2/clients/{clientId}/documents/{documentId}/showInPortal | Microservice.ClientStorage |
 | CreateAdviserDocument | POST | /v2/advisers/{adviserId}/documents | Monolith.Storage |
+| CreateDocument | POST | /v2/documents | Monolith.Storage |
 | CreateDocument | POST | /v1/documents | Microservice.ClientStorage |
 | DeleteAdviserDocument | DELETE | /v2/advisers/{adviserId}/documents/{documentId} | Monolith.Storage |
 | DeleteDocument | DELETE | /v1/documents/{documentId} | Microservice.ClientStorage |
@@ -999,8 +1047,15 @@ These APIs are available but not yet documented on the developer portal. Conside
 | UpdateAdviserDocument | PUT | /v2/advisers/{adviserId}/documents/{documentId} | Monolith.Storage |
 | UpdateDocument | PUT | /v1/documents/{documentId} | Microservice.ClientStorage |
 | UpdateDocumentContent | PUT | /v1/documents/{documentId}/content | Microservice.ClientStorage |
+| CreateEmail | POST | /v2/activities/emails | Monolith.Crm |
+| GetEmail | GET | /v2/activities/emails/{emailId} | Monolith.Crm |
+| ListEmails | GET | /v2/activities/emails | Monolith.Crm |
+| CreateIPAddress | POST | /v2/tenants/{tenantId}/IPAddress | Monolith.Entitlement |
 | CreateUserDetail | POST | /v2/users | Monolith.Entitlement |
 | GetUserDetail | GET | /v2/users/{userId} | Monolith.Entitlement |
+| ListIPAddresses | GET | /v2/tenants/{tenantId}/IPAddress | Monolith.Entitlement |
+| ListSupportIPAddresses | GET | /v2/support/IPAddress | Monolith.Entitlement |
+| ListUserActivity | GET | /v2/users/{userId}/activity | Monolith.Entitlement |
 | ListUsersDetails | GET | /v2/users | Monolith.Entitlement |
 | UpdateUserDetail | PUT | /v2/users/{userId} | Monolith.Entitlement |
 | GetClientFinancialsummary | GET | /v1/clients/{clientId}/financialsummary | Monolith.Portfolio |
@@ -1012,11 +1067,13 @@ These APIs are available but not yet documented on the developer portal. Conside
 | ListClientsHoldings | GET | /v2/clients/{clientId}/holdings | Monolith.Portfolio |
 | PatchIllustrationStatus | PATCH | /v2/illustrations/{illustrationId} | Microservice.ProviderIntegration |
 | CreateClientInsight | POST | /v2/clients/{clientId}/insights | Microservice.Insight |
+| CreateClientInsight | POST | /v1/clients/{clientId}/insights | Microservice.Insight |
 | GetClientInsights | GET | /v2/clients/{clientId}/insights | Microservice.Insight |
 | DeleteClientInvestment | DELETE | /v1/clients/{clientId}/plans/investments/{planId} | Monolith.Portfolio |
 | GetClientInvestment | GET | /v1/clients/{clientId}/plans/investments/{planId} | Monolith.Portfolio |
 | ListClientPlansInvestments | GET | /v1/clients/{clientId}/plans/investments | Monolith.Portfolio |
 | UpdateClientInvestment | PUT | /v1/clients/{clientId}/plans/investments/{planId} | Monolith.Portfolio |
+| AssignLeadDocument | POST | /v2/leads/{leadId}/documents/{documentId} | Monolith.Storage |
 | DeleteLeadContact | DELETE | /v1/leads/{partyId}/contacts/{contactId} | Monolith.Crm |
 | ExistsLead | HEAD | /v1/leads/{partyId} | Monolith.Crm |
 | ExistsLeadContact | HEAD | /v1/leads/{partyId}/contacts/{contactId} | Monolith.Crm |
@@ -1088,6 +1145,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | UpdateClientSavingsaccount | PUT | /v1/clients/{clientId}/plans/savingsaccounts/{planId} | Monolith.Portfolio |
 | CreateClientsSearch | POST | /v1/clients/search | Monolith.Crm |
 | CreateLeadsSearch | POST | /v1/leads/search | Monolith.Crm |
+| ListClientsSearch | GET | /v2/clients/search | Monolith.Crm |
 | CreateTask | POST | /v2/activities/tasks | Monolith.Crm |
 | CreateTask | POST | /v1/tasks | Monolith.Crm |
 | DeleteTask | DELETE | /v2/activities/tasks/{taskId} | Monolith.Crm |
@@ -1106,6 +1164,10 @@ These APIs are available but not yet documented on the developer portal. Conside
 | PatchMoneyMovementStatus | PATCH | /v2/accounts/{accountNumber}/moneymovements/{movementId}/status | Microservice.ProviderIntegration |
 | PatchSecurityTransferInstructionStatus | PATCH | /v2/accounts/{accountNumber}/transfers/{movementId}/status | Microservice.ProviderIntegration |
 | PatchStandingInstructionStatus | PATCH | /v2/accounts/{accountNumber}/banklink/{bankLinkRef}/status | Microservice.ProviderIntegration |
+| PutAccountModel | PUT | /v2/accounts/{accountNumber}/model | Microservice.ProviderIntegration |
+| PutMoneyMovementInstuction | PUT | /v2/accounts/{accountNumber}/moneymovements | Microservice.ProviderIntegration |
+| GetUserDiaryClassification | GET | /v2/diary/users/{userId}/classifications/{userDiaryClassificationId} | Monolith.Crm |
+| ListUserDiaryClassification | GET | /v2/diary/users/{userId}/classifications | Monolith.Crm |
 | ListClientValuationsAssetliabilityTimeseries | GET | /v1/clients/{clientId}/valuations/assetliability_timeseries | Monolith.Portfolio |
 | ListClientValuationsPortfolioValuations | GET | /v1/clients/{clientId}/valuations/portfolio_valuations | Monolith.Portfolio |
 | ListClientValuationsTimeseries | GET | /v1/clients/{clientId}/valuations/timeseries | Monolith.Portfolio |
@@ -1176,17 +1238,19 @@ These APIs are available but not yet documented on the developer portal. Conside
 | PatchDPAPolicy | PATCH | /v2/dpa_policies/{policyId} | dpa |  |
 | UpdateDPAPolicy | PUT | /v2/dpa_policies/{policyId} | dpa |  |
 
-### Microservice.Insight (2 operations)
+### Microservice.Insight (3 operations)
 
 | Operation ID | Method | Endpoint | Tags | Scopes |
 |-------------|--------|----------|------|--------|
 | CreateClientInsight | POST | /v2/clients/{clientId}/insights | insights |  |
+| CreateClientInsight | POST | /v1/clients/{clientId}/insights | insights |  |
 | GetClientInsights | GET | /v2/clients/{clientId}/insights | insights |  |
 
-### Microservice.ProviderIntegration (8 operations)
+### Microservice.ProviderIntegration (11 operations)
 
 | Operation ID | Method | Endpoint | Tags | Scopes |
 |-------------|--------|----------|------|--------|
+| GetDocument | GET | /v2/clients/{clientId}/plans/{planId}/documents/{documentId} | document |  |
 | PatchIllustrationStatus | PATCH | /v2/illustrations/{illustrationId} | illustrations |  |
 | DeleteProviderTenant | DELETE | /v2/providers/{providerId}/providerTenants | provider tenant configuration |  |
 | GetProviderTenant | GET | /v2/providers/{providerId}/providerTenants | provider tenant configuration |  |
@@ -1195,6 +1259,8 @@ These APIs are available but not yet documented on the developer portal. Conside
 | PatchMoneyMovementStatus | PATCH | /v2/accounts/{accountNumber}/moneymovements/{movementId}/status | update status |  |
 | PatchSecurityTransferInstructionStatus | PATCH | /v2/accounts/{accountNumber}/transfers/{movementId}/status | update status |  |
 | PatchStandingInstructionStatus | PATCH | /v2/accounts/{accountNumber}/banklink/{bankLinkRef}/status | update status |  |
+| PutAccountModel | PUT | /v2/accounts/{accountNumber}/model | update status |  |
+| PutMoneyMovementInstuction | PUT | /v2/accounts/{accountNumber}/moneymovements | update status |  |
 
 ### Microservice.Quotation (12 operations)
 
@@ -1246,11 +1312,12 @@ These APIs are available but not yet documented on the developer portal. Conside
 | GetClientObjective | GET | /v2/clients/{clientId}/objectives/{objectiveId} | objectives | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements |
 | ListClientObjectives | GET | /v2/clients/{clientId}/objectives | objectives | openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements, openid, myprofile, client_data, client_data.requirements |
 
-### Microservice.TimeRecording (1 operations)
+### Microservice.TimeRecording (2 operations)
 
 | Operation ID | Method | Endpoint | Tags | Scopes |
 |-------------|--------|----------|------|--------|
 | ListTimeEntries | GET | /v2/time_entries | timeentries |  |
+| ListTimeEntries | GET | /v1/time_entries | timeentries |  |
 
 ### Microservice.iMps (3 operations)
 
@@ -1318,7 +1385,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | UpdateIncomeStatement | PUT | /v2/incomestatements/{incomeStatementId} | incomestatements | openid, myprofile, firm_data.incomestatements, openid, myprofile, firm_data.incomestatements, openid, myprofile, firm_data.incomestatements |
 | UpdateIncomeStatementItem | PUT | /v2/incomestatements/{incomeStatementId}/items/{incomeStatementItemId} | incomestatements | openid, myprofile, firm_data.incomestatements, openid, myprofile, firm_data.incomestatements, openid, myprofile, firm_data.incomestatements |
 
-### Monolith.Crm (196 operations)
+### Monolith.Crm (213 operations)
 
 | Operation ID | Method | Endpoint | Tags | Scopes |
 |-------------|--------|----------|------|--------|
@@ -1346,6 +1413,11 @@ These APIs are available but not yet documented on the developer portal. Conside
 | GetAdviser | GET | /v2/advisers/{adviserId} | advisers |  |
 | GetAdviser | GET | /v1/advisers/{partyId} | advisers |  |
 | ListAdvisers | GET | /v2/advisers | advisers |  |
+| CreateAppointment | POST | /v2/activities/appointments | appointments |  |
+| DeleteAppointment | DELETE | /v2/activities/appointments/{appointmentId} | appointments |  |
+| GetAppointment | GET | /v2/activities/appointments/{appointmentId} | appointments |  |
+| ListAppointment | GET | /v2/activities/appointments | appointments |  |
+| UpdateAppointment | PUT | /v2/activities/appointments/{appointmentId} | appointments |  |
 | ClientExists | HEAD | /v2/clients/{clientId} | clients |  |
 | CreateClient | POST | /v2/clients | clients |  |
 | CreateClient | POST | /v1/clients | clients |  |
@@ -1356,10 +1428,12 @@ These APIs are available but not yet documented on the developer portal. Conside
 | GetClient | GET | /v2/clients/{clientId} | clients |  |
 | GetClient | GET | /v1/clients/{partyId} | clients |  |
 | GetClientContact | GET | /v1/clients/{partyId}/contacts/{contactId} | clients |  |
+| GetClientServicecase | GET | /v1/clients/{clientId}/servicecases/{serviceCaseId} | clients |  |
 | ListClientContacts | GET | /v1/clients/{partyId}/contacts | clients |  |
 | ListClients | GET | /v2/clients | clients |  |
 | ListClientsAdvisers | GET | /v1/clients/{partyId}/advisers | clients |  |
 | ListClientSegments | GET | /v2/clients/client_segments | clients |  |
+| ListClientServicecases | GET | /v1/clients/{clientId}/servicecases | clients |  |
 | ListClientsProfessionalcontacts | GET | /v1/clients/{clientId}/professionalcontacts | clients |  |
 | MarkasdefaultClientContact | PATCH | /v1/clients/{partyId}/contacts/{contactId}/markasdefault | clients |  |
 | UpdateClient | PUT | /v2/clients/{clientId} | clients |  |
@@ -1392,6 +1466,10 @@ These APIs are available but not yet documented on the developer portal. Conside
 | GetQuestion | GET | /v2/questions/{questionId} | customquestions |  |
 | ListQuestions | GET | /v2/questions | customquestions |  |
 | ListQuestionsAnswers | GET | /v2/clients/{clientId}/questions | customquestions |  |
+| UpdateQuestionAnswers | PUT | /v2/clients/{clientId}/questions | customquestions |  |
+| CreateEmail | POST | /v2/activities/emails | emails |  |
+| GetEmail | GET | /v2/activities/emails/{emailId} | emails |  |
+| ListEmails | GET | /v2/activities/emails | emails |  |
 | GetGroup | GET | /v2/groups/{groupId} | groups |  |
 | GetGroup | GET | /v1/groups/{groupId} | groups |  |
 | ListGroups | GET | /v2/groups | groups |  |
@@ -1477,8 +1555,10 @@ These APIs are available but not yet documented on the developer portal. Conside
 | DeleteClientRelationshipAccess | DELETE | /v2/clients/{clientId}/relationships/{relationshipId}/access | relationships |  |
 | DeleteLeadRelationship | DELETE | /v2/leads/{leadId}/relationships/{relationshipId} | relationships |  |
 | GetClientRelationship | GET | /v2/clients/{clientId}/relationships/{relationshipId} | relationships |  |
+| GetClientRelationship | GET | /v1/clients/{clientId}/relationships/{relationshipId} | relationships |  |
 | GetLeadRelationship | GET | /v2/leads/{leadId}/relationships/{relationshipId} | relationships |  |
 | ListClientRelationships | GET | /v2/clients/{clientId}/relationships | relationships |  |
+| ListClientRelationships | GET | /v1/clients/{clientId}/relationships | relationships |  |
 | ListLeadRelationships | GET | /v2/leads/{leadId}/relationships | relationships |  |
 | UpdateClientRelationship | PUT | /v2/clients/{clientId}/relationships/{relationshipId} | relationships |  |
 | UpdateLeadRelationship | PUT | /v2/leads/{leadId}/relationships/{relationshipId} | relationships |  |
@@ -1487,6 +1567,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | ListClientRequirements | GET | /v2/clients/{clientId}/requirements | requirements |  |
 | CreateClientsSearch | POST | /v1/clients/search | search, clients |  |
 | CreateLeadsSearch | POST | /v1/leads/search | search, leads |  |
+| ListClientsSearch | GET | /v2/clients/search | searches |  |
 | CreateClientServicecases | POST | /v2/clients/{clientId}/servicecases | servicecases |  |
 | GetClientServicecase | GET | /v2/clients/{clientId}/servicecases/{serviceCaseId} | servicecases |  |
 | ListClientServicecases | GET | /v2/clients/{clientId}/servicecases | servicecases |  |
@@ -1514,26 +1595,34 @@ These APIs are available but not yet documented on the developer portal. Conside
 | UpdateTask | PUT | /v1/tasks/{taskId} | tasks |  |
 | UpdateTaskSettings | PUT | /v1/tasks/settings | tasks |  |
 | GetTenant | GET | /v2/tenants/{tenantId} | tenants, beta |  |
+| GetTenant | GET | /v1/tenants/{tenantId} | tenants |  |
+| GetUserDiaryClassification | GET | /v2/diary/users/{userId}/classifications/{userDiaryClassificationId} | userdiaryclassifications |  |
+| ListUserDiaryClassification | GET | /v2/diary/users/{userId}/classifications | userdiaryclassifications |  |
 | GetClientVulnerability | GET | /v2/clients/{clientId}/vulnerabilities/{vulnerabilityId} | vulnerabilities |  |
 | GetClientVulnerabilityCurrent | GET | /v2/clients/{clientId}/vulnerabilities/current | vulnerabilities |  |
 | ListClientsVulnerabilities | GET | /v2/clients/vulnerabilities/current | vulnerabilities |  |
 | UpdateClientVulnerabilitiesCurrent | PUT | /v2/clients/{clientId}/vulnerabilities/current | vulnerabilities |  |
 
-### Monolith.Entitlement (4 operations)
+### Monolith.Entitlement (8 operations)
 
 | Operation ID | Method | Endpoint | Tags | Scopes |
 |-------------|--------|----------|------|--------|
+| CreateIPAddress | POST | /v2/tenants/{tenantId}/IPAddress | entitlement |  |
 | CreateUserDetail | POST | /v2/users | entitlement |  |
 | GetUserDetail | GET | /v2/users/{userId} | entitlement |  |
+| ListIPAddresses | GET | /v2/tenants/{tenantId}/IPAddress | entitlement, beta |  |
+| ListSupportIPAddresses | GET | /v2/support/IPAddress | entitlement, beta |  |
+| ListUserActivity | GET | /v2/users/{userId}/activity | entitlement, beta |  |
 | ListUsersDetails | GET | /v2/users | entitlement, beta |  |
 | UpdateUserDetail | PUT | /v2/users/{userId} | entitlement |  |
 
-### Monolith.FactFind (56 operations)
+### Monolith.FactFind (57 operations)
 
 | Operation ID | Method | Endpoint | Tags | Scopes |
 |-------------|--------|----------|------|--------|
 | CreateClientGoalLinktoplan | POST | /v1/clients/{clientId}/goals/{goalId}/linktoplan | clients |  |
 | CreateClientGoalUnlink | POST | /v1/clients/{clientId}/goals/{goalId}/unlink | clients |  |
+| CreateClientIncome | POST | /v1/clients/{clientId}/incomes | clients |  |
 | DeleteClientExpenditure | DELETE | /v1/clients/{clientId}/expenditure | clients |  |
 | DeleteClientExpense | DELETE | /v1/clients/{clientId}/expenditure/expenses/{expenseId} | clients |  |
 | DeleteClientGoal | DELETE | /v1/clients/{clientId}/goals/{goalId} | clients |  |
@@ -1589,10 +1678,11 @@ These APIs are available but not yet documented on the developer portal. Conside
 | ListClientIncomes | GET | /v2/clients/{clientId}/incomes | incomes, beta |  |
 | UpdateClientIncome | PUT | /v2/clients/{clientId}/incomes/{incomeId} | incomes, beta |  |
 
-### Monolith.Portfolio (129 operations)
+### Monolith.Portfolio (131 operations)
 
 | Operation ID | Method | Endpoint | Tags | Scopes |
 |-------------|--------|----------|------|--------|
+| ListGatedPlanTypesByAdviserId | GET | /v2/advisers/{adviserId}/planTypes | advisers |  |
 | CreateClientAssets | POST | /v2/clients/{clientId}/assets | assets |  |
 | DeleteClientAsset | DELETE | /v2/clients/{clientId}/assets/{assetId} | assets |  |
 | GetClientAsset | GET | /v2/clients/{clientId}/assets/{assetId} | assets |  |
@@ -1682,6 +1772,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | PatchClientPlan | PATCH | /v2/clients/{clientId}/plans/{planId} | plans |  |
 | PlanExists | HEAD | /v2/plans/{planId} | plans |  |
 | UpdateClientPlan | PUT | /v2/clients/{clientId}/plans/{planId} | plans, beta |  |
+| ListGatedPlanTypes | GET | /v2/plantypes/adviser/{adviserId} | plantypes |  |
 | ListPlantypes | GET | /v2/plantypes | plantypes |  |
 | DeleteClientProtection | DELETE | /v1/clients/{clientId}/plans/protections/{planId} | protections |  |
 | GetClientProtection | GET | /v1/clients/{clientId}/plans/protections/{planId} | protections |  |
@@ -1723,7 +1814,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | ListClientPlanWithdrawals | GET | /v2/clients/{clientId}/plans/{planId}/withdrawals | withdrawals, beta |  |
 | UpdateClientPlanWithdrawal | PUT | /v2/clients/{clientId}/plans/{planId}/withdrawals/{withdrawalId} | withdrawals |  |
 
-### Monolith.Storage (14 operations)
+### Monolith.Storage (16 operations)
 
 | Operation ID | Method | Endpoint | Tags | Scopes |
 |-------------|--------|----------|------|--------|
@@ -1734,6 +1825,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | AssignClientDocument | POST | /v2/clients/{clientId}/documents/{documentId} | documents |  |
 | CreateAdviserDocument | POST | /v2/advisers/{adviserId}/documents | documents |  |
 | CreateClientDocument | POST | /v2/clients/{clientId}/documents | documents |  |
+| CreateDocument | POST | /v2/documents | documents |  |
 | DeleteAdviserDocument | DELETE | /v2/advisers/{adviserId}/documents/{documentId} | documents |  |
 | GetAdviserDocument | GET | /v2/advisers/{adviserId}/documents/{documentId} | documents |  |
 | GetClientDocument | GET | /v2/clients/{clientId}/documents/{documentId} | documents |  |
@@ -1741,6 +1833,7 @@ These APIs are available but not yet documented on the developer portal. Conside
 | ListClientDocuments | GET | /v2/clients/{clientId}/documents | documents |  |
 | UpdateAdviserDocument | PUT | /v2/advisers/{adviserId}/documents/{documentId} | documents |  |
 | UpdateClientDocument | PUT | /v2/clients/{clientId}/documents/{documentId} | documents |  |
+| AssignLeadDocument | POST | /v2/leads/{leadId}/documents/{documentId} | leads |  |
 
 ### Monolith.Valuation (5 operations)
 

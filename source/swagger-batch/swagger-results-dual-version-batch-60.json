@@ -3,14 +3,14 @@
     "service": "Monolith.Bulk",
     "url": "https://monolith-bulk.sys-ie-04.intelliflo.systems/docs/v2/swagger",
     "version": "v2",
-    "error": "HTTP 503",
+    "error": "HTTP 404",
     "operations": []
   },
   {
     "service": "Monolith.Bulk",
     "url": "https://monolith-bulk.sys-ie-04.intelliflo.systems/docs/v1/swagger",
     "version": "v1",
-    "error": "HTTP 503",
+    "error": "HTTP 404",
     "operations": []
   }
 ]

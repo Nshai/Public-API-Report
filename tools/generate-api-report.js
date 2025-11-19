@@ -131,14 +131,42 @@ if (!fs.existsSync('../output/reports')) {
   fs.mkdirSync('../output/reports', { recursive: true });
 }
 
-// Save report
+// Save markdown report
 fs.writeFileSync('../output/reports/PUBLIC-API-REPORT.md', markdown);
 
+// Generate JSON data for the website
+const apiData = {
+  generatedAt: new Date().toISOString(),
+  summary: {
+    totalApis: filteredApis.length,
+    onPortal: filteredApis.filter(api => api.onPortal).length,
+    notOnPortal: filteredApis.filter(api => !api.onPortal).length,
+    withScopes: filteredApis.filter(api => api.scopes && api.scopes.length > 0).length
+  },
+  apis: filteredApis.map(api => ({
+    tags: (api.tags && api.tags.length > 0) ? api.tags.join(', ') : '',
+    operationId: api.operationId || '',
+    method: api.method || '',
+    endpoint: api.path || '',
+    description: api.description || '',
+    scopes: (api.scopes && api.scopes.length > 0) ? api.scopes.join(', ') : '',
+    onPortal: api.onPortal ? 'Yes' : 'No',
+    service: api.service || '',
+    source: api.source || ''
+  }))
+};
+
+// Save JSON data for the website
+fs.writeFileSync('../output/reports/api-data.json', JSON.stringify(apiData, null, 2));
+
 console.log('=== REPORT GENERATION COMPLETE ===\n');
-console.log(`File saved: output/reports/PUBLIC-API-REPORT.md`);
-console.log(`Total APIs: ${filteredApis.length}`);
-console.log(`On Portal: ${filteredApis.filter(api => api.onPortal).length}`);
-console.log(`Not on Portal: ${filteredApis.filter(api => !api.onPortal).length}`);
-console.log(`With Scopes: ${filteredApis.filter(api => api.scopes && api.scopes.length > 0).length}`);
-console.log(`Unique Services: ${serviceGroups.size}`);
-console.log(`Unique Scopes: ${uniqueScopes.length}`);
+console.log(`Files saved:`);
+console.log(`  - output/reports/PUBLIC-API-REPORT.md`);
+console.log(`  - output/reports/api-data.json`);
+console.log(`\nSummary:`);
+console.log(`  Total APIs: ${filteredApis.length}`);
+console.log(`  On Portal: ${filteredApis.filter(api => api.onPortal).length}`);
+console.log(`  Not on Portal: ${filteredApis.filter(api => !api.onPortal).length}`);
+console.log(`  With Scopes: ${filteredApis.filter(api => api.scopes && api.scopes.length > 0).length}`);
+console.log(`  Unique Services: ${serviceGroups.size}`);
+console.log(`  Unique Scopes: ${uniqueScopes.length}`);

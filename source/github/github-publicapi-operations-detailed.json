@@ -1,1 +1,1028 @@
-[]
+[
+  {
+    "operationId": "GetClientAssetValuation",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Assets\\v2\\Rest\\AssetsValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientAssetValuations",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Assets\\v2\\Rest\\AssetsValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateAssetValuations",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Assets\\v2\\Rest\\AssetsValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientAssetValuation",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Assets\\v2\\Rest\\AssetsValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientAssetValuation",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Assets\\v2\\Rest\\AssetsValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListFundPrices",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Funds\\v2\\Controllers\\FundController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListFunds",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Funds\\v2\\Controllers\\FundController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetFund",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Funds\\v2\\Controllers\\FundController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateFund",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Funds\\v2\\Controllers\\FundController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateFund",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Funds\\v2\\Controllers\\FundController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ExistsClientPlan",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientPlan",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientPlans",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientPlans",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientPlan",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateTopupPlan",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "PlanExists",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetPlan",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientPlan",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "PatchClientPlan",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreatePlanStatuses",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanStatusController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientPlanStatuses",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanStatusController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetPlanStatus",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanStatusController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientPlanValuations",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientPlanValuation",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreatePlanValuations",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientPlanValuation",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\PlanValuationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListUnmatchedPlans",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\Plans\\v2\\Rest\\UnMatchedPlansController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientPlanTransaction",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTransactions\\v2\\Controllers\\TransactionController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ClientPlanTransactionExists",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTransactions\\v2\\Controllers\\TransactionController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientPlanTransactions",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTransactions\\v2\\Controllers\\TransactionController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientTransactions",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTransactions\\v2\\Controllers\\TransactionController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "BatchCreateTransactions",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTransactions\\v2\\Controllers\\TransactionController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "BatchCreateClientTransactions",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTransactions\\v2\\Controllers\\TransactionController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "BatchCreateClientPlanTransactions",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTransactions\\v2\\Controllers\\TransactionController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientPlanTransaction",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTransactions\\v2\\Controllers\\TransactionController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListGatedPlanTypes",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\PlanTypes\\v2\\Rest\\PlanTypeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListGatedPlanTypesByAdviserId",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\AdvisersController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientPlansBeneficiaries",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\PlanBeneficiaryController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientPlansBeneficiaries",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\PlanBeneficiaryController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientPlanBeneficiaries",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\PlanBeneficiaryController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateOrCreatePortfolioModel",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\PortfolioModelController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ActivatePortfolioModel",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\PortfolioModelController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "PublishDraftPortfolioModel",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\PortfolioModelController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateDraftPortfolioModel",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\PortfolioModelController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateDraftPortfolioModel",
+    "repository": "Monolith.Portfolio",
+    "file": "src\\Monolith.Portfolio\\v2\\Controllers\\PortfolioModelController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListSupportIPAddresses",
+    "repository": "Monolith.Entitlement",
+    "file": "src\\Monolith.Entitlement\\v2\\Controllers\\SupportIPAddressController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateIPAddress",
+    "repository": "Monolith.Entitlement",
+    "file": "src\\Monolith.Entitlement\\v2\\Controllers\\TenantIPAddressController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListIPAddresses",
+    "repository": "Monolith.Entitlement",
+    "file": "src\\Monolith.Entitlement\\v2\\Controllers\\TenantIPAddressController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateUserDetail",
+    "repository": "Monolith.Entitlement",
+    "file": "src\\Monolith.Entitlement\\v2\\Controllers\\UserController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateUserDetail",
+    "repository": "Monolith.Entitlement",
+    "file": "src\\Monolith.Entitlement\\v2\\Controllers\\UserController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetUserDetail",
+    "repository": "Monolith.Entitlement",
+    "file": "src\\Monolith.Entitlement\\v2\\Controllers\\UserController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListUsersDetails",
+    "repository": "Monolith.Entitlement",
+    "file": "src\\Monolith.Entitlement\\v2\\Controllers\\UserController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListUserActivity",
+    "repository": "Monolith.Entitlement",
+    "file": "src\\Monolith.Entitlement\\v2\\Controllers\\UserController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "PutAccountModel",
+    "repository": "Microservice.ProviderIntegration",
+    "file": "src\\Microservice.ProviderIntegration\\v2\\Controllers\\AccountController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "PutMoneyMovementInstuction",
+    "repository": "Microservice.ProviderIntegration",
+    "file": "src\\Microservice.ProviderIntegration\\v2\\Controllers\\AccountController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetActivityCategory",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ActivityCategoryController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListActivityCategories",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ActivityCategoryController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetActivityOutcome",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ActivityOutcomeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListActivityOutcomes",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ActivityOutcomeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetActivityPriority",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ActivityPriorityController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListActivityPriorities",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ActivityPriorityController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetActivityType",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ActivityTypeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListActivityTypes",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ActivityTypeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetAdviserAddress",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AdviserAddressController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListAdviserAddresses",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AdviserAddressController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListAdviserContactdetails",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AdviserContactDetailsController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetAdviserContactdetail",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AdviserContactDetailsController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "AdviserExists",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AdviserController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetAppointment",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AppointmentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListAppointment",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AppointmentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteAppointment",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AppointmentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateAppointment",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AppointmentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateAppointment",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\AppointmentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClient",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClient",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ClientExists",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientRelationship",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientRelationshipController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientRelationship",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientRelationshipController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientRelationships",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientRelationshipController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientRelationship",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientRelationshipController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientRelationship",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientRelationshipController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientRelationshipWithRelation",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientRelationshipController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientRelationshipAccess",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientRelationshipController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientRelationshipAccess",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientRelationshipController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientsSearch",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ClientSearchController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetEmail",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\EmailController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListEmails",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\EmailController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateEmail",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\EmailController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetGroup",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\GroupController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListGroups",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\GroupController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListQuestionsAnswers",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\NeedsAndPrioritiesAnswersController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateQuestionAnswers",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\NeedsAndPrioritiesAnswersController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetQuestion",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\NeedsAndPrioritiesQuestionsController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListQuestions",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\NeedsAndPrioritiesQuestionsController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientOpportunityPlan",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\OpportunityPlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientOpportunityPlan",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\OpportunityPlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetProductprovider",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ProductProviderController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListProductproviders",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ProductProviderController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateProductProvider",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ProductProviderController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientRequirement",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\RequirementController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientRequirements",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\RequirementController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientServicecases",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ServiceCaseController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientServicecase",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ServiceCaseController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientServicecases",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ServiceCaseController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientServicecase",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ServiceCaseController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientServicecasePlan",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ServiceCaseToPlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientServicecasePlan",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\ServiceCaseToPlanController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetTask",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\TaskController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateTask",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\TaskController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateTask",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\TaskController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListTask",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\TaskController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteTask",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\TaskController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetTenant",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\TenantController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListLegacyApps",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\UserController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetUserDiaryClassification",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\UserDiaryClassificationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListUserDiaryClassification",
+    "repository": "Monolith.Crm",
+    "file": "src\\Monolith.Crm\\v2\\Controllers\\UserDiaryClassificationController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateInstalledAppGroupSettings",
+    "repository": "Microservice.AppD",
+    "file": "src\\Microservice.AppD\\v2\\Controllers\\InstalledAppGroupSettingsController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateAdviserDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\AdviserDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateAdviserDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\AdviserDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetAdviserDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\AdviserDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListAdviserDocuments",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\AdviserDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteAdviserDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\AdviserDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "AdviserDocumentExists",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\AdviserDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\ClientDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\ClientDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "AssignClientDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\ClientDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\ClientDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientDocuments",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\ClientDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\DocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\DocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "AssignLeadDocument",
+    "repository": "Monolith.Storage",
+    "file": "src\\Monolith.Storage\\v2\\Controllers\\LeadDocumentController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientInsights",
+    "repository": "Microservice.Insight",
+    "file": "src\\Microservice.Insight\\v2\\Controllers\\ClientInsightsController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientInsight",
+    "repository": "Microservice.Insight",
+    "file": "src\\Microservice.Insight\\v2\\Controllers\\ClientInsightsController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListTimeEntries",
+    "repository": "Microservice.TimeRecording",
+    "file": "src\\Microservice.TimeRecording\\v2\\Controllers\\TimeEntryController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientExpenditure",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\ExpenditureController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientExpenditure",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\ExpenditureController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientExpenditure",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\ExpenditureController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientExpenditures",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\ExpenditureController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientExpenditure",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\ExpenditureController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListClientIncomes",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\IncomeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetClientIncome",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\IncomeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientIncome",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\IncomeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateClientIncome",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\IncomeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteClientIncome",
+    "repository": "Monolith.FactFind",
+    "file": "src\\Monolith.FactFind\\v2\\Controllers\\IncomeController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateClientAtr",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "GetClientAtr",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "ListClientAtrs",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "UpdateClientAtrResult",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "PatchClientAtr",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "DeleteClientAtr",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "GetTenantProviderAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrInstalledAppTemplateController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "ListTenantProviderAtrTemplates",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrInstalledAppTemplateController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "AcceptTenantProviderAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrInstalledAppTemplateController.cs",
+    "scope": "controller"
+  },
+  {
+    "operationId": "CreateProviderAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrProviderTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetProviderAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrProviderTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListProviderAtrTemplates",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrProviderTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ActivateProviderAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrProviderTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetAtrTemplateV2",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListAtrTemplatesV2",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ActivateAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "PatchAtrTemplate",
+    "repository": "Monolith.Atr",
+    "file": "src\\Monolith.Atr\\v2\\New\\Controllers\\AtrTemplateController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetDpaPolicy",
+    "repository": "Microservice.DPA",
+    "file": "src\\Microservice.DPA\\v2\\Controllers\\DPAPolicyController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "GetCurrentDPAPolicy",
+    "repository": "Microservice.DPA",
+    "file": "src\\Microservice.DPA\\v2\\Controllers\\DPAPolicyController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "ListDpaPolicies",
+    "repository": "Microservice.DPA",
+    "file": "src\\Microservice.DPA\\v2\\Controllers\\DPAPolicyController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "CreateDPAPolicy",
+    "repository": "Microservice.DPA",
+    "file": "src\\Microservice.DPA\\v2\\Controllers\\DPAPolicyController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "UpdateDPAPolicy",
+    "repository": "Microservice.DPA",
+    "file": "src\\Microservice.DPA\\v2\\Controllers\\DPAPolicyController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "DeleteDPAPolicy",
+    "repository": "Microservice.DPA",
+    "file": "src\\Microservice.DPA\\v2\\Controllers\\DPAPolicyController.cs",
+    "scope": "action"
+  },
+  {
+    "operationId": "PatchDPAPolicy",
+    "repository": "Microservice.DPA",
+    "file": "src\\Microservice.DPA\\v2\\Controllers\\DPAPolicyController.cs",
+    "scope": "action"
+  }
+]

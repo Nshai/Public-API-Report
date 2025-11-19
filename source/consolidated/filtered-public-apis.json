@@ -170,6 +170,19 @@
     "onPortal": false
   },
   {
+    "operationId": "AssignLeadDocument",
+    "method": "POST",
+    "path": "/v2/leads/{leadId}/documents/{documentId}",
+    "description": "Adds the specified owner to the specified document",
+    "tags": [
+      "leads"
+    ],
+    "service": "Monolith.Storage",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Storage)",
+    "onPortal": false
+  },
+  {
     "operationId": "BatchCreateClientPlanTransactions",
     "method": "POST",
     "path": "/v2/clients/{clientId}/plans/{planId}/transactions",
@@ -329,6 +342,19 @@
     "service": "Monolith.Storage",
     "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Storage)",
+    "onPortal": false
+  },
+  {
+    "operationId": "CreateAppointment",
+    "method": "POST",
+    "path": "/v2/activities/appointments",
+    "description": "Creates an appointment.",
+    "tags": [
+      "appointments"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
     "onPortal": false
   },
   {
@@ -582,6 +608,19 @@
     "onPortal": true
   },
   {
+    "operationId": "CreateClientIncome",
+    "method": "POST",
+    "path": "/v1/clients/{clientId}/incomes",
+    "description": "",
+    "tags": [
+      "clients"
+    ],
+    "service": "Monolith.FactFind",
+    "swaggerVersion": "v1",
+    "source": "Service Swagger (Monolith.FactFind)",
+    "onPortal": true
+  },
+  {
     "operationId": "CreateClientInsight",
     "method": "POST",
     "path": "/v2/clients/{clientId}/insights",
@@ -591,6 +630,19 @@
     ],
     "service": "Microservice.Insight",
     "swaggerVersion": "v2",
+    "source": "Service Swagger (Microservice.Insight)",
+    "onPortal": false
+  },
+  {
+    "operationId": "CreateClientInsight",
+    "method": "POST",
+    "path": "/v1/clients/{clientId}/insights",
+    "description": "Post insight for a given client with clientId.",
+    "tags": [
+      "insights"
+    ],
+    "service": "Microservice.Insight",
+    "swaggerVersion": "v1",
     "source": "Service Swagger (Microservice.Insight)",
     "onPortal": false
   },
@@ -821,6 +873,19 @@
   {
     "operationId": "CreateDocument",
     "method": "POST",
+    "path": "/v2/documents",
+    "description": "Creates a new document",
+    "tags": [
+      "documents"
+    ],
+    "service": "Monolith.Storage",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Storage)",
+    "onPortal": false
+  },
+  {
+    "operationId": "CreateDocument",
+    "method": "POST",
     "path": "/v1/documents",
     "description": "",
     "tags": [
@@ -869,6 +934,19 @@
     "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Portfolio)",
     "onPortal": true
+  },
+  {
+    "operationId": "CreateEmail",
+    "method": "POST",
+    "path": "/v2/activities/emails",
+    "description": "Creates an email.",
+    "tags": [
+      "emails"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": false
   },
   {
     "operationId": "CreateFund",
@@ -930,6 +1008,19 @@
     "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Commission)",
     "onPortal": true
+  },
+  {
+    "operationId": "CreateIPAddress",
+    "method": "POST",
+    "path": "/v2/tenants/{tenantId}/IPAddress",
+    "description": "",
+    "tags": [
+      "entitlement"
+    ],
+    "service": "Monolith.Entitlement",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Entitlement)",
+    "onPortal": false
   },
   {
     "operationId": "CreateLead",
@@ -1320,6 +1411,19 @@
     "service": "Monolith.Storage",
     "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Storage)",
+    "onPortal": false
+  },
+  {
+    "operationId": "DeleteAppointment",
+    "method": "DELETE",
+    "path": "/v2/activities/appointments/{appointmentId}",
+    "description": "Deletes a given appointment.",
+    "tags": [
+      "appointments"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
     "onPortal": false
   },
   {
@@ -2495,6 +2599,19 @@
     "onPortal": false
   },
   {
+    "operationId": "GetAppointment",
+    "method": "GET",
+    "path": "/v2/activities/appointments/{appointmentId}",
+    "description": "Returns a given appointment.",
+    "tags": [
+      "appointments"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": false
+  },
+  {
     "operationId": "GetAtrTemplateV2",
     "method": "GET",
     "path": "/v2/attitudeToRisk/atr_templates/{templateId}",
@@ -3219,6 +3336,19 @@
     "onPortal": true
   },
   {
+    "operationId": "GetClientRelationship",
+    "method": "GET",
+    "path": "/v1/clients/{clientId}/relationships/{relationshipId}",
+    "description": "Get the specified Relationship",
+    "tags": [
+      "relationships"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v1",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": true
+  },
+  {
     "operationId": "GetClientRequirement",
     "method": "GET",
     "path": "/v2/clients/{clientId}/requirements/{requirementId}",
@@ -3254,6 +3384,19 @@
     ],
     "service": "Monolith.Crm",
     "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": true
+  },
+  {
+    "operationId": "GetClientServicecase",
+    "method": "GET",
+    "path": "/v1/clients/{clientId}/servicecases/{serviceCaseId}",
+    "description": "",
+    "tags": [
+      "clients"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v1",
     "source": "Service Swagger (Monolith.Crm)",
     "onPortal": true
   },
@@ -3338,6 +3481,19 @@
   {
     "operationId": "GetDocument",
     "method": "GET",
+    "path": "/v2/clients/{clientId}/plans/{planId}/documents/{documentId}",
+    "description": "Returns an actual document (byte array) from the provider",
+    "tags": [
+      "document"
+    ],
+    "service": "Microservice.ProviderIntegration",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Microservice.ProviderIntegration)",
+    "onPortal": true
+  },
+  {
+    "operationId": "GetDocument",
+    "method": "GET",
     "path": "/v1/documents/{documentId}",
     "description": "Returns document data from private storage",
     "tags": [
@@ -3399,6 +3555,19 @@
     "swaggerVersion": "v2",
     "source": "Service Swagger (Microservice.DPA)",
     "onPortal": true
+  },
+  {
+    "operationId": "GetEmail",
+    "method": "GET",
+    "path": "/v2/activities/emails/{emailId}",
+    "description": "Returns a given email.",
+    "tags": [
+      "emails"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": false
   },
   {
     "operationId": "GetExpensecategory",
@@ -3962,6 +4131,19 @@
     "onPortal": true
   },
   {
+    "operationId": "GetTenant",
+    "method": "GET",
+    "path": "/v1/tenants/{tenantId}",
+    "description": "Get details about a specific tenant",
+    "tags": [
+      "tenants"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v1",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": true
+  },
+  {
     "operationId": "GetTenantProviderAtrTemplate",
     "method": "GET",
     "path": "/v2/installed_apps/atr_templates/{id}",
@@ -4011,6 +4193,19 @@
     "service": "Monolith.Entitlement",
     "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Entitlement)",
+    "onPortal": false
+  },
+  {
+    "operationId": "GetUserDiaryClassification",
+    "method": "GET",
+    "path": "/v2/diary/users/{userId}/classifications/{userDiaryClassificationId}",
+    "description": "Returns a given user diary classification.",
+    "tags": [
+      "userdiaryclassifications"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
     "onPortal": false
   },
   {
@@ -4142,6 +4337,19 @@
     "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Crm)",
     "onPortal": true
+  },
+  {
+    "operationId": "ListAppointment",
+    "method": "GET",
+    "path": "/v2/activities/appointments",
+    "description": "Returns a list of appointments.",
+    "tags": [
+      "appointments"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": false
   },
   {
     "operationId": "ListAtrSystemCategories",
@@ -4894,6 +5102,19 @@
     "onPortal": true
   },
   {
+    "operationId": "ListClientRelationships",
+    "method": "GET",
+    "path": "/v1/clients/{clientId}/relationships",
+    "description": "Get the Relationships",
+    "tags": [
+      "relationships"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v1",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": true
+  },
+  {
     "operationId": "ListClientRequirements",
     "method": "GET",
     "path": "/v2/clients/{clientId}/requirements",
@@ -4959,6 +5180,19 @@
     "onPortal": true
   },
   {
+    "operationId": "ListClientServicecases",
+    "method": "GET",
+    "path": "/v1/clients/{clientId}/servicecases",
+    "description": "",
+    "tags": [
+      "clients"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v1",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": true
+  },
+  {
     "operationId": "ListClientsExpensecategories",
     "method": "GET",
     "path": "/v1/clients/expensecategories",
@@ -5007,6 +5241,19 @@
     ],
     "service": "Monolith.Crm",
     "swaggerVersion": "v1",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": false
+  },
+  {
+    "operationId": "ListClientsSearch",
+    "method": "GET",
+    "path": "/v2/clients/search",
+    "description": "Returns a list of quick search clients for the user.",
+    "tags": [
+      "searches"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Crm)",
     "onPortal": false
   },
@@ -5168,6 +5415,19 @@
     "onPortal": true
   },
   {
+    "operationId": "ListEmails",
+    "method": "GET",
+    "path": "/v2/activities/emails",
+    "description": "Returns a list of emails.",
+    "tags": [
+      "emails"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": false
+  },
+  {
     "operationId": "ListFundPrices",
     "method": "GET",
     "path": "/v2/funds/{fundId}/prices",
@@ -5213,6 +5473,32 @@
     "description": "Returns a list of fund sectors.",
     "tags": [
       "fundsectors"
+    ],
+    "service": "Monolith.Portfolio",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Portfolio)",
+    "onPortal": true
+  },
+  {
+    "operationId": "ListGatedPlanTypes",
+    "method": "GET",
+    "path": "/v2/plantypes/adviser/{adviserId}",
+    "description": "Returns a list of gated plan types based on adviser multi-tie configuration.",
+    "tags": [
+      "plantypes"
+    ],
+    "service": "Monolith.Portfolio",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Portfolio)",
+    "onPortal": true
+  },
+  {
+    "operationId": "ListGatedPlanTypesByAdviserId",
+    "method": "GET",
+    "path": "/v2/advisers/{adviserId}/planTypes",
+    "description": "Returns a list of gated plan types based on adviser multi-tie configuration.",
+    "tags": [
+      "advisers"
     ],
     "service": "Monolith.Portfolio",
     "swaggerVersion": "v2",
@@ -5347,6 +5633,20 @@
     "swaggerVersion": "v2",
     "source": "Service Swagger (Microservice.AppD)",
     "onPortal": true
+  },
+  {
+    "operationId": "ListIPAddresses",
+    "method": "GET",
+    "path": "/v2/tenants/{tenantId}/IPAddress",
+    "description": "",
+    "tags": [
+      "entitlement",
+      "beta"
+    ],
+    "service": "Monolith.Entitlement",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Entitlement)",
+    "onPortal": false
   },
   {
     "operationId": "ListLeadAddresses",
@@ -5701,6 +6001,20 @@
     "onPortal": true
   },
   {
+    "operationId": "ListSupportIPAddresses",
+    "method": "GET",
+    "path": "/v2/support/IPAddress",
+    "description": "Returns a list of support IP addresses.",
+    "tags": [
+      "entitlement",
+      "beta"
+    ],
+    "service": "Monolith.Entitlement",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Entitlement)",
+    "onPortal": false
+  },
+  {
     "operationId": "ListTags",
     "method": "GET",
     "path": "/v2/tags",
@@ -5792,6 +6106,19 @@
     "onPortal": true
   },
   {
+    "operationId": "ListTimeEntries",
+    "method": "GET",
+    "path": "/v1/time_entries",
+    "description": "Get the time entries by filter",
+    "tags": [
+      "timeentries"
+    ],
+    "service": "Microservice.TimeRecording",
+    "swaggerVersion": "v1",
+    "source": "Service Swagger (Microservice.TimeRecording)",
+    "onPortal": true
+  },
+  {
     "operationId": "ListUnmatchedPlans",
     "method": "GET",
     "path": "/v2/plans/unmatched",
@@ -5803,6 +6130,33 @@
     "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Portfolio)",
     "onPortal": true
+  },
+  {
+    "operationId": "ListUserActivity",
+    "method": "GET",
+    "path": "/v2/users/{userId}/activity",
+    "description": "Returns a list of user activities.",
+    "tags": [
+      "entitlement",
+      "beta"
+    ],
+    "service": "Monolith.Entitlement",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Entitlement)",
+    "onPortal": false
+  },
+  {
+    "operationId": "ListUserDiaryClassification",
+    "method": "GET",
+    "path": "/v2/diary/users/{userId}/classifications",
+    "description": "Returns a list of user diary classifications.",
+    "tags": [
+      "userdiaryclassifications"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
+    "onPortal": false
   },
   {
     "operationId": "ListUserMesBrands",
@@ -6131,6 +6485,32 @@
     "onPortal": true
   },
   {
+    "operationId": "PutAccountModel",
+    "method": "PUT",
+    "path": "/v2/accounts/{accountNumber}/model",
+    "description": "",
+    "tags": [
+      "update status"
+    ],
+    "service": "Microservice.ProviderIntegration",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Microservice.ProviderIntegration)",
+    "onPortal": false
+  },
+  {
+    "operationId": "PutMoneyMovementInstuction",
+    "method": "PUT",
+    "path": "/v2/accounts/{accountNumber}/moneymovements",
+    "description": "",
+    "tags": [
+      "update status"
+    ],
+    "service": "Microservice.ProviderIntegration",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Microservice.ProviderIntegration)",
+    "onPortal": false
+  },
+  {
     "operationId": "RemoveClientTag",
     "method": "DELETE",
     "path": "/v2/clients/{clientId}/tags/{tagName}",
@@ -6220,6 +6600,19 @@
     "service": "Monolith.Storage",
     "swaggerVersion": "v2",
     "source": "Service Swagger (Monolith.Storage)",
+    "onPortal": false
+  },
+  {
+    "operationId": "UpdateAppointment",
+    "method": "PUT",
+    "path": "/v2/activities/appointments/{appointmentId}",
+    "description": "Updates a given appointment.",
+    "tags": [
+      "appointments"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
     "onPortal": false
   },
   {
@@ -7266,6 +7659,19 @@
     "service": "Microservice.ProviderIntegration",
     "swaggerVersion": "v2",
     "source": "Service Swagger (Microservice.ProviderIntegration)",
+    "onPortal": false
+  },
+  {
+    "operationId": "UpdateQuestionAnswers",
+    "method": "PUT",
+    "path": "/v2/clients/{clientId}/questions",
+    "description": "Updates a client's answers to one or more questions. See above for the rules governing this.",
+    "tags": [
+      "customquestions"
+    ],
+    "service": "Monolith.Crm",
+    "swaggerVersion": "v2",
+    "source": "Service Swagger (Monolith.Crm)",
     "onPortal": false
   },
   {
